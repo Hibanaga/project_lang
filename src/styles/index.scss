@@ -1,0 +1,17 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  font-size: 10px;
+  font-family: "Lato", sans-serif;
+}
