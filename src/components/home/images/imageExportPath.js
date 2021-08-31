@@ -7,6 +7,7 @@ import imgLogo from "./main_logo.png";
 import worldSVG from "./world_svg.svg";
 import starBack from "./star-pattern.svg";
 import bg_mainHeader from "./mainBG.png";
+import bgPresent from "./presentBG.png";
 
 export {
   prayImg,
@@ -18,4 +19,5 @@ export {
   starBack,
   bg_mainHeader,
   interestImg,
+  bgPresent,
 };

@@ -1,3 +1,10 @@
+@mixin resetDefaultInputStyles {
+  outline: none;
+  border: none;
+  cursor: default;
+  background-color: transparent;
+}
+
 .nav__wrapper {
   background-color: #235390;
   height: 6.5rem;
@@ -18,7 +25,7 @@
   }
 }
 
-header {
+section {
   max-height: 108rem;
   max-width: 100%;
   overflow: hidden;
@@ -59,6 +66,7 @@ header {
 
       .description_strong {
         font-weight: 800;
+        color: #000;
       }
       &::first-letter {
         padding-left: 1.5rem;
@@ -69,6 +77,94 @@ header {
 }
 
 .wrapperSelectUser {
+  border-top: 0.2rem solid #e5e5e5;
+
+  .cardSelectUser {
+    img {
+      width: 3rem;
+    }
+    &:last-child {
+      margin-bottom: 2rem;
+    }
+
+    .wrapper__description {
+      margin-left: 1rem;
+
+      h2 {
+        text-align: left;
+        margin: 1rem auto;
+      }
+    }
+  }
+}
+
+.wrapper_presentAbout {
+  border-top: 0.2rem solid #e5e5e5;
+
+  img {
+    margin-top: 1rem;
+  }
+
+  .description {
+    font-size: 1.7rem;
+    &::first-letter {
+      padding-left: 1.5rem;
+    }
+  }
+
+  a {
+    font-size: 2rem;
+    margin: 4rem auto;
+    margin-bottom: 6rem;
+    color: #1cb0f6;
+    transition: 0.3s;
+    text-align: center;
+    cursor: default;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+  }
+}
+
+.wrapperFooter {
+  h1 {
+    margin-top: 4rem;
+    font-size: 3rem;
+    width: 100%;
+  }
+
+  a {
+    width: 50%;
+    margin-bottom: 3rem;
+  }
+
   div {
+    margin-bottom: 3rem;
+  }
+
+  .container_lang {
+    width: 100%;
+    border-top: 0.2rem solid #e5e5e5;
+    border-radius: 1px;
+
+    h2 {
+      color: #e5e5e5;
+      font-size: 2.6rem;
+    }
+
+    .row_lang {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      .js-btn_lang {
+        display: block;
+        margin: 0.3rem;
+        color: #e5e5e5;
+        font-weight: 600;
+
+        @include resetDefaultInputStyles;
+      }
+    }
   }
 }

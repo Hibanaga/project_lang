@@ -7,8 +7,38 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `;
 
+const Row = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Header = styled.section`
+  max-height: 108rem;
+  max-width: 100%;
+  overflow: hidden;
+  //   background-color: #235390;
+  background-color: #235390;
+
+  background-image: url(${({ theme }) => theme});
+  background-size: cover;
+  background-position: center center;
+`;
+
 const Title = styled.h1`
   color: #fff;
+  font-size: 2.4rem;
+  text-align: center;
+  width: 80%;
+  margin: 2rem auto;
+  margin-bottom: 3rem;
+`;
+
+const Description = styled.span`
+  display: block;
+  font-size: 1.5rem;
+  line-height: 145%;
+  color: #777;
 `;
 
 const Link = styled(NavLink)`
@@ -26,11 +56,11 @@ const Link = styled(NavLink)`
   justify-content: center;
 
   background-color: ${({ theme, to }) =>
-    to === "/sign_up" ? theme.background.signUp : theme.background.logIn};
+    to === "/register" ? theme.background.signUp : theme.background.logIn};
   border-radius: 15px;
   border-bottom: 0.5rem solid
     ${({ theme, to }) =>
-      to === "/sign_up" ? theme.border.signUp : theme.border.logIn};
+      to === "/register" ? theme.border.signUp : theme.border.logIn};
 
   font-size: 2rem;
   color: #fff;
@@ -41,7 +71,7 @@ const Link = styled(NavLink)`
     border: 0.2rem solid ${({ theme }) => theme.border.logIn};
     border-bottom: 0.5rem solid
       ${({ theme, to }) =>
-        to === "/sign_up" ? theme.border.signUp : theme.border.logIn};
+        to === "/register" ? theme.border.signUp : theme.border.logIn};
 
     margin-bottom: 2rem;
   }
@@ -50,18 +80,6 @@ const Link = styled(NavLink)`
     filter: brightness(1.1);
     color: ${({ theme }) => theme.color};
   }
-`;
-
-const Header = styled.header`
-  max-height: 108rem;
-  max-width: 100%;
-  overflow: hidden;
-  //   background-color: #235390;
-  background-color: #235390;
-
-  background-image: url(${({ theme }) => theme});
-  background-size: cover;
-  background-position: center center;
 `;
 
 const IMG_BACK = styled.img`
@@ -77,10 +95,21 @@ const SubTitle = styled.h2`
   font-size: 2rem;
 `;
 
-const Row = styled.div`
+const Card = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 25rem;
 `;
 
-export { Wrapper, Title, Link, SubTitle, Row, Header, IMG_BACK };
+export {
+  Wrapper,
+  Title,
+  Link,
+  SubTitle,
+  Row,
+  Header,
+  IMG_BACK,
+  Card,
+  Description,
+};
