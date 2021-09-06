@@ -1,0 +1,13 @@
+{
+  "home": {
+    "headerContainer": {
+      "title": "Учите языки бесплатно, весело и эффективно!",
+      "link_1": "начать",
+      "link_2": "У меня уже есть аккаунт"
+    },
+    "aboutContainer": {},
+    "selectUsersContainer": {},
+    "presentAbout": {},
+    "footerContainer": {}
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "home": {
+    "headerContainer": {
+      "title": "Ucz się języków za darmo, zabawnie i efektywnie!",
+      "link_1": "rozpocząć",
+      "link_2": "mam już konto"
+    },
+    "aboutContainer": {},
+    "selectUsersContainer": {},
+    "presentAbout": {},
+    "footerContainer": {}
+  }
+}

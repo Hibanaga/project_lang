@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import {
   Header,
   Title,
@@ -9,9 +9,16 @@ import {
 import { starBack } from "../images/imageExportPath";
 import { register } from "../../../router/routes";
 import { linksDefaultStyles } from "../styles/styled_links";
-import lang from "../assets/lang.json";
+import { supportedLang } from "../../../translation/assets/lang";
 
-function footerContainer() {
+function FooterContainer({ onUpdateLangHandler }) {
+  const updateLangHandler = useCallback(
+    (event) => {
+      onUpdateLangHandler(event.target.dataset.source);
+    },
+    [onUpdateLangHandler]
+  );
+
   return (
     <Header theme={starBack} className="wrapperFooter">
       <Wrapper>
@@ -24,8 +31,13 @@ function footerContainer() {
           <SubTitle>Язык сайта:</SubTitle>
 
           <div className="row_lang">
-            {lang.map(({ id, lang }) => (
-              <button className="js-btn_lang" key={id}>
+            {supportedLang.map(({ id, lang, code }) => (
+              <button
+                className="js-btn_lang"
+                data-source={code}
+                key={id}
+                onClick={updateLangHandler}
+              >
                 {lang}
               </button>
             ))}
@@ -36,4 +48,4 @@ function footerContainer() {
   );
 }
 
-export default React.memo(footerContainer);
+export default React.memo(FooterContainer);

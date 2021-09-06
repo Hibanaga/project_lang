@@ -4,21 +4,21 @@ import { register, log_in } from "../../../router/routes";
 import { linksDefaultStyles } from "../styles/styled_links";
 import { worldSVG, starBack } from "../images/imageExportPath";
 
-function headerContainer() {
+function HeaderContainer({ headerLang }) {
   return (
     <Header theme={starBack}>
       <Wrapper>
         <img src={worldSVG} alt="world logo svg" />
-        <Title>Учите языки бесплатно, весело и эффективно!</Title>
+        <Title>{headerLang.title}</Title>
         <Link theme={linksDefaultStyles} to={register}>
-          начать
+          {headerLang.link_1}
         </Link>
         <Link theme={linksDefaultStyles} to={log_in}>
-          У меня уже есть аккаунт
+          {headerLang.link_2}
         </Link>
       </Wrapper>
     </Header>
   );
 }
 
-export default React.memo(headerContainer);
+export default React.memo(HeaderContainer);
