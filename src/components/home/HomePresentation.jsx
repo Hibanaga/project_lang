@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AboutContainer from "./components/aboutContainer";
-import FooterContainer from "./components/footerContainer";
+import FooterContainer from "./components/footerContainert";
 import HeaderContainer from "./components/headerContainer";
 import NavPanel from "./components/navPanel";
 import PresentAbout from "./components/presentAbout";
@@ -10,11 +10,13 @@ import { defaultLang } from "../../translation/assets/lang";
 import { useLang } from "./hooks/customHooks";
 
 function HomePresentation() {
-  const [currLang, setLang] = useLang(defaultLang);
+  //set new lang
+  const [selectedLang, setSelectedLang] = useState(defaultLang);
+  const currLang = useLang(selectedLang);
 
+  //fucntion set new lang
   const updateLangHandler = (lang) => {
-    console.log(lang);
-    setLang(lang);
+    setSelectedLang(lang);
   };
 
   return (
@@ -22,10 +24,15 @@ function HomePresentation() {
       <>
         <NavPanel />
         <HeaderContainer headerLang={currLang.home.headerContainer} />
-        <AboutContainer />
-        <SelectUsersContainer />
-        <PresentAbout />
-        <FooterContainer onUpdateLangHandler={updateLangHandler} />
+        <AboutContainer aboutLang={currLang.home.aboutContainer} />
+        <SelectUsersContainer
+          selectUserLang={currLang.home.selectUsersContainer}
+        />
+        <PresentAbout presentAbout={currLang.home.presentAbout} />
+        <FooterContainer
+          footerLang={currLang.home.footerContainer}
+          onUpdateLangHandler={updateLangHandler}
+        />
       </>
     )
   );

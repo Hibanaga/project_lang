@@ -7,7 +7,7 @@ import "./styles/index.scss";
 
 ReactDOM.render(
   <BrowserRouter>
-    <Suspense fallback="loading...">
+    <Suspense fallback="">
       <App />
     </Suspense>
   </BrowserRouter>,

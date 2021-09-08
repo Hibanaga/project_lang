@@ -10,19 +10,19 @@ import { bgPresent } from "../images/imageExportPath";
 import { englishTest } from "../../../router/routes";
 import { NavLink } from "react-router-dom";
 
-function presentAbout() {
+function presentAbout({ presentAbout }) {
   return (
     <Wrapper className="wrapper_presentAbout">
-      <Row>
+      <Row className="row_presentAbout">
         <IMG_BACK loading="lazy" src={bgPresent} alt="bg present info" />
-        <SubTitle>Collearn English Test</SubTitle>
+        <div className="wrapper_desc">
+          <SubTitle>{presentAbout.title}</SubTitle>
 
-        <Description className="description">
-          Так же coollearn предоставляет удобное тестирование знаний чтобы
-          каждый пользователь мог узнать свой уровень владения языком.
-        </Description>
-
-        <NavLink to={englishTest}>ПОДТВЕРДИТЕ ВЛАДЕНИЕ АНГЛИЙСКИМ</NavLink>
+          <Description className="description">
+            {presentAbout.description}
+          </Description>
+        </div>
+        <NavLink to={englishTest}>{presentAbout.link}</NavLink>
       </Row>
     </Wrapper>
   );

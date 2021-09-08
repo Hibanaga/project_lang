@@ -15,22 +15,21 @@ import {
   Description,
 } from "../../../styles/styled-comp";
 
-function selectUsersContainer() {
+function selectUsersContainer({ selectUserLang }) {
   return (
     <Wrapper className="wrapperSelectUser">
       <Row>
         <IMG_BACK src={selectUsersImg} alt="users select bg" />
 
-        <SubTitle>Почему вам стоит выбрать именно coollearn</SubTitle>
+        <SubTitle>{selectUserLang.title}</SubTitle>
         <Row className="rowSelectUser">
           <Card className="cardSelectUser">
             <img src={goalImg} alt="select user success" />
 
             <div className="wrapper__description">
-              <SubTitle>Быстрый прогресс</SubTitle>
+              <SubTitle>{selectUserLang.card_1.subtitle}</SubTitle>
               <Description className="description">
-                Эффективное обучение построено на практических задачах чтобы
-                пользователь мог освоить новые знания.
+                {selectUserLang.card_1.description}
               </Description>
             </div>
           </Card>
@@ -39,11 +38,9 @@ function selectUsersContainer() {
             <img src={studyImg} alt="select user success" />
 
             <div className="wrapper__description">
-              <SubTitle>Индивидуальное обучение</SubTitle>
+              <SubTitle>{selectUserLang.card_2.subtitle}</SubTitle>
               <Description className="description">
-                Наши уроки сочетают лучшие достижения искусственного интеллекта
-                и лингвистики. Мы балансируем сложность и темп обучения для
-                каждого пользователя индивидуально!
+                {selectUserLang.card_2.description}
               </Description>
             </div>
           </Card>
@@ -52,11 +49,9 @@ function selectUsersContainer() {
             <img src={prayImg} alt="select user success" />
 
             <div className="wrapper__description">
-              <SubTitle>Стимул к учёбе</SubTitle>
+              <SubTitle>{selectUserLang.card_3.subtitle}</SubTitle>
               <Description className="description">
-                С нашим игровым подходом ежедневные занятия входят в привычку.
-                Вам помогут забавные задания и напоминания от нашего талисмана —
-                совёнка Duo.
+                {selectUserLang.card_3.description}
               </Description>
             </div>
           </Card>
@@ -65,10 +60,9 @@ function selectUsersContainer() {
             <img src={interestImg} alt="select user success" />
 
             <div className="wrapper__description">
-              <SubTitle>Нескучные уроки!</SubTitle>
+              <SubTitle>{selectUserLang.card_4.subtitle}</SubTitle>
               <Description className="description">
-                Эффективное обучение не должно быть скучным! Интересные задания
-                и забавные персонажи дают стимул заниматься каждый день.
+                {selectUserLang.card_4.description}
               </Description>
             </div>
           </Card>

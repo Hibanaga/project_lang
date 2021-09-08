@@ -11,7 +11,7 @@ import { register } from "../../../router/routes";
 import { linksDefaultStyles } from "../styles/styled_links";
 import { supportedLang } from "../../../translation/assets/lang";
 
-function FooterContainer({ onUpdateLangHandler }) {
+function FooterContainer({ onUpdateLangHandler, footerLang }) {
   const updateLangHandler = useCallback(
     (event) => {
       onUpdateLangHandler(event.target.dataset.source);
@@ -22,13 +22,13 @@ function FooterContainer({ onUpdateLangHandler }) {
   return (
     <Header theme={starBack} className="wrapperFooter">
       <Wrapper>
-        <Title>Изучайте английский с Coollearn</Title>
+        <Title>{footerLang.title}</Title>
         <Link theme={linksDefaultStyles} to={register}>
-          Начать
+          {footerLang.link}
         </Link>
 
         <div className="container_lang">
-          <SubTitle>Язык сайта:</SubTitle>
+          <SubTitle>{footerLang.subtitle}</SubTitle>
 
           <div className="row_lang">
             {supportedLang.map(({ id, lang, code }) => (

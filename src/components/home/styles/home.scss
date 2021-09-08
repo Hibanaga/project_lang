@@ -5,6 +5,8 @@
   background-color: transparent;
 }
 
+$transition_t: 0.3s;
+
 .nav__wrapper {
   background-color: #235390;
   height: 6.5rem;
@@ -117,7 +119,7 @@ section {
     margin: 4rem auto;
     margin-bottom: 6rem;
     color: #1cb0f6;
-    transition: 0.3s;
+    transition: $transition_t;
     text-align: center;
     cursor: default;
 
@@ -166,5 +168,92 @@ section {
         @include resetDefaultInputStyles;
       }
     }
+  }
+}
+
+@media (min-width: 768px) {
+  section div img {
+    width: 30rem;
+  }
+
+  .wrapper_presentAbout a {
+    cursor: pointer;
+  }
+  .wrapperFooter a {
+    cursor: pointer;
+  }
+
+  .wrapperFooter .container_lang .row_lang .js-btn_lang {
+    cursor: pointer;
+    transition: $transition_t;
+    font-size: 1.4rem;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+@media (min-width: 1140px) {
+  .container__header {
+    height: 80vh;
+  }
+
+  section div img {
+    width: 45rem;
+  }
+
+  section div {
+    flex-direction: row;
+  }
+
+  .wrapper_desc {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wrapperSelectUser {
+    img {
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      text-align: center;
+      width: 32rem;
+    }
+  }
+
+  .wrapperSelectUser .cardSelectUser .wrapper__description {
+    width: 80%;
+  }
+
+  .wrapper_presentAbout {
+    .row_presentAbout {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+    }
+
+    .wrapper_desc {
+      width: 50%;
+    }
+  }
+
+  .wrapperFooter {
+    height: 40rem;
+
+    div {
+      flex-direction: column;
+
+      .container_lang {
+        width: 80%;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  .wrapperFooter div a {
+    width: 27rem;
   }
 }

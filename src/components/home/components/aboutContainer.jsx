@@ -8,18 +8,16 @@ import {
 } from "../../../styles/styled-comp";
 import { bg_mainHeader } from "../images/imageExportPath";
 
-function about() {
+function about({ aboutLang }) {
   return (
     <Wrapper className="wrapperAbout__container">
-      <SubTitle>Ресурс для обучения английскому языку</SubTitle>
+      <SubTitle>{aboutLang.subtitle}</SubTitle>
       <Row>
         <IMG_BACK src={bg_mainHeader} alt="bg_main container_image" />
         <Description className="description">
-          Учиться с помощью{" "}
-          <span className="description_strong">Coollearn</span> очень весело и
-          эффективно. Мы предоставляем уникальную возможность сделать процесс
-          обучения, где каждый может найти задания которые помогут ему освоить
-          новые знания.
+          {aboutLang.description_1}{" "}
+          <span className="description_strong"> {aboutLang.description_2}</span>{" "}
+          {aboutLang.description_3}
         </Description>
       </Row>
     </Wrapper>

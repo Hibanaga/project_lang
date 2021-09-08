@@ -2,15 +2,32 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 const Wrapper = styled.div`
-  width: 290px;
+  width: 80%;
   height: 100%;
   margin: 0 auto;
+  position: relative;
+
+  @media (min-width: 1140px) {
+    width: 960px;
+  }
 `;
 
 const Row = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: 768px) {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: 1140px) {
+    justify-content: space-between;
+  }
 `;
 
 const Header = styled.section`
@@ -27,11 +44,15 @@ const Header = styled.section`
 
 const Title = styled.h1`
   color: #fff;
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   text-align: center;
   width: 80%;
   margin: 2rem auto;
   margin-bottom: 3rem;
+
+  @media (min-width: 768px) {
+    font-size: 3.2rem;
+  }
 `;
 
 const Description = styled.span`
@@ -46,7 +67,7 @@ const Link = styled(NavLink)`
   outline: none;
   cursor: default;
 
-  width: 90%;
+  width: 27rem;
   margin: 0.5rem auto;
 
   height: 5rem;
@@ -80,12 +101,20 @@ const Link = styled(NavLink)`
     filter: brightness(1.1);
     color: ${({ theme }) => theme.color};
   }
+
+  @media (min-width: 768px) {
+    cursor: pointer;
+  }
 `;
 
 const IMG_BACK = styled.img`
   width: 30rem;
   margin: 0 auto;
   display: block;
+
+  @media (min-width: 1140px) {
+    width: 35rem;
+  }
 `;
 
 const SubTitle = styled.h2`
@@ -93,6 +122,10 @@ const SubTitle = styled.h2`
   text-align: center;
   margin: 2rem auto;
   font-size: 2rem;
+
+  @media (min-width: 768px) {
+    font-size: 2.6rem;
+  }
 `;
 
 const Card = styled.div`
@@ -100,6 +133,18 @@ const Card = styled.div`
   justify-content: space-between;
   align-items: baseline;
   width: 25rem;
+
+  img {
+    position: inherit;
+  }
+
+  @media (min-width: 768px) {
+    width: 45%;
+  }
+
+  @media (min-width: 1140px) {
+    width: 35%;
+  }
 `;
 
 export {
