@@ -11,7 +11,12 @@ import { register } from "../../../router/routes";
 import { linksDefaultStyles } from "../styles/styled_links";
 import { supportedLang } from "../../../translation/assets/lang";
 
-function FooterContainer({ onUpdateLangHandler, footerLang }) {
+interface InfoProp {
+  onUpdateLangHandler: (p: string) => void;
+  footerLang: any;
+}
+
+function FooterContainer({ onUpdateLangHandler, footerLang }: InfoProp) {
   const updateLangHandler = useCallback(
     (event) => {
       onUpdateLangHandler(event.target.dataset.source);

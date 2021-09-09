@@ -8,7 +8,11 @@ import {
 } from "../../../styles/styled-comp";
 import { bg_mainHeader } from "../images/imageExportPath";
 
-function about({ aboutLang }) {
+interface InfoProp {
+  aboutLang: any;
+}
+
+function about({ aboutLang }: InfoProp) {
   return (
     <Wrapper className="wrapperAbout__container">
       <SubTitle>{aboutLang.subtitle}</SubTitle>

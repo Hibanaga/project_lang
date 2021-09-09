@@ -10,7 +10,11 @@ import { bgPresent } from "../images/imageExportPath";
 import { englishTest } from "../../../router/routes";
 import { NavLink } from "react-router-dom";
 
-function presentAbout({ presentAbout }) {
+interface InfoProp {
+  presentAbout: any;
+}
+
+function presentAbout({ presentAbout }: InfoProp) {
   return (
     <Wrapper className="wrapper_presentAbout">
       <Row className="row_presentAbout">

@@ -1,0 +1,17 @@
+$transition_t: 0.3s;
+
+@mixin resetDefaultInputStyles {
+  outline: none;
+  border: none;
+  cursor: default;
+  background-color: transparent;
+}
+
+@mixin defaultStyleInput {
+  margin: 1rem auto;
+  border: 0.2rem solid rgb(90, 90, 90);
+  background-color: rgb(240, 240, 240);
+  color: rgb(60, 60, 60);
+  font-size: 1.4rem;
+  font-weight: 500;
+}

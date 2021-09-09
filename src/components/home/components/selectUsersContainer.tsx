@@ -15,7 +15,11 @@ import {
   Description,
 } from "../../../styles/styled-comp";
 
-function selectUsersContainer({ selectUserLang }) {
+interface InfoProp {
+  selectUserLang: any;
+}
+
+function selectUsersContainer({ selectUserLang }: InfoProp) {
   return (
     <Wrapper className="wrapperSelectUser">
       <Row>

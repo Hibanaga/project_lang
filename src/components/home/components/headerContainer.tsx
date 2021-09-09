@@ -4,7 +4,11 @@ import { register, log_in } from "../../../router/routes";
 import { linksDefaultStyles } from "../styles/styled_links";
 import { worldSVG, starBack } from "../images/imageExportPath";
 
-function HeaderContainer({ headerLang }) {
+interface InfoProp {
+  headerLang: any;
+}
+
+function HeaderContainer({ headerLang }: InfoProp) {
   return (
     <Header theme={starBack} className="container__header">
       <Wrapper>

@@ -1,0 +1,38 @@
+@import "../../../styles/_mixins";
+
+.containerLogin {
+  height: 100vh;
+  background-color: transparent;
+
+  .row_login {
+    h1 {
+      color: rgb(60, 60, 60);
+    }
+
+    form {
+      input {
+        @include resetDefaultInputStyles;
+        @include defaultStyleInput;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      button {
+        @include resetDefaultInputStyles;
+
+        margin-top: 1.5rem;
+        color: #fff;
+        background-color: #1cb0f6;
+        border-bottom: 0.4rem solid #1394cf;
+        font-size: 2rem;
+        transition: $transition_t;
+
+        &:hover {
+          filter: brightness(1.1);
+        }
+      }
+    }
+  }
+}

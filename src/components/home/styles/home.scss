@@ -1,11 +1,4 @@
-@mixin resetDefaultInputStyles {
-  outline: none;
-  border: none;
-  cursor: default;
-  background-color: transparent;
-}
-
-$transition_t: 0.3s;
+@import "../../../styles/_mixins";
 
 .nav__wrapper {
   background-color: #235390;
