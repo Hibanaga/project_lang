@@ -40,5 +40,20 @@
       "subtitle": "Язык сайта:",
       "link": "начать"
     }
+  },
+  "form": {
+    "loginForm": {
+      "placeholderEmail": "Email или имя пользователя",
+      "registerBtn": "Регистрация"
+    },
+    "registerForm": {
+      "title": "Создайте аккаунт",
+      "placeholderEmail": "Электронная почта",
+      "placeholderNickname": "Имя(необязательно)",
+      "submit": "Создать аккаут"
+    },
+    "placeholderPassword": "Пароль",
+    "login": "Войти",
+    "title": "Имя пользователя может включать только числа,буквы и некоторые специальные знаки такие как !_@"
   }
 }

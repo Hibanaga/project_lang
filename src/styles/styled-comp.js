@@ -118,11 +118,11 @@ const Link = styled.button`
 
 const IMG_BACK = styled.img`
   width: 30rem;
-  /* margin: 0 auto; */
   display: block;
 
-  @media (min-width: 1140px) {
+  @media (min-width: 760px) {
     width: 35rem;
+    margin: 0 auto;
   }
 `;
 

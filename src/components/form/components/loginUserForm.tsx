@@ -28,6 +28,7 @@ export default function loginUserForm({
         type="password"
         value={validateInput(password)}
         placeholder="Пароль"
+        title="Имя пользователя может включать только числа,буквы и некоторые специальные знаки такие как !_@"
         name="password"
         onChange={onHandleInputChange}
       />

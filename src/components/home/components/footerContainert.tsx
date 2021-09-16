@@ -12,10 +12,15 @@ import { supportedLang } from "../../../translation/assets/lang";
 
 interface InfoProp {
   onUpdateLangHandler: (p: string) => void;
+  onToggleRegisterPage: () => void;
   footerLang: any;
 }
 
-function FooterContainer({ onUpdateLangHandler, footerLang }: InfoProp) {
+function FooterContainer({
+  onUpdateLangHandler,
+  onToggleRegisterPage,
+  footerLang,
+}: InfoProp) {
   const updateLangHandler = useCallback(
     (event) => {
       onUpdateLangHandler(event.target.dataset.source);
@@ -29,8 +34,8 @@ function FooterContainer({ onUpdateLangHandler, footerLang }: InfoProp) {
         <Title>{footerLang.title}</Title>
         <Link
           className="js_btn__routeFooter"
-          data-source={"register"}
           title="register page"
+          onClick={onToggleRegisterPage}
           theme={linksDefaultStyles}
         >
           {footerLang.link}

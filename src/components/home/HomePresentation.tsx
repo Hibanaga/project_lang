@@ -55,6 +55,7 @@ function HomePresentation({
           />
           <PresentAbout presentAbout={currLang.home.presentAbout} />
           <FooterContainer
+            onToggleRegisterPage={onToggleRegisterPage}
             footerLang={currLang.home.footerContainer}
             onUpdateLangHandler={onUpdateLangHandler}
           />
