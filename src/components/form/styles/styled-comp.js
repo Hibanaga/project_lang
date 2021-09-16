@@ -26,6 +26,8 @@ const Submit = styled.button`
   width: 24rem;
   height: 4rem;
   border-radius: 7px;
+
+  border-bottom: 0.4rem solid #1394cf;
 `;
 
 export { RowLogin, Input, Form, Submit };

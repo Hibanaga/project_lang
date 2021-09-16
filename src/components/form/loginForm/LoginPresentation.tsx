@@ -5,13 +5,14 @@ import { RowLogin } from "../styles/styled-comp.js";
 
 //instane of object
 interface stateProp {
-  login: string;
+  email: string;
   password: string;
+  nickname?: string;
 }
 
 interface typeProp {
   state: stateProp;
-  onToggleRegisterPage: () => void;
+  isLoginPage: boolean;
   onToggleLoginPage: () => void;
   onHandleInputChange: (p: any) => void;
   onSubmitFormHandler: (p: any) => void;
@@ -19,24 +20,24 @@ interface typeProp {
 
 export default function LoginPresentation({
   state,
-  onToggleRegisterPage,
+  isLoginPage,
   onToggleLoginPage,
   onHandleInputChange,
   onSubmitFormHandler,
 }: typeProp) {
   //desctructe state
-  const { login, password } = state;
+  const { email, password } = state;
   return (
     <section className="containerLogin">
       <Wrapper>
         <ActionsRedirect
-          onToggleRegisterPage={onToggleRegisterPage}
+          isLoginPage={isLoginPage}
           onToggleLoginPage={onToggleLoginPage}
         />
         <RowLogin className="row_login">
           <Title>Войти</Title>
           <LoginUserForm
-            login={login}
+            email={email}
             password={password}
             onHandleInputChange={onHandleInputChange}
             onSubmitFormHandler={onSubmitFormHandler}

@@ -28,18 +28,19 @@ function HomePresentation({
   onToggleLoginPage,
   onToggleRegisterPage,
 }: InfoProp) {
-  console.log(isLoginPage === false || isRegisterPage === false);
   return (
     <>
       {isLoginPage && (
         <Login
+          isLoginPage={isLoginPage}
           onToggleLoginPage={onToggleLoginPage}
-          onToggleRegisterPage={onToggleRegisterPage}
         />
       )}
+
       {isRegisterPage && (
         <Register onToggleRegisterPage={onToggleRegisterPage} />
       )}
+
       {isLoginPage === false && isRegisterPage === false && (
         <>
           <NavPanel />

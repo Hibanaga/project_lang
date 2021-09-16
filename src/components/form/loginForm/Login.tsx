@@ -4,17 +4,18 @@ import { actions, initialState } from "../services/optionsReducer";
 import "../styles/auth.scss";
 
 interface stateProp {
-  onToggleRegisterPage: () => void;
   onToggleLoginPage: () => void;
+  isLoginPage: boolean;
 }
 
-function Login({ onToggleLoginPage, onToggleRegisterPage }: stateProp) {
+function Login({ onToggleLoginPage, isLoginPage }: stateProp) {
   const [state, dispatch] = useReducer(actions, initialState);
+
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = event.target;
 
-    if (name === "login") {
-      dispatch({ type: "change_login", payload: value });
+    if (name === "email") {
+      dispatch({ type: "change_email", payload: value });
     }
 
     if (name === "password") {
@@ -29,10 +30,10 @@ function Login({ onToggleLoginPage, onToggleRegisterPage }: stateProp) {
   return (
     <LoginPresentation
       state={state}
+      isLoginPage={isLoginPage}
       onHandleInputChange={handleInputChange}
       onSubmitFormHandler={submitFormHandler}
       onToggleLoginPage={onToggleLoginPage}
-      onToggleRegisterPage={onToggleRegisterPage}
     />
   );
 }
