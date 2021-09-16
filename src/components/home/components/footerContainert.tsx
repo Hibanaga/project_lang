@@ -7,7 +7,6 @@ import {
   SubTitle,
 } from "../../../styles/styled-comp";
 import { starBack } from "../images/imageExportPath";
-import { register } from "../../../router/routes";
 import { linksDefaultStyles } from "../styles/styled_links";
 import { supportedLang } from "../../../translation/assets/lang";
 
@@ -28,7 +27,12 @@ function FooterContainer({ onUpdateLangHandler, footerLang }: InfoProp) {
     <Header theme={starBack} className="wrapperFooter">
       <Wrapper>
         <Title>{footerLang.title}</Title>
-        <Link theme={linksDefaultStyles} to={register}>
+        <Link
+          className="js_btn__routeFooter"
+          data-source={"register"}
+          title="register page"
+          theme={linksDefaultStyles}
+        >
           {footerLang.link}
         </Link>
 

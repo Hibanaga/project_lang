@@ -1,7 +1,9 @@
-import { Wrapper, Title } from "../../styles/styled-comp";
-import LoginUserForm from "./components/loginUserForm";
-import { RowLogin } from "./styles/styled-comp.js";
+import { Wrapper, Title } from "../../../styles/styled-comp";
+import ActionsRedirect from "../components/actionsRedirect";
+import LoginUserForm from "../components/loginUserForm";
+import { RowLogin } from "../styles/styled-comp.js";
 
+//instane of object
 interface stateProp {
   login: string;
   password: string;
@@ -9,12 +11,16 @@ interface stateProp {
 
 interface typeProp {
   state: stateProp;
+  onToggleRegisterPage: () => void;
+  onToggleLoginPage: () => void;
   onHandleInputChange: (p: any) => void;
   onSubmitFormHandler: (p: any) => void;
 }
 
 export default function LoginPresentation({
   state,
+  onToggleRegisterPage,
+  onToggleLoginPage,
   onHandleInputChange,
   onSubmitFormHandler,
 }: typeProp) {
@@ -23,6 +29,10 @@ export default function LoginPresentation({
   return (
     <section className="containerLogin">
       <Wrapper>
+        <ActionsRedirect
+          onToggleRegisterPage={onToggleRegisterPage}
+          onToggleLoginPage={onToggleLoginPage}
+        />
         <RowLogin className="row_login">
           <Title>Войти</Title>
           <LoginUserForm

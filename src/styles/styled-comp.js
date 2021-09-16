@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 80%;
@@ -62,10 +61,11 @@ const Description = styled.span`
   color: #777;
 `;
 
-const Link = styled(NavLink)`
+const Link = styled.button`
   user-select: none;
   outline: none;
   cursor: default;
+  border: none;
 
   width: 27rem;
   margin: 0.5rem auto;
@@ -75,13 +75,17 @@ const Link = styled(NavLink)`
   display: flex;
   align-items: center;
   justify-content: center;
+  /* { theme, to }
+  to === "/register" ? theme.background.signUp : theme.background.logIn} */
+  background-color: ${({ theme, title }) =>
+    title === "register page"
+      ? theme.background.signUp
+      : theme.background.logIn};
 
-  background-color: ${({ theme, to }) =>
-    to === "/register" ? theme.background.signUp : theme.background.logIn};
   border-radius: 15px;
   border-bottom: 0.5rem solid
-    ${({ theme, to }) =>
-      to === "/register" ? theme.border.signUp : theme.border.logIn};
+    ${({ theme, title }) =>
+      title === "register page" ? theme.border.signUp : theme.border.logIn};
 
   font-size: 2rem;
   color: #fff;
@@ -91,15 +95,20 @@ const Link = styled(NavLink)`
   &:last-child {
     border: 0.2rem solid ${({ theme }) => theme.border.logIn};
     border-bottom: 0.5rem solid
-      ${({ theme, to }) =>
-        to === "/register" ? theme.border.signUp : theme.border.logIn};
-
+      ${({ theme, title }) =>
+        title === "register page" ? theme.border.signUp : theme.border.logIn};
     margin-bottom: 2rem;
   }
 
   &:hover {
     filter: brightness(1.1);
     color: ${({ theme }) => theme.color};
+  }
+
+  &:active {
+    border-bottom: 0.2rem solid
+      ${({ theme, title }) =>
+        title === "register page" ? theme.border.signUp : theme.border.logIn};
   }
 
   @media (min-width: 768px) {

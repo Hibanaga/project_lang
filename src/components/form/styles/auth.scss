@@ -2,9 +2,51 @@
 
 .containerLogin {
   height: 100vh;
-  background-color: transparent;
+  width: 100%;
+  background-color: #fff;
+  z-index: 12;
+  position: absolute;
+  overflow: none;
+
+  .wrapper__actionsRedirect {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+
+    margin-top: 1.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    .js-btn__redirectToHome {
+      svg {
+        font-size: 4rem;
+        color: #1cb0f6;
+      }
+    }
+
+    .js-btn__redirectToRegister {
+      font-size: 1.6rem;
+      font-weight: 600;
+
+      color: #1cb0f6;
+      background-color: transparent;
+
+      padding: 0.8rem 1rem;
+
+      border-radius: 1.2rem;
+      border: 0.2rem solid rgb(209, 209, 209);
+      border-bottom: 0.4rem solid rgb(209, 209, 209);
+    }
+  }
 
   .row_login {
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+
     h1 {
       color: rgb(60, 60, 60);
     }

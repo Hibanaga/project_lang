@@ -1,9 +1,14 @@
 import React, { useReducer } from "react";
 import LoginPresentation from "./LoginPresentation";
-import { actions, initialState } from "./services/optionsReducer";
-import "./styles/auth.scss";
+import { actions, initialState } from "../services/optionsReducer";
+import "../styles/auth.scss";
 
-function Login() {
+interface stateProp {
+  onToggleRegisterPage: () => void;
+  onToggleLoginPage: () => void;
+}
+
+function Login({ onToggleLoginPage, onToggleRegisterPage }: stateProp) {
   const [state, dispatch] = useReducer(actions, initialState);
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = event.target;
@@ -26,6 +31,8 @@ function Login() {
       state={state}
       onHandleInputChange={handleInputChange}
       onSubmitFormHandler={submitFormHandler}
+      onToggleLoginPage={onToggleLoginPage}
+      onToggleRegisterPage={onToggleRegisterPage}
     />
   );
 }
