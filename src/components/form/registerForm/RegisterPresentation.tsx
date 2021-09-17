@@ -7,15 +7,15 @@ import { withTranslation } from "react-i18next";
 
 interface stateProp {
   onHandleInputChange: (p: any) => void;
-  t: any;
+  t: (p: string) => object;
   state: any;
 }
 
 function RegisterPresentation({ onHandleInputChange, t, state }: stateProp) {
   return (
     <section className="containerRegister">
+      <ActionsRedirect />
       <Wrapper>
-        <ActionsRedirect />
         <RowLogin className="row_register">
           <Title>{t("form.registerForm.title")}</Title>
           <RegisterUserForm

@@ -31,9 +31,8 @@ function LoginPresentation({
   const { email, password } = state;
   return (
     <section className="containerLogin">
+      <ActionsRedirect pathLocation={pathLocation} />
       <Wrapper>
-        <ActionsRedirect pathLocation={pathLocation} />
-
         <RowLogin className="row_login">
           <Title>{t("form.login")}</Title>
           <LoginUserForm
