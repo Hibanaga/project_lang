@@ -40,5 +40,20 @@
       "subtitle": "Język strony:",
       "link": "rozpocząć"
     }
+  },
+  "form": {
+    "loginForm": {
+      "placeholderEmail": "Email lub nazwa użytkownika",
+      "registerBtn": "Rejestracja"
+    },
+    "registerForm": {
+      "title": "Załóż konto",
+      "placeholderEmail": "E-mail",
+      "placeholderNickname": "Nazwa (opcjonalnie)",
+      "submit": "Załóż konto"
+    },
+    "placeholderPassword": "Hasło",
+    "login": "Zalogować",
+    "title": "Nazwa użytkownika może zawierać tylko liczby, litery i niektóre znaki specjalne takie jak !_@"
   }
 }

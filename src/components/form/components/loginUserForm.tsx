@@ -6,7 +6,7 @@ interface stateProp {
   password: string;
   onHandleInputChange: (p: object) => void;
   onSubmitFormHandler: (p: object) => void;
-  loginLang: any;
+  userLang: any;
 }
 
 export default function loginUserForm({
@@ -14,28 +14,28 @@ export default function loginUserForm({
   password,
   onHandleInputChange,
   onSubmitFormHandler,
-  loginLang,
+  userLang,
 }: stateProp) {
   return (
     <Form onSubmit={onSubmitFormHandler}>
       <Input
         type="email"
         value={validateInput(email)}
-        placeholder={loginLang.loginForm.placeholderEmail}
-        title={loginLang.title}
+        placeholder={userLang.form.loginForm.placeholderEmail}
+        title={userLang.form.title}
         name="email"
         onChange={onHandleInputChange}
       />
       <Input
         type="password"
         value={validateInput(password)}
-        placeholder={loginLang.placeholderPassword}
-        title={loginLang.title}
+        placeholder={userLang.form.placeholderPassword}
+        title={userLang.form.title}
         name="password"
         onChange={onHandleInputChange}
       />
 
-      <Submit type="submit"> {loginLang.login} </Submit>
+      <Submit type="submit"> {userLang.form.login} </Submit>
     </Form>
   );
 }

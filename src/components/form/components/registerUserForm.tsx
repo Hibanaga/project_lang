@@ -9,13 +9,13 @@ interface typeProp {
 
 interface stateProp {
   onHandleInputChange: (p: any) => void;
-  registerLang: any;
+  userLang: any;
   state: typeProp;
 }
 
 export default function registerUserForm({
   state,
-  registerLang,
+  userLang,
   onHandleInputChange,
 }: stateProp) {
   const { email, password, nickname } = state;
@@ -23,26 +23,26 @@ export default function registerUserForm({
     <Form>
       <Input
         type="text"
-        placeholder={registerLang.registerForm.placeholderNickname}
+        placeholder={userLang.form.registerForm.placeholderNickname}
         name="nickname"
         value={validateInput(nickname)}
         onChange={onHandleInputChange}
       />
       <Input
         type="email"
-        placeholder={registerLang.registerForm.placeholderEmail}
+        placeholder={userLang.form.registerForm.placeholderEmail}
         name="email"
         value={validateInput(email)}
         onChange={onHandleInputChange}
       />
       <Input
         type="password"
-        placeholder={registerLang.placeholderPassword}
+        placeholder={userLang.form.placeholderPassword}
         value={validateInput(password)}
         name="password"
         onChange={onHandleInputChange}
       />
-      <Submit>{registerLang.registerForm.submit}</Submit>
+      <Submit>{userLang.form.registerForm.submit}</Submit>
     </Form>
   );
 }

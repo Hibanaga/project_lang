@@ -29,13 +29,15 @@ function Login({ userLang }: stateProp) {
   };
 
   return (
-    <LoginPresentation
-      userLang={userLang}
-      pathLocation={location.pathname}
-      state={state}
-      onHandleInputChange={handleInputChange}
-      onSubmitFormHandler={submitFormHandler}
-    />
+    Object.keys(userLang).length > 0 && (
+      <LoginPresentation
+        userLang={userLang}
+        pathLocation={location.pathname}
+        state={state}
+        onHandleInputChange={handleInputChange}
+        onSubmitFormHandler={submitFormHandler}
+      />
+    )
   );
 }
 

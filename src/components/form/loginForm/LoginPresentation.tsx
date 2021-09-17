@@ -33,9 +33,9 @@ export default function LoginPresentation({
         <ActionsRedirect userLang={userLang} pathLocation={pathLocation} />
 
         <RowLogin className="row_login">
-          <Title>{userLang.login}</Title>
+          <Title>{userLang.form.login}</Title>
           <LoginUserForm
-            loginLang={userLang}
+            userLang={userLang}
             email={email}
             password={password}
             onHandleInputChange={onHandleInputChange}

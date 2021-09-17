@@ -26,10 +26,12 @@ export default function Register({ userLang }: stateProp) {
   };
 
   return (
-    <RegisterPresentation
-      state={state}
-      userLang={userLang}
-      onHandleInputChange={handleInputChange}
-    />
+    Object.keys(userLang).length > 0 && (
+      <RegisterPresentation
+        state={state}
+        userLang={userLang}
+        onHandleInputChange={handleInputChange}
+      />
+    )
   );
 }

@@ -19,16 +19,15 @@ export default function RegisterPresentation({
   userLang,
   state,
 }: stateProp) {
-  console.log(userLang);
   return (
     <section className="containerRegister">
       <Wrapper>
         <ActionsRedirect userLang={userLang} />
         <RowLogin className="row_register">
-          <Title>{userLang.registerForm.title}</Title>
+          <Title>{userLang.form.registerForm.title}</Title>
           <RegisterUserForm
             state={state}
-            registerLang={userLang}
+            userLang={userLang}
             onHandleInputChange={onHandleInputChange}
           />
         </RowLogin>

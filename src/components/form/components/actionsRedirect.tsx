@@ -19,11 +19,9 @@ export default function actionsRedirect({ userLang, pathLocation }: stateProp) {
         to={pathLocation === log_in ? register : log_in}
         className="js-btn__redirect js-btn__redirectToRegister"
       >
-        {
-          (pathLocation = log_in
-            ? userLang.loginForm.registerBtn
-            : userLang.login)
-        }
+        {pathLocation === log_in
+          ? userLang.form.loginForm.registerBtn
+          : userLang.form.login}
       </NavLink>
     </div>
   );

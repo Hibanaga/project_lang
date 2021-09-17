@@ -11,7 +11,6 @@ export default function Home({
   currLang,
   onUpdateLangHandler,
 }: stateProp): React.ReactNode {
-  console.log(currLang);
   return (
     Object.keys(currLang).length > 0 && (
       <HomePresentation

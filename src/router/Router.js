@@ -32,12 +32,12 @@ export default function Router() {
       <Route
         exact
         path={log_in}
-        component={() => <Login userLang={currLang.form} />}
+        component={() => <Login userLang={currLang} />}
       />
       <Route
         exact
         path={register}
-        component={() => <Register currLang={Login} userLang={currLang.form} />}
+        component={() => <Register userLang={currLang} />}
       />
     </Switch>
   );
