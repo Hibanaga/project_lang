@@ -1,17 +1,44 @@
-import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { home } from "./routes";
+import { home, log_in, register } from "./routes";
 import Home from "../components/home/Home";
+import Login from "../components/form/loginForm/Login";
+import Register from "../components/form/registerForm/Register";
 
-//unusual router
-// import Login from "../components/form/loginForm/Login";
-// , log_in
+import { useState } from "react";
+//i18n translation
+import { defaultLang } from "../translation/assets/lang";
+import { useLang } from "../components/home/hooks/customHooks";
 
 export default function Router() {
+  //set new lang
+  const [selectedLang, setSelectedLang] = useState(defaultLang);
+
+  const currLang = useLang(selectedLang);
+
+  //fucntion set new lang
+  const updateLangHandler = (lang) => {
+    setSelectedLang(lang);
+  };
+
   return (
     <Switch>
-      <Route exact path={home} component={Home} />
-      {/* <Route exact path={log_in} component={Login} /> */}
+      <Route
+        exact
+        path={home}
+        component={() => (
+          <Home currLang={currLang} onUpdateLangHandler={updateLangHandler} />
+        )}
+      />
+      <Route
+        exact
+        path={log_in}
+        component={() => <Login userLang={currLang.form} />}
+      />
+      <Route
+        exact
+        path={register}
+        component={() => <Register currLang={Login} userLang={currLang.form} />}
+      />
     </Switch>
   );
 }

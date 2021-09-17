@@ -12,16 +12,16 @@ interface stateProp {
 
 interface typeProp {
   state: stateProp;
-  isLoginPage: boolean;
-  onToggleLoginPage: () => void;
+  userLang: any;
+  pathLocation: string;
   onHandleInputChange: (p: any) => void;
   onSubmitFormHandler: (p: any) => void;
 }
 
 export default function LoginPresentation({
   state,
-  isLoginPage,
-  onToggleLoginPage,
+  pathLocation,
+  userLang,
   onHandleInputChange,
   onSubmitFormHandler,
 }: typeProp) {
@@ -30,13 +30,12 @@ export default function LoginPresentation({
   return (
     <section className="containerLogin">
       <Wrapper>
-        <ActionsRedirect
-          isLoginPage={isLoginPage}
-          onToggleLoginPage={onToggleLoginPage}
-        />
+        <ActionsRedirect userLang={userLang} pathLocation={pathLocation} />
+
         <RowLogin className="row_login">
-          <Title>Войти</Title>
+          <Title>{userLang.login}</Title>
           <LoginUserForm
+            loginLang={userLang}
             email={email}
             password={password}
             onHandleInputChange={onHandleInputChange}

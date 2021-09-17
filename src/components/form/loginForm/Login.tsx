@@ -2,13 +2,14 @@ import React, { useReducer } from "react";
 import LoginPresentation from "./LoginPresentation";
 import { actions, initialState } from "../services/optionsReducer";
 import "../styles/auth.scss";
+import { useLocation } from "react-router";
 
 interface stateProp {
-  onToggleLoginPage: () => void;
-  isLoginPage: boolean;
+  userLang: any;
 }
 
-function Login({ onToggleLoginPage, isLoginPage }: stateProp) {
+function Login({ userLang }: stateProp) {
+  const location = useLocation();
   const [state, dispatch] = useReducer(actions, initialState);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,11 +30,11 @@ function Login({ onToggleLoginPage, isLoginPage }: stateProp) {
 
   return (
     <LoginPresentation
+      userLang={userLang}
+      pathLocation={location.pathname}
       state={state}
-      isLoginPage={isLoginPage}
       onHandleInputChange={handleInputChange}
       onSubmitFormHandler={submitFormHandler}
-      onToggleLoginPage={onToggleLoginPage}
     />
   );
 }

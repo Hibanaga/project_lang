@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -61,7 +62,7 @@ const Description = styled.span`
   color: #777;
 `;
 
-const Link = styled.button`
+const Link = styled(NavLink)`
   user-select: none;
   outline: none;
   cursor: default;

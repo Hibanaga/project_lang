@@ -9,25 +9,26 @@ import { RowLogin } from "../styles/styled-comp";
 // }
 
 interface stateProp {
-  onToggleRegisterPage: () => void;
   onHandleInputChange: (p: any) => void;
-  // onSubmitFormHandler: (p: any) => void;
+  userLang: any;
   state: any;
 }
 
 export default function RegisterPresentation({
-  onToggleRegisterPage,
   onHandleInputChange,
+  userLang,
   state,
 }: stateProp) {
+  console.log(userLang);
   return (
     <section className="containerRegister">
       <Wrapper>
-        <ActionsRedirect onToggleRegisterPage={onToggleRegisterPage} />
+        <ActionsRedirect userLang={userLang} />
         <RowLogin className="row_register">
-          <Title>Создайте аккаунт</Title>
+          <Title>{userLang.registerForm.title}</Title>
           <RegisterUserForm
             state={state}
+            registerLang={userLang}
             onHandleInputChange={onHandleInputChange}
           />
         </RowLogin>

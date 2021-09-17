@@ -1,39 +1,22 @@
-import { useState } from "react";
+import React from "react";
 import HomePresentation from "./HomePresentation";
-//i18n translation
-import { defaultLang } from "../../translation/assets/lang";
-import { useLang } from "./hooks/customHooks";
 import "./styles/home.scss";
 
-export default function Home() {
-  //set new lang
-  const [selectedLang, setSelectedLang] = useState(defaultLang);
+interface stateProp {
+  currLang: any;
+  onUpdateLangHandler: (p: string) => void;
+}
 
-  //toggle login and register page
-  const [isLoginPage, setLoginPage] = useState(false);
-  const [isRegisterPage, setRegisterPage] = useState(false);
-
-  const currLang = useLang(selectedLang);
-
-  //fucntion set new lang
-  const updateLangHandler = (lang: string) => {
-    setSelectedLang(lang);
-  };
-
-  //toggle login page
-  const toggleLoginPage = () => setLoginPage(!isLoginPage);
-  //toggle register page
-  const toggleRegisterPage = () => setRegisterPage(!isRegisterPage);
-
+export default function Home({
+  currLang,
+  onUpdateLangHandler,
+}: stateProp): React.ReactNode {
+  console.log(currLang);
   return (
     Object.keys(currLang).length > 0 && (
       <HomePresentation
         currLang={currLang}
-        onUpdateLangHandler={updateLangHandler}
-        isLoginPage={isLoginPage}
-        isRegisterPage={isRegisterPage}
-        onToggleLoginPage={toggleLoginPage}
-        onToggleRegisterPage={toggleRegisterPage}
+        onUpdateLangHandler={onUpdateLangHandler}
       />
     )
   );

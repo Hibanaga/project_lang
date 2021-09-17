@@ -9,18 +9,14 @@ import {
 import { starBack } from "../images/imageExportPath";
 import { linksDefaultStyles } from "../styles/styled_links";
 import { supportedLang } from "../../../translation/assets/lang";
+import { register } from "../../../router/routes";
 
 interface InfoProp {
   onUpdateLangHandler: (p: string) => void;
-  onToggleRegisterPage: () => void;
   footerLang: any;
 }
 
-function FooterContainer({
-  onUpdateLangHandler,
-  onToggleRegisterPage,
-  footerLang,
-}: InfoProp) {
+function FooterContainer({ onUpdateLangHandler, footerLang }: InfoProp) {
   const updateLangHandler = useCallback(
     (event) => {
       onUpdateLangHandler(event.target.dataset.source);
@@ -33,9 +29,9 @@ function FooterContainer({
       <Wrapper>
         <Title>{footerLang.title}</Title>
         <Link
+          to={register}
           className="js_btn__routeFooter"
           title="register page"
-          onClick={onToggleRegisterPage}
           theme={linksDefaultStyles}
         >
           {footerLang.link}

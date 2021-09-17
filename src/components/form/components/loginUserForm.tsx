@@ -6,6 +6,7 @@ interface stateProp {
   password: string;
   onHandleInputChange: (p: object) => void;
   onSubmitFormHandler: (p: object) => void;
+  loginLang: any;
 }
 
 export default function loginUserForm({
@@ -13,27 +14,28 @@ export default function loginUserForm({
   password,
   onHandleInputChange,
   onSubmitFormHandler,
+  loginLang,
 }: stateProp) {
   return (
     <Form onSubmit={onSubmitFormHandler}>
       <Input
         type="email"
         value={validateInput(email)}
-        placeholder="Email или имя пользователя"
-        title="Имя пользователя может включать только числа,буквы и некоторые специальные знаки такие как !_@"
+        placeholder={loginLang.loginForm.placeholderEmail}
+        title={loginLang.title}
         name="email"
         onChange={onHandleInputChange}
       />
       <Input
         type="password"
         value={validateInput(password)}
-        placeholder="Пароль"
-        title="Имя пользователя может включать только числа,буквы и некоторые специальные знаки такие как !_@"
+        placeholder={loginLang.placeholderPassword}
+        title={loginLang.title}
         name="password"
         onChange={onHandleInputChange}
       />
 
-      <Submit type="submit"> Войти </Submit>
+      <Submit type="submit"> {loginLang.login} </Submit>
     </Form>
   );
 }

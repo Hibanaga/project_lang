@@ -7,60 +7,25 @@ import NavPanel from "./components/navPanel";
 import PresentAbout from "./components/presentAbout";
 import SelectUsersContainer from "./components/selectUsersContainer";
 
-//anotherPage
-import Login from "../form/loginForm/Login";
-import Register from "../form/registerForm/Register";
-
 interface InfoProp {
   currLang: any;
   onUpdateLangHandler: (lang: string) => void;
-  isLoginPage: boolean;
-  isRegisterPage: boolean;
-  onToggleLoginPage: () => void;
-  onToggleRegisterPage: () => void;
 }
 
-function HomePresentation({
-  currLang,
-  onUpdateLangHandler,
-  isLoginPage,
-  isRegisterPage,
-  onToggleLoginPage,
-  onToggleRegisterPage,
-}: InfoProp) {
+function HomePresentation({ currLang, onUpdateLangHandler }: InfoProp) {
   return (
     <>
-      {isLoginPage && (
-        <Login
-          isLoginPage={isLoginPage}
-          onToggleLoginPage={onToggleLoginPage}
-        />
-      )}
-
-      {isRegisterPage && (
-        <Register onToggleRegisterPage={onToggleRegisterPage} />
-      )}
-
-      {isLoginPage === false && isRegisterPage === false && (
-        <>
-          <NavPanel />
-          <HeaderContainer
-            headerLang={currLang.home.headerContainer}
-            onToggleLoginPage={onToggleLoginPage}
-            onToggleRegisterPage={onToggleRegisterPage}
-          />
-          <AboutContainer aboutLang={currLang.home.aboutContainer} />
-          <SelectUsersContainer
-            selectUserLang={currLang.home.selectUsersContainer}
-          />
-          <PresentAbout presentAbout={currLang.home.presentAbout} />
-          <FooterContainer
-            onToggleRegisterPage={onToggleRegisterPage}
-            footerLang={currLang.home.footerContainer}
-            onUpdateLangHandler={onUpdateLangHandler}
-          />
-        </>
-      )}
+      <NavPanel />
+      <HeaderContainer headerLang={currLang.home.headerContainer} />
+      <AboutContainer aboutLang={currLang.home.aboutContainer} />
+      <SelectUsersContainer
+        selectUserLang={currLang.home.selectUsersContainer}
+      />
+      <PresentAbout presentAbout={currLang.home.presentAbout} />
+      <FooterContainer
+        footerLang={currLang.home.footerContainer}
+        onUpdateLangHandler={onUpdateLangHandler}
+      />
     </>
   );
 }

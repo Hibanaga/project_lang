@@ -3,10 +3,10 @@ import { actions, initialState } from "../services/optionsReducer";
 import RegisterPresentation from "./RegisterPresentation";
 
 interface stateProp {
-  onToggleRegisterPage: () => void;
+  userLang: any;
 }
 
-export default function Register({ onToggleRegisterPage }: stateProp) {
+export default function Register({ userLang }: stateProp) {
   const [state, dispatch] = useReducer(actions, initialState);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,8 +28,8 @@ export default function Register({ onToggleRegisterPage }: stateProp) {
   return (
     <RegisterPresentation
       state={state}
+      userLang={userLang}
       onHandleInputChange={handleInputChange}
-      onToggleRegisterPage={onToggleRegisterPage}
     />
   );
 }

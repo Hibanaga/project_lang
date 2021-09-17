@@ -9,11 +9,13 @@ interface typeProp {
 
 interface stateProp {
   onHandleInputChange: (p: any) => void;
+  registerLang: any;
   state: typeProp;
 }
 
 export default function registerUserForm({
   state,
+  registerLang,
   onHandleInputChange,
 }: stateProp) {
   const { email, password, nickname } = state;
@@ -21,26 +23,26 @@ export default function registerUserForm({
     <Form>
       <Input
         type="text"
-        placeholder="Имя(необязательно)"
+        placeholder={registerLang.registerForm.placeholderNickname}
         name="nickname"
         value={validateInput(nickname)}
         onChange={onHandleInputChange}
       />
       <Input
         type="email"
-        placeholder="Электронная почта"
+        placeholder={registerLang.registerForm.placeholderEmail}
         name="email"
         value={validateInput(email)}
         onChange={onHandleInputChange}
       />
       <Input
         type="password"
-        placeholder="Пароль"
+        placeholder={registerLang.placeholderPassword}
         value={validateInput(password)}
         name="password"
         onChange={onHandleInputChange}
       />
-      <Submit> Создать аккаут </Submit>
+      <Submit>{registerLang.registerForm.submit}</Submit>
     </Form>
   );
 }
