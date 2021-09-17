@@ -1,6 +1,8 @@
 import { Form, Input, Submit } from "../styles/styled-comp";
 import { validateInput } from "../../../utils/validationHelpers";
 
+import { withTranslation } from "react-i18next";
+
 interface typeProp {
   email: string;
   password: string;
@@ -9,40 +11,38 @@ interface typeProp {
 
 interface stateProp {
   onHandleInputChange: (p: any) => void;
-  userLang: any;
+  t: any;
   state: typeProp;
 }
 
-export default function registerUserForm({
-  state,
-  userLang,
-  onHandleInputChange,
-}: stateProp) {
+function registerUserForm({ state, t, onHandleInputChange }: stateProp) {
   const { email, password, nickname } = state;
   return (
     <Form>
       <Input
         type="text"
-        placeholder={userLang.form.registerForm.placeholderNickname}
+        placeholder={t("form.registerForm.placeholderNickname")}
         name="nickname"
         value={validateInput(nickname)}
         onChange={onHandleInputChange}
       />
       <Input
         type="email"
-        placeholder={userLang.form.registerForm.placeholderEmail}
+        placeholder={t("form.registerForm.placeholderEmail")}
         name="email"
         value={validateInput(email)}
         onChange={onHandleInputChange}
       />
       <Input
         type="password"
-        placeholder={userLang.form.placeholderPassword}
+        placeholder={t("form.placeholderPassword")}
         value={validateInput(password)}
         name="password"
         onChange={onHandleInputChange}
       />
-      <Submit>{userLang.form.registerForm.submit}</Submit>
+      <Submit>{t("form.registerForm.submit")}</Submit>
     </Form>
   );
 }
+
+export default withTranslation()(registerUserForm);

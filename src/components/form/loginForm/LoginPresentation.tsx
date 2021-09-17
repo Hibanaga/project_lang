@@ -3,6 +3,8 @@ import ActionsRedirect from "../components/actionsRedirect";
 import LoginUserForm from "../components/loginUserForm";
 import { RowLogin } from "../styles/styled-comp.js";
 
+import { withTranslation } from "react-i18next";
+
 //instane of object
 interface stateProp {
   email: string;
@@ -12,16 +14,16 @@ interface stateProp {
 
 interface typeProp {
   state: stateProp;
-  userLang: any;
+  t: (p: string) => object;
   pathLocation: string;
   onHandleInputChange: (p: any) => void;
   onSubmitFormHandler: (p: any) => void;
 }
 
-export default function LoginPresentation({
+function LoginPresentation({
   state,
+  t,
   pathLocation,
-  userLang,
   onHandleInputChange,
   onSubmitFormHandler,
 }: typeProp) {
@@ -30,12 +32,11 @@ export default function LoginPresentation({
   return (
     <section className="containerLogin">
       <Wrapper>
-        <ActionsRedirect userLang={userLang} pathLocation={pathLocation} />
+        <ActionsRedirect pathLocation={pathLocation} />
 
         <RowLogin className="row_login">
-          <Title>{userLang.form.login}</Title>
+          <Title>{t("form.login")}</Title>
           <LoginUserForm
-            userLang={userLang}
             email={email}
             password={password}
             onHandleInputChange={onHandleInputChange}
@@ -46,3 +47,5 @@ export default function LoginPresentation({
     </section>
   );
 }
+
+export default withTranslation()(LoginPresentation);

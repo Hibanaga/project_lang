@@ -2,11 +2,7 @@ import { useReducer } from "react";
 import { actions, initialState } from "../services/optionsReducer";
 import RegisterPresentation from "./RegisterPresentation";
 
-interface stateProp {
-  userLang: any;
-}
-
-export default function Register({ userLang }: stateProp) {
+export default function Register() {
   const [state, dispatch] = useReducer(actions, initialState);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,12 +22,9 @@ export default function Register({ userLang }: stateProp) {
   };
 
   return (
-    Object.keys(userLang).length > 0 && (
-      <RegisterPresentation
-        state={state}
-        userLang={userLang}
-        onHandleInputChange={handleInputChange}
-      />
-    )
+    <RegisterPresentation
+      state={state}
+      onHandleInputChange={handleInputChange}
+    />
   );
 }

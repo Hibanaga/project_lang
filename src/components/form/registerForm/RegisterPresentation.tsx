@@ -3,31 +3,23 @@ import ActionsRedirect from "../components/actionsRedirect";
 import RegisterUserForm from "../components/registerUserForm";
 import { RowLogin } from "../styles/styled-comp";
 
-// interface typePropObject {
-//   login: string;
-//   password: string;
-// }
+import { withTranslation } from "react-i18next";
 
 interface stateProp {
   onHandleInputChange: (p: any) => void;
-  userLang: any;
+  t: any;
   state: any;
 }
 
-export default function RegisterPresentation({
-  onHandleInputChange,
-  userLang,
-  state,
-}: stateProp) {
+function RegisterPresentation({ onHandleInputChange, t, state }: stateProp) {
   return (
     <section className="containerRegister">
       <Wrapper>
-        <ActionsRedirect userLang={userLang} />
+        <ActionsRedirect />
         <RowLogin className="row_register">
-          <Title>{userLang.form.registerForm.title}</Title>
+          <Title>{t("form.registerForm.title")}</Title>
           <RegisterUserForm
             state={state}
-            userLang={userLang}
             onHandleInputChange={onHandleInputChange}
           />
         </RowLogin>
@@ -35,3 +27,5 @@ export default function RegisterPresentation({
     </section>
   );
 }
+
+export default withTranslation()(RegisterPresentation);

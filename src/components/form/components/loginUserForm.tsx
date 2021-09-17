@@ -1,41 +1,45 @@
 import { Input, Form, Submit } from "../styles/styled-comp.js";
 import { validateInput } from "../../../utils/validationHelpers";
 
+import { withTranslation } from "react-i18next";
+
 interface stateProp {
   email: string;
   password: string;
   onHandleInputChange: (p: object) => void;
   onSubmitFormHandler: (p: object) => void;
-  userLang: any;
+  t: any;
 }
 
-export default function loginUserForm({
+function loginUserForm({
   email,
   password,
   onHandleInputChange,
   onSubmitFormHandler,
-  userLang,
+  t,
 }: stateProp) {
   return (
     <Form onSubmit={onSubmitFormHandler}>
       <Input
         type="email"
         value={validateInput(email)}
-        placeholder={userLang.form.loginForm.placeholderEmail}
-        title={userLang.form.title}
+        placeholder={t("form.loginForm.placeholderEmail")}
+        title={t("form.title")}
         name="email"
         onChange={onHandleInputChange}
       />
       <Input
         type="password"
         value={validateInput(password)}
-        placeholder={userLang.form.placeholderPassword}
-        title={userLang.form.title}
+        placeholder={t("form.placeholderPassword")}
+        title={t("form.title")}
         name="password"
         onChange={onHandleInputChange}
       />
 
-      <Submit type="submit"> {userLang.form.login} </Submit>
+      <Submit type="submit"> {t("form.login")} </Submit>
     </Form>
   );
 }
+
+export default withTranslation()(loginUserForm);

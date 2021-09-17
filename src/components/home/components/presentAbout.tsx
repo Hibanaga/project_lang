@@ -10,26 +10,28 @@ import { bgPresent } from "../images/imageExportPath";
 import { englishTest } from "../../../router/routes";
 import { NavLink } from "react-router-dom";
 
+import { withTranslation } from "react-i18next";
+
 interface InfoProp {
-  presentAbout: any;
+  t: (p: string) => object;
 }
 
-function presentAbout({ presentAbout }: InfoProp) {
+function presentAbout({ t }: InfoProp) {
   return (
     <Wrapper className="wrapper_presentAbout">
       <Row className="row_presentAbout">
         <IMG_BACK loading="lazy" src={bgPresent} alt="bg present info" />
         <div className="wrapper_desc">
-          <SubTitle>{presentAbout.title}</SubTitle>
+          <SubTitle>{t("home.presentAbout.title")}</SubTitle>
 
           <Description className="description">
-            {presentAbout.description}
+            {t("home.presentAbout.description")}
           </Description>
         </div>
-        <NavLink to={englishTest}>{presentAbout.link}</NavLink>
+        <NavLink to={englishTest}>{t("home.presentAbout.link")}</NavLink>
       </Row>
     </Wrapper>
   );
 }
 
-export default React.memo(presentAbout);
+export default withTranslation()(React.memo(presentAbout));

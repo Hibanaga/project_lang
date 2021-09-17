@@ -1,4 +1,5 @@
 import React, { useCallback } from "react";
+
 import {
   Header,
   Title,
@@ -11,42 +12,41 @@ import { linksDefaultStyles } from "../styles/styled_links";
 import { supportedLang } from "../../../translation/assets/lang";
 import { register } from "../../../router/routes";
 
+import { withTranslation } from "react-i18next";
+import i18next from "i18next";
+
 interface InfoProp {
-  onUpdateLangHandler: (p: string) => void;
-  footerLang: any;
+  t: (p: string) => object;
 }
 
-function FooterContainer({ onUpdateLangHandler, footerLang }: InfoProp) {
-  const updateLangHandler = useCallback(
-    (event) => {
-      onUpdateLangHandler(event.target.dataset.source);
-    },
-    [onUpdateLangHandler]
-  );
+function FooterContainer({ t }: InfoProp) {
+  const updateLangHandler = useCallback((event) => {
+    i18next.changeLanguage(event.target.dataset.source);
+  }, []);
 
   return (
     <Header theme={starBack} className="wrapperFooter">
       <Wrapper>
-        <Title>{footerLang.title}</Title>
+        <Title>{t("home.footerContainer.title")}</Title>
         <Link
           to={register}
           className="js_btn__routeFooter"
           title="register page"
           theme={linksDefaultStyles}
         >
-          {footerLang.link}
+          {t("home.footerContainer.link")}
         </Link>
 
         <div className="container_lang">
-          <SubTitle>{footerLang.subtitle}</SubTitle>
+          <SubTitle>{t("home.footerContainer.subtitle")}</SubTitle>
 
           <div className="row_lang">
             {supportedLang.map(({ id, lang, code }) => (
               <button
                 className="js-btn_lang"
+                onClick={updateLangHandler}
                 data-source={code}
                 key={id}
-                onClick={updateLangHandler}
               >
                 {lang}
               </button>
@@ -58,4 +58,4 @@ function FooterContainer({ onUpdateLangHandler, footerLang }: InfoProp) {
   );
 }
 
-export default React.memo(FooterContainer);
+export default withTranslation()(React.memo(FooterContainer));

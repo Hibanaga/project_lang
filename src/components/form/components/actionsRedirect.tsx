@@ -3,12 +3,14 @@ import { NavLink } from "react-router-dom";
 import { log_in, home, register } from "../../../router/routes";
 // import { removeUnusedPartLocation } from "../../../utils/validationHelpers";
 
+import { withTranslation } from "react-i18next";
+
 interface stateProp {
   pathLocation?: string;
-  userLang: any;
+  t: (p: string) => object;
 }
 
-export default function actionsRedirect({ userLang, pathLocation }: stateProp) {
+function actionsRedirect({ t, pathLocation }: stateProp) {
   return (
     <div className="wrapper__actionsRedirect">
       <NavLink to={home} className="js-btn__redirect js-btn__redirectToHome">
@@ -20,9 +22,11 @@ export default function actionsRedirect({ userLang, pathLocation }: stateProp) {
         className="js-btn__redirect js-btn__redirectToRegister"
       >
         {pathLocation === log_in
-          ? userLang.form.loginForm.registerBtn
-          : userLang.form.login}
+          ? t("form.loginForm.registerBtn")
+          : t("form.login")}
       </NavLink>
     </div>
   );
 }
+
+export default withTranslation()(actionsRedirect);

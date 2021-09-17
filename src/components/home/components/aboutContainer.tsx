@@ -7,25 +7,29 @@ import {
   Description,
 } from "../../../styles/styled-comp";
 import { bg_mainHeader } from "../images/imageExportPath";
+import { withTranslation } from "react-i18next";
 
 interface InfoProp {
-  aboutLang: any;
+  t: (p: string) => object;
 }
 
-function about({ aboutLang }: InfoProp) {
+function about({ t }: InfoProp) {
   return (
     <Wrapper className="wrapperAbout__container">
-      <SubTitle>{aboutLang.subtitle}</SubTitle>
+      <SubTitle>{t("home.aboutContainer.subtitle")}</SubTitle>
       <Row>
         <IMG_BACK src={bg_mainHeader} alt="bg_main container_image" />
         <Description className="description">
-          {aboutLang.description_1}{" "}
-          <span className="description_strong"> {aboutLang.description_2}</span>{" "}
-          {aboutLang.description_3}
+          {t("home.aboutContainer.description_1")}{" "}
+          <span className="description_strong">
+            {" "}
+            {t("home.aboutContainer.description_2")}
+          </span>{" "}
+          {t("home.aboutContainer.description_3")}
         </Description>
       </Row>
     </Wrapper>
   );
 }
 
-export default React.memo(about);
+export default withTranslation()(React.memo(about));

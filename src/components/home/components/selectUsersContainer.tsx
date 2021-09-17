@@ -14,26 +14,29 @@ import {
   Card,
   Description,
 } from "../../../styles/styled-comp";
+import { withTranslation } from "react-i18next";
 
 interface InfoProp {
-  selectUserLang: any;
+  t: (p: string) => object;
 }
 
-function selectUsersContainer({ selectUserLang }: InfoProp) {
+function selectUsersContainer({ t }: InfoProp) {
   return (
     <Wrapper className="wrapperSelectUser">
       <Row>
         <IMG_BACK src={selectUsersImg} alt="users select bg" />
 
-        <SubTitle>{selectUserLang.title}</SubTitle>
+        <SubTitle>{t("home.selectUsersContainer.title")}</SubTitle>
         <Row className="rowSelectUser">
           <Card className="cardSelectUser">
             <img src={goalImg} alt="select user success" />
 
             <div className="wrapper__description">
-              <SubTitle>{selectUserLang.card_1.subtitle}</SubTitle>
+              <SubTitle>
+                {t("home.selectUsersContainer.card_1.subtitle")}
+              </SubTitle>
               <Description className="description">
-                {selectUserLang.card_1.description}
+                {t("home.selectUsersContainer.card_1.description")}
               </Description>
             </div>
           </Card>
@@ -42,9 +45,11 @@ function selectUsersContainer({ selectUserLang }: InfoProp) {
             <img src={studyImg} alt="select user success" />
 
             <div className="wrapper__description">
-              <SubTitle>{selectUserLang.card_2.subtitle}</SubTitle>
+              <SubTitle>
+                {t("home.selectUsersContainer.card_2.subtitle")}
+              </SubTitle>
               <Description className="description">
-                {selectUserLang.card_2.description}
+                {t("home.selectUsersContainer.card_2.description")}
               </Description>
             </div>
           </Card>
@@ -53,9 +58,11 @@ function selectUsersContainer({ selectUserLang }: InfoProp) {
             <img src={prayImg} alt="select user success" />
 
             <div className="wrapper__description">
-              <SubTitle>{selectUserLang.card_3.subtitle}</SubTitle>
+              <SubTitle>
+                {t("home.selectUsersContainer.card_3.subtitle")}
+              </SubTitle>
               <Description className="description">
-                {selectUserLang.card_3.description}
+                {t("home.selectUsersContainer.card_3.description")}
               </Description>
             </div>
           </Card>
@@ -64,9 +71,11 @@ function selectUsersContainer({ selectUserLang }: InfoProp) {
             <img src={interestImg} alt="select user success" />
 
             <div className="wrapper__description">
-              <SubTitle>{selectUserLang.card_4.subtitle}</SubTitle>
+              <SubTitle>
+                {t("home.selectUsersContainer.card_4.subtitle")}
+              </SubTitle>
               <Description className="description">
-                {selectUserLang.card_4.description}
+                {t("home.selectUsersContainer.card_4.description")}
               </Description>
             </div>
           </Card>
@@ -76,4 +85,4 @@ function selectUsersContainer({ selectUserLang }: InfoProp) {
   );
 }
 
-export default React.memo(selectUsersContainer);
+export default withTranslation()(React.memo(selectUsersContainer));
