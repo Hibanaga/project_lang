@@ -1,19 +1,23 @@
 const express = require("express");
 const app = express();
+require("dotenv").config();
+const { PORT, URI } = require("./variables/globalVars");
 const cors = require("cors");
 
+//connection mongodb
 const { MongoClient } = require("mongodb");
 
 app.use(cors());
 app.use(express.json());
 
-const username = `hibana_main`;
-const password = `Zaxscd1212`;
-const cluster = `clusterprojectlang.jt1vg`;
-const dbname = `myFirstDatabase`;
+// const username = `hibana_main`;
+// const password = `Zaxscd1212`;
+// const cluster = `clusterprojectlang.jt1vg`;
+// const dbname = `myFirstDatabase`;
+// const PORT = process.env.PORT || 3001;
+// const URI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}.mongodb.net/${process.env.DB_GLOBALNAME}?retryWrites=true&w=majority`;
 
-const PORT = process.env.PORT || 3001;
-const URI = `mongodb+srv://${username}:${password}@${cluster}.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+// console.log(URI);
 
 const client = new MongoClient(URI);
 
@@ -28,7 +32,7 @@ const client = new MongoClient(URI);
 // }
 
 async function run() {
-  let dbName = "test";
+  let dbName = "projectLang";
 
   try {
     // let doc = {
@@ -40,9 +44,9 @@ async function run() {
     console.log("Connected correctly to server");
 
     const db = client.db(dbName);
-    const col = db.collection("testConnect");
+    const col = db.collection("users");
 
-    const myDoc = await col.findOne({ name: "Vladyslav" });
+    const myDoc = await col.findOne({ nickname: "Eric" });
 
     console.log(myDoc);
   } catch (err) {
