@@ -4,11 +4,7 @@ import { actions, initialState } from "../services/optionsReducer";
 import "../styles/auth.scss";
 import { useLocation } from "react-router";
 
-interface stateProp {
-  userLang: any;
-}
-
-function Login({ userLang }: stateProp) {
+function Login() {
   const location = useLocation();
   const [state, dispatch] = useReducer(actions, initialState);
 

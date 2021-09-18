@@ -8,10 +8,16 @@ import { withTranslation } from "react-i18next";
 interface stateProp {
   onHandleInputChange: (p: any) => void;
   t: (p: string) => object;
+  onSubmitFormHandler: (p: any) => void;
   state: any;
 }
 
-function RegisterPresentation({ onHandleInputChange, t, state }: stateProp) {
+function RegisterPresentation({
+  onHandleInputChange,
+  t,
+  state,
+  onSubmitFormHandler,
+}: stateProp) {
   return (
     <section className="containerRegister">
       <ActionsRedirect />
@@ -21,6 +27,7 @@ function RegisterPresentation({ onHandleInputChange, t, state }: stateProp) {
           <RegisterUserForm
             state={state}
             onHandleInputChange={onHandleInputChange}
+            onSubmitFormHandler={onSubmitFormHandler}
           />
         </RowLogin>
       </Wrapper>

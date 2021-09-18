@@ -21,10 +21,15 @@ export default function Register() {
     }
   };
 
+  const submitFormHandler = (event: React.MouseEvent) => {
+    event.preventDefault();
+  };
+
   return (
     <RegisterPresentation
       state={state}
       onHandleInputChange={handleInputChange}
+      onSubmitFormHandler={submitFormHandler}
     />
   );
 }

@@ -12,13 +12,19 @@ interface typeProp {
 interface stateProp {
   onHandleInputChange: (p: any) => void;
   t: any;
+  onSubmitFormHandler: (p: any) => void;
   state: typeProp;
 }
 
-function registerUserForm({ state, t, onHandleInputChange }: stateProp) {
+function registerUserForm({
+  state,
+  t,
+  onHandleInputChange,
+  onSubmitFormHandler,
+}: stateProp) {
   const { email, password, nickname } = state;
   return (
-    <Form>
+    <Form onSubmit={onSubmitFormHandler}>
       <Input
         type="text"
         placeholder={t("form.registerForm.placeholderNickname")}
