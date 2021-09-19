@@ -9,7 +9,7 @@ export default function Router() {
     <Switch>
       <Route exact path={home} component={Home} />
       <Route exact path={log_in} component={Login} />
-      <Route exact path={register} component={Register} />
+      <Route exact path={register} component={Register} />{" "}
     </Switch>
   );
 }

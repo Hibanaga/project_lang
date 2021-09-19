@@ -10,7 +10,6 @@ interface InfoProp {
 }
 
 function HeaderContainer({ t }: InfoProp) {
-  console.log(typeof t);
   return (
     <Header theme={starBack} className="container__header">
       <Wrapper className="wrapper__header">
