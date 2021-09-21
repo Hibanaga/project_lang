@@ -1,5 +1,10 @@
+import { ContextFormProvider } from "./components/form/ContextForm";
 import Router from "./router/Router";
 
 export default function App() {
-  return <Router />;
+  return (
+    <ContextFormProvider>
+      <Router />
+    </ContextFormProvider>
+  );
 }

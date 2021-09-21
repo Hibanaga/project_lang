@@ -10,7 +10,25 @@ export default function Confirm() {
   const submitFormHandler = (event: React.MouseEvent) => {
     event.preventDefault();
 
-    console.log(codeConfirm);
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    fetch("/verify_user", {
+      method: "POST",
+      signal: signal,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        code: codeConfirm,
+        email: "vladyslav.tykhoniuk.works@gmail.com",
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .finally(() => {
+        controller.abort();
+      });
   };
 
   return (

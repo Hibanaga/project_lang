@@ -1,26 +1,26 @@
-import { useReducer, useState } from "react";
-import { actions, initialState } from "../services/optionsReducer";
+import { useContext, useState } from "react";
 import RegisterPresentation from "./RegisterPresentation";
 import { Redirect } from "react-router-dom";
 import { confirm } from "../../../router/routes";
+import { ContextForm } from "../ContextForm";
 
 export default function Register() {
-  const [state, dispatch] = useReducer(actions, initialState);
+  const [state, dispatch] = useContext(ContextForm);
   const [isAlreadyExist, setAlreadyExist] = useState("not exist");
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = event.target;
 
     if (name === "email") {
-      dispatch({ type: "change_email", payload: value });
+      dispatch({ type: "change_email__register", payload: value });
     }
 
     if (name === "password") {
-      dispatch({ type: "change_password", payload: value });
+      dispatch({ type: "change_password__register", payload: value });
     }
 
     if (name === "nickname") {
-      dispatch({ type: "change_nickname", payload: value });
+      dispatch({ type: "change_nickname__register", payload: value });
     }
   };
 
@@ -45,11 +45,13 @@ export default function Register() {
       });
   };
 
+  const { register } = state;
+
   return (
     <>
       {isAlreadyExist === "success added" && <Redirect to={confirm} />}
       <RegisterPresentation
-        state={state}
+        state={register}
         isAlreadyExist={isAlreadyExist}
         onHandleInputChange={handleInputChange}
         onSubmitFormHandler={submitFormHandler}

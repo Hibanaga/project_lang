@@ -18,6 +18,7 @@ function loginUserForm({
   onSubmitFormHandler,
   t,
 }: stateProp) {
+  // validateInput(email)
   return (
     <Form onSubmit={onSubmitFormHandler}>
       <Input

@@ -1,22 +1,22 @@
-import React, { useReducer } from "react";
+import React, { useContext } from "react";
 import LoginPresentation from "./LoginPresentation";
-import { actions, initialState } from "../services/optionsReducer";
 import "../styles/auth.scss";
 import { useLocation } from "react-router";
+import { ContextForm } from "../ContextForm";
 
 function Login() {
   const location = useLocation();
-  const [state, dispatch] = useReducer(actions, initialState);
+  const [state, dispatch] = useContext(ContextForm);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = event.target;
 
     if (name === "email") {
-      dispatch({ type: "change_email", payload: value });
+      dispatch({ type: "change_email__login", payload: value });
     }
 
     if (name === "password") {
-      dispatch({ type: "change_password", payload: value });
+      dispatch({ type: "change_password__login", payload: value });
     }
   };
 
@@ -33,11 +33,11 @@ function Login() {
         controller.abort();
       });
   };
-
+  const { login } = state;
   return (
     <LoginPresentation
       pathLocation={location.pathname}
-      state={state}
+      state={login}
       onHandleInputChange={handleInputChange}
       onSubmitFormHandler={submitFormHandler}
     />
