@@ -8,12 +8,14 @@ interface stateProp {
   codeConfirm: string;
   onHandleInputChange: (p: any) => void;
   onSubmitFormHandler: (p: any) => void;
+  message: string;
 }
 
 export default function ConfirmPresentation({
   codeConfirm,
   onHandleInputChange,
   onSubmitFormHandler,
+  message,
 }: stateProp) {
   return (
     <ContainerForm className="containerConfirm">
@@ -22,6 +24,7 @@ export default function ConfirmPresentation({
         <RowLogin className="rowConfirm">
           <Title>Подтверждение почты</Title>
           <ConfirmCodeForm
+            message={message}
             codeConfirm={codeConfirm}
             onHandleInputChange={onHandleInputChange}
             onSubmitFormHandler={onSubmitFormHandler}

@@ -8,6 +8,8 @@ function Login() {
   const location = useLocation();
   const [state, dispatch] = useContext(ContextForm);
 
+  const { login } = state;
+
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = event.target;
 
@@ -33,7 +35,9 @@ function Login() {
         controller.abort();
       });
   };
-  const { login } = state;
+
+  console.log(state);
+
   return (
     <LoginPresentation
       pathLocation={location.pathname}

@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import RegisterPresentation from "./RegisterPresentation";
 import { Redirect } from "react-router-dom";
 import { confirm } from "../../../router/routes";
@@ -7,6 +8,7 @@ import { ContextForm } from "../ContextForm";
 export default function Register() {
   const [state, dispatch] = useContext(ContextForm);
   const [isAlreadyExist, setAlreadyExist] = useState("not exist");
+  const { register } = state;
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = event.target;
@@ -36,7 +38,7 @@ export default function Register() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(state),
+      body: JSON.stringify({ ...register, clientID: uuidv4() }),
     })
       .then((res) => res.json())
       .then((data) => setAlreadyExist(data.isExist))
@@ -44,8 +46,6 @@ export default function Register() {
         controller.abort();
       });
   };
-
-  const { register } = state;
 
   return (
     <>

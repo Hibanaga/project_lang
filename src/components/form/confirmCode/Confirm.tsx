@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ContextForm } from "../ContextForm";
 import ConfirmPresentation from "./ConfirmPresentation";
 
 export default function Confirm() {
   const [codeConfirm, setConfirmCode] = useState("");
+  const [message, setMessage] = useState("loading");
+  const [state] = useContext(ContextForm);
+  const { register } = state;
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setConfirmCode(event.target.value);
@@ -21,18 +25,21 @@ export default function Confirm() {
       },
       body: JSON.stringify({
         code: codeConfirm,
-        email: "vladyslav.tykhoniuk.works@gmail.com",
+        email: register.email,
       }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => setMessage(data.message))
       .finally(() => {
         controller.abort();
       });
   };
 
+  console.log(message);
+
   return (
     <ConfirmPresentation
+      message={message}
       codeConfirm={codeConfirm}
       onHandleInputChange={handleInputChange}
       onSubmitFormHandler={submitFormHandler}
