@@ -35,8 +35,6 @@ export default function Confirm() {
       });
   };
 
-  console.log(message);
-
   return (
     <ConfirmPresentation
       message={message}
