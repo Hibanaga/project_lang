@@ -50,7 +50,8 @@
       "title": "Создайте аккаунт",
       "placeholderEmail": "Электронная почта",
       "placeholderNickname": "Имя(необязательно)",
-      "submit": "Создать аккаут"
+      "submit": "Создать аккаут",
+      "errorCreateUser": "Такой адрес уже был зарегистрирован"
     },
     "placeholderPassword": "Пароль",
     "login": "Войти",

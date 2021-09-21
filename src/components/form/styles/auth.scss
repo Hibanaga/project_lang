@@ -1,54 +1,47 @@
 @import "../../../styles/_mixins";
 
-.containerLogin {
-  height: 100vh;
-  width: 100%;
-  background-color: #fff;
-  z-index: 12;
+.wrapper__actionsRedirect {
+  width: 90%;
+  top: 4.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   position: absolute;
-  overflow: none;
+  z-index: 15;
 
-  .wrapper__actionsRedirect {
-    width: 90%;
-    top: 4.5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  margin-top: 1.5rem;
 
-    position: absolute;
-    z-index: 15;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 
-    margin-top: 1.5rem;
+  .js-btn__redirectToHome {
+    @include resetDefaultInputStyles;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-
-    .js-btn__redirectToHome {
-      @include resetDefaultInputStyles;
-
-      cursor: pointer;
-      svg {
-        font-size: 4rem;
-        color: #1cb0f6;
-      }
-    }
-
-    .js-btn__redirectToRegister {
-      font-size: 1.6rem;
-      font-weight: 600;
-
+    cursor: pointer;
+    svg {
+      font-size: 4rem;
       color: #1cb0f6;
-      background-color: transparent;
-
-      padding: 0.8rem 1rem;
-
-      border-radius: 1.2rem;
-      border: 0.2rem solid rgb(209, 209, 209);
-      border-bottom: 0.4rem solid rgb(209, 209, 209);
     }
   }
 
+  .js-btn__redirectToRegister {
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    color: #1cb0f6;
+    background-color: transparent;
+
+    padding: 0.8rem 1rem;
+
+    border-radius: 1.2rem;
+    border: 0.2rem solid rgb(209, 209, 209);
+    border-bottom: 0.4rem solid rgb(209, 209, 209);
+  }
+}
+
+.containerLogin {
   .row_login {
     flex-direction: column;
     position: relative;
@@ -97,13 +90,6 @@
 }
 
 .containerRegister {
-  height: 100vh;
-  width: 100%;
-  background-color: #fff;
-  z-index: 12;
-  position: absolute;
-  overflow: none;
-
   .wrapper__actionsRedirect {
     width: 90%;
     top: 4.5%;
@@ -160,6 +146,11 @@
       position: relative;
       z-index: 3;
 
+      .hidden_text {
+        height: 3rem;
+        font-size: 2rem;
+      }
+
       input {
         @include resetDefaultInputStyles;
         @include defaultStyleInput;
@@ -172,13 +163,13 @@
       button {
         @include resetDefaultInputStyles;
 
-        margin-top: 1.5rem;
         color: #fff;
         background-color: #1cb0f6;
         border-bottom: 0.4rem solid #1394cf;
         font-size: 2rem;
         transition: $transition_t;
 
+        margin: 1.5rem auto 0 auto;
         &:hover {
           filter: brightness(1.1);
         }
@@ -189,6 +180,67 @@
 
         &:hover {
           filter: brightness(1.1);
+        }
+      }
+    }
+  }
+}
+
+.containerConfirm {
+  .rowConfirm {
+    margin: 0 auto;
+    flex-direction: column;
+
+    h1 {
+      text-align: center;
+      color: rgb(60, 60, 60);
+    }
+
+    form {
+      flex-direction: column;
+      position: relative;
+      z-index: 3;
+
+      // align-items: center;
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      input {
+        @include resetDefaultInputStyles;
+        @include defaultStyleInput;
+
+        width: 100%;
+        font-size: 1.4rem;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          /* display: none; <- Crashes Chrome on hover */
+          -webkit-appearance: none;
+          -moz-appearance: textfield;
+          margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+        }
+      }
+
+      button {
+        @include resetDefaultInputStyles;
+
+        color: #fff;
+        width: 13rem;
+        background-color: #1cb0f6;
+        border-bottom: 0.4rem solid #1394cf;
+        font-size: 1.7rem;
+        transition: $transition_t;
+
+        // margin-left: 1.5rem;
+        margin: 1.5rem auto 0 auto;
+        &:hover {
+          filter: brightness(1.1);
+        }
+
+        &:active {
+          border-bottom: 0.2rem solid #1394cf;
         }
       }
     }
@@ -222,6 +274,24 @@
 
   .containerRegister .row_register h1 {
     font-size: 3.6rem;
+    width: 100%;
+  }
+
+  .containerConfirm .rowConfirm form {
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    align-items: center;
+  }
+
+  .containerConfirm .rowConfirm form input {
+    width: 24rem;
+  }
+
+  .containerConfirm .rowConfirm form button {
+    margin: 0;
+    margin-left: 1.5rem;
+    width: 14rem;
   }
 }
 

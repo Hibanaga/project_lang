@@ -1,9 +1,12 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { actions, initialState } from "../services/optionsReducer";
 import RegisterPresentation from "./RegisterPresentation";
+import { Redirect } from "react-router-dom";
+import { confirm } from "../../../router/routes";
 
 export default function Register() {
   const [state, dispatch] = useReducer(actions, initialState);
+  const [isAlreadyExist, setAlreadyExist] = useState("not exist");
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = event.target;
@@ -36,19 +39,21 @@ export default function Register() {
       body: JSON.stringify(state),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => setAlreadyExist(data.isExist))
       .finally(() => {
         controller.abort();
       });
-
-    // console.log(state);
   };
 
   return (
-    <RegisterPresentation
-      state={state}
-      onHandleInputChange={handleInputChange}
-      onSubmitFormHandler={submitFormHandler}
-    />
+    <>
+      {isAlreadyExist === "success added" && <Redirect to={confirm} />}
+      <RegisterPresentation
+        state={state}
+        isAlreadyExist={isAlreadyExist}
+        onHandleInputChange={handleInputChange}
+        onSubmitFormHandler={submitFormHandler}
+      />
+    </>
   );
 }

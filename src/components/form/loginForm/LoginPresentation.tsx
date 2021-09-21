@@ -1,7 +1,7 @@
 import { Wrapper, Title } from "../../../styles/styled-comp";
 import ActionsRedirect from "../components/actionsRedirect";
 import LoginUserForm from "../components/loginUserForm";
-import { RowLogin } from "../styles/styled-comp.js";
+import { RowLogin, ContainerForm } from "../styles/styled-comp.js";
 
 import { withTranslation } from "react-i18next";
 
@@ -30,7 +30,7 @@ function LoginPresentation({
   //desctructe state
   const { email, password } = state;
   return (
-    <section className="containerLogin">
+    <ContainerForm className="containerLogin">
       <ActionsRedirect pathLocation={pathLocation} />
       <Wrapper>
         <RowLogin className="row_login">
@@ -43,7 +43,7 @@ function LoginPresentation({
           />
         </RowLogin>
       </Wrapper>
-    </section>
+    </ContainerForm>
   );
 }
 

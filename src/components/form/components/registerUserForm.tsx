@@ -14,6 +14,7 @@ interface stateProp {
   t: any;
   onSubmitFormHandler: (p: any) => void;
   state: typeProp;
+  isAlreadyExist: string;
 }
 
 function registerUserForm({
@@ -21,10 +22,16 @@ function registerUserForm({
   t,
   onHandleInputChange,
   onSubmitFormHandler,
+  isAlreadyExist,
 }: stateProp) {
   const { email, password, nickname } = state;
   return (
     <Form onSubmit={onSubmitFormHandler}>
+      {isAlreadyExist === "exist" && (
+        <span className="hidden_text">
+          {t("form.registerForm.errorCreateUser")}
+        </span>
+      )}
       <Input
         type="text"
         placeholder={t("form.registerForm.placeholderNickname")}

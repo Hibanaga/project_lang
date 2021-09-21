@@ -22,6 +22,16 @@ function Login() {
 
   const submitFormHandler = (event: React.MouseEvent) => {
     event.preventDefault();
+
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    fetch("/show_data", { signal: signal })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .finally(() => {
+        controller.abort();
+      });
   };
 
   return (

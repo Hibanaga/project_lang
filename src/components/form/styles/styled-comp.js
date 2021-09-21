@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+const ContainerForm = styled.section`
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  z-index: 12;
+  position: absolute;
+  overflow: none;
+`;
+
 const RowLogin = styled.div`
   display: flex;
   align-items: center;
@@ -30,4 +39,4 @@ const Submit = styled.button`
   border-bottom: 0.4rem solid #1394cf;
 `;
 
-export { RowLogin, Input, Form, Submit };
+export { RowLogin, Input, Form, Submit, ContainerForm };

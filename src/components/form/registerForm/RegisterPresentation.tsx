@@ -1,7 +1,7 @@
 import { Title, Wrapper } from "../../../styles/styled-comp";
 import ActionsRedirect from "../components/actionsRedirect";
 import RegisterUserForm from "../components/registerUserForm";
-import { RowLogin } from "../styles/styled-comp";
+import { RowLogin, ContainerForm } from "../styles/styled-comp";
 
 import { withTranslation } from "react-i18next";
 
@@ -10,6 +10,7 @@ interface stateProp {
   t: (p: string) => object;
   onSubmitFormHandler: (p: any) => void;
   state: any;
+  isAlreadyExist: string;
 }
 
 function RegisterPresentation({
@@ -17,21 +18,23 @@ function RegisterPresentation({
   t,
   state,
   onSubmitFormHandler,
+  isAlreadyExist,
 }: stateProp) {
   return (
-    <section className="containerRegister">
+    <ContainerForm className="containerRegister">
       <ActionsRedirect />
       <Wrapper>
         <RowLogin className="row_register">
           <Title>{t("form.registerForm.title")}</Title>
           <RegisterUserForm
+            isAlreadyExist={isAlreadyExist}
             state={state}
             onHandleInputChange={onHandleInputChange}
             onSubmitFormHandler={onSubmitFormHandler}
           />
         </RowLogin>
       </Wrapper>
-    </section>
+    </ContainerForm>
   );
 }
 
