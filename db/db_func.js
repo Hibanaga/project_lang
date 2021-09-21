@@ -32,7 +32,24 @@ async function insert_query(dbname, collection, data) {
   }
 }
 
+async function update_query(dbname, collection, query, update) {
+  try {
+    //connect
+    await client.connect();
+    const db = client.db(dbname);
+    const coll = db.collection(collection);
+
+    await coll.updateOne(query, { $set: update }, { upsert: false });
+  } catch (err) {
+    // "error to update"
+    throw new Error("error to update");
+  } finally {
+    await client.close();
+  }
+}
+
 module.exports = {
   db_read: read_query,
   db_insert: insert_query,
+  db_update: update_query,
 };
