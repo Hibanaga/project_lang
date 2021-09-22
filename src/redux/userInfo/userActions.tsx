@@ -1,8 +1,13 @@
-import { SET_USERDATA } from "./userActionsTypes";
+import { SET_USERID, SET_FIRSTAUTH } from "./userActionsTypes";
 
-const setDefaultUserData = (objUser: object) => ({
-  type: SET_USERDATA,
-  payload: objUser,
+const setAuthClientID = (clientID: any) => ({
+  type: SET_USERID,
+  payload: clientID,
 });
 
-export { setDefaultUserData };
+const setFirstAuth = (isFirstAuth: boolean) => ({
+  type: SET_FIRSTAUTH,
+  payload: isFirstAuth,
+});
+
+export { setAuthClientID, setFirstAuth };

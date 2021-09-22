@@ -3,13 +3,18 @@ import { connect } from "react-redux";
 // import { Redirect } from "react-router";
 import { ContextForm } from "../ContextForm";
 import ConfirmPresentation from "./ConfirmPresentation";
-import { setDefaultUserData } from "../../../redux/userInfo/userActions";
+import {
+  setAuthClientID,
+  setFirstAuth,
+} from "../../../redux/userInfo/userActions";
+import localforage from "localforage";
 
 interface stateProp {
   addDefaultUserData: (p: object) => void;
+  setFirstAuthHandler: (p: boolean) => void;
 }
 
-function Confirm({ addDefaultUserData }: stateProp) {
+function Confirm({ addDefaultUserData, setFirstAuthHandler }: stateProp) {
   const [codeConfirm, setConfirmCode] = useState("");
   const [message, setMessage] = useState("loading");
   const [state] = useContext(ContextForm);
@@ -38,11 +43,10 @@ function Confirm({ addDefaultUserData }: stateProp) {
       .then((res) => res.json())
       .then((data) => {
         setMessage(data.message);
-        addDefaultUserData({
-          clientID: data.clientID,
-          userName: data.userName,
-          email: data.email,
-        });
+        addDefaultUserData(data.clientID);
+
+        localforage.setItem("loginID", data.clientID);
+        setFirstAuthHandler(true);
       })
       .finally(() => {
         controller.abort();
@@ -51,13 +55,7 @@ function Confirm({ addDefaultUserData }: stateProp) {
 
   return (
     <>
-      {/* {message === "success" && (
-        <Redirect
-          to={{
-            pathname: `/profile/${message}`,
-          }}
-        />
-      )} */}
+      {/* {message === "success" && <Redirect to={learn} />} */}
 
       <ConfirmPresentation
         message={message}
@@ -70,7 +68,8 @@ function Confirm({ addDefaultUserData }: stateProp) {
 }
 
 const mapDispatchToProps = {
-  addDefaultUserData: setDefaultUserData,
+  addDefaultUserData: setAuthClientID,
+  setFirstAuthHandler: setFirstAuth,
 };
 
 export default connect(null, mapDispatchToProps)(Confirm);

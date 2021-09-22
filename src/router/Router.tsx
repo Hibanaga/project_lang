@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Route, Switch } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
 import { home, log_in, register, confirm, profile_user, learn } from "./routes";
 import Home from "../components/home/Home";
 import Login from "../components/form/loginForm/Login";
@@ -9,11 +9,35 @@ import { ContextFormProvider } from "../components/form/ContextForm";
 import Profile from "../components/profile/Profile";
 import { connect } from "react-redux";
 import Main from "../components/main/Main";
+// import localforage from "localforage";
 
-function Router({ profile }: any) {
+interface stateProp {
+  profile?: any;
+}
+
+function Router({ profile }: stateProp) {
   const [isAuth, setAuth] = useState(false);
 
-  console.log(setAuth);
+  useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    if (profile.clientID !== "" && isAuth === false) {
+      fetch("/check_login", {
+        method: "POST",
+        signal: signal,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ clientID: profile.clientID }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data.message);
+          data.message === "success" ? setAuth(true) : setAuth(false);
+        });
+    }
+  }, [isAuth, profile.clientID]);
 
   return (
     <Switch>
@@ -23,6 +47,8 @@ function Router({ profile }: any) {
         <Route exact path={log_in} component={Login} />
         <Route exact path={register} component={Register} />
         <Route exact path={confirm} component={Confirm} />
+
+        {profile.isFirstAuth && <Redirect to={learn} />}
 
         {isAuth && (
           <>
