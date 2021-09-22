@@ -1,14 +1,23 @@
-import { setUserData } from "./userActionsTypes";
+import { SET_USERDATA } from "./userActionsTypes";
 
 interface stateProp {
   type: string;
   payload: object;
 }
 
-export default function userReducer(state = {}, { type, payload }: stateProp) {
+const initialState = {
+  clientID: "",
+  userName: "",
+  email: "",
+};
+
+export default function userReducer(
+  state = initialState,
+  { type, payload }: stateProp
+) {
   switch (type) {
-    case setUserData:
-      return { ...state, payload };
+    case SET_USERDATA:
+      return payload;
     default:
       return state;
   }

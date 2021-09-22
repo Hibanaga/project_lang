@@ -1,3 +1,3 @@
-const setUserData = "users/setUserData";
+const SET_USERDATA = "users/set__allUserData";
 
-export { setUserData };
+export { SET_USERDATA };

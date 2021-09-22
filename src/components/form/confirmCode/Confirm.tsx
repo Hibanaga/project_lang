@@ -1,8 +1,15 @@
 import { useContext, useState } from "react";
+import { connect } from "react-redux";
+// import { Redirect } from "react-router";
 import { ContextForm } from "../ContextForm";
 import ConfirmPresentation from "./ConfirmPresentation";
+import { setDefaultUserData } from "../../../redux/userInfo/userActions";
 
-export default function Confirm() {
+interface stateProp {
+  addDefaultUserData: (p: object) => void;
+}
+
+function Confirm({ addDefaultUserData }: stateProp) {
   const [codeConfirm, setConfirmCode] = useState("");
   const [message, setMessage] = useState("loading");
   const [state] = useContext(ContextForm);
@@ -29,18 +36,41 @@ export default function Confirm() {
       }),
     })
       .then((res) => res.json())
-      .then((data) => setMessage(data.message))
+      .then((data) => {
+        setMessage(data.message);
+        addDefaultUserData({
+          clientID: data.clientID,
+          userName: data.userName,
+          email: data.email,
+        });
+      })
       .finally(() => {
         controller.abort();
       });
   };
 
   return (
-    <ConfirmPresentation
-      message={message}
-      codeConfirm={codeConfirm}
-      onHandleInputChange={handleInputChange}
-      onSubmitFormHandler={submitFormHandler}
-    />
+    <>
+      {/* {message === "success" && (
+        <Redirect
+          to={{
+            pathname: `/profile/${message}`,
+          }}
+        />
+      )} */}
+
+      <ConfirmPresentation
+        message={message}
+        codeConfirm={codeConfirm}
+        onHandleInputChange={handleInputChange}
+        onSubmitFormHandler={submitFormHandler}
+      />
+    </>
   );
 }
+
+const mapDispatchToProps = {
+  addDefaultUserData: setDefaultUserData,
+};
+
+export default connect(null, mapDispatchToProps)(Confirm);

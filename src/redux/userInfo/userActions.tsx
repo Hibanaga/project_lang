@@ -1,5 +1,8 @@
-import { setUserData } from "./userActionsTypes";
+import { SET_USERDATA } from "./userActionsTypes";
 
-const setUser = (objUser: object) => ({ type: setUserData, payload: objUser });
+const setDefaultUserData = (objUser: object) => ({
+  type: SET_USERDATA,
+  payload: objUser,
+});
 
-export { setUser };
+export { setDefaultUserData };
