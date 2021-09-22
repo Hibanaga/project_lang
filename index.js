@@ -11,16 +11,14 @@ const random = require("lodash.random");
 const { db_read, db_insert, db_update } = require("./db/db_func");
 const { sendMail } = require("./service/mail_send");
 
+const { searchEmail } = require("./utils/validateReq");
+
 //control parser json()
 app.use(cors());
 app.use(express.json());
 
 //variable to set code verification of login
 let randArr = [];
-
-app.get("/show_data", (req, res) => {
-  res.json({ message: "lol" });
-});
 
 app.post("/register_user", (req, res) => {
   const state = req.body;
@@ -81,6 +79,39 @@ app.post("/verify_user", (req, res) => {
       });
   } else {
     res.json({ message: "error" });
+  }
+});
+
+app.post("/log_in", (req, res) => {
+  const state = req.body;
+  const { email, password } = state;
+
+  if (searchEmail(email)) {
+    console.log({
+      email: email,
+      password: password,
+      isActive: true,
+    });
+
+    db_read(process.env.DB_NAME, "users", {
+      email: email,
+      password: password,
+      isActive: true,
+    }).then((data) =>
+      data !== null
+        ? res.json({ message: "success email", clientID: data.clientID })
+        : res.json({ message: "error email" })
+    );
+  } else {
+    db_read(process.env.DB_NAME, "users", {
+      nickname: email,
+      password: password,
+      isActive: true,
+    }).then((data) =>
+      data !== null
+        ? res.json({ message: "success nickname", clientID: data.clientID })
+        : res.json({ message: "error nickname" })
+    );
   }
 });
 
