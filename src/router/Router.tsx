@@ -9,7 +9,6 @@ import { ContextFormProvider } from "../components/form/ContextForm";
 import Profile from "../components/profile/Profile";
 import { connect } from "react-redux";
 import Main from "../components/main/Main";
-// import localforage from "localforage";
 
 interface stateProp {
   profile?: any;
@@ -32,10 +31,9 @@ function Router({ profile }: stateProp) {
         body: JSON.stringify({ clientID: profile.clientID }),
       })
         .then((res) => res.json())
-        .then((data) => {
-          console.log(data.message);
-          data.message === "success" ? setAuth(true) : setAuth(false);
-        });
+        .then((data) =>
+          data.message === "success" ? setAuth(true) : setAuth(false)
+        );
     }
   }, [isAuth, profile.clientID]);
 

@@ -55,8 +55,6 @@ function Confirm({ addDefaultUserData, setFirstAuthHandler }: stateProp) {
 
   return (
     <>
-      {/* {message === "success" && <Redirect to={learn} />} */}
-
       <ConfirmPresentation
         message={message}
         codeConfirm={codeConfirm}

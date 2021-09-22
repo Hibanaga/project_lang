@@ -22,7 +22,7 @@ function loginUserForm({
   return (
     <Form onSubmit={onSubmitFormHandler}>
       <Input
-        type="email"
+        type="text"
         value={validateInput(email)}
         placeholder={t("form.loginForm.placeholderEmail")}
         title={t("form.title")}

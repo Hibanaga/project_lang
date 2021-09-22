@@ -3,8 +3,19 @@ import LoginPresentation from "./LoginPresentation";
 import "../styles/auth.scss";
 import { useLocation } from "react-router";
 import { ContextForm } from "../ContextForm";
+import { connect } from "react-redux";
+import {
+  setAuthClientID,
+  setFirstAuth,
+} from "../../../redux/userInfo/userActions";
+import localforage from "localforage";
 
-function Login() {
+interface stateProp {
+  addDefaultUserData: (p: object) => void;
+  setFirstAuthHandler: (p: boolean) => void;
+}
+
+function Login({ addDefaultUserData, setFirstAuthHandler }: stateProp) {
   const location = useLocation();
   const [state, dispatch] = useContext(ContextForm);
 
@@ -28,15 +39,25 @@ function Login() {
     const controller = new AbortController();
     const signal = controller.signal;
 
-    fetch("/show_data", { signal: signal })
+    fetch("/log_in", {
+      method: "POST",
+      signal: signal,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(login),
+    })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        addDefaultUserData(data.clientID);
+
+        localforage.setItem("loginID", data.clientID);
+        setFirstAuthHandler(true);
+      })
       .finally(() => {
         controller.abort();
       });
   };
-
-  console.log(state);
 
   return (
     <LoginPresentation
@@ -48,4 +69,9 @@ function Login() {
   );
 }
 
-export default Login;
+const mapDispatchToProps = {
+  addDefaultUserData: setAuthClientID,
+  setFirstAuthHandler: setFirstAuth,
+};
+
+export default connect(null, mapDispatchToProps)(Login);
