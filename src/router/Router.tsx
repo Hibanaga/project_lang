@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { home, log_in, register, confirm, profile_user, learn } from "./routes";
 import Home from "../components/home/Home";
-import Login from "../components/form/loginForm/Login";
-import Register from "../components/form/registerForm/Register";
-import Confirm from "../components/form/confirmCode/Confirm";
-import { ContextFormProvider } from "../components/form/ContextForm";
+import Login from "../components/auth/loginForm/Login";
+import Register from "../components/auth/registerForm/Register";
+import Confirm from "../components/auth/confirmCode/Confirm";
+import { ContextFormProvider } from "../components/auth/ContextForm";
 import Profile from "../components/profile/Profile";
 import { connect } from "react-redux";
-import Main from "../components/main/Main";
+import Main from "../components/auth_main/Main";
 
 interface stateProp {
   profile?: any;
