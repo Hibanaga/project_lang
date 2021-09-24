@@ -64,6 +64,8 @@ app.post("/verify_user", (req, res) => {
       .then((data) => {
         db_insert(process.env.DB_NAME, "activeUsers", {
           clientID: data.clientID,
+          coin: 0,
+          crown: 0,
         });
 
         res.json({
@@ -129,6 +131,18 @@ app.post("/check_login", (req, res) => {
       res.json({ message: "error" });
     }
   });
+});
+
+app.post("/profileStats", (req, res) => {
+  const state = req.body;
+  const { clientID } = state;
+
+  db_read(process.env.DB_NAME, "activeUsers", { clientID: clientID }).then(
+    (data) =>
+      data !== null
+        ? res.json({ coin: data.coin, crown: data.crown })
+        : res.json({ message: "error" })
+  );
 });
 
 app.listen(PORT, () => console.log(`server lister on port ${PORT}`));
