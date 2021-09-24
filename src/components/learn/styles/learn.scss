@@ -1,0 +1,94 @@
+@import "../../../styles/_mixins";
+
+.container_navPanel {
+  height: 6.5rem;
+  width: 100%;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  border-top: 0.3rem solid #e5e5e5;
+
+  .row_navPanel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 100%;
+
+    img {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+}
+
+.containerProfileInfo {
+  height: 6rem;
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  border-bottom: 0.3rem solid #e5e5e5;
+
+  .rowProfileInfo {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    flex-direction: row;
+
+    img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 6rem;
+
+      &:last-child {
+        width: 2rem;
+      }
+    }
+
+    .js-btn_loadMore {
+      @include resetDefaultInputStyles;
+      margin-left: 1rem;
+
+      padding: 0.5rem;
+      border: 0.2rem solid #e5e5e5;
+      border-radius: 50%;
+    }
+
+    .wrapperUserCoins {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 15rem;
+
+      .containerUserCoin {
+        display: flex;
+        align-items: center;
+
+        .descriptionUserCoin {
+          font-size: 2rem;
+          font-weight: 600;
+          color: #ffc107;
+
+          padding-left: 0.5rem;
+        }
+
+        .descriptionCoin {
+          color: #e50777;
+          padding-left: 0rem;
+          padding-right: 1.5rem;
+        }
+      }
+
+      img {
+        width: 4rem;
+      }
+    }
+  }
+}

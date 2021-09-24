@@ -1,4 +1,4 @@
-export default function MainPresentation() {
+export default function panelInfo() {
   return (
     <div>
       <h1>title</h1>
