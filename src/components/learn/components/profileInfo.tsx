@@ -1,3 +1,4 @@
+import React from "react";
 import { connect } from "react-redux";
 import { Wrapper, Row } from "../../../styles/styled-comp";
 import {
@@ -58,4 +59,4 @@ const mapStateToProps = ({ profile }: reduxProp) => ({
   coin: profile.coin,
 });
 
-export default connect(mapStateToProps, null)(profileInfo);
+export default connect(mapStateToProps, null)(React.memo(profileInfo));

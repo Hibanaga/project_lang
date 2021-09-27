@@ -44,20 +44,21 @@ function Router({
         .then((res) => res.json())
         .then((data) =>
           data.message === "success" ? setAuth(true) : setAuth(false)
-        );
-
-      //upload user start
-      fetch("/profileStats", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ clientID: profile.clientID }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          restoreCoinHandler(data.coin);
-          restoreCrownHandler(data.crown);
+        )
+        .then(() => {
+          //upload user start
+          fetch("/profileStats", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ clientID: profile.clientID }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              restoreCoinHandler(data.coin);
+              restoreCrownHandler(data.crown);
+            });
         });
     }
   }, [isAuth, profile.clientID, restoreCoinHandler, restoreCrownHandler]);
