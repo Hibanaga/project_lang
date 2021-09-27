@@ -13,7 +13,7 @@ const actions = (state = initialState, { type, payload }: actionsProp) => {
       return { ...state, introduction: !payload };
 
     default:
-      break;
+      throw new Error();
   }
 };
 

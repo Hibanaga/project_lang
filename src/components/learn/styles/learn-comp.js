@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 const WrapperCard = styled.div`
   width: 30rem;
+
+  cursor: default;
 `;
 
 const WrapperTitleCard = styled.div`
@@ -36,4 +38,53 @@ const TitleCardContent = styled.h1`
   /* text-align: center; */
 `;
 
-export { WrapperTitleCard, RowTitleCard, WrapperCard, TitleCardContent };
+const ListCardContent = styled.ul`
+  width: 26rem;
+
+  transition: 0.2s;
+
+  border-color: ${({ className }) =>
+    className === "active" ? "#e5e5e5" : "transparent"};
+  border-style: solid;
+
+  border-width: 0.2rem;
+  height: ${({ className }) => (className === "active" ? "16rem" : "0rem")};
+
+  padding-top: -0.5rem;
+
+  border-top: none;
+
+  border-bottom-right-radius: 0.7rem;
+  border-bottom-left-radius: 0.7rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+`;
+
+const ListItemCardContent = styled.li`
+  list-style: none;
+
+  font-size: 2rem;
+
+  text-align: center;
+  color: ${({ className }) =>
+    className === "active" ? "#000" : "transparent"};
+
+  transform: ${({ className }) =>
+    className === "active" ? "translate(0px, 0px)" : "translate(0px, -15px)"};
+  transition: 0.2s;
+  transition-delay: ${({ className }) =>
+    className === "active" ? "0.2s" : "0s"};
+
+  padding: 0.3rem 0;
+`;
+
+export {
+  WrapperTitleCard,
+  RowTitleCard,
+  WrapperCard,
+  TitleCardContent,
+  ListCardContent,
+  ListItemCardContent,
+};

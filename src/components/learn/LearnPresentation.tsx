@@ -6,17 +6,23 @@ import { introduceOff, introduceOn } from "./images/catalog/imageCatalogExport";
 
 interface stateProp {
   introduction: boolean;
+  onToggleDropDownHandler: (p: any) => void;
 }
 
-export default function MainPresentation({ introduction }: stateProp) {
+export default function MainPresentation({
+  onToggleDropDownHandler,
+  introduction,
+}: stateProp) {
   return (
     <section className="containerLearn">
       <Wrapper>
         <Row>
           <TrainingSection
+            onToggleDropDownHandler={onToggleDropDownHandler}
             content={catalog[0]}
             imgOff={introduceOff}
             imgOn={introduceOn}
+            isDropDown={introduction}
           />
         </Row>
       </Wrapper>

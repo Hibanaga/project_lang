@@ -102,12 +102,19 @@
       width: 90%;
 
       img {
-        width: 3.5rem;
+        width: 5rem;
         margin: 0;
+        transition: $transition_t;
+      }
 
-        &:last-child {
-          width: 2rem;
-        }
+      .imgTitleCatalog {
+        transition: $transition_t;
+        margin: 0;
+        width: 1rem;
+      }
+
+      .img_active {
+        transform: rotate(180deg);
       }
     }
   }
