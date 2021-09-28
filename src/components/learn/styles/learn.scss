@@ -96,6 +96,8 @@
 .containerLearn {
   background-color: #fff;
   margin-top: 6rem;
+  margin-bottom: 7rem;
+  min-height: 520px;
 
   .wrapperCatalogCard {
     .rowTitleCatalog {
@@ -117,5 +119,152 @@
         transform: rotate(180deg);
       }
     }
+  }
+}
+
+.rowAdditionalInfo {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .rowContainerLearn {
+    flex-direction: row;
+    justify-content: space-between;
+
+    height: 100%;
+  }
+
+  .rowAdditionalInfo {
+    display: block;
+  }
+
+  .wrapperContainer {
+    border-bottom: 0.3rem solid #e5e5e5;
+  }
+
+  .containerNavLearn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container_navPanel .row_navPanel {
+    justify-content: space-between;
+  }
+
+  .containerProfileInfo {
+    width: 50%;
+    position: inherit;
+
+    border: none;
+
+    height: 7rem;
+  }
+
+  .container_navPanel {
+    position: inherit;
+    width: 50%;
+
+    border: none;
+
+    height: 7rem;
+  }
+
+  .containerProfileInfo .rowProfileInfo {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .containerLearn {
+    margin-top: 0;
+  }
+
+  .containerLearn .wrapperCatalogCard .rowTitleCatalog img {
+    width: 7.5rem;
+  }
+
+  .containerLearn .wrapperCatalogCard .rowTitleCatalog .imgTitleCatalog {
+    width: 1.5rem;
+  }
+
+  .wrapperCatalogLearn {
+    width: 45%;
+    min-height: 490px;
+  }
+
+  .rowAdditionalInfo {
+    width: 45%;
+    min-height: 490px;
+
+    display: flex;
+    // justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
+
+@media (min-width: 1140px) {
+  .containerNavLearn {
+    width: 1040px;
+    margin: 0 auto;
+  }
+
+  .rowAdditionalInfo {
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .wrapperCatalogCard {
+    flex-direction: initial;
+  }
+
+  .containerLearn .wrapperCatalogCard .rowTitleCatalog img {
+    margin-left: 2.5rem;
+  }
+
+  .container_navPanel div {
+    // margin-left: 4rem;
+    width: 95%;
+  }
+
+  .containerProfileInfo div {
+    width: 95%;
+  }
+
+  .containerProfileInfo .rowProfileInfo .wrapperUserCoins {
+    width: 25rem;
+  }
+
+  .rowContainerLearn {
+    width: 100%;
+  }
+
+  .wrapperCatalogLearn {
+    width: 50%;
+  }
+
+  .rowAdditionalInfo {
+    width: 50%;
+  }
+
+  .containerProfileInfo .rowProfileInfo {
+    margin-left: 2.5rem;
+    width: 90%;
+  }
+
+  .containerProfileInfo .rowProfileInfo .js-btn_loadMore {
+    margin-right: 2.5rem;
+  }
+
+  .containerProfileInfo .rowProfileInfo .wrapperUserCoins .containerUserCoin {
+    justify-content: space-between;
+    width: 6rem;
+  }
+
+  .containerProfileInfo
+    .rowProfileInfo
+    .wrapperUserCoins
+    .containerUserCoin
+    .descriptionCoin {
+    padding-right: 0;
   }
 }

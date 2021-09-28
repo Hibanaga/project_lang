@@ -49,10 +49,9 @@ export default function TrainingSection({
         data-source="hidden"
         className={isDropDown ? "active" : ""}
       >
-        {catalogTitles.map(({ id, title }: any) => (
+        {catalogTitles.map(({ id, title }: any, idx: number) => (
           <ListItemCardContent className={isDropDown ? "active" : ""} key={id}>
-            {" "}
-            {title}{" "}
+            {idx + 1}. {title}{" "}
           </ListItemCardContent>
         ))}
       </ListCardContent>

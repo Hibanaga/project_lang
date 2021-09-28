@@ -9,9 +9,8 @@ import { ContextFormProvider } from "../components/auth/ContextForm";
 import Profile from "../components/profile/Profile";
 import { connect } from "react-redux";
 import Learn from "../components/learn/Learn";
-import NavPanel from "../components/learn/components/navPanel";
+import LearnNavPanel from "../components/learn/components/learnNavPanel";
 import { setCountCoin, setCountCrown } from "../redux/userInfo/userActions";
-import ProfileInfo from "../components/learn/components/profileInfo";
 
 interface stateProp {
   profile?: any;
@@ -76,8 +75,7 @@ function Router({
 
         {isAuth && (
           <>
-            <NavPanel pathname={location.pathname} />
-            <ProfileInfo />
+            <LearnNavPanel pathname={location.pathname} />
             <Route exact path={learn} component={Learn} />
             <Route exact path={profile_user} component={Profile} />
           </>

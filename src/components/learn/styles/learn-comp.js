@@ -4,6 +4,14 @@ const WrapperCard = styled.div`
   width: 30rem;
 
   cursor: default;
+
+  @media (min-width: 768px) {
+    width: 36rem;
+  }
+
+  @media (min-width: 1130px) {
+    width: 50rem;
+  }
 `;
 
 const WrapperTitleCard = styled.div`
@@ -36,6 +44,10 @@ const TitleCardContent = styled.h1`
   width: 100%;
   text-align: inherit;
   /* text-align: center; */
+
+  @media (min-width: 1130px) {
+    padding-left: 3rem;
+  }
 `;
 
 const ListCardContent = styled.ul`
@@ -60,6 +72,15 @@ const ListCardContent = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+
+  @media (min-width: 768px) {
+    width: 30rem;
+  }
+
+  @media (min-width: 1140px) {
+    width: 38rem;
+    margin: 0 auto;
+  }
 `;
 
 const ListItemCardContent = styled.li`
@@ -67,7 +88,7 @@ const ListItemCardContent = styled.li`
 
   font-size: 2rem;
 
-  text-align: center;
+  /* text-align: center; */
   color: ${({ className }) =>
     className === "active" ? "#000" : "transparent"};
 
@@ -77,7 +98,29 @@ const ListItemCardContent = styled.li`
   transition-delay: ${({ className }) =>
     className === "active" ? "0.2s" : "0s"};
 
-  padding: 0.3rem 0;
+  visibility: ${({ className }) =>
+    className === "active" ? "visible" : "hidden"};
+  opacity: ${({ className }) => (className === "active" ? "1" : "0")};
+
+  padding: 0.3rem 1rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const AdditionalInfoWrapper = styled.div`
+  width: 24rem;
+
+  border: 0.2rem solid #f5f5f5;
+  border-radius: 15px;
+
+  margin-top: 2rem;
+  padding: 1rem;
+
+  @media (min-width: 1140px) {
+    width: 34rem;
+  }
 `;
 
 export {
@@ -87,4 +130,5 @@ export {
   TitleCardContent,
   ListCardContent,
   ListItemCardContent,
+  AdditionalInfoWrapper,
 };
