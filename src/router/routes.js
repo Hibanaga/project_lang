@@ -5,6 +5,7 @@ const confirm = "/register/confirm";
 const englishTest = "/english_test";
 const profile_user = "/profile/:cliendID";
 const learn = "/learn";
+const learnLesson = "/learn/:lessonName";
 const story = "/story";
 const store = "/store";
 
@@ -18,4 +19,5 @@ export {
   learn,
   story,
   store,
+  learnLesson,
 };

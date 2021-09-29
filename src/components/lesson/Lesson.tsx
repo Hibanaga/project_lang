@@ -2,19 +2,16 @@ import { connect } from "react-redux";
 import LessonPresentation from "./LessonPresentation";
 
 interface stateProp {
-  onToggleLessonOpenHandler: () => void;
-  lessonType?: string;
+  name?: string;
   catalog?: [];
 }
 
-function Lesson({ onToggleLessonOpenHandler, lessonType, catalog }: stateProp) {
-  return (
-    <LessonPresentation onToggleLessonOpenHandler={onToggleLessonOpenHandler} />
-  );
+function Lesson({ name, catalog }: stateProp) {
+  return <LessonPresentation />;
 }
 
 const mapStateToProps = ({ lesson }: any) => ({
-  lessonType: lesson.name,
+  name: lesson.name,
   catalog: lesson.catalog,
 });
 

@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 import { Route, Switch, Redirect, useLocation } from "react-router-dom";
-import { home, log_in, register, confirm, profile_user, learn } from "./routes";
+import {
+  home,
+  log_in,
+  register,
+  confirm,
+  profile_user,
+  learn,
+  learnLesson,
+} from "./routes";
 import Home from "../components/home/Home";
 import Login from "../components/auth/loginForm/Login";
 import Register from "../components/auth/registerForm/Register";
@@ -11,6 +19,7 @@ import { connect } from "react-redux";
 import Learn from "../components/learn/Learn";
 import LearnNavPanel from "../components/learn/components/learnNavPanel";
 import { setCountCoin, setCountCrown } from "../redux/userInfo/userActions";
+import Lesson from "../components/lesson/Lesson";
 
 interface stateProp {
   profile?: any;
@@ -77,6 +86,7 @@ function Router({
           <>
             <LearnNavPanel pathname={location.pathname} />
             <Route exact path={learn} component={Learn} />
+            <Route exact path={learnLesson} component={Lesson} />
             <Route exact path={profile_user} component={Profile} />
           </>
         )}

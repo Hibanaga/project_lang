@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import {
   WrapperTitleCard,
   WrapperCard,
@@ -6,9 +5,11 @@ import {
   TitleCardContent,
   ListCardContent,
   ListItemCardContent,
+  ListItemCardLink,
 } from "../styles/learn-comp";
 import { arrowDropDown } from "../images/catalog/imageCatalogExport";
 import { withTranslation } from "react-i18next";
+import { learn } from "../../../router/routes";
 
 interface stateProp {
   content: { mainTitle: string; catalogTitles: any };
@@ -56,12 +57,19 @@ function TrainingSection({
         >
           {catalogTitles.map(({ id, title, description }: any, idx: number) => (
             <ListItemCardContent
-              data-source={description}
               className={isDropDown ? "active" : ""}
               key={id}
-              onClick={onSetLessonNameHandler}
             >
-              {idx + 1}. {title}{" "}
+              <ListItemCardLink
+                data-source={description}
+                onClick={onSetLessonNameHandler}
+                className={isDropDown ? "active" : ""}
+                to={{
+                  pathname: `${learn}/${description}`,
+                }}
+              >
+                {idx + 1}. {title}
+              </ListItemCardLink>
             </ListItemCardContent>
           ))}
         </ListCardContent>

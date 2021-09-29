@@ -1,15 +1,10 @@
+import ActionReturnBack from "./components/actionReturnBack";
 import "./styles/lesson.scss";
 
-interface stateProp {
-  onToggleLessonOpenHandler: () => void;
-}
-
-export default function LessonPresentation({
-  onToggleLessonOpenHandler,
-}: stateProp) {
+export default function LessonPresentation() {
   return (
     <div className="containerPresentationCard">
-      <h1>title</h1>
+      <ActionReturnBack />
     </div>
   );
 }

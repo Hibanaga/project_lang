@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const WrapperCard = styled.div`
@@ -89,8 +90,6 @@ const ListItemCardContent = styled.li`
   font-size: 2rem;
 
   /* text-align: center; */
-  color: ${({ className }) =>
-    className === "active" ? "#000" : "transparent"};
 
   transform: ${({ className }) =>
     className === "active" ? "translate(0px, 0px)" : "translate(0px, -15px)"};
@@ -107,6 +106,15 @@ const ListItemCardContent = styled.li`
   &:hover {
     text-decoration: underline;
   }
+`;
+
+const ListItemCardLink = styled(NavLink)`
+  text-decoration: none;
+  color: ${({ className }) =>
+    className === "active" ? "#000" : "transparent"};
+
+  width: 100%;
+  display: block;
 `;
 
 const AdditionalInfoWrapper = styled.div`
@@ -132,4 +140,5 @@ export {
   ListCardContent,
   ListItemCardContent,
   AdditionalInfoWrapper,
+  ListItemCardLink,
 };
