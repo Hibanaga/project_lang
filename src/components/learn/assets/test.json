@@ -1,0 +1,118 @@
+{
+  "_id": {
+    "$oid": "6154281121304351647079f7"
+  },
+  "title": "family",
+  "content": [
+    {
+      "type": "A",
+      "typeQuestion": "Введите перевод на английский",
+      "questionDefaultLang": "Отец",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Mother"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Uncle"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Father"
+        }
+      ],
+      "answer": "Father"
+    },
+    {
+      "type": "B",
+      "typeQuestion": "Вставьте пропущенные буквы",
+      "startQuestion": "m**",
+      "varianAnswer": [
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "m"
+        },
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "g"
+        },
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "d"
+        },
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "m"
+        },
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "o"
+        },
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "n"
+        }
+      ],
+      "answer": "mom"
+    },
+    {
+      "type": "A",
+      "typeQuestion": "Введите перевод на английский",
+      "questionDefaultLang": "Двоюродный брат",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Son"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Cousin"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Uncle"
+        }
+      ],
+      "answer": "Cousin"
+    },
+    {
+      "type": "B",
+      "typeQuestion": "Вставьте пропущенные слова",
+      "startQuestion": "Bro***r",
+      "varianAnswer": [
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "n"
+        },
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "v"
+        },
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "w"
+        },
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "h"
+        },
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "t"
+        },
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "r"
+        }
+      ],
+      "answer": "Broth­er"
+    },
+    {
+      "type": "C",
+      "typeQuestion": "Напишите перевод на английский",
+      "startQuestion": "Дочь",
+      "answer": "Daugh­ter"
+    }
+  ]
+}

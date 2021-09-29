@@ -1,22 +1,26 @@
 [
   {
-    "mainTitle": "Основы",
+    "mainTitle": "Learn.trainingSection.mainTitle",
     "catalogTitles": [
       {
         "id": "7a76e325-761b-4955-8431-27fc55ad27b0",
-        "title": "Семья"
+        "title": "Семья",
+        "description": "family"
       },
       {
         "id": "f28f9370-5c87-4f5a-94a4-c232e17f6eba",
-        "title": "Знакомство"
+        "title": "Знакомство",
+        "description": "meeting"
       },
       {
         "id": "3f125c08-8f6c-420c-a19e-57d3222cb8b6",
-        "title": "Вечеринка"
+        "title": "Вечеринка",
+        "description": "party"
       },
       {
         "id": "e5cf4a2a-c4b4-49fb-a31c-5d92b45f1c3f",
-        "title": "Ресторан"
+        "title": "Ресторан",
+        "description": "restaurant"
       }
     ]
   }

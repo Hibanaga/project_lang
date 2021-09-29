@@ -8,11 +8,13 @@ import { introduceOff, introduceOn } from "./images/catalog/imageCatalogExport";
 interface stateProp {
   introduction: boolean;
   onToggleDropDownHandler: (p: any) => void;
+  onSetLessonNameHandler: (p: any) => void;
 }
 
 export default function MainPresentation({
   onToggleDropDownHandler,
   introduction,
+  onSetLessonNameHandler,
 }: stateProp) {
   return (
     <article className="containerLearn">
@@ -20,6 +22,7 @@ export default function MainPresentation({
         <Row className="rowContainerLearn">
           <div className="wrapperCatalogLearn">
             <TrainingSection
+              onSetLessonNameHandler={onSetLessonNameHandler}
               onToggleDropDownHandler={onToggleDropDownHandler}
               content={catalog[0]}
               imgOff={introduceOff}

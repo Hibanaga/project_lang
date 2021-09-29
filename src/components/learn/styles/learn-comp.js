@@ -54,6 +54,7 @@ const ListCardContent = styled.ul`
   width: 26rem;
 
   transition: 0.2s;
+  margin: 0 auto;
 
   border-color: ${({ className }) =>
     className === "active" ? "#e5e5e5" : "transparent"};
@@ -79,7 +80,6 @@ const ListCardContent = styled.ul`
 
   @media (min-width: 1140px) {
     width: 38rem;
-    margin: 0 auto;
   }
 `;
 
@@ -110,7 +110,8 @@ const ListItemCardContent = styled.li`
 `;
 
 const AdditionalInfoWrapper = styled.div`
-  width: 24rem;
+  width: 20rem;
+  height: 10rem;
 
   border: 0.2rem solid #f5f5f5;
   border-radius: 15px;
