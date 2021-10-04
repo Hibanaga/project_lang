@@ -1,10 +1,18 @@
 import ActionReturnBack from "./components/actionReturnBack";
 import "./styles/lesson.scss";
 
-export default function LessonPresentation() {
+interface stateProp {
+  catalog: [];
+}
+
+export default function LessonPresentation({ catalog }: stateProp) {
+  console.log(catalog);
+
   return (
     <div className="containerPresentationCard">
       <ActionReturnBack />
+
+      <h1>title</h1>
     </div>
   );
 }
