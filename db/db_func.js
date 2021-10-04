@@ -8,6 +8,7 @@ async function read_query(dbname, collection, query) {
   try {
     //connect
     await client.connect();
+
     const db = client.db(dbname);
     const coll = db.collection(collection);
 

@@ -24,7 +24,6 @@ app.post("/register_user", (req, res) => {
   const state = req.body;
   const { email } = state;
   const updateState = { ...state, isActive: false };
-  // rand = random(1111, 9999);
 
   randArr.push({
     email: email,
@@ -88,13 +87,23 @@ app.post("/log_in", (req, res) => {
   const state = req.body;
   const { email, password } = state;
 
-  if (searchEmail(email)) {
-    console.log({
-      email: email,
-      password: password,
-      isActive: true,
-    });
+  // console.log({
+  //   email: email,
+  //   password: password,
+  //   isActive: true,
+  // });
 
+  // nickname: email,
+  // password: password,
+  // isActive: true,
+
+  // db_read(process.env.DB_NAME, "users", {
+  //   nickname: email,
+  // }).then((data) => console.log(data));
+
+  // res.json({ message: "success nickname", clientID: "12345" });
+
+  if (searchEmail(email)) {
     db_read(process.env.DB_NAME, "users", {
       email: email,
       password: password,
@@ -142,6 +151,17 @@ app.post("/profileStats", (req, res) => {
       data !== null
         ? res.json({ coin: data.coin, crown: data.crown })
         : res.json({ message: "error" })
+  );
+});
+
+app.post("/get_lesson", (req, res) => {
+  const state = req.body;
+  const { lesson } = state;
+
+  db_read(process.env.DB_NAME, "introduction_lessons", { title: lesson }).then(
+    (data) => {
+      res.json(data.content);
+    }
   );
 });
 
