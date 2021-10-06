@@ -53,19 +53,23 @@
   .wrapperSubmitAnswer {
     button {
       @include resetDefaultInputStyles;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      // position: absolute;
+      // left: 10%;
+      // bottom: 10%;
+      display: block;
 
       cursor: pointer;
       margin: 0 auto;
       padding: 1rem 1.5rem;
 
-      font-size: 2rem;
+      font-size: 1.7rem;
+      font-weight: 600;
+
       width: 80%;
       color: #fff;
 
       background-color: #6fce03;
+
       border-bottom: 0.4rem solid #58a700;
       border-radius: 15px;
 
@@ -77,6 +81,13 @@
         color: rgb(110, 110, 110);
         border-color: #dadada;
       }
+    }
+
+    .containerErrorMessage {
+      width: 80%;
+      margin: 0 auto;
+
+      user-select: none;
     }
   }
 

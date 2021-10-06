@@ -71,6 +71,9 @@ function Lesson({
 
   const getNextLessonHandler = (event: any) => {
     event.preventDefault();
+    setSelectedWord("");
+    setMessageConfirm("");
+    setCountQuestion(countQuestion + 1);
   };
 
   return (

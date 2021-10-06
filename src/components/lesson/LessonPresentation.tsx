@@ -23,6 +23,8 @@ export default function LessonPresentation({
   messageConfirm,
   onGetNextLessonHandler,
 }: stateProp) {
+  console.log(catalog[countQuestion]);
+
   return (
     <>
       {catalog.length > 0 && (
@@ -39,6 +41,7 @@ export default function LessonPresentation({
 
             <SubmitAnswerAction
               messageConfirm={messageConfirm}
+              correctAnswer={catalog[countQuestion].answer}
               currSelectedWord={currSelectedWord}
               onSubmitCardLessonHandler={onSubmitCardLessonHandler}
               onGetNextLessonHandler={onGetNextLessonHandler}

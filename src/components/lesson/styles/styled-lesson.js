@@ -61,16 +61,37 @@ const FormSubmitCardLesson = styled.form`
     theme.message === ""
       ? "#fff"
       : theme.message === "success"
-      ? "green"
-      : "red"};
+      ? "#8aff055e"
+      : "rgba(241, 19, 19, 0.4)"};
   width: 100%;
   transition: 0.2s height;
 
   border-top: 0.2rem solid #e5e5e5;
 
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+`;
+
+const FinalMessageConfirm = styled.h2`
+  /* position: absolute;
+  top: 10%;
+  left: 10%; */
+  color: ${({ theme }) =>
+    theme.message === "success" ? "#58a700" : "#ea2b2b"};
+
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+`;
+
+const CorrectlyMessageConfirm = styled.span`
+  font-size: 1.6rem;
+  /* font-weight: 600; */
+
+  padding-left: 1rem;
+  color: ${({ theme }) => theme.message === "error" && "#ea2b2b"};
 `;
 
 export {
@@ -80,4 +101,6 @@ export {
   SubTitleSearchWord,
   DescriptionCardSelect,
   FormSubmitCardLesson,
+  FinalMessageConfirm,
+  CorrectlyMessageConfirm,
 };
