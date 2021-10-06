@@ -4,6 +4,7 @@ import LearnPresentation from "./LearnPresentation";
 import { initialState, actions } from "./services/optionsReducer";
 import { useCallback } from "react";
 import { setLessonTypeName } from "../../redux/lessonInfo/lessonActions";
+import localforage from "localforage";
 
 interface stateProp {
   onSetLessonNameHandler: (p: string) => void;
@@ -26,6 +27,7 @@ function Learn({ onSetLessonNameHandler }: stateProp) {
   const setLessonNameHandler = useCallback(
     (event: any) => {
       onSetLessonNameHandler(event.target.dataset.source);
+      localforage.setItem("currLesson", event.target.dataset.source);
     },
     [onSetLessonNameHandler]
   );

@@ -5,7 +5,7 @@
   height: 100vh;
   background-color: #fff;
 
-  position: absolute;
+  position: relative;
 
   top: 0;
   left: 0;
@@ -18,6 +18,7 @@
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     .js-link__returnLearn {
       @include resetDefaultInputStyles;
@@ -28,5 +29,67 @@
         color: #1cb0f6;
       }
     }
+
+    .wrapperProgressBar {
+      width: 75%;
+      height: 2.5rem;
+
+      border-radius: 25px;
+
+      background-color: rgb(226, 226, 226);
+      position: relative;
+      .progressBar {
+        position: absolute;
+        left: 0;
+        border-radius: 25px;
+
+        height: 2.5rem;
+        background-color: rgb(102, 204, 0);
+        width: 0%;
+      }
+    }
+  }
+
+  .wrapperSubmitAnswer {
+    button {
+      @include resetDefaultInputStyles;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+
+      font-size: 2rem;
+      width: 80%;
+      color: #fff;
+
+      background-color: #6fce03;
+      border-bottom: 0.4rem solid #58a700;
+      border-radius: 15px;
+
+      text-transform: uppercase;
+
+      &:disabled {
+        cursor: default;
+        background-color: #e5e5e5;
+        color: rgb(110, 110, 110);
+        border-color: #dadada;
+      }
+    }
+  }
+
+  .activeWrapperSubmitAnswer {
+    height: 14rem;
+    background-color: red;
+  }
+}
+
+.wrapperCardLessonTypeA {
+  img {
+    display: block;
+    width: 80%;
+    margin: 1rem auto 0.5rem auto;
   }
 }

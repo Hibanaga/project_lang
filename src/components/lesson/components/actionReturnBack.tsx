@@ -9,6 +9,10 @@ export default function actionReturnBack() {
       <NavLink to={learn} className="js-link__returnLearn">
         <CloseRoundedIcon />
       </NavLink>
+
+      <div className="wrapperProgressBar">
+        <div className="progressBar"></div>
+      </div>
     </Wrapper>
   );
 }
