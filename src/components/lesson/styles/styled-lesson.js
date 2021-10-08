@@ -20,13 +20,14 @@ const BubbleMessageBox = styled.div`
   border: 0.3rem solid #1cb0f6;
   border-radius: 0.4em;
   margin-left: 1rem;
+  border-radius: 15px;
   /* width: 15rem; */
 
   &::after {
     content: "";
     position: absolute;
     left: 0;
-    top: 40%;
+    top: 50%;
     width: 0;
     height: 0;
     border: 18px solid transparent;

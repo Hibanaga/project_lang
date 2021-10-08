@@ -6,6 +6,8 @@ import {
   BubbleMessageBox,
 } from "../styles/styled-lesson";
 import objExported from "../images/familyPack/familyImagesExporter";
+import { useState } from "react";
+import { replaceStarsHelper } from "../utils/validateLessonExamples";
 
 interface stateProp {
   content: {
@@ -25,8 +27,15 @@ interface cardProp {
   answer: string;
 }
 
-export default function questionTypeB({ content, countCurrID }: stateProp) {
+export default function QuestionTypeB({ content, countCurrID }: stateProp) {
   console.log(content);
+
+  const [searchWord, setSearchWord] = useState(
+    replaceStarsHelper(content.startQuestion).split("")
+  );
+
+  console.log(searchWord);
+
   const imgObjRandom = Object.values(objExported).reverse()[countCurrID];
   return (
     <div>
@@ -36,7 +45,7 @@ export default function questionTypeB({ content, countCurrID }: stateProp) {
         <img src={imgObjRandom} alt="" />
 
         <BubbleMessageBox className="bubbleMessageBox">
-          <SubTitleSearchWord>{content.startQuestion}</SubTitleSearchWord>
+          <SubTitleSearchWord>{searchWord}</SubTitleSearchWord>
         </BubbleMessageBox>
       </MessageBoxContainer>
     </div>
