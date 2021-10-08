@@ -1,6 +1,8 @@
 import { Wrapper } from "../../styles/styled-comp";
 import ActionReturnBack from "./components/actionReturnBack";
 import QuestionTypeA from "./components/questionTypeA";
+import QuestionTypeB from "./components/questionTypeB";
+
 import SubmitAnswerAction from "./components/submitAnswerAction";
 import "./styles/lesson.scss";
 
@@ -36,6 +38,14 @@ export default function LessonPresentation({
                 onSelectCardHandler={onSelectCardHandler}
                 currSelectedWord={currSelectedWord}
                 content={catalog[countQuestion]}
+                countCurrID={countQuestion}
+              />
+            )}
+
+            {catalog[countQuestion].type === "B" && (
+              <QuestionTypeB
+                countCurrID={countQuestion}
+                content={catalog[countQuestion]}
               />
             )}
 
@@ -52,10 +62,3 @@ export default function LessonPresentation({
     </>
   );
 }
-
-// {catalog.length > 0 && (
-//   <div className="containerPresentationCard">
-//     <ActionReturnBack />
-//     <Wrapper>{catalog[0].type === "A" && <QuestionTypeA />}</Wrapper>
-//   </div>
-// )}

@@ -5,20 +5,19 @@ import {
   MessageBoxContainer,
   BubbleMessageBox,
 } from "../styles/styled-lesson";
-import CardSelectTypeA from "./cardSelectTypeA";
 import objExported from "../images/familyPack/familyImagesExporter";
 
 interface stateProp {
   content: {
     type: string;
     typeQuestion: string;
-    questionDefaultLang: string;
+    startQuestion: string;
     answer: string;
     varianAnswer: cardProp[];
   };
-  onSelectCardHandler: (p: any) => void;
   countCurrID: number;
-  currSelectedWord: string;
+  // onSelectCardHandler: (p: any) => void;
+  // currSelectedWord: string;
 }
 
 interface cardProp {
@@ -26,12 +25,8 @@ interface cardProp {
   answer: string;
 }
 
-export default function questionTypeA({
-  content,
-  onSelectCardHandler,
-  currSelectedWord,
-  countCurrID,
-}: stateProp) {
+export default function questionTypeB({ content, countCurrID }: stateProp) {
+  console.log(content);
   const imgObjRandom = Object.values(objExported).reverse()[countCurrID];
   return (
     <div>
@@ -41,21 +36,9 @@ export default function questionTypeA({
         <img src={imgObjRandom} alt="" />
 
         <BubbleMessageBox className="bubbleMessageBox">
-          <SubTitleSearchWord>{content.questionDefaultLang}</SubTitleSearchWord>
+          <SubTitleSearchWord>{content.startQuestion}</SubTitleSearchWord>
         </BubbleMessageBox>
       </MessageBoxContainer>
-
-      <WrapperCardSelect>
-        {content.varianAnswer.map(({ id, answer }: cardProp) => (
-          <CardSelectTypeA
-            key={id}
-            answer={answer}
-            currSelectedWord={currSelectedWord}
-            imgIcon={objExported[answer]}
-            onSelectCardHandler={onSelectCardHandler}
-          />
-        ))}
-      </WrapperCardSelect>
     </div>
   );
 }

@@ -5,6 +5,38 @@ const TitleQuestion = styled.h1`
   margin-top: 1rem;
 `;
 
+const MessageBoxContainer = styled.div`
+  display: flex;
+
+  align-items: center;
+
+  /* margin-bottom: 1.5rem; */
+  margin: 2rem auto;
+`;
+
+const BubbleMessageBox = styled.div`
+  position: relative;
+  background: #fff;
+  border: 0.3rem solid #1cb0f6;
+  border-radius: 0.4em;
+  margin-left: 1rem;
+  /* width: 15rem; */
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 0;
+    height: 0;
+    border: 18px solid transparent;
+    border-right-color: #1cb0f6;
+    border-left: 0;
+    margin-top: -18px;
+    margin-left: -18px;
+  }
+`;
+
 const SubTitleSearchWord = styled.h2`
   text-align: center;
   font-size: 2rem;
@@ -61,10 +93,10 @@ const FormSubmitCardLesson = styled.form`
     theme.message === ""
       ? "#fff"
       : theme.message === "success"
-      ? "#8aff055e"
-      : "rgba(241, 19, 19, 0.4)"};
+      ? "#d4ffa2"
+      : "#f9a0a0"};
   width: 100%;
-  transition: 0.2s height;
+  transition: 0.5s;
 
   border-top: 0.2rem solid #e5e5e5;
 
@@ -103,4 +135,6 @@ export {
   FormSubmitCardLesson,
   FinalMessageConfirm,
   CorrectlyMessageConfirm,
+  MessageBoxContainer,
+  BubbleMessageBox,
 };

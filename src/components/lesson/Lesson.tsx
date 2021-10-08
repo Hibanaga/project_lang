@@ -53,14 +53,15 @@ function Lesson({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [uploadContentLessonHandler, uploadContentLessonName]);
 
+  //
   const selectCardHandler = useCallback(
     (event: any) => setSelectedWord(event.currentTarget.dataset.source),
     []
   );
 
+  //
   const submitCardLessonHandler = (event: any) => {
     event.preventDefault();
-
     // console.log(catalog[countQuestion]);
     if (currSelectedWord === catalog[countQuestion].answer) {
       setMessageConfirm("success");
@@ -69,6 +70,7 @@ function Lesson({
     }
   };
 
+  //
   const getNextLessonHandler = (event: any) => {
     event.preventDefault();
     setSelectedWord("");
