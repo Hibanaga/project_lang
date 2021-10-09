@@ -5,6 +5,7 @@ import {
 } from "../styles/styled-lesson";
 import random from "lodash.sample";
 import messageCongratulations from "../services/messageCongratulations.json";
+import { isAvailableQuestion } from "../utils/validateLessonExamples";
 
 interface stateProp {
   onSubmitCardLessonHandler: (p: any) => void;
@@ -12,6 +13,8 @@ interface stateProp {
   messageConfirm: string;
   currSelectedWord: string;
   correctAnswer: string;
+  arrWordMessage: any;
+  currentTypeQuestion: string;
 }
 
 export default function submitAnswerAction({
@@ -20,9 +23,9 @@ export default function submitAnswerAction({
   messageConfirm,
   currSelectedWord,
   correctAnswer,
+  arrWordMessage,
+  currentTypeQuestion,
 }: stateProp) {
-  // const randItem = ;
-
   return (
     <FormSubmitCardLesson
       className="wrapperSubmitAnswer"
@@ -67,7 +70,16 @@ export default function submitAnswerAction({
         </div>
       )}
 
-      <button type="submit" disabled={currSelectedWord === "" ? true : false}>
+      <button
+        type="submit"
+        disabled={
+          isAvailableQuestion(currSelectedWord, arrWordMessage, {
+            type: currentTypeQuestion,
+          })
+            ? true
+            : false
+        }
+      >
         {messageConfirm === "" ? "Проверить" : "Далее"}{" "}
       </button>
     </FormSubmitCardLesson>

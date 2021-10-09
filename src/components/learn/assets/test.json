@@ -15,7 +15,7 @@
         },
         {
           "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
-          "answer": "Uncle"
+          "answer": "Grandfather"
         },
         {
           "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
@@ -26,40 +26,40 @@
     },
     {
       "type": "B",
-      "typeQuestion": "Вставьте пропущенные буквы",
-      "startQuestion": "m**",
+      "typeQuestion": "Введите перевод на",
+      "startQuestion": "My mother's name is Alexandra",
       "varianAnswer": [
         {
           "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "m"
+          "answer": "Мою"
         },
         {
-          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "g"
+          "id": "3947cfb5-b7bf-4b8f-8886-9a6898c94e34",
+          "answer": "брат"
         },
         {
-          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "d"
+          "id": "f0262f68-ae5b-4718-91b5-8fb7950ac6b6",
+          "answer": "зовут"
         },
         {
-          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "m"
+          "id": "fb3f50b3-f284-43d6-9676-c72d86000327",
+          "answer": "Александра"
         },
         {
-          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "o"
+          "id": "323b01ba-31a8-4ab4-b9d9-3582237d5728",
+          "answer": "фамилия"
         },
         {
-          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "n"
+          "id": "d133fa86-9d95-4a0e-af18-c44c4443f448",
+          "answer": "мать"
         }
       ],
-      "answer": "mom"
+      "answer": "Мою мать зовут Александра"
     },
     {
       "type": "A",
       "typeQuestion": "Введите перевод на английский",
-      "questionDefaultLang": "Двоюродный брат",
+      "questionDefaultLang": "Двоюродная сестра",
       "varianAnswer": [
         {
           "id": "a432f889-3d78-4103-9454-98cecb86be43",
@@ -71,7 +71,7 @@
         },
         {
           "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
-          "answer": "Uncle"
+          "answer": "Father"
         }
       ],
       "answer": "Cousin"
@@ -79,40 +79,44 @@
     {
       "type": "B",
       "typeQuestion": "Вставьте пропущенные слова",
-      "startQuestion": "Bro***r",
+      "startQuestion": "My father is 42 years old",
       "varianAnswer": [
         {
           "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "n"
+          "answer": "Моему"
         },
         {
-          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "v"
+          "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
+          "answer": "брату"
         },
         {
-          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "w"
+          "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
+          "answer": "сестре"
         },
         {
-          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "h"
+          "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
+          "answer": "отцу"
         },
         {
-          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "t"
+          "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
+          "answer": "42"
         },
         {
-          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "r"
+          "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
+          "answer": "32"
+        },
+        {
+          "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
+          "answer": "года"
         }
       ],
-      "answer": "Broth­er"
+      "answer": "Моему отцу 42 года"
     },
     {
       "type": "C",
       "typeQuestion": "Напишите перевод на английский",
-      "startQuestion": "Дочь",
-      "answer": "Daugh­ter"
+      "startQuestion": "Мой брат студент",
+      "answer": "My brother is a student"
     }
   ]
 }

@@ -4,10 +4,12 @@ import {
   SubTitleSearchWord,
   MessageBoxContainer,
   BubbleMessageBox,
+  ContainerTextBox,
+  ContainterLineTextBox,
+  CardSelectWord,
 } from "../styles/styled-lesson";
 import objExported from "../images/familyPack/familyImagesExporter";
-import { useState } from "react";
-import { replaceStarsHelper } from "../utils/validateLessonExamples";
+import { disablesUsedWord } from "../utils/validateLessonExamples";
 
 interface stateProp {
   content: {
@@ -18,6 +20,9 @@ interface stateProp {
     varianAnswer: cardProp[];
   };
   countCurrID: number;
+  arrWordMessage: any;
+  onAddWordToMessageBoxHandler: (p: any) => void;
+  onRemoveWordFromMessageBoxHandler: (p: any) => void;
   // onSelectCardHandler: (p: any) => void;
   // currSelectedWord: string;
 }
@@ -27,15 +32,13 @@ interface cardProp {
   answer: string;
 }
 
-export default function QuestionTypeB({ content, countCurrID }: stateProp) {
-  console.log(content);
-
-  const [searchWord, setSearchWord] = useState(
-    replaceStarsHelper(content.startQuestion).split("")
-  );
-
-  console.log(searchWord);
-
+export default function questionTypeB({
+  content,
+  countCurrID,
+  arrWordMessage,
+  onAddWordToMessageBoxHandler,
+  onRemoveWordFromMessageBoxHandler,
+}: stateProp) {
   const imgObjRandom = Object.values(objExported).reverse()[countCurrID];
   return (
     <div>
@@ -45,9 +48,40 @@ export default function QuestionTypeB({ content, countCurrID }: stateProp) {
         <img src={imgObjRandom} alt="" />
 
         <BubbleMessageBox className="bubbleMessageBox">
-          <SubTitleSearchWord>{searchWord}</SubTitleSearchWord>
+          <SubTitleSearchWord>{content.startQuestion}</SubTitleSearchWord>
         </BubbleMessageBox>
       </MessageBoxContainer>
+
+      <ContainerTextBox>
+        <ContainterLineTextBox></ContainterLineTextBox>
+        <ContainterLineTextBox></ContainterLineTextBox>
+        <ContainterLineTextBox className="last_item"></ContainterLineTextBox>
+
+        <WrapperCardSelect>
+          {arrWordMessage.map(
+            ({ id, value }: { id: string; value: string }) => (
+              <CardSelectWord
+                onClick={onRemoveWordFromMessageBoxHandler}
+                key={id}
+              >
+                {value}
+              </CardSelectWord>
+            )
+          )}
+        </WrapperCardSelect>
+      </ContainerTextBox>
+
+      <WrapperCardSelect theme={{ type: content.type }}>
+        {content.varianAnswer.map(({ id, answer }: cardProp) => (
+          <CardSelectWord
+            disabled={disablesUsedWord(answer, arrWordMessage) ? true : false}
+            key={id}
+            onClick={onAddWordToMessageBoxHandler}
+          >
+            {answer}
+          </CardSelectWord>
+        ))}
+      </WrapperCardSelect>
     </div>
   );
 }

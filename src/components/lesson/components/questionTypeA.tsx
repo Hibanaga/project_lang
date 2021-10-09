@@ -33,6 +33,8 @@ export default function questionTypeA({
   countCurrID,
 }: stateProp) {
   const imgObjRandom = Object.values(objExported).reverse()[countCurrID];
+
+  console.log(content);
   return (
     <div>
       <TitleQuestion>{content.typeQuestion}</TitleQuestion>
@@ -45,7 +47,7 @@ export default function questionTypeA({
         </BubbleMessageBox>
       </MessageBoxContainer>
 
-      <WrapperCardSelect>
+      <WrapperCardSelect theme={{ type: content.type }}>
         {content.varianAnswer.map(({ id, answer }: cardProp) => (
           <CardSelectTypeA
             key={id}

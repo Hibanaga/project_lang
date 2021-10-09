@@ -47,7 +47,8 @@ const SubTitleSearchWord = styled.h2`
 const WrapperCardSelect = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: ${({ theme }) =>
+    theme.type === "A" ? "space-evenly" : "inherit"};
 `;
 
 const CardSelect = styled.div`
@@ -72,6 +73,29 @@ const CardSelect = styled.div`
     border-color: #1899d6;
     background-color: #02afff44;
     /* border: 0.2rem solid #1899d6; */
+  }
+`;
+
+const CardSelectWord = styled.button`
+  padding: 0.5rem 1rem;
+
+  background-color: transparent;
+  border: 0.2rem solid #e5e5e5;
+  color: #4b4b4b;
+
+  border-right-width: 0.4rem;
+  border-bottom-width: 0.4rem;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 7px;
+  font-weight: 600;
+  display: block;
+
+  cursor: pointer;
+
+  &:disabled {
+    background-color: #e5e5e5;
+    color: #e5e5e5;
   }
 `;
 
@@ -127,6 +151,34 @@ const CorrectlyMessageConfirm = styled.span`
   color: ${({ theme }) => theme.message === "error" && "#ea2b2b"};
 `;
 
+const ContainerTextBox = styled.div`
+  height: 15rem;
+  /* border: 1px solid #333; */
+
+  position: relative;
+`;
+
+const ContainterLineTextBox = styled.span`
+  border-radius: 7px;
+  width: 100%;
+  display: block;
+  position: absolute;
+
+  top: 57%;
+  border-bottom: 0.2rem solid #e5e5e5;
+
+  &:first-child {
+    top: 27%;
+    border-bottom: 0.2rem solid #e5e5e5;
+  }
+
+  &.last_item {
+    top: 87%;
+    background-color: #333;
+    border-bottom: 0.2rem solid #e5e5e5;
+  }
+`;
+
 export {
   TitleQuestion,
   CardSelect,
@@ -138,4 +190,7 @@ export {
   CorrectlyMessageConfirm,
   MessageBoxContainer,
   BubbleMessageBox,
+  ContainerTextBox,
+  ContainterLineTextBox,
+  CardSelectWord,
 };

@@ -18,7 +18,7 @@ const objExported: Dict = {
   Dauther: DautherIMG,
   Baby: BabyIMG,
   Boy: BoyIMG,
-  Girl: GirlIMG,
+  Cousin: GirlIMG,
   Son: SonIMG,
 };
 
