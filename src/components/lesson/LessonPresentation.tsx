@@ -44,52 +44,60 @@ export default function LessonPresentation({
   // console.log(countQuestion);
 
   // console.log(catalog[countQuestion].type);
+  console.log(catalog[countQuestion]);
   return (
     <>
       {catalog.length > 0 && (
         <div className="containerPresentationCard">
-          <ActionReturnBack />
+          <ActionReturnBack
+            countQuestion={countQuestion}
+            catalogLength={catalog.length}
+          />
           <Wrapper>
-            {catalog[countQuestion].type === "A" && (
-              <QuestionTypeA
-                onSelectCardHandler={onSelectCardHandler}
-                currSelectedWord={currSelectedWord}
-                content={catalog[countQuestion]}
-                countCurrID={countQuestion}
-              />
-            )}
+            {catalog[countQuestion] !== undefined && (
+              <>
+                {catalog[countQuestion].type === "A" && (
+                  <QuestionTypeA
+                    onSelectCardHandler={onSelectCardHandler}
+                    currSelectedWord={currSelectedWord}
+                    content={catalog[countQuestion]}
+                    countCurrID={countQuestion}
+                  />
+                )}
 
-            {catalog[countQuestion].type === "B" && (
-              <QuestionTypeB
-                countCurrID={countQuestion}
-                content={catalog[countQuestion]}
-                arrWordMessage={arrWordMessage}
-                onAddWordToMessageBoxHandler={onAddWordToMessageBoxHandler}
-                onRemoveWordFromMessageBoxHandler={
-                  onRemoveWordFromMessageBoxHandler
-                }
-              />
-            )}
+                {catalog[countQuestion].type === "B" && (
+                  <QuestionTypeB
+                    countCurrID={countQuestion}
+                    content={catalog[countQuestion]}
+                    arrWordMessage={arrWordMessage}
+                    onAddWordToMessageBoxHandler={onAddWordToMessageBoxHandler}
+                    onRemoveWordFromMessageBoxHandler={
+                      onRemoveWordFromMessageBoxHandler
+                    }
+                  />
+                )}
 
-            {catalog[countQuestion].type === "C" && (
-              <QuestionTypeC
-                countCurrID={countQuestion}
-                content={catalog[countQuestion]}
-                typedText={typedText}
-                onChangeTextAreaHandler={onChangeTextAreaHandler}
-              />
-            )}
+                {catalog[countQuestion].type === "C" && (
+                  <QuestionTypeC
+                    countCurrID={countQuestion}
+                    content={catalog[countQuestion]}
+                    typedText={typedText}
+                    onChangeTextAreaHandler={onChangeTextAreaHandler}
+                  />
+                )}
 
-            <SubmitAnswerAction
-              messageConfirm={messageConfirm}
-              correctAnswer={catalog[countQuestion].answer}
-              currentTypeQuestion={catalog[countQuestion].type}
-              currSelectedWord={currSelectedWord}
-              onSubmitCardLessonHandler={onSubmitCardLessonHandler}
-              onGetNextLessonHandler={onGetNextLessonHandler}
-              arrWordMessage={arrWordMessage}
-              typedText={typedText}
-            />
+                <SubmitAnswerAction
+                  messageConfirm={messageConfirm}
+                  correctAnswer={catalog[countQuestion].answer}
+                  currentTypeQuestion={catalog[countQuestion].type}
+                  currSelectedWord={currSelectedWord}
+                  onSubmitCardLessonHandler={onSubmitCardLessonHandler}
+                  onGetNextLessonHandler={onGetNextLessonHandler}
+                  arrWordMessage={arrWordMessage}
+                  typedText={typedText}
+                />
+              </>
+            )}
           </Wrapper>
         </div>
       )}

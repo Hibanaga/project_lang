@@ -190,6 +190,29 @@ const TextAreaForm = styled.textarea`
   font-size: 15px;
 `;
 
+const ProgressBar = styled.div`
+  border-radius: 25px;
+  transition: 0.3s;
+
+  height: 2.5rem;
+  background-color: rgb(102, 204, 0);
+  width: ${({ theme }) => `${theme.currWidth}%`};
+`;
+
+const ProgressInlineBar = styled.div`
+  position: absolute;
+  left: 8%;
+  transition: 0.3s;
+
+  bottom: 30%;
+
+  height: 0.5rem;
+  border-radius: 5px;
+
+  width: ${({ theme }) => `${theme.currWidth - 20}%`};
+  background-color: rgba(127, 250, 4, 0.5);
+`;
+
 export {
   TitleQuestion,
   CardSelect,
@@ -205,4 +228,6 @@ export {
   ContainterLineTextBox,
   CardSelectWord,
   TextAreaForm,
+  ProgressBar,
+  ProgressInlineBar,
 };

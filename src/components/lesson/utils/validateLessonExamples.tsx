@@ -72,9 +72,18 @@ function replacedAllUnusedLocals(str: string): string {
   return str.match(pattern) ? str.replaceAll(pattern, "") : str;
 }
 
+function detectCurrWidthProgressBar(
+  currQuestion: number,
+  allQuestion: number
+): string {
+  const result = (currQuestion / allQuestion) * 100;
+  return result.toFixed(2);
+}
+
 export {
   disablesUsedWord,
   isAvailableQuestion,
   isCompletedQuestion,
   replacedAllUnusedLocals,
+  detectCurrWidthProgressBar,
 };

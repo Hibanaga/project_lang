@@ -71,17 +71,17 @@ function Lesson({
   }, [uploadContentLessonHandler, uploadContentLessonName]);
 
   //redirect after count of question is equal lesson length;
-  useEffect(() => {
-    if (countQuestion === catalog.length) {
-      timer.current = setTimeout(() => {
-        console.log("aaaaa");
+  // useEffect(() => {
+  //   if (countQuestion === catalog.length) {
+  //     timer.current = setTimeout(() => {
+  //       console.log("aaaaa");
 
-        // history.push(learn);
-      }, 3000);
-    }
+  //       history.push(learn);
+  //     }, 3000);
+  //   }
 
-    return () => clearTimeout(timer.current);
-  }, [catalog.length, countQuestion, history]);
+  //   return () => clearTimeout(timer.current);
+  // }, [catalog.length, countQuestion, history]);
 
   // select word from type A
   const selectCardHandler = useCallback(
