@@ -179,6 +179,17 @@ const ContainterLineTextBox = styled.span`
   }
 `;
 
+const TextAreaForm = styled.textarea`
+  width: 100%;
+  height: 20rem;
+
+  resize: none;
+  border-radius: 10px;
+
+  padding: 1rem;
+  font-size: 15px;
+`;
+
 export {
   TitleQuestion,
   CardSelect,
@@ -193,4 +204,5 @@ export {
   ContainerTextBox,
   ContainterLineTextBox,
   CardSelectWord,
+  TextAreaForm,
 };

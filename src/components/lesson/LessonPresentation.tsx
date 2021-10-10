@@ -21,6 +21,8 @@ interface stateProp {
   arrWordMessage: any;
   onAddWordToMessageBoxHandler: (p: any) => void;
   onRemoveWordFromMessageBoxHandler: (p: any) => void;
+  typedText: string;
+  onChangeTextAreaHandler: (p: any) => void;
 }
 
 export default function LessonPresentation({
@@ -34,8 +36,14 @@ export default function LessonPresentation({
   arrWordMessage,
   onAddWordToMessageBoxHandler,
   onRemoveWordFromMessageBoxHandler,
+  typedText,
+  onChangeTextAreaHandler,
 }: stateProp) {
   // console.log(catalog[countQuestion]);
+  // console.log(catalog.length);
+  // console.log(countQuestion);
+
+  // console.log(catalog[countQuestion].type);
   return (
     <>
       {catalog.length > 0 && (
@@ -67,6 +75,8 @@ export default function LessonPresentation({
               <QuestionTypeC
                 countCurrID={countQuestion}
                 content={catalog[countQuestion]}
+                typedText={typedText}
+                onChangeTextAreaHandler={onChangeTextAreaHandler}
               />
             )}
 
@@ -78,6 +88,7 @@ export default function LessonPresentation({
               onSubmitCardLessonHandler={onSubmitCardLessonHandler}
               onGetNextLessonHandler={onGetNextLessonHandler}
               arrWordMessage={arrWordMessage}
+              typedText={typedText}
             />
           </Wrapper>
         </div>

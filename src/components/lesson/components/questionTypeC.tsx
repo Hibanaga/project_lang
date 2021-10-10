@@ -4,6 +4,8 @@ import {
   MessageBoxContainer,
   BubbleMessageBox,
 } from "../styles/styled-lesson";
+import FormInputTypeC from "./textAreaProvideTextLesson";
+
 import objExported from "../images/familyPack/familyImagesExporter";
 
 interface stateProp {
@@ -14,12 +16,19 @@ interface stateProp {
     answer: string;
   };
   countCurrID: number;
+  typedText: string;
+  onChangeTextAreaHandler: (p: any) => void;
 }
 
-export default function questionTypeC({ content, countCurrID }: stateProp) {
+export default function questionTypeC({
+  content,
+  countCurrID,
+  typedText,
+  onChangeTextAreaHandler,
+}: stateProp) {
   const imgObjRandom = Object.values(objExported).reverse()[countCurrID];
   return (
-    <div>
+    <div className="containerQuestionTypeC">
       <TitleQuestion>{content.typeQuestion}</TitleQuestion>
 
       <MessageBoxContainer className="containerMessageBox">
@@ -29,6 +38,11 @@ export default function questionTypeC({ content, countCurrID }: stateProp) {
           <SubTitleSearchWord>{content.startQuestion}</SubTitleSearchWord>
         </BubbleMessageBox>
       </MessageBoxContainer>
+
+      <FormInputTypeC
+        typedText={typedText}
+        onChangeTextAreaHandler={onChangeTextAreaHandler}
+      />
     </div>
   );
 }

@@ -34,7 +34,7 @@ export default function questionTypeA({
 }: stateProp) {
   const imgObjRandom = Object.values(objExported).reverse()[countCurrID];
 
-  console.log(content);
+  // console.log(content);
   return (
     <div>
       <TitleQuestion>{content.typeQuestion}</TitleQuestion>

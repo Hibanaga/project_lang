@@ -5,6 +5,7 @@ function disablesUsedWord(word: string, arrWord: [id: string, value: any]) {
 function isAvailableQuestion(
   strTypeA: string,
   arrTypeB: [],
+  strTypeC: string,
   options: {
     type: string;
   }
@@ -23,11 +24,18 @@ function isAvailableQuestion(
   } else if (type === "B" && arrTypeB.length === 0) {
     return false;
   }
+
+  if (type === "C" && strTypeC === "") {
+    return true;
+  } else if (type === "C" && strTypeC !== "") {
+    return false;
+  }
 }
 
 function isCompletedQuestion(
   strTypeA: string,
   strTypeB: string,
+  strTypeC: string,
   type: string,
   currentAnswer: string
 ) {
@@ -42,6 +50,31 @@ function isCompletedQuestion(
   } else if (type === "B" && strTypeB !== currentAnswer) {
     return false;
   }
+
+  if (
+    type === "C" &&
+    replacedAllUnusedLocals(strTypeC).toLowerCase().trim() ===
+      replacedAllUnusedLocals(currentAnswer).toLowerCase().trim()
+  ) {
+    return true;
+  } else if (
+    type === "C" &&
+    replacedAllUnusedLocals(strTypeC).toLowerCase() ===
+      replacedAllUnusedLocals(currentAnswer).toLowerCase()
+  ) {
+    return false;
+  }
 }
 
-export { disablesUsedWord, isAvailableQuestion, isCompletedQuestion };
+function replacedAllUnusedLocals(str: string): string {
+  let pattern = /[`,.~#$%^&*()|+\-=;'"< >{}[\]\\/]/gi;
+
+  return str.match(pattern) ? str.replaceAll(pattern, "") : str;
+}
+
+export {
+  disablesUsedWord,
+  isAvailableQuestion,
+  isCompletedQuestion,
+  replacedAllUnusedLocals,
+};

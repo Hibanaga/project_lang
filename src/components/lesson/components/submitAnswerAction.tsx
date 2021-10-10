@@ -15,6 +15,7 @@ interface stateProp {
   correctAnswer: string;
   arrWordMessage: any;
   currentTypeQuestion: string;
+  typedText: string;
 }
 
 export default function submitAnswerAction({
@@ -25,6 +26,7 @@ export default function submitAnswerAction({
   correctAnswer,
   arrWordMessage,
   currentTypeQuestion,
+  typedText,
 }: stateProp) {
   return (
     <FormSubmitCardLesson
@@ -73,7 +75,7 @@ export default function submitAnswerAction({
       <button
         type="submit"
         disabled={
-          isAvailableQuestion(currSelectedWord, arrWordMessage, {
+          isAvailableQuestion(currSelectedWord, arrWordMessage, typedText, {
             type: currentTypeQuestion,
           })
             ? true

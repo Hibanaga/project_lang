@@ -57,6 +57,7 @@
       // left: 10%;
       // bottom: 10%;
       display: block;
+      transition: 0.2s;
 
       cursor: pointer;
       margin: 0 auto;
@@ -113,5 +114,14 @@
   .bubbleMessageBox {
     width: 80%;
     user-select: none;
+  }
+}
+
+.containerQuestionTypeC {
+  textarea {
+    @include resetDefaultInputStyles;
+
+    border: 0.2rem solid #e5e5e5;
+    background-color: #f7f7f7;
   }
 }

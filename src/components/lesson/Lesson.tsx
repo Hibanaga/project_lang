@@ -1,14 +1,17 @@
 import { connect } from "react-redux";
 import LessonPresentation from "./LessonPresentation";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { isCompletedQuestion } from "./utils/validateLessonExamples";
+// import { Redirect } from "react-router-dom";
+import { learn } from "../../router/routes";
 
 import {
   setLessonContent,
   setLessonTypeName,
 } from "../../redux/lessonInfo/lessonActions";
 import localforage from "localforage";
+import { useHistory } from "react-router";
 
 interface stateProp {
   name?: string;
@@ -23,7 +26,10 @@ function Lesson({
   uploadContentLessonHandler,
   uploadContentLessonName,
 }: stateProp) {
+  const history = useHistory();
+
   const [countQuestion, setCountQuestion] = useState(0);
+  const timer: any = useRef(null);
 
   //typeA
   const [currSelectedWord, setSelectedWord] = useState("");
@@ -34,8 +40,7 @@ function Lesson({
     Array<{ id: string; value: string }>
   >([]);
 
-  // console.log(setCountQuestion);
-  // console.log(catalog[countQuestion]);
+  const [typedText, setTypedText] = useState("");
 
   //get current lesson data
   useEffect(() => {
@@ -65,6 +70,19 @@ function Lesson({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [uploadContentLessonHandler, uploadContentLessonName]);
 
+  //redirect after count of question is equal lesson length;
+  useEffect(() => {
+    if (countQuestion === catalog.length) {
+      timer.current = setTimeout(() => {
+        console.log("aaaaa");
+
+        // history.push(learn);
+      }, 3000);
+    }
+
+    return () => clearTimeout(timer.current);
+  }, [catalog.length, countQuestion, history]);
+
   // select word from type A
   const selectCardHandler = useCallback(
     (event: any) => setSelectedWord(event.currentTarget.dataset.source),
@@ -85,6 +103,7 @@ function Lesson({
     isCompletedQuestion(
       currSelectedWord,
       stringWordsTypeB,
+      typedText,
       catalog[countQuestion].type,
       catalog[countQuestion].answer
     )
@@ -98,6 +117,7 @@ function Lesson({
     setSelectedWord("");
     setMessageConfirm("");
     setArrWordMessage([]);
+    setTypedText("");
     setCountQuestion(countQuestion + 1);
   };
 
@@ -127,6 +147,9 @@ function Lesson({
     [arrWordMessage]
   );
 
+  const changeTextAreaHandler = (event: any) =>
+    setTypedText(event.target.value);
+
   return (
     <LessonPresentation
       countQuestion={countQuestion}
@@ -139,6 +162,8 @@ function Lesson({
       arrWordMessage={arrWordMessage}
       onAddWordToMessageBoxHandler={addWordToMessageBoxHandler}
       onRemoveWordFromMessageBoxHandler={removeWordFromMessageBoxHandler}
+      typedText={typedText}
+      onChangeTextAreaHandler={changeTextAreaHandler}
     />
   );
 }
