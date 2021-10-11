@@ -1,23 +1,26 @@
 import { connect } from "react-redux";
 import LessonPresentation from "./LessonPresentation";
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { isCompletedQuestion } from "./utils/validateLessonExamples";
-// import { Redirect } from "react-router-dom";
-import { learn } from "../../router/routes";
 
 import {
   setLessonContent,
   setLessonTypeName,
 } from "../../redux/lessonInfo/lessonActions";
 import localforage from "localforage";
-import { useHistory } from "react-router";
+import { setCountCoin, setCountCrown } from "../../redux/userInfo/userActions";
 
 interface stateProp {
   name?: string;
   catalog?: any;
   uploadContentLessonHandler: (p: any) => void;
   uploadContentLessonName: (p: any) => void;
+  updateCountCoinHandler: (p: any) => void;
+  updateCountCrownHandler: (p: any) => void;
+  coin: number;
+  crown: number;
+  clientID: string;
 }
 
 function Lesson({
@@ -25,11 +28,13 @@ function Lesson({
   catalog,
   uploadContentLessonHandler,
   uploadContentLessonName,
+  updateCountCoinHandler,
+  updateCountCrownHandler,
+  coin,
+  crown,
+  clientID,
 }: stateProp) {
-  const history = useHistory();
-
   const [countQuestion, setCountQuestion] = useState(0);
-  const timer: any = useRef(null);
 
   //typeA
   const [currSelectedWord, setSelectedWord] = useState("");
@@ -40,7 +45,7 @@ function Lesson({
     Array<{ id: string; value: string }>
   >([]);
 
-  const [countScrore, setCountScore] = useState(0);
+  const [countScore, setCountScore] = useState(0);
   const [typedText, setTypedText] = useState("");
 
   //get current lesson data
@@ -71,19 +76,6 @@ function Lesson({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [uploadContentLessonHandler, uploadContentLessonName]);
 
-  //redirect after count of question is equal lesson length;
-  // useEffect(() => {
-  //   if (countQuestion === catalog.length) {
-  //     timer.current = setTimeout(() => {
-  //       console.log("aaaaa");
-
-  //       history.push(learn);
-  //     }, 3000);
-  //   }
-
-  //   return () => clearTimeout(timer.current);
-  // }, [catalog.length, countQuestion, history]);
-
   // select word from type A
   const selectCardHandler = useCallback(
     (event: any) => setSelectedWord(event.currentTarget.dataset.source),
@@ -111,7 +103,7 @@ function Lesson({
       )
     ) {
       setMessageConfirm("success");
-      setCountScore(countScrore + 1);
+      setCountScore(countScore + 1);
     } else {
       setMessageConfirm("error");
     }
@@ -156,6 +148,33 @@ function Lesson({
   const changeTextAreaHandler = (event: any) =>
     setTypedText(event.target.value);
 
+  const submitLessonHandler = (event: any) => {
+    // console.log(countScore);
+    // console.log(Math.ceil(countScore / 2));
+    updateCountCoinHandler(coin + countScore);
+    updateCountCrownHandler(crown + Math.ceil(countScore / 2));
+
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    fetch("/update_markUpCoin", {
+      method: "POST",
+      signal: signal,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        clientID: clientID,
+        coin: coin + countScore,
+        crown: crown + Math.ceil(countScore / 2),
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
   return (
     <LessonPresentation
       countQuestion={countQuestion}
@@ -170,19 +189,25 @@ function Lesson({
       onRemoveWordFromMessageBoxHandler={removeWordFromMessageBoxHandler}
       typedText={typedText}
       onChangeTextAreaHandler={changeTextAreaHandler}
-      countScrore={countScrore}
+      countScore={countScore}
+      onSubmitLessonHandler={submitLessonHandler}
     />
   );
 }
 
-const mapStateToProps = ({ lesson }: any) => ({
+const mapStateToProps = ({ lesson, profile }: any) => ({
   name: lesson.name,
   catalog: lesson.catalog,
+  coin: profile.coin,
+  crown: profile.crown,
+  clientID: profile.clientID,
 });
 
 const mapDispatchToProps = {
   uploadContentLessonHandler: setLessonContent,
   uploadContentLessonName: setLessonTypeName,
+  updateCountCoinHandler: setCountCoin,
+  updateCountCrownHandler: setCountCrown,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Lesson);

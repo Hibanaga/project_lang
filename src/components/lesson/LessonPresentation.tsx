@@ -24,7 +24,8 @@ interface stateProp {
   onRemoveWordFromMessageBoxHandler: (p: any) => void;
   typedText: string;
   onChangeTextAreaHandler: (p: any) => void;
-  countScrore: number;
+  countScore: number;
+  onSubmitLessonHandler: (p: any) => void;
 }
 
 export default function LessonPresentation({
@@ -40,7 +41,8 @@ export default function LessonPresentation({
   onRemoveWordFromMessageBoxHandler,
   typedText,
   onChangeTextAreaHandler,
-  countScrore,
+  countScore,
+  onSubmitLessonHandler,
 }: stateProp) {
   return (
     <>
@@ -99,8 +101,9 @@ export default function LessonPresentation({
             {catalog[countQuestion] === undefined && (
               <>
                 <ResultScrore
-                  countScore={countScrore}
+                  countScore={countScore}
                   catalogLength={catalog.length}
+                  onSubmitLessonHandler={onSubmitLessonHandler}
                 />
               </>
             )}

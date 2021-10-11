@@ -10,10 +10,15 @@ import messageResults from "../services/messageResults.json";
 interface stateProp {
   countScore: number;
   catalogLength: number;
+  onSubmitLessonHandler: (p: any) => void;
 }
 
-export default function resultScrore({ countScore, catalogLength }: stateProp) {
-  console.log(detectCurrWidthProgressBar(countScore, catalogLength));
+export default function resultScrore({
+  countScore,
+  catalogLength,
+  onSubmitLessonHandler,
+}: stateProp) {
+  //   console.log(detectCurrWidthProgressBar(countScore, catalogLength));
   return (
     <div className="containerCountScore">
       <TitleQuestion className="titleResultCountScore">
@@ -48,7 +53,11 @@ export default function resultScrore({ countScore, catalogLength }: stateProp) {
         )}
       </span>
 
-      <NavLink onClick={() => ""} to={learn} className="routeReturnToMain">
+      <NavLink
+        onClick={onSubmitLessonHandler}
+        to={learn}
+        className="routeReturnToMain"
+      >
         Завершить
       </NavLink>
     </div>
