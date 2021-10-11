@@ -3,6 +3,7 @@ import ActionReturnBack from "./components/actionReturnBack";
 import QuestionTypeA from "./components/questionTypeA";
 import QuestionTypeB from "./components/questionTypeB";
 import QuestionTypeC from "./components/questionTypeC";
+import ResultScrore from "./components/resultScrore";
 
 import SubmitAnswerAction from "./components/submitAnswerAction";
 import "./styles/lesson.scss";
@@ -23,6 +24,7 @@ interface stateProp {
   onRemoveWordFromMessageBoxHandler: (p: any) => void;
   typedText: string;
   onChangeTextAreaHandler: (p: any) => void;
+  countScrore: number;
 }
 
 export default function LessonPresentation({
@@ -38,13 +40,8 @@ export default function LessonPresentation({
   onRemoveWordFromMessageBoxHandler,
   typedText,
   onChangeTextAreaHandler,
+  countScrore,
 }: stateProp) {
-  // console.log(catalog[countQuestion]);
-  // console.log(catalog.length);
-  // console.log(countQuestion);
-
-  // console.log(catalog[countQuestion].type);
-  console.log(catalog[countQuestion]);
   return (
     <>
       {catalog.length > 0 && (
@@ -95,6 +92,15 @@ export default function LessonPresentation({
                   onGetNextLessonHandler={onGetNextLessonHandler}
                   arrWordMessage={arrWordMessage}
                   typedText={typedText}
+                />
+              </>
+            )}
+
+            {catalog[countQuestion] === undefined && (
+              <>
+                <ResultScrore
+                  countScore={countScrore}
+                  catalogLength={catalog.length}
                 />
               </>
             )}

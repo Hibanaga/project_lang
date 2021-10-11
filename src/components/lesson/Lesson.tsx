@@ -40,6 +40,7 @@ function Lesson({
     Array<{ id: string; value: string }>
   >([]);
 
+  const [countScrore, setCountScore] = useState(0);
   const [typedText, setTypedText] = useState("");
 
   //get current lesson data
@@ -100,15 +101,20 @@ function Lesson({
       return idx === 0 ? curr.value : prev + " " + curr.value;
     }, "");
 
-    isCompletedQuestion(
-      currSelectedWord,
-      stringWordsTypeB,
-      typedText,
-      catalog[countQuestion].type,
-      catalog[countQuestion].answer
-    )
-      ? setMessageConfirm("success")
-      : setMessageConfirm("error");
+    if (
+      isCompletedQuestion(
+        currSelectedWord,
+        stringWordsTypeB,
+        typedText,
+        catalog[countQuestion].type,
+        catalog[countQuestion].answer
+      )
+    ) {
+      setMessageConfirm("success");
+      setCountScore(countScrore + 1);
+    } else {
+      setMessageConfirm("error");
+    }
   };
 
   // upload next question from type A
@@ -164,6 +170,7 @@ function Lesson({
       onRemoveWordFromMessageBoxHandler={removeWordFromMessageBoxHandler}
       typedText={typedText}
       onChangeTextAreaHandler={changeTextAreaHandler}
+      countScrore={countScrore}
     />
   );
 }

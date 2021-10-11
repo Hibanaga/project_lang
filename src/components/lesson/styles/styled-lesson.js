@@ -213,6 +213,10 @@ const ProgressInlineBar = styled.div`
   background-color: rgba(127, 250, 4, 0.5);
 `;
 
+const CountScore = styled.span`
+  color: rgb(102, 204, 0);
+`;
+
 export {
   TitleQuestion,
   CardSelect,
@@ -230,4 +234,5 @@ export {
   TextAreaForm,
   ProgressBar,
   ProgressInlineBar,
+  CountScore,
 };

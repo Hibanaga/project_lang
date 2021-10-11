@@ -80,10 +80,19 @@ function detectCurrWidthProgressBar(
   return result.toFixed(2);
 }
 
+function getResultsMessages(percentage: string, messages: any): any {
+  for (let el in messages) {
+    if (messages[el].count <= Number(percentage)) {
+      return messages[el].message;
+    }
+  }
+}
+
 export {
   disablesUsedWord,
   isAvailableQuestion,
   isCompletedQuestion,
   replacedAllUnusedLocals,
   detectCurrWidthProgressBar,
+  getResultsMessages,
 };

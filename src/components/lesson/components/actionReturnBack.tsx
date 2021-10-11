@@ -12,7 +12,7 @@ interface stateProp {
 }
 
 function actionReturnBack({ countQuestion, catalogLength }: stateProp) {
-  console.log(detectCurrWidthProgressBar(countQuestion, catalogLength));
+  // console.log(detectCurrWidthProgressBar(countQuestion, catalogLength));
 
   return (
     <Wrapper className="wrapperActionsRouter">
