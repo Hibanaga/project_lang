@@ -4,22 +4,22 @@
     "catalogTitles": [
       {
         "id": "7a76e325-761b-4955-8431-27fc55ad27b0",
-        "title": "Семья",
+        "title": "Learn.catalogLesson.titleFamily",
         "description": "family"
       },
       {
         "id": "f28f9370-5c87-4f5a-94a4-c232e17f6eba",
-        "title": "Знакомство",
+        "title": "Learn.catalogLesson.titleMeeting",
         "description": "meeting"
       },
       {
         "id": "3f125c08-8f6c-420c-a19e-57d3222cb8b6",
-        "title": "Вечеринка",
+        "title": "Learn.catalogLesson.titleParty",
         "description": "party"
       },
       {
         "id": "e5cf4a2a-c4b4-49fb-a31c-5d92b45f1c3f",
-        "title": "Ресторан",
+        "title": "Learn.catalogLesson.titleRestaurant",
         "description": "restaurant"
       }
     ]

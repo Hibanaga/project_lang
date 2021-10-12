@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import LessonPresentation from "./LessonPresentation";
-import { useEffect, useState, useCallback } from "react";
+import { memo, useEffect, useState, useCallback } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { isCompletedQuestion } from "./utils/validateLessonExamples";
 
@@ -10,14 +10,17 @@ import {
 } from "../../redux/lessonInfo/lessonActions";
 import localforage from "localforage";
 import { setCountCoin, setCountCrown } from "../../redux/userInfo/userActions";
+import { withTranslation } from "react-i18next";
+// import uniq from "lodash.uniq";
 
 interface stateProp {
-  name?: string;
+  name?: any;
   catalog?: any;
   uploadContentLessonHandler: (p: any) => void;
   uploadContentLessonName: (p: any) => void;
   updateCountCoinHandler: (p: any) => void;
   updateCountCrownHandler: (p: any) => void;
+  t: (p: any) => string;
   coin: number;
   crown: number;
   clientID: string;
@@ -33,6 +36,8 @@ function Lesson({
   coin,
   crown,
   clientID,
+
+  t,
 }: stateProp) {
   const [countQuestion, setCountQuestion] = useState(0);
 
@@ -47,6 +52,25 @@ function Lesson({
 
   const [countScore, setCountScore] = useState(0);
   const [typedText, setTypedText] = useState("");
+  const [progressArr, setProgressArr] = useState<Array<number>>([]);
+
+  //upload progress on new response
+  // useEffect(() => {
+  //   if (name !== undefined) {
+  //     let initialObject = {};
+  //     initialObject[name] = progressArr;
+
+  //     localforage.getItem("currentProgressUser").then((data) => {
+  //       data === null
+  //         ? localforage.setItem("currentProgressUser", initialObject)
+  //         : localforage.getItem("currentProgressUser").then((data: any) => {
+  //             setProgressArr(data[name]);
+  //           });
+  //     });
+  //   }
+
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   //get current lesson data
   useEffect(() => {
@@ -85,7 +109,8 @@ function Lesson({
   // submit type A
   const submitCardLessonHandler = (event: any) => {
     event.preventDefault();
-    // console.log(catalog[countQuestion]);
+
+    let correctAnswer = "";
 
     //type A submit
 
@@ -93,17 +118,22 @@ function Lesson({
       return idx === 0 ? curr.value : prev + " " + curr.value;
     }, "");
 
+    catalog[countQuestion].type === "B"
+      ? (correctAnswer = t(catalog[countQuestion].answer))
+      : (correctAnswer = catalog[countQuestion].answer);
     if (
       isCompletedQuestion(
         currSelectedWord,
         stringWordsTypeB,
         typedText,
         catalog[countQuestion].type,
-        catalog[countQuestion].answer
+        correctAnswer
       )
     ) {
       setMessageConfirm("success");
+
       setCountScore(countScore + 1);
+      setProgressArr([...progressArr, countQuestion]);
     } else {
       setMessageConfirm("error");
     }
@@ -119,7 +149,7 @@ function Lesson({
     setCountQuestion(countQuestion + 1);
   };
 
-  // add word to array in question type B
+  // add word to array in question type B : correct
   const addWordToMessageBoxHandler = useCallback(
     (event: any) => {
       // console.log(event.currentTarget.textContent);
@@ -136,10 +166,11 @@ function Lesson({
     [arrWordMessage]
   );
 
-  //remove selected Element from arr in question type B
+  //remove selected Element from arr in question type B :correct
   const removeWordFromMessageBoxHandler = useCallback(
     (event: any) => {
       let target = event.currentTarget.textContent;
+
       setArrWordMessage(arrWordMessage.filter(({ value }) => value !== target));
     },
     [arrWordMessage]
@@ -149,8 +180,6 @@ function Lesson({
     setTypedText(event.target.value);
 
   const submitLessonHandler = (event: any) => {
-    // console.log(countScore);
-    // console.log(Math.ceil(countScore / 2));
     updateCountCoinHandler(coin + countScore);
     updateCountCrownHandler(crown + Math.ceil(countScore / 2));
 
@@ -168,13 +197,21 @@ function Lesson({
         coin: coin + countScore,
         crown: crown + Math.ceil(countScore / 2),
       }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+    }).then((res) => res.json());
+
+    localforage.removeItem("currLesson");
+
+    // localforage.getItem("currentProgressUser").then((data: any) => {
+    //   localforage.setItem("currentProgressUser", {
+    //     ...data,
+    //     [name]: uniq(progressArr),
+    //   });
+    // });
   };
 
+  const removePathRedirectHandler = () => localforage.removeItem("currLesson");
+
+  // console.log(progressArr);
   return (
     <LessonPresentation
       countQuestion={countQuestion}
@@ -191,6 +228,7 @@ function Lesson({
       onChangeTextAreaHandler={changeTextAreaHandler}
       countScore={countScore}
       onSubmitLessonHandler={submitLessonHandler}
+      onRemovePathRedirectHandler={removePathRedirectHandler}
     />
   );
 }
@@ -210,4 +248,6 @@ const mapDispatchToProps = {
   updateCountCrownHandler: setCountCrown,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Lesson);
+export default withTranslation()(
+  connect(mapStateToProps, mapDispatchToProps)(memo(Lesson))
+);

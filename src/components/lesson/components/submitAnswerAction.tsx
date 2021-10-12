@@ -6,6 +6,7 @@ import {
 import random from "lodash.sample";
 import messageCongratulations from "../services/messageCongratulations.json";
 import { isAvailableQuestion } from "../utils/validateLessonExamples";
+import { withTranslation } from "react-i18next";
 
 interface stateProp {
   onSubmitCardLessonHandler: (p: any) => void;
@@ -16,9 +17,10 @@ interface stateProp {
   arrWordMessage: any;
   currentTypeQuestion: string;
   typedText: string;
+  t: (p: any) => string;
 }
 
-export default function submitAnswerAction({
+function submitAnswerAction({
   onSubmitCardLessonHandler,
   onGetNextLessonHandler,
   messageConfirm,
@@ -27,7 +29,10 @@ export default function submitAnswerAction({
   arrWordMessage,
   currentTypeQuestion,
   typedText,
+  t,
 }: stateProp) {
+  // console.log(correctAnswer);
+
   return (
     <FormSubmitCardLesson
       className="wrapperSubmitAnswer"
@@ -67,7 +72,7 @@ export default function submitAnswerAction({
               message: messageConfirm,
             }}
           >
-            {correctAnswer}
+            {t(correctAnswer)}
           </CorrectlyMessageConfirm>
         </div>
       )}
@@ -87,3 +92,5 @@ export default function submitAnswerAction({
     </FormSubmitCardLesson>
   );
 }
+
+export default withTranslation()(submitAnswerAction);

@@ -7,6 +7,7 @@ import {
 import FormInputTypeC from "./textAreaProvideTextLesson";
 
 import objExported from "../images/familyPack/familyImagesExporter";
+import { withTranslation } from "react-i18next";
 
 interface stateProp {
   content: {
@@ -18,24 +19,26 @@ interface stateProp {
   countCurrID: number;
   typedText: string;
   onChangeTextAreaHandler: (p: any) => void;
+  t: (p: any) => string;
 }
 
-export default function questionTypeC({
+function questionTypeC({
   content,
   countCurrID,
   typedText,
   onChangeTextAreaHandler,
+  t,
 }: stateProp) {
   const imgObjRandom = Object.values(objExported).reverse()[countCurrID];
   return (
     <div className="containerQuestionTypeC">
-      <TitleQuestion>{content.typeQuestion}</TitleQuestion>
+      <TitleQuestion>{t(content.typeQuestion)}</TitleQuestion>
 
       <MessageBoxContainer className="containerMessageBox">
         <img src={imgObjRandom} alt="" />
 
         <BubbleMessageBox className="bubbleMessageBox">
-          <SubTitleSearchWord>{content.startQuestion}</SubTitleSearchWord>
+          <SubTitleSearchWord>{t(content.startQuestion)}</SubTitleSearchWord>
         </BubbleMessageBox>
       </MessageBoxContainer>
 
@@ -46,3 +49,5 @@ export default function questionTypeC({
     </div>
   );
 }
+
+export default withTranslation()(questionTypeC);

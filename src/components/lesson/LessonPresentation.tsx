@@ -26,9 +26,11 @@ interface stateProp {
   onChangeTextAreaHandler: (p: any) => void;
   countScore: number;
   onSubmitLessonHandler: (p: any) => void;
+
+  onRemovePathRedirectHandler: () => void;
 }
 
-export default function LessonPresentation({
+function LessonPresentation({
   catalog,
   onSelectCardHandler,
   currSelectedWord,
@@ -43,12 +45,14 @@ export default function LessonPresentation({
   onChangeTextAreaHandler,
   countScore,
   onSubmitLessonHandler,
+  onRemovePathRedirectHandler,
 }: stateProp) {
   return (
     <>
       {catalog.length > 0 && (
         <div className="containerPresentationCard">
           <ActionReturnBack
+            onRemovePathRedirectHandler={onRemovePathRedirectHandler}
             countQuestion={countQuestion}
             catalogLength={catalog.length}
           />
@@ -113,3 +117,5 @@ export default function LessonPresentation({
     </>
   );
 }
+
+export default LessonPresentation;

@@ -55,5 +55,59 @@
     "placeholderPassword": "Hasło",
     "login": "Zalogować",
     "title": "Nazwa użytkownika może zawierać tylko liczby, litery i niektóre znaki specjalne takie jak !_@"
+  },
+
+  "Learn": {
+    "trainingSection": {
+      "mainTitle": "Zasady"
+    },
+    "catalogLesson": {
+      "titleFamily": "Rodzina",
+      "titleMeeting": "Znajomość",
+      "titleParty": "Impreza",
+      "titleRestaurant": "Restauracja"
+    }
+  },
+
+  "Lesson": {
+    "titleTypes": {
+      "titleTypeA": "Wpisz tłumaczenie na język angielski",
+      "titleTypeB": "Wpisz tłumaczenie na Polski",
+      "titleTypeC": "Napisz tłumaczenie na angielski"
+    },
+    "familyQuestionTranslate": {
+      "typeA": {
+        "question_0": "Ojciec",
+        "question_1": "Kuzynka"
+      },
+      "typeB": {
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "Moja",
+            "answer_1": "imię",
+            "answer_2": "Aleksandra",
+            "answer_3": "na",
+            "answer_4": "ma",
+            "answer_5": "matka"
+          },
+          "correctAnswer": "Moja matka ma na imię Aleksandra"
+        },
+        "question_1": {
+          "variantAnswer": {
+            "answer_0": "Mój",
+            "answer_1": "ojciec",
+            "answer_2": "ma",
+            "answer_3": "dziadek",
+            "answer_4": "42",
+            "answer_5": "32",
+            "answer_6": "lata"
+          },
+          "correctAnswer": "Mój ojciec ma 42 lata"
+        }
+      },
+      "typeC": {
+        "startQuestion": "Mój brat student"
+      }
+    }
   }
 }

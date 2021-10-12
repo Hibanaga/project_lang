@@ -10,6 +10,7 @@ import {
 } from "../styles/styled-lesson";
 import objExported from "../images/familyPack/familyImagesExporter";
 import { disablesUsedWord } from "../utils/validateLessonExamples";
+import { withTranslation } from "react-i18next";
 
 interface stateProp {
   content: {
@@ -25,6 +26,7 @@ interface stateProp {
   onRemoveWordFromMessageBoxHandler: (p: any) => void;
   // onSelectCardHandler: (p: any) => void;
   // currSelectedWord: string;
+  t: (p: any) => string;
 }
 
 interface cardProp {
@@ -32,23 +34,24 @@ interface cardProp {
   answer: string;
 }
 
-export default function questionTypeB({
+function questionTypeB({
   content,
   countCurrID,
   arrWordMessage,
   onAddWordToMessageBoxHandler,
   onRemoveWordFromMessageBoxHandler,
+  t,
 }: stateProp) {
   const imgObjRandom = Object.values(objExported).reverse()[countCurrID];
   return (
     <div>
-      <TitleQuestion>{content.typeQuestion}</TitleQuestion>
+      <TitleQuestion>{t(content.typeQuestion)}</TitleQuestion>
 
       <MessageBoxContainer className="containerMessageBox">
         <img src={imgObjRandom} alt="" />
 
         <BubbleMessageBox className="bubbleMessageBox">
-          <SubTitleSearchWord>{content.startQuestion}</SubTitleSearchWord>
+          <SubTitleSearchWord>{t(content.startQuestion)}</SubTitleSearchWord>
         </BubbleMessageBox>
       </MessageBoxContainer>
 
@@ -74,14 +77,18 @@ export default function questionTypeB({
       <WrapperCardSelect theme={{ type: content.type }}>
         {content.varianAnswer.map(({ id, answer }: cardProp) => (
           <CardSelectWord
-            disabled={disablesUsedWord(answer, arrWordMessage) ? true : false}
+            disabled={
+              disablesUsedWord(t(answer), arrWordMessage) ? true : false
+            }
             key={id}
             onClick={onAddWordToMessageBoxHandler}
           >
-            {answer}
+            {t(answer)}
           </CardSelectWord>
         ))}
       </WrapperCardSelect>
     </div>
   );
 }
+
+export default withTranslation()(questionTypeB);

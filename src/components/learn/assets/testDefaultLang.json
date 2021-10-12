@@ -6,8 +6,8 @@
   "content": [
     {
       "type": "A",
-      "typeQuestion": "Lesson.titleTypes.titleTypeA",
-      "questionDefaultLang": "Lesson.familyQuestionTranslate.typeA.question_0",
+      "typeQuestion": "Введите перевод на английский",
+      "questionDefaultLang": "Отец",
       "varianAnswer": [
         {
           "id": "a432f889-3d78-4103-9454-98cecb86be43",
@@ -26,40 +26,40 @@
     },
     {
       "type": "B",
-      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "typeQuestion": "Введите перевод на",
       "startQuestion": "My mother's name is Alexandra",
       "varianAnswer": [
         {
           "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "Lesson.familyQuestionTranslate.typeB.question_0.variantAnswer.answer_0"
+          "answer": "Мою"
         },
         {
           "id": "3947cfb5-b7bf-4b8f-8886-9a6898c94e34",
-          "answer": "Lesson.familyQuestionTranslate.typeB.question_0.variantAnswer.answer_1"
+          "answer": "брат"
         },
         {
           "id": "f0262f68-ae5b-4718-91b5-8fb7950ac6b6",
-          "answer": "Lesson.familyQuestionTranslate.typeB.question_0.variantAnswer.answer_2"
+          "answer": "зовут"
         },
         {
           "id": "fb3f50b3-f284-43d6-9676-c72d86000327",
-          "answer": "Lesson.familyQuestionTranslate.typeB.question_0.variantAnswer.answer_3"
+          "answer": "Александра"
         },
         {
           "id": "323b01ba-31a8-4ab4-b9d9-3582237d5728",
-          "answer": "Lesson.familyQuestionTranslate.typeB.question_0.variantAnswer.answer_4"
+          "answer": "фамилия"
         },
         {
           "id": "d133fa86-9d95-4a0e-af18-c44c4443f448",
-          "answer": "Lesson.familyQuestionTranslate.typeB.question_0.variantAnswer.answer_5"
+          "answer": "мать"
         }
       ],
-      "answer": "Lesson.familyQuestionTranslate.typeB.question_0.correctAnswer"
+      "answer": "Мою мать зовут Александра"
     },
     {
       "type": "A",
-      "typeQuestion": "Lesson.titleTypes.titleTypeA",
-      "questionDefaultLang": "Lesson.familyQuestionTranslate.typeA.question_1",
+      "typeQuestion": "Введите перевод на английский",
+      "questionDefaultLang": "Двоюродная сестра",
       "varianAnswer": [
         {
           "id": "a432f889-3d78-4103-9454-98cecb86be43",
@@ -78,44 +78,44 @@
     },
     {
       "type": "B",
-      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "typeQuestion": "Вставьте пропущенные слова",
       "startQuestion": "My father is 42 years old",
       "varianAnswer": [
         {
           "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "Lesson.familyQuestionTranslate.typeB.question_1.variantAnswer.answer_0"
+          "answer": "Моему"
         },
         {
           "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
-          "answer": "Lesson.familyQuestionTranslate.typeB.question_1.variantAnswer.answer_1"
+          "answer": "брату"
         },
         {
           "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
-          "answer": "Lesson.familyQuestionTranslate.typeB.question_1.variantAnswer.answer_2"
+          "answer": "сестре"
         },
         {
           "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
-          "answer": "Lesson.familyQuestionTranslate.typeB.question_1.variantAnswer.answer_3"
+          "answer": "отцу"
         },
         {
           "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
-          "answer": "Lesson.familyQuestionTranslate.typeB.question_1.variantAnswer.answer_4"
+          "answer": "42"
         },
         {
           "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
-          "answer": "Lesson.familyQuestionTranslate.typeB.question_1.variantAnswer.answer_5"
+          "answer": "32"
         },
         {
           "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
-          "answer": "Lesson.familyQuestionTranslate.typeB.question_1.variantAnswer.answer_6"
+          "answer": "года"
         }
       ],
-      "answer": "Lesson.familyQuestionTranslate.typeB.question_1.correctAnswer"
+      "answer": "Моему отцу 42 года"
     },
     {
       "type": "C",
-      "typeQuestion": "Lesson.titleTypes.titleTypeC",
-      "startQuestion": "Lesson.familyQuestionTranslate.typeC.startQuestion",
+      "typeQuestion": "Напишите перевод на английский",
+      "startQuestion": "Мой брат студент",
       "answer": "My brother is a student"
     }
   ]

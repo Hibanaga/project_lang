@@ -9,14 +9,23 @@ import { detectCurrWidthProgressBar } from "../utils/validateLessonExamples";
 interface stateProp {
   countQuestion: number;
   catalogLength: number;
+  onRemovePathRedirectHandler: () => void;
 }
 
-function actionReturnBack({ countQuestion, catalogLength }: stateProp) {
+function actionReturnBack({
+  countQuestion,
+  catalogLength,
+  onRemovePathRedirectHandler,
+}: stateProp) {
   // console.log(detectCurrWidthProgressBar(countQuestion, catalogLength));
 
   return (
     <Wrapper className="wrapperActionsRouter">
-      <NavLink to={learn} className="js-link__returnLearn">
+      <NavLink
+        to={learn}
+        onClick={onRemovePathRedirectHandler}
+        className="js-link__returnLearn"
+      >
         <CloseRoundedIcon />
       </NavLink>
 

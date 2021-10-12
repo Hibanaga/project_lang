@@ -1,10 +1,12 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import { connect } from "react-redux";
 import LearnPresentation from "./LearnPresentation";
 import { initialState, actions } from "./services/optionsReducer";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { setLessonTypeName } from "../../redux/lessonInfo/lessonActions";
 import localforage from "localforage";
+import { Redirect } from "react-router";
+import { learn } from "../../router/routes";
 
 interface stateProp {
   onSetLessonNameHandler: (p: string) => void;
@@ -12,6 +14,7 @@ interface stateProp {
 
 function Learn({ onSetLessonNameHandler }: stateProp) {
   const [state, dispatch] = useReducer(actions, initialState);
+  const [pathRedirect, setPathRedirect] = useState("");
 
   const toggleDropDownHandler = useCallback(
     (event) => {
@@ -32,8 +35,24 @@ function Learn({ onSetLessonNameHandler }: stateProp) {
     [onSetLessonNameHandler]
   );
 
+  useEffect(() => {
+    localforage
+      .getItem("currLesson")
+      .then((data: any) =>
+        data !== null ? setPathRedirect(data) : setPathRedirect("")
+      );
+  }, []);
+
   return (
     <>
+      {pathRedirect !== "" && (
+        <Redirect
+          to={{
+            pathname: `${learn}/${pathRedirect}`,
+          }}
+        />
+      )}
+
       <LearnPresentation
         onToggleDropDownHandler={toggleDropDownHandler}
         introduction={state.introduction}

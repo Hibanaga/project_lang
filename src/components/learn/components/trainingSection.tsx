@@ -31,6 +31,7 @@ function TrainingSection({
   onSetLessonNameHandler,
 }: stateProp) {
   const { mainTitle, catalogTitles } = content;
+
   return (
     <>
       <WrapperCard>
@@ -68,7 +69,7 @@ function TrainingSection({
                   pathname: `${learn}/${description}`,
                 }}
               >
-                {idx + 1}. {title}
+                {idx + 1}. {t(title)}
               </ListItemCardLink>
             </ListItemCardContent>
           ))}

@@ -18,21 +18,28 @@ import Profile from "../components/profile/Profile";
 import { connect } from "react-redux";
 import Learn from "../components/learn/Learn";
 import LearnNavPanel from "../components/learn/components/learnNavPanel";
-import { setCountCoin, setCountCrown } from "../redux/userInfo/userActions";
+import {
+  setCountCoin,
+  setCountCrown,
+  setFirstAuth,
+} from "../redux/userInfo/userActions";
 import Lesson from "../components/lesson/Lesson";
 
 interface stateProp {
   profile?: any;
   restoreCoinHandler: (p: number) => void;
   restoreCrownHandler: (p: number) => void;
+  setFirthAuthHandler: (p: boolean) => void;
 }
 
 function Router({
   profile,
   restoreCoinHandler,
   restoreCrownHandler,
+  setFirthAuthHandler,
 }: stateProp) {
   const [isAuth, setAuth] = useState(false);
+
   const location = useLocation();
 
   useEffect(() => {
@@ -66,9 +73,12 @@ function Router({
             .then((data) => {
               restoreCoinHandler(data.coin);
               restoreCrownHandler(data.crown);
+
+              profile.isFirstAuth === false && setFirthAuthHandler(true);
             });
         });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuth, profile.clientID, restoreCoinHandler, restoreCrownHandler]);
 
   return (
@@ -102,6 +112,7 @@ const mapStateToProps = (state: any) => ({
 const mapDispatchToProps = {
   restoreCoinHandler: setCountCoin,
   restoreCrownHandler: setCountCrown,
+  setFirthAuthHandler: setFirstAuth,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Router);
