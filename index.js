@@ -87,22 +87,6 @@ app.post("/log_in", (req, res) => {
   const state = req.body;
   const { email, password } = state;
 
-  // console.log({
-  //   email: email,
-  //   password: password,
-  //   isActive: true,
-  // });
-
-  // nickname: email,
-  // password: password,
-  // isActive: true,
-
-  // db_read(process.env.DB_NAME, "users", {
-  //   nickname: email,
-  // }).then((data) => console.log(data));
-
-  // res.json({ message: "success nickname", clientID: "12345" });
-
   if (searchEmail(email)) {
     db_read(process.env.DB_NAME, "users", {
       email: email,
@@ -149,7 +133,11 @@ app.post("/profileStats", (req, res) => {
   db_read(process.env.DB_NAME, "activeUsers", { clientID: clientID }).then(
     (data) =>
       data !== null
-        ? res.json({ coin: data.coin, crown: data.crown })
+        ? res.json({
+            coin: data.coin,
+            crown: data.crown,
+            progress: data.progress,
+          })
         : res.json({ message: "error" })
   );
 });
@@ -158,11 +146,43 @@ app.post("/get_lesson", (req, res) => {
   const state = req.body;
   const { lesson } = state;
 
-  db_read(process.env.DB_NAME, "introduction_lessons", { title: lesson }).then(
-    (data) => {
-      res.json(data.content);
+  db_read(process.env.DB_NAME, "introduction_lessons", { title: lesson })
+    .then((data) => {
+      data !== null ? res.json(data.content) : res.json({ mesage: "error" });
+    })
+    .catch((err) => res.json({ message: "error" }));
+});
+
+app.post("/update_markUpCoin", (req, res) => {
+  const state = req.body;
+  const { coin, crown, clientID, nameCatalog, updatedProgress } = state;
+
+  // console.log(coin);
+  // console.log(crown);
+  // console.log(clientID);
+  // console.log(nameCatalog);
+  // console.log(updatedProgress);
+
+  db_read(process.env.DB_NAME, "activeUsers", { clientID: clientID }).then(
+    ({ progress }) => {
+      const objToupdateProgress = progress;
+      objToupdateProgress[nameCatalog] = updatedProgress;
+      console.log(objToupdateProgress);
+      // console.log(data.progress);
+      db_update(
+        process.env.DB_NAME,
+        "activeUsers",
+        { clientID: clientID },
+        {
+          coin: coin,
+          crown: crown,
+          progress: objToupdateProgress,
+        }
+      ).catch((err) => console.log(err));
     }
   );
+
+  res.json({ message: "success" });
 });
 
 app.listen(PORT, () => console.log(`server lister on port ${PORT}`));
