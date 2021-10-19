@@ -167,7 +167,7 @@ app.post("/update_markUpCoin", (req, res) => {
     ({ progress }) => {
       const objToupdateProgress = progress;
       objToupdateProgress[nameCatalog] = updatedProgress;
-      console.log(objToupdateProgress);
+      // console.log(objToupdateProgress);
       // console.log(data.progress);
       db_update(
         process.env.DB_NAME,
