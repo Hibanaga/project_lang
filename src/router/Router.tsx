@@ -21,14 +21,31 @@ import LearnNavPanel from "../components/learn/components/learnNavPanel";
 import { setFirstAuth } from "../redux/userInfo/userActions";
 import Lesson from "../components/lesson/Lesson";
 
+import {
+  setCountCoin,
+  setCountCrown,
+  setCurrentProgress,
+} from "../redux/userInfo/userActions";
+
 interface stateProp {
   profile?: any;
   setFirthAuthHandler: (p: boolean) => void;
   nameLesson: string;
   catalog: any;
+
+  restoreCoinHandler: (p: number) => void;
+  restoreCrownHandler: (p: number) => void;
+  restoreCurrentProgressHandler: (p: {}) => void;
 }
 
-function Router({ profile, nameLesson, catalog }: stateProp) {
+function Router({
+  profile,
+  nameLesson,
+  catalog,
+  restoreCoinHandler,
+  restoreCrownHandler,
+  restoreCurrentProgressHandler,
+}: stateProp) {
   const [isAuth, setAuth] = useState(false);
 
   const location = useLocation();
@@ -50,8 +67,23 @@ function Router({ profile, nameLesson, catalog }: stateProp) {
         .then((res) => res.json())
         .then((data) =>
           data.message === "success" ? setAuth(true) : setAuth(false)
-        );
+        )
+        .then(() => {
+          fetch("/profileStats", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ clientID: profile.clientID }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              restoreCoinHandler(data.coin);
+              restoreCrownHandler(data.crown);
+            });
+        });
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuth, profile.clientID]);
 
@@ -89,6 +121,10 @@ const mapStateToProps = (state: any) => ({
 
 const mapDispatchToProps = {
   setFirthAuthHandler: setFirstAuth,
+
+  restoreCoinHandler: setCountCoin,
+  restoreCrownHandler: setCountCrown,
+  restoreCurrentProgressHandler: setCurrentProgress,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Router);

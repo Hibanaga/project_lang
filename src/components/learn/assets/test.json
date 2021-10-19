@@ -1,3 +1,4 @@
+//family
 {
   "_id": {
     "$oid": "6154281121304351647079f7"
@@ -120,3 +121,129 @@
     }
   ]
 }
+
+//meeting
+{
+  "_id": {
+      "$oid": "616e7cddab401d2e6f9c4ae5"
+  },
+  "title": "meeting",
+  "content": [
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "лед",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Ice"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Wine"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Juice"
+        }
+      ],
+      "answer": "Ice"
+    },
+    {
+      "type": "C",
+      "typeQuestion": "Lesson.titleTypes.titleTypeC",
+      "startQuestion": "Кто потратил весь лед",
+      "answer": "Who spent all the ice"
+    },
+    {
+      "type": "B",
+      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "startQuestion": "Martha really enjoyed the party",
+      "varianAnswer": [
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "Марте"
+        },
+        {
+          "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
+          "answer": "Марие"
+        },
+        {
+          "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
+          "answer": "очень"
+        },
+        {
+          "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
+          "answer": "понравилась"
+        },
+        {
+          "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
+          "answer": "вечеринка"
+        },
+        {
+          "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
+          "answer": "не понравилась"
+        },
+        {
+          "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
+          "answer": "любимая"
+        }
+      ],
+      "answer": "Марте очень понравилась вечеринка"
+    },
+    {
+      "type": "B",
+      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "startQuestion": "She really likes you.",
+      "varianAnswer": [
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "Она"
+        },
+        {
+          "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
+          "answer": "Ты"
+        },
+        {
+          "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
+          "answer": "ей"
+        },
+        {
+          "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
+          "answer": "очень"
+        },
+        {
+          "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
+          "answer": "понравился"
+        },
+        {
+          "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
+          "answer": "понравилась"
+        },
+        {
+          "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
+          "answer": "знакомство"
+        }
+      ],
+      "answer": "Ты ей очень понравился."
+    }
+  ]
+}
+
+// {
+//   "_id": {
+//       "$oid": "616d2bef2212cc1e7ec2f713"
+//   },
+//   "clientID": "aa09c79f-daae-42dc-b1ae-326f1d291351",
+//   "coin": {
+//       "$numberInt": "3"
+//   },
+//   "crown": {
+//       "$numberInt": "2"
+//   },
+//   "progress": {
+//       "family": [{
+//           "$numberInt": "0"
+//       }]
+//   }
+// }

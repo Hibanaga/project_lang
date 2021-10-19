@@ -7,12 +7,17 @@ import { setLessonTypeName } from "../../redux/lessonInfo/lessonActions";
 import localforage from "localforage";
 import { Redirect } from "react-router";
 import { learn } from "../../router/routes";
-import { setCountCoin, setCountCrown } from "../../redux/userInfo/userActions";
+import {
+  setCountCoin,
+  setCountCrown,
+  setCurrentProgress,
+} from "../../redux/userInfo/userActions";
 
 interface stateProp {
   onSetLessonNameHandler: (p: string) => void;
   restoreCoinHandler: (p: number) => void;
   restoreCrownHandler: (p: number) => void;
+  restoreCurrentProgressHandler: (p: {}) => void;
   profile?: any;
 }
 
@@ -20,6 +25,7 @@ function Learn({
   onSetLessonNameHandler,
   restoreCoinHandler,
   restoreCrownHandler,
+  restoreCurrentProgressHandler,
   profile,
 }: stateProp) {
   const [state, dispatch] = useReducer(actions, initialState);
@@ -60,9 +66,8 @@ function Learn({
     })
       .then((res) => res.json())
       .then((data) => {
-        restoreCoinHandler(data.coin);
-        restoreCrownHandler(data.crown);
-        // setFirthAuthHandler(true);
+        data.progress !== undefined &&
+          restoreCurrentProgressHandler(data.progress);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -94,6 +99,7 @@ const mapDispatchToProps = {
   onSetLessonNameHandler: setLessonTypeName,
   restoreCoinHandler: setCountCoin,
   restoreCrownHandler: setCountCrown,
+  restoreCurrentProgressHandler: setCurrentProgress,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Learn));

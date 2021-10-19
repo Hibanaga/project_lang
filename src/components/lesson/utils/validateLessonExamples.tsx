@@ -88,6 +88,12 @@ function getResultsMessages(percentage: string, messages: any): any {
   }
 }
 
+function uniqNumbers(arr: any) {
+  return arr.filter(
+    (item: any, pos: any, self: any) => self.indexOf(item) === pos
+  );
+}
+
 export {
   disablesUsedWord,
   isAvailableQuestion,
@@ -95,4 +101,5 @@ export {
   replacedAllUnusedLocals,
   detectCurrWidthProgressBar,
   getResultsMessages,
+  uniqNumbers,
 };

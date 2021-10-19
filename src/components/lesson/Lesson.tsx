@@ -3,7 +3,7 @@ import LessonPresentation from "./LessonPresentation";
 import { memo, useEffect, useState, useCallback } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { isCompletedQuestion } from "./utils/validateLessonExamples";
-
+// uniqNumbers,
 import {
   setLessonContent,
   setLessonTypeName,
@@ -21,6 +21,7 @@ interface stateProp {
   updateCountCoinHandler: (p: any) => void;
   updateCountCrownHandler: (p: any) => void;
   t: (p: any) => string;
+  progress: any;
   coin: number;
   crown: number;
   clientID: string;
@@ -29,6 +30,7 @@ interface stateProp {
 function Lesson({
   name,
   catalog,
+  progress,
   uploadContentLessonHandler,
   uploadContentLessonName,
   updateCountCoinHandler,
@@ -53,24 +55,6 @@ function Lesson({
   const [countScore, setCountScore] = useState(0);
   const [typedText, setTypedText] = useState("");
   const [progressArr, setProgressArr] = useState<Array<number>>([]);
-
-  //upload progress on new response
-  // useEffect(() => {
-  //   if (name !== undefined) {
-  //     let initialObject = {};
-  //     initialObject[name] = progressArr;
-
-  //     localforage.getItem("currentProgressUser").then((data) => {
-  //       data === null
-  //         ? localforage.setItem("currentProgressUser", initialObject)
-  //         : localforage.getItem("currentProgressUser").then((data: any) => {
-  //             setProgressArr(data[name]);
-  //           });
-  //     });
-  //   }
-
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
 
   //get current lesson data
   useEffect(() => {
@@ -132,8 +116,20 @@ function Lesson({
     ) {
       setMessageConfirm("success");
 
-      setCountScore(countScore + 1);
       setProgressArr([...progressArr, countQuestion]);
+
+      // console.log(progress[name]);
+
+      if (progress[name] === undefined) {
+        setCountScore(countScore + 1);
+      }
+
+      if (
+        progress[name] !== undefined &&
+        progress[name].indexOf(countQuestion) === -1
+      ) {
+        setCountScore(countScore + 1);
+      }
     } else {
       setMessageConfirm("error");
     }
@@ -195,23 +191,22 @@ function Lesson({
       body: JSON.stringify({
         clientID: clientID,
         coin: coin + countScore,
+        nameCatalog: name,
+        updatedProgress: progressArr,
         crown: crown + Math.ceil(countScore / 2),
       }),
     }).then((res) => res.json());
 
     localforage.removeItem("currLesson");
-
-    // localforage.getItem("currentProgressUser").then((data: any) => {
-    //   localforage.setItem("currentProgressUser", {
-    //     ...data,
-    //     [name]: uniq(progressArr),
-    //   });
-    // });
   };
 
   const removePathRedirectHandler = () => localforage.removeItem("currLesson");
 
   // console.log(progressArr);
+  // console.log(progress[name]);
+  // console.log(countScore);
+  // console.log(progressArr);
+
   return (
     <LessonPresentation
       countQuestion={countQuestion}
@@ -239,6 +234,7 @@ const mapStateToProps = ({ lesson, profile }: any) => ({
   coin: profile.coin,
   crown: profile.crown,
   clientID: profile.clientID,
+  progress: profile.progress,
 });
 
 const mapDispatchToProps = {

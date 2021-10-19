@@ -3,6 +3,7 @@ import {
   SET_FIRSTAUTH,
   SET_COINCOUNT,
   SET_CROWNCOUNT,
+  SET_PROGRESSINFO,
 } from "./userActionsTypes";
 
 const setAuthClientID = (clientID: any) => ({
@@ -25,4 +26,15 @@ const setCountCrown = (count: number) => ({
   payload: count,
 });
 
-export { setAuthClientID, setFirstAuth, setCountCoin, setCountCrown };
+const setCurrentProgress = (objProgress: any) => ({
+  type: SET_PROGRESSINFO,
+  payload: objProgress,
+});
+
+export {
+  setAuthClientID,
+  setFirstAuth,
+  setCountCoin,
+  setCountCrown,
+  setCurrentProgress,
+};
