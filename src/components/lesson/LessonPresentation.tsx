@@ -3,9 +3,12 @@ import ActionReturnBack from "./components/actionReturnBack";
 import QuestionTypeA from "./components/questionTypeA";
 import QuestionTypeB from "./components/questionTypeB";
 import QuestionTypeC from "./components/questionTypeC";
+
 import ResultScrore from "./components/resultScrore";
+import SuccessfulCompletedLesson from "./components/successfulCompletedLesson";
 
 import SubmitAnswerAction from "./components/submitAnswerAction";
+
 import "./styles/lesson.scss";
 
 interface stateProp {
@@ -17,6 +20,7 @@ interface stateProp {
   onSubmitCardLessonHandler: (p: any) => void;
   onGetNextLessonHandler: (p: any) => void;
   messageConfirm: string;
+  progressArr: any;
 
   //type B
   arrWordMessage: any;
@@ -28,6 +32,8 @@ interface stateProp {
   onSubmitLessonHandler: (p: any) => void;
 
   onRemovePathRedirectHandler: () => void;
+
+  currentProgressArr: any;
 }
 
 function LessonPresentation({
@@ -35,6 +41,7 @@ function LessonPresentation({
   onSelectCardHandler,
   currSelectedWord,
   countQuestion,
+  progressArr,
   onSubmitCardLessonHandler,
   messageConfirm,
   onGetNextLessonHandler,
@@ -46,7 +53,10 @@ function LessonPresentation({
   countScore,
   onSubmitLessonHandler,
   onRemovePathRedirectHandler,
+  currentProgressArr,
 }: stateProp) {
+  console.log(currentProgressArr);
+
   return (
     <>
       {catalog.length > 0 && (
@@ -104,11 +114,17 @@ function LessonPresentation({
 
             {catalog[countQuestion] === undefined && (
               <>
-                <ResultScrore
-                  countScore={countScore}
-                  catalogLength={catalog.length}
-                  onSubmitLessonHandler={onSubmitLessonHandler}
-                />
+                {currentProgressArr.length !== catalog.length ? (
+                  <ResultScrore
+                    countScore={countScore}
+                    catalogLength={catalog.length}
+                    onSubmitLessonHandler={onSubmitLessonHandler}
+                  />
+                ) : (
+                  <SuccessfulCompletedLesson
+                    onSubmitLessonHandler={onSubmitLessonHandler}
+                  />
+                )}
               </>
             )}
           </Wrapper>

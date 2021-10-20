@@ -199,15 +199,12 @@ function Lesson({
 
   const removePathRedirectHandler = () => localforage.removeItem("currLesson");
 
-  // console.log(progressArr);
-  // console.log(progress[name]);
-  // console.log(countScore);
-  // console.log(progressArr);
-
   return (
     <LessonPresentation
       countQuestion={countQuestion}
       catalog={catalog}
+      progressArr={progress[name]}
+      currentProgressArr={progressArr}
       onSelectCardHandler={selectCardHandler}
       currSelectedWord={currSelectedWord}
       onSubmitCardLessonHandler={submitCardLessonHandler}

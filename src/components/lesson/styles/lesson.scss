@@ -162,32 +162,54 @@
     margin-top: 6rem;
     display: block;
   }
+}
 
-  .routeReturnToMain {
-    @include resetDefaultInputStyles;
+.routeReturnToMain {
+  @include resetDefaultInputStyles;
 
-    display: block;
-    transition: 0.2s;
-    text-align: center;
+  display: block;
+  transition: 0.2s;
+  text-align: center;
 
-    cursor: pointer;
-    margin: 0 auto;
-    padding: 1rem 1.5rem;
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
 
-    font-size: 1.7rem;
-    font-weight: 600;
+  font-size: 1.7rem;
+  font-weight: 600;
 
-    width: 80%;
-    color: #fff;
+  width: 80%;
+  color: #fff;
 
-    background-color: #6fce03;
-    border-bottom: 0.4rem solid #58a700;
+  background-color: #6fce03;
+  border-bottom: 0.4rem solid #58a700;
 
-    border-radius: 15px;
+  border-radius: 15px;
 
+  text-transform: uppercase;
+
+  position: fixed;
+  bottom: 10%;
+}
+
+.wrapperSuccesfulCompletedLesson {
+  .titleSuccesfullMessage {
     text-transform: uppercase;
+    font-weight: 600;
+    width: 100%;
 
-    position: fixed;
-    bottom: 10%;
+    font-size: 3rem;
+    position: absolute;
+    top: 20%;
+    color: #58a700;
+  }
+
+  .subTitleSuccesfullMessage {
+    width: 100%;
+
+    font-size: 2rem;
+    position: absolute;
+    top: 35%;
+    color: #6fce03;
   }
 }
