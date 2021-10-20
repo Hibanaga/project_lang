@@ -150,25 +150,36 @@ app.post("/get_lesson", (req, res) => {
     .then((data) => {
       data !== null ? res.json(data.content) : res.json({ mesage: "error" });
     })
-    .catch((err) => res.json({ message: "error" }));
+    .catch((err) =>
+      db_read(process.env.DB_NAME, "introduction_lessons", {
+        title: lesson,
+      }).then((data) =>
+        data !== null ? res.json(data.content) : res.json({ mesage: "error" })
+      )
+    );
 });
 
 app.post("/update_markUpCoin", (req, res) => {
   const state = req.body;
   const { coin, crown, clientID, nameCatalog, updatedProgress } = state;
 
-  // console.log(coin);
-  // console.log(crown);
-  // console.log(clientID);
-  // console.log(nameCatalog);
-  // console.log(updatedProgress);
-
   db_read(process.env.DB_NAME, "activeUsers", { clientID: clientID }).then(
     ({ progress }) => {
       const objToupdateProgress = progress;
-      objToupdateProgress[nameCatalog] = updatedProgress;
+
+      // console.log(progress);
       // console.log(objToupdateProgress);
-      // console.log(data.progress);
+      // console.log(progress[nameCatalog]);
+
+      if (progress[nameCatalog] !== undefined) {
+        let arrAnswers = [...progress[nameCatalog], ...updatedProgress];
+        objToupdateProgress[nameCatalog] = Array.from(new Set(arrAnswers));
+      } else {
+        objToupdateProgress[nameCatalog] = updatedProgress;
+      }
+
+      // console.log(objToupdateProgress[nameCatalog]);
+
       db_update(
         process.env.DB_NAME,
         "activeUsers",
@@ -178,7 +189,7 @@ app.post("/update_markUpCoin", (req, res) => {
           crown: crown,
           progress: objToupdateProgress,
         }
-      ).catch((err) => console.log(err));
+      );
     }
   );
 
