@@ -67,6 +67,7 @@ function Lesson({
         .then((lessonName: any) => uploadContentLessonName(lessonName));
     }
 
+    //get_lesson from back-end
     if (name !== "") {
       fetch("/get_lesson", {
         method: "POST",
@@ -115,11 +116,7 @@ function Lesson({
       )
     ) {
       setMessageConfirm("success");
-
       setProgressArr([...progressArr, countQuestion]);
-
-      // console.log(progress[name]);
-
       if (progress[name] === undefined) {
         setCountScore(countScore + 1);
       }

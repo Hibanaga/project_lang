@@ -6,7 +6,8 @@ import {
   BubbleMessageBox,
 } from "../styles/styled-lesson";
 import CardSelectTypeA from "./cardSelectTypeA";
-import objExported from "../images/familyPack/familyImagesExporter";
+import questionVariantPack from "../images/questionVariant";
+import examplePack from "../images/examplesPack";
 import { withTranslation } from "react-i18next";
 
 interface stateProp {
@@ -35,7 +36,7 @@ function questionTypeA({
   countCurrID,
   t,
 }: stateProp) {
-  const imgObjRandom = Object.values(objExported).reverse()[countCurrID];
+  const imgObjRandom = Object.values(examplePack).reverse()[countCurrID];
 
   // console.log(content);
   return (
@@ -58,7 +59,7 @@ function questionTypeA({
             key={id}
             answer={answer}
             currSelectedWord={currSelectedWord}
-            imgIcon={objExported[answer]}
+            imgIcon={questionVariantPack[answer]}
             onSelectCardHandler={onSelectCardHandler}
           />
         ))}

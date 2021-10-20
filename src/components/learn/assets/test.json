@@ -122,12 +122,12 @@
   ]
 }
 
-//meeting
+//party
 {
   "_id": {
       "$oid": "616e7cddab401d2e6f9c4ae5"
   },
-  "title": "meeting",
+  "title": "party",
   "content": [
     {
       "type": "A",
@@ -190,23 +190,94 @@
         }
       ],
       "answer": "Марте очень понравилась вечеринка"
+    }
+    
+  ]
+}
+
+//meeting
+{
+  "_id": {
+      "$oid": "616fd739ff61fa52cdd227da"
+  },
+  "title": "meeting",
+  "content": [
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "морковь",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Tomato"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Carrot"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Apple"
+        }
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Лимон",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Pineapple"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Lemon"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Milk"
+        }
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Лимон",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Pineapple"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Lemon"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Milk"
+        }
+      ],
+      "answer": "Carrot"
     },
     {
       "type": "B",
       "typeQuestion": "Lesson.titleTypes.titleTypeB",
-      "startQuestion": "She really likes you.",
+      "startQuestion": "This tea is very hot",
       "varianAnswer": [
         {
           "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "Она"
+          "answer": "Этот"
         },
         {
           "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
-          "answer": "Ты"
+          "answer": "суп"
         },
         {
           "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
-          "answer": "ей"
+          "answer": "чай"
         },
         {
           "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
@@ -214,21 +285,63 @@
         },
         {
           "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
-          "answer": "понравился"
+          "answer": "хороший"
         },
         {
           "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
-          "answer": "понравилась"
+          "answer": "холодный"
         },
         {
           "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
-          "answer": "знакомство"
+          "answer": "горячий"
         }
       ],
-      "answer": "Ты ей очень понравился."
+      "answer": "Этот чай очень горячий"
+    },{
+      "type": "C",
+      "typeQuestion": "Lesson.titleTypes.titleTypeC",
+      "startQuestion": "Сначала добавь сахара",
+      "answer": "Add sugar first"
+    },
+    {
+      "type": "B",
+      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "startQuestion": "I ate all the soup",
+      "varianAnswer": [
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "суп"
+        },
+        {
+          "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
+          "answer": "съел"
+        },
+        {
+          "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
+          "answer": "Я"
+        },
+        {
+          "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
+          "answer": "салат"
+        },
+        {
+          "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
+          "answer": "весь"
+        },
+        {
+          "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
+          "answer": "завтрак"
+        },
+        {
+          "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
+          "answer": "холодный"
+        }
+      ],
+      "answer": "Я съел весь суп"
     }
   ]
 }
+
 
 // {
 //   "_id": {

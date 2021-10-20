@@ -8,7 +8,7 @@ import {
   ContainterLineTextBox,
   CardSelectWord,
 } from "../styles/styled-lesson";
-import objExported from "../images/familyPack/familyImagesExporter";
+import questionVariantPack from "../images/examplesPack";
 import { disablesUsedWord } from "../utils/validateLessonExamples";
 import { withTranslation } from "react-i18next";
 
@@ -42,7 +42,9 @@ function questionTypeB({
   onRemoveWordFromMessageBoxHandler,
   t,
 }: stateProp) {
-  const imgObjRandom = Object.values(objExported).reverse()[countCurrID];
+  const imgObjRandom =
+    Object.values(questionVariantPack).reverse()[countCurrID];
+
   return (
     <div>
       <TitleQuestion>{t(content.typeQuestion)}</TitleQuestion>

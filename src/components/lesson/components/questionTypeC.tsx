@@ -5,8 +5,7 @@ import {
   BubbleMessageBox,
 } from "../styles/styled-lesson";
 import FormInputTypeC from "./textAreaProvideTextLesson";
-
-import objExported from "../images/familyPack/familyImagesExporter";
+import questionVariantPack from "../images/examplesPack";
 import { withTranslation } from "react-i18next";
 
 interface stateProp {
@@ -29,7 +28,8 @@ function questionTypeC({
   onChangeTextAreaHandler,
   t,
 }: stateProp) {
-  const imgObjRandom = Object.values(objExported).reverse()[countCurrID];
+  const imgObjRandom =
+    Object.values(questionVariantPack).reverse()[countCurrID];
   return (
     <div className="containerQuestionTypeC">
       <TitleQuestion>{t(content.typeQuestion)}</TitleQuestion>
