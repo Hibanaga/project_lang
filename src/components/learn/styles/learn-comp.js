@@ -132,6 +132,28 @@ const AdditionalInfoWrapper = styled.div`
   }
 `;
 
+const MessageArrowCurrentPath = styled.div`
+  transform: rotate(45deg);
+
+  width: 1rem;
+  height: 1rem;
+
+  position: absolute;
+  top: -8.5%;
+  left: ${({ theme }) =>
+    theme.currTheme === "flag"
+      ? "14%"
+      : theme.currTheme === "rubin"
+      ? "35%"
+      : theme.currTheme === "crown"
+      ? "60%"
+      : "83%"};
+
+  background-color: #fff;
+  border-left: 0.3rem solid #e5e5e5;
+  border-top: 0.3rem solid #e5e5e5;
+`;
+
 export {
   WrapperTitleCard,
   RowTitleCard,
@@ -141,4 +163,5 @@ export {
   ListItemCardContent,
   AdditionalInfoWrapper,
   ListItemCardLink,
+  MessageArrowCurrentPath,
 };

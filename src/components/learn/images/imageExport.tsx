@@ -10,10 +10,11 @@ import storeOn from "./store_on.svg";
 import storyOff from "./story_off.svg";
 import storyOn from "./story_on.svg";
 
-import americaFlag from "./america_flag.svg";
+import russianFlag from "./russianFlag.png";
+import polishFlag from "./polishFlag.png";
 import imgCrown from "./crown.svg";
 import imgCoin from "./imgRubi.svg";
-import loadMore from "./more.svg";
+import unknown from "./unknown.png";
 
 export {
   learnOff,
@@ -24,8 +25,9 @@ export {
   storeOn,
   storyOff,
   storyOn,
-  americaFlag,
   imgCrown,
   imgCoin,
-  loadMore,
+  russianFlag,
+  polishFlag,
+  unknown,
 };

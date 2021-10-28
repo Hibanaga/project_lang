@@ -3,32 +3,47 @@ import { connect } from "react-redux";
 import { Wrapper, Row } from "../../../styles/styled-comp";
 import {
   imgCrown,
-  americaFlag,
+  russianFlag,
+  // polishFlag,
   imgCoin,
-  loadMore,
+  unknown,
 } from "../images/imageExport";
 
 interface stateProp {
   crown?: number;
   coin?: number;
+  onChangePathMessageHandler: (p: any) => void;
 }
 
-function profileInfo({ crown, coin }: stateProp) {
+function profileInfo({ crown, coin, onChangePathMessageHandler }: stateProp) {
   return (
     <aside className="containerProfileInfo">
       <Wrapper className="wrapperProfileInfo">
         <Row className="rowProfileInfo">
-          <img src={americaFlag} alt="america flag" />
+          <img
+            src={russianFlag}
+            alt="flag"
+            data-theme="flag"
+            onClick={onChangePathMessageHandler}
+          />
 
           <div className="wrapperUserCoins">
-            <div className="containerUserCoin">
+            <div
+              className="containerUserCoin"
+              data-theme="rubin"
+              onClick={onChangePathMessageHandler}
+            >
               <img src={imgCoin} alt="img coin" />
               <span className="descriptionUserCoin descriptionCoin">
                 {coin}
               </span>
             </div>
 
-            <div className="containerUserCoin">
+            <div
+              className="containerUserCoin"
+              data-theme="crown"
+              onClick={onChangePathMessageHandler}
+            >
               <img src={imgCrown} alt="img crown" />
               <span className="descriptionUserCoin descriptioCrown">
                 {crown}
@@ -36,8 +51,12 @@ function profileInfo({ crown, coin }: stateProp) {
             </div>
           </div>
 
-          <button className="js-btn_loadMore">
-            <img src={loadMore} alt="img loadmore" />
+          <button
+            className="js-btn_loadMore"
+            data-theme="profile"
+            onClick={onChangePathMessageHandler}
+          >
+            <img src={unknown} alt="img loadmore" />
           </button>
         </Row>
       </Wrapper>

@@ -72,6 +72,7 @@ function Learn({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // console.log(state);
   return (
     <>
       {pathRedirect !== "" && (
@@ -83,8 +84,8 @@ function Learn({
       )}
 
       <LearnPresentation
-        onToggleDropDownHandler={toggleDropDownHandler}
         introduction={state.introduction}
+        onToggleDropDownHandler={toggleDropDownHandler}
         onSetLessonNameHandler={setLessonNameHandler}
       />
     </>

@@ -55,8 +55,6 @@ function LessonPresentation({
   onRemovePathRedirectHandler,
   currentProgressArr,
 }: stateProp) {
-  console.log(currentProgressArr);
-
   return (
     <>
       {catalog.length > 0 && (

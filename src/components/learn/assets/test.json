@@ -342,6 +342,99 @@
   ]
 }
 
+//restaurant
+{
+  "_id": {
+      "$oid": "61712881c138a149aae04b4d"
+  },
+  "title": "restaurant",
+  "content": [
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Ресторан",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Menu"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Restaurant"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Fork"
+        }
+      ],
+      "answer": "Restaurant"
+    },
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Меню",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Fork"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Menu"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Soup"
+        }
+      ],
+      "answer": "Menu"
+    },
+    ,
+    {
+      "type": "B",
+      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "startQuestion": "This is not my menu",
+      "varianAnswer": [
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "Это"
+        },
+        {
+          "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
+          "answer": "не"
+        },
+        {
+          "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
+          "answer": "мое"
+        },
+        {
+          "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
+          "answer": "меню"
+        },
+        {
+          "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
+          "answer": "мой"
+        },
+        {
+          "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
+          "answer": "заказ"
+        },
+        {
+          "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
+          "answer": "салат"
+        }
+      ],
+      "answer": "Это не мое меню"
+    },{
+      "type": "C",
+      "typeQuestion": "Lesson.titleTypes.titleTypeC",
+      "startQuestion": "Мне нравится это кофе",
+      "answer": "I like this coffee"
+    },
+  ]
+}
+
+
 
 // {
 //   "_id": {
