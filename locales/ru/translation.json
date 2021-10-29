@@ -50,10 +50,65 @@
       "title": "Создайте аккаунт",
       "placeholderEmail": "Электронная почта",
       "placeholderNickname": "Имя(необязательно)",
-      "submit": "Создать аккаут"
+      "submit": "Создать аккаут",
+      "errorCreateUser": "Такой адрес уже был зарегистрирован"
     },
     "placeholderPassword": "Пароль",
     "login": "Войти",
     "title": "Имя пользователя может включать только числа,буквы и некоторые специальные знаки такие как !_@"
+  },
+
+  "Learn": {
+    "trainingSection": {
+      "mainTitle": "Основы"
+    },
+    "catalogLesson": {
+      "titleFamily": "Семья",
+      "titleProduct": "Продукты",
+      "titleParty": "Вечеринка",
+      "titleRestaurant": "Ресторан"
+    }
+  },
+
+  "Lesson": {
+    "titleTypes": {
+      "titleTypeA": "Введите перевод на английский",
+      "titleTypeB": "Введите перевод на Русский",
+      "titleTypeC": "Напишите перевод на английский"
+    },
+    "familyQuestionTranslate": {
+      "typeA": {
+        "question_0": "Отец",
+        "question_1": "Двоюродная сестра"
+      },
+      "typeB": {
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "Мою",
+            "answer_1": "брат",
+            "answer_2": "зовут",
+            "answer_3": "Александра",
+            "answer_4": "фамилия",
+            "answer_5": "мать"
+          },
+          "correctAnswer": "Мою мать зовут Александра"
+        },
+        "question_1": {
+          "variantAnswer": {
+            "answer_0": "Моему",
+            "answer_1": "брату",
+            "answer_2": "сестре",
+            "answer_3": "отцу",
+            "answer_4": "42",
+            "answer_5": "32",
+            "answer_6": "года"
+          },
+          "correctAnswer": "Моему отцу 42 года"
+        }
+      },
+      "typeC": {
+        "startQuestion": "Мой брат студент"
+      }
+    }
   }
 }
