@@ -1,0 +1,308 @@
+@import "../../../styles/_mixins";
+
+.container_navPanel {
+  height: 6.5rem;
+  width: 100%;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+
+  border-top: 0.3rem solid #e5e5e5;
+
+  .row_navPanel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 100%;
+
+    img {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+}
+
+.containerProfileInfo {
+  height: 6rem;
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  border-bottom: 0.3rem solid #e5e5e5;
+
+  .rowProfileInfo {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    flex-direction: row;
+
+    img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 4rem;
+
+      &:last-child {
+        width: 2rem;
+      }
+    }
+
+    .js-btn_loadMore {
+      @include resetDefaultInputStyles;
+      margin-left: 1rem;
+
+      // padding: 0.5rem;
+      border: 0.2rem solid #e5e5e5;
+      border-radius: 50%;
+
+      width: 4rem;
+      height: 4rem;
+      overflow: hidden;
+
+      img {
+        width: 90%;
+        margin: 0.5rem auto 0 auto;
+      }
+    }
+
+    .wrapperUserCoins {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      // width: 15rem;
+      width: 50%;
+
+      .containerUserCoin {
+        display: flex;
+        align-items: center;
+        cursor: default;
+
+        .descriptionUserCoin {
+          font-size: 2rem;
+          font-weight: 600;
+          color: #ffc107;
+
+          padding-left: 0.5rem;
+        }
+
+        .descriptionCoin {
+          color: #e50777;
+          padding-left: 0rem;
+          padding-right: 1.5rem;
+        }
+      }
+
+      img {
+        width: 4rem;
+      }
+    }
+  }
+}
+
+.containerLearn {
+  background-color: #fff;
+  margin-top: 6rem;
+  margin-bottom: 7rem;
+  min-height: 530px;
+
+  .wrapperCatalogCard {
+    .rowTitleCatalog {
+      width: 90%;
+
+      img {
+        width: 5rem;
+        margin: 0;
+        margin-left: 1.5rem;
+        transition: $transition_t;
+      }
+
+      .imgTitleCatalog {
+        transition: $transition_t;
+        margin: 0;
+        width: 1rem;
+      }
+
+      .img_active {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.rowAdditionalInfo {
+  display: none;
+}
+
+.containerNavLearn {
+  position: relative;
+
+  .containerMessageInformation {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+
+    z-index: 11;
+
+    height: 8rem;
+    width: 100%;
+
+    background-color: #fff;
+
+    border-bottom: 0.3rem solid #e5e5e5;
+  }
+}
+
+@media (min-width: 425px) {
+  .containerProfileInfo .rowProfileInfo .wrapperUserCoins {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .rowContainerLearn {
+    flex-direction: row;
+    justify-content: space-between;
+
+    height: 100%;
+  }
+
+  .rowAdditionalInfo {
+    display: block;
+  }
+
+  .wrapperContainer {
+    border-bottom: 0.3rem solid #e5e5e5;
+  }
+
+  .containerNavLearn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container_navPanel .row_navPanel {
+    justify-content: space-between;
+  }
+
+  .containerProfileInfo {
+    width: 50%;
+    position: inherit;
+
+    border: none;
+
+    height: 7rem;
+  }
+
+  .container_navPanel {
+    position: inherit;
+    width: 50%;
+
+    border: none;
+
+    height: 7rem;
+  }
+
+  .containerProfileInfo .rowProfileInfo {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .containerLearn {
+    margin-top: 0;
+  }
+
+  .containerLearn .wrapperCatalogCard .rowTitleCatalog img {
+    width: 7.5rem;
+  }
+
+  .containerLearn .wrapperCatalogCard .rowTitleCatalog .imgTitleCatalog {
+    width: 1.5rem;
+  }
+
+  .wrapperCatalogLearn {
+    width: 45%;
+    min-height: 490px;
+  }
+
+  .rowAdditionalInfo {
+    width: 45%;
+    min-height: 490px;
+
+    display: flex;
+    justify-content: flex-end;
+    // align-items: flex-end;
+  }
+}
+
+@media (min-width: 1140px) {
+  .containerNavLearn {
+    width: 1040px;
+    margin: 0 auto;
+  }
+
+  .rowAdditionalInfo {
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .wrapperCatalogCard {
+    flex-direction: initial;
+  }
+
+  .containerLearn .wrapperCatalogCard .rowTitleCatalog img {
+    margin-left: 2.5rem;
+  }
+
+  .container_navPanel div {
+    // margin-left: 4rem;
+    width: 95%;
+  }
+
+  .containerProfileInfo div {
+    width: 95%;
+  }
+
+  .containerProfileInfo .rowProfileInfo .wrapperUserCoins {
+    width: 25rem;
+  }
+
+  .rowContainerLearn {
+    width: 100%;
+  }
+
+  .wrapperCatalogLearn {
+    width: 50%;
+  }
+
+  .rowAdditionalInfo {
+    width: 50%;
+  }
+
+  .containerProfileInfo .rowProfileInfo {
+    margin-left: 2.5rem;
+    width: 90%;
+  }
+
+  .containerProfileInfo .rowProfileInfo .js-btn_loadMore {
+    margin-right: 2.5rem;
+  }
+
+  .containerProfileInfo .rowProfileInfo .wrapperUserCoins .containerUserCoin {
+    justify-content: space-between;
+    width: 6rem;
+  }
+
+  .containerProfileInfo
+    .rowProfileInfo
+    .wrapperUserCoins
+    .containerUserCoin
+    .descriptionCoin {
+    padding-right: 0;
+  }
+}

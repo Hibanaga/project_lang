@@ -1,0 +1,455 @@
+//family
+{
+  "_id": {
+    "$oid": "6154281121304351647079f7"
+  },
+  "title": "family",
+  "content": [
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Lesson.familyQuestionTranslate.typeA.question_0",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Mother"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Grandfather"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Father"
+        }
+      ],
+      "answer": "Father"
+    },
+    {
+      "type": "B",
+      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "startQuestion": "My mother's name is Alexandra",
+      "varianAnswer": [
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "Lesson.familyQuestionTranslate.typeB.question_0.variantAnswer.answer_0"
+        },
+        {
+          "id": "3947cfb5-b7bf-4b8f-8886-9a6898c94e34",
+          "answer": "Lesson.familyQuestionTranslate.typeB.question_0.variantAnswer.answer_1"
+        },
+        {
+          "id": "f0262f68-ae5b-4718-91b5-8fb7950ac6b6",
+          "answer": "Lesson.familyQuestionTranslate.typeB.question_0.variantAnswer.answer_2"
+        },
+        {
+          "id": "fb3f50b3-f284-43d6-9676-c72d86000327",
+          "answer": "Lesson.familyQuestionTranslate.typeB.question_0.variantAnswer.answer_3"
+        },
+        {
+          "id": "323b01ba-31a8-4ab4-b9d9-3582237d5728",
+          "answer": "Lesson.familyQuestionTranslate.typeB.question_0.variantAnswer.answer_4"
+        },
+        {
+          "id": "d133fa86-9d95-4a0e-af18-c44c4443f448",
+          "answer": "Lesson.familyQuestionTranslate.typeB.question_0.variantAnswer.answer_5"
+        }
+      ],
+      "answer": "Lesson.familyQuestionTranslate.typeB.question_0.correctAnswer"
+    },
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Lesson.familyQuestionTranslate.typeA.question_1",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Son"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Cousin"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Father"
+        }
+      ],
+      "answer": "Cousin"
+    },
+    {
+      "type": "B",
+      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "startQuestion": "My father is 42 years old",
+      "varianAnswer": [
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "Lesson.familyQuestionTranslate.typeB.question_1.variantAnswer.answer_0"
+        },
+        {
+          "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
+          "answer": "Lesson.familyQuestionTranslate.typeB.question_1.variantAnswer.answer_1"
+        },
+        {
+          "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
+          "answer": "Lesson.familyQuestionTranslate.typeB.question_1.variantAnswer.answer_2"
+        },
+        {
+          "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
+          "answer": "Lesson.familyQuestionTranslate.typeB.question_1.variantAnswer.answer_3"
+        },
+        {
+          "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
+          "answer": "Lesson.familyQuestionTranslate.typeB.question_1.variantAnswer.answer_4"
+        },
+        {
+          "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
+          "answer": "Lesson.familyQuestionTranslate.typeB.question_1.variantAnswer.answer_5"
+        },
+        {
+          "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
+          "answer": "Lesson.familyQuestionTranslate.typeB.question_1.variantAnswer.answer_6"
+        }
+      ],
+      "answer": "Lesson.familyQuestionTranslate.typeB.question_1.correctAnswer"
+    },
+    {
+      "type": "C",
+      "typeQuestion": "Lesson.titleTypes.titleTypeC",
+      "startQuestion": "Lesson.familyQuestionTranslate.typeC.startQuestion",
+      "answer": "My brother is a student"
+    }
+  ]
+}
+
+//party
+{
+  "_id": {
+      "$oid": "616e7cddab401d2e6f9c4ae5"
+  },
+  "title": "party",
+  "content": [
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "лед",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Ice"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Wine"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Juice"
+        }
+      ],
+      "answer": "Ice"
+    },
+    {
+      "type": "C",
+      "typeQuestion": "Lesson.titleTypes.titleTypeC",
+      "startQuestion": "Кто потратил весь лед",
+      "answer": "Who spent all the ice"
+    },
+    {
+      "type": "B",
+      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "startQuestion": "Martha really enjoyed the party",
+      "varianAnswer": [
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "Марте"
+        },
+        {
+          "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
+          "answer": "Марие"
+        },
+        {
+          "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
+          "answer": "очень"
+        },
+        {
+          "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
+          "answer": "понравилась"
+        },
+        {
+          "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
+          "answer": "вечеринка"
+        },
+        {
+          "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
+          "answer": "не понравилась"
+        },
+        {
+          "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
+          "answer": "любимая"
+        }
+      ],
+      "answer": "Марте очень понравилась вечеринка"
+    }
+    
+  ]
+}
+
+//meeting
+{
+  "_id": {
+      "$oid": "616fd739ff61fa52cdd227da"
+  },
+  "title": "meeting",
+  "content": [
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "морковь",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Tomato"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Carrot"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Apple"
+        }
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Лимон",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Pineapple"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Lemon"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Milk"
+        }
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Лимон",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Pineapple"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Lemon"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Milk"
+        }
+      ],
+      "answer": "Carrot"
+    },
+    {
+      "type": "B",
+      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "startQuestion": "This tea is very hot",
+      "varianAnswer": [
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "Этот"
+        },
+        {
+          "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
+          "answer": "суп"
+        },
+        {
+          "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
+          "answer": "чай"
+        },
+        {
+          "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
+          "answer": "очень"
+        },
+        {
+          "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
+          "answer": "хороший"
+        },
+        {
+          "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
+          "answer": "холодный"
+        },
+        {
+          "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
+          "answer": "горячий"
+        }
+      ],
+      "answer": "Этот чай очень горячий"
+    },{
+      "type": "C",
+      "typeQuestion": "Lesson.titleTypes.titleTypeC",
+      "startQuestion": "Сначала добавь сахара",
+      "answer": "Add sugar first"
+    },
+    {
+      "type": "B",
+      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "startQuestion": "I ate all the soup",
+      "varianAnswer": [
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "суп"
+        },
+        {
+          "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
+          "answer": "съел"
+        },
+        {
+          "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
+          "answer": "Я"
+        },
+        {
+          "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
+          "answer": "салат"
+        },
+        {
+          "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
+          "answer": "весь"
+        },
+        {
+          "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
+          "answer": "завтрак"
+        },
+        {
+          "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
+          "answer": "холодный"
+        }
+      ],
+      "answer": "Я съел весь суп"
+    }
+  ]
+}
+
+//restaurant
+{
+  "_id": {
+      "$oid": "61712881c138a149aae04b4d"
+  },
+  "title": "restaurant",
+  "content": [
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Ресторан",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Menu"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Restaurant"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Fork"
+        }
+      ],
+      "answer": "Restaurant"
+    },
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Меню",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Fork"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Menu"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Soup"
+        }
+      ],
+      "answer": "Menu"
+    },
+    ,
+    {
+      "type": "B",
+      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "startQuestion": "This is not my menu",
+      "varianAnswer": [
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "Это"
+        },
+        {
+          "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
+          "answer": "не"
+        },
+        {
+          "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
+          "answer": "мое"
+        },
+        {
+          "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
+          "answer": "меню"
+        },
+        {
+          "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
+          "answer": "мой"
+        },
+        {
+          "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
+          "answer": "заказ"
+        },
+        {
+          "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
+          "answer": "салат"
+        }
+      ],
+      "answer": "Это не мое меню"
+    },{
+      "type": "C",
+      "typeQuestion": "Lesson.titleTypes.titleTypeC",
+      "startQuestion": "Мне нравится это кофе",
+      "answer": "I like this coffee"
+    },
+  ]
+}
+
+
+
+// {
+//   "_id": {
+//       "$oid": "616d2bef2212cc1e7ec2f713"
+//   },
+//   "clientID": "aa09c79f-daae-42dc-b1ae-326f1d291351",
+//   "coin": {
+//       "$numberInt": "3"
+//   },
+//   "crown": {
+//       "$numberInt": "2"
+//   },
+//   "progress": {
+//       "family": [{
+//           "$numberInt": "0"
+//       }]
+//   }
+// }

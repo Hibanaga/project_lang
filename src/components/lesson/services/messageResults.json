@@ -1,0 +1,18 @@
+{
+  "great": {
+    "count": 80,
+    "message": "Отлично"
+  },
+  "good": {
+    "count": 60,
+    "message": "Хорошо"
+  },
+  "normal": {
+    "count": 45,
+    "message": "Нормально"
+  },
+  "bad": {
+    "count": 0,
+    "message": "Можно лучше"
+  }
+}

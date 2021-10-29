@@ -1,0 +1,215 @@
+@import "../../../styles/_mixins";
+
+.containerPresentationCard {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+
+  position: relative;
+
+  top: 0;
+  left: 0;
+
+  overflow: hidden;
+  z-index: 15;
+
+  .wrapperActionsRouter {
+    height: 6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .js-link__returnLearn {
+      @include resetDefaultInputStyles;
+      cursor: pointer;
+
+      svg {
+        font-size: 3.5rem;
+        color: #1cb0f6;
+      }
+    }
+
+    .wrapperProgressBar {
+      width: 75%;
+      height: 2.5rem;
+
+      border-radius: 25px;
+
+      background-color: rgb(226, 226, 226);
+      position: relative;
+      .progressBar {
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
+  .wrapperSubmitAnswer {
+    button {
+      @include resetDefaultInputStyles;
+      // position: absolute;
+      // left: 10%;
+      // bottom: 10%;
+      display: block;
+      transition: 0.2s;
+
+      cursor: pointer;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+
+      font-size: 1.7rem;
+      font-weight: 600;
+
+      width: 80%;
+      color: #fff;
+
+      background-color: #6fce03;
+      border-bottom: 0.4rem solid #58a700;
+      border-radius: 15px;
+
+      text-transform: uppercase;
+
+      &:disabled {
+        cursor: default;
+        background-color: #e5e5e5;
+        color: rgb(110, 110, 110);
+        border-color: #dadada;
+      }
+    }
+
+    .containerErrorMessage {
+      width: 80%;
+      margin: 0 auto;
+
+      user-select: none;
+    }
+  }
+
+  .activeWrapperSubmitAnswer {
+    height: 14rem;
+    background-color: red;
+  }
+}
+
+.wrapperCardLessonTypeA {
+  img {
+    display: block;
+    width: 80%;
+    margin: 1rem auto 0.5rem auto;
+  }
+}
+
+.containerMessageBox {
+  img {
+    width: 30%;
+  }
+
+  .bubbleMessageBox {
+    width: 80%;
+    user-select: none;
+  }
+}
+
+.containerQuestionTypeC {
+  textarea {
+    @include resetDefaultInputStyles;
+
+    border: 0.2rem solid #e5e5e5;
+    background-color: #f7f7f7;
+  }
+}
+
+.containerCountScore {
+  h1 {
+    margin-top: 4rem;
+  }
+
+  .titleResultCountScore {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+
+  .ulResultList {
+    margin-top: 4rem;
+
+    .liItemResultList {
+      margin-top: 2rem;
+
+      display: flex;
+      justify-content: space-between;
+
+      align-items: baseline;
+
+      .subTitleProperty {
+        color: #333;
+        font-size: 1.6rem;
+      }
+
+      .countValueProperty {
+        font-size: 3rem;
+        font-weight: 600;
+        letter-spacing: 0.2rem;
+      }
+    }
+  }
+
+  .resultMessageToUser {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+
+    margin-top: 6rem;
+    display: block;
+  }
+}
+
+.routeReturnToMain {
+  @include resetDefaultInputStyles;
+
+  display: block;
+  transition: 0.2s;
+  text-align: center;
+
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+
+  font-size: 1.7rem;
+  font-weight: 600;
+
+  width: 80%;
+  color: #fff;
+
+  background-color: #6fce03;
+  border-bottom: 0.4rem solid #58a700;
+
+  border-radius: 15px;
+
+  text-transform: uppercase;
+
+  position: fixed;
+  bottom: 10%;
+}
+
+.wrapperSuccesfulCompletedLesson {
+  .titleSuccesfullMessage {
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 100%;
+
+    font-size: 3rem;
+    position: absolute;
+    top: 20%;
+    color: #58a700;
+  }
+
+  .subTitleSuccesfullMessage {
+    width: 100%;
+
+    font-size: 2rem;
+    position: absolute;
+    top: 35%;
+    color: #6fce03;
+  }
+}
