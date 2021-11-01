@@ -102,7 +102,11 @@ function Router({
           <>
             {nameLesson && catalog.length === 0 && <Redirect to={learn} />}
 
+<<<<<<< HEAD
             <LearnNavPanel profile={profile} pathname={location.pathname} />
+=======
+            <LearnNavPanel pathname={location.pathname} />
+>>>>>>> 0d9bff4779fc9ce4d5c34247b271222a9c2feef6
             <Route exact path={learn} component={Learn} />
             <Route exact path={learnLesson} component={Lesson} />
             <Route exact path={profile_user} component={Profile} />
