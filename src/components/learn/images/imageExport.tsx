@@ -15,6 +15,7 @@ import polishFlag from "./polishFlag.png";
 import imgCrown from "./crown.svg";
 import imgCoin from "./imgRubi.svg";
 import unknown from "./unknown.png";
+import profileIMG from "./profile.png";
 
 export {
   learnOff,
@@ -30,4 +31,5 @@ export {
   russianFlag,
   polishFlag,
   unknown,
+  profileIMG,
 };

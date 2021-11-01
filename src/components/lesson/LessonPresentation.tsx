@@ -55,6 +55,9 @@ function LessonPresentation({
   onRemovePathRedirectHandler,
   currentProgressArr,
 }: stateProp) {
+  // console.log(catalog);
+  // console.log(progressArr.length);
+
   return (
     <>
       {catalog.length > 0 && (
@@ -112,17 +115,31 @@ function LessonPresentation({
 
             {catalog[countQuestion] === undefined && (
               <>
-                {currentProgressArr.length !== catalog.length ? (
+                {progressArr.length === catalog.length ? (
+                  <SuccessfulCompletedLesson
+                    onSubmitLessonHandler={onSubmitLessonHandler}
+                  />
+                ) : (
+                  <ResultScrore
+                    countScore={countScore}
+                    catalogLength={catalog.length}
+                    onSubmitLessonHandler={onSubmitLessonHandler}
+                  />
+                )}
+
+                {/* {currentProgressArr.length !== catalog.length ? (
                   <ResultScrore
                     countScore={countScore}
                     catalogLength={catalog.length}
                     onSubmitLessonHandler={onSubmitLessonHandler}
                   />
                 ) : (
-                  <SuccessfulCompletedLesson
-                    onSubmitLessonHandler={onSubmitLessonHandler}
-                  />
-                )}
+                  catalog.length === progressArr.length && (
+                    <SuccessfulCompletedLesson
+                      onSubmitLessonHandler={onSubmitLessonHandler}
+                    />
+                  )
+                )} */}
               </>
             )}
           </Wrapper>

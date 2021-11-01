@@ -23,5 +23,55 @@
         "description": "restaurant"
       }
     ]
+  },
+  {
+    "mainTitle": "Learn.trainingSection.chapter_1",
+    "catalogTitles": [
+      {
+        "id": "5d0128fa-a400-4b3d-b77a-262cbfa08ab2",
+        "title": "Learn.catalogLesson.titleBathroom",
+        "description": "bathroom"
+      },
+      {
+        "id": "52dd58e0-4abd-47fa-b2d9-964e5e0f8b42",
+        "title": "Learn.catalogLesson.titlePurchases",
+        "description": "purchases"
+      },
+      {
+        "id": "5f974e9b-2bb5-4909-84f3-6743c07db6b4",
+        "title": "Learn.catalogLesson.titleFood",
+        "description": "food"
+      },
+      {
+        "id": "82c1cbd8-d983-4eb8-bf4f-a08e8f2e4924",
+        "title": "Learn.catalogLesson.titleUniversity",
+        "description": "university"
+      }
+    ]
+  },
+  {
+    "mainTitle": "Learn.trainingSection.chapter_2",
+    "catalogTitles": [
+      {
+        "id": "376767ef-b17a-4ac3-b497-82ef5b604f3f",
+        "title": "Learn.catalogLesson.titleCity",
+        "description": "city"
+      },
+      {
+        "id": "54a61242-5140-4944-9dde-f9d31db56e0e",
+        "title": "Learn.catalogLesson.titleLessons",
+        "description": "lessons"
+      },
+      {
+        "id": "77dc204c-48e7-404d-9b5c-4eac76b09911",
+        "title": "Learn.catalogLesson.titleRecreation",
+        "description": "recreation"
+      },
+      {
+        "id": "d328236d-3dad-4f43-ad13-e14ed0c7986b",
+        "title": "Learn.catalogLesson.titleMarket",
+        "description": "market"
+      }
+    ]
   }
 ]

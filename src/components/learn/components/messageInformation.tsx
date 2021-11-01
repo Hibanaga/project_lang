@@ -3,7 +3,7 @@ import {
   ButtonSelectLang,
   CardCrownCard,
 } from "../styles/learn-comp";
-import { imgCrown } from "../images/imageExport";
+import { imgCrown, profileIMG } from "../images/imageExport";
 import flagObj from "../images/flagExport";
 import { supportedLang } from "../../../translation/assets/lang";
 
@@ -88,7 +88,19 @@ export default function messageInformation({
             )}
 
             {currentTheme === "profile" && (
-              <div className="wrapperMessage"></div>
+              <div className="wrapperMessage">
+                <div className="rowMessage rowMessageProfile">
+                  <img src={profileIMG} alt="" className="imgProfile" />
+
+                  <div className="containerMessageInfo">
+                    <h2 className="subTitleNameMessage">Аккаунт</h2>
+
+                    <span className="descriptionMessage">
+                      Профиль можно кастомизировать используя рубины.
+                    </span>
+                  </div>
+                </div>
+              </div>
             )}
           </div>
         </>

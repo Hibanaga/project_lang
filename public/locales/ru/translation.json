@@ -60,13 +60,23 @@
 
   "Learn": {
     "trainingSection": {
-      "mainTitle": "Основы"
+      "mainTitle": "Основы",
+      "chapter_1": "I. Утро",
+      "chapter_2": "II. Обед"
     },
     "catalogLesson": {
       "titleFamily": "Семья",
       "titleProduct": "Продукты",
       "titleParty": "Вечеринка",
-      "titleRestaurant": "Ресторан"
+      "titleRestaurant": "Ресторан",
+      "titleFood": "Еда",
+      "titleBathroom": "Ванная",
+      "titlePurchases": "Покупки",
+      "titleUniversity": "Университет",
+      "titleCity": "Город",
+      "titleLessons": "Занятия",
+      "titleRecreation": "Отдых",
+      "titleMarket": "Рынок"
     }
   },
 

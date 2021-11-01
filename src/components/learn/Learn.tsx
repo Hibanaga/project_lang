@@ -38,8 +38,26 @@ function Learn({
       ) {
         dispatch({ type: "toggleIntroduction", payload: state.introduction });
       }
+
+      if (
+        event.currentTarget.dataset.source === "Learn.trainingSection.chapter_1"
+      ) {
+        dispatch({
+          type: "toggleChapter_1",
+          payload: state.chapter_1,
+        });
+      }
+
+      if (
+        event.currentTarget.dataset.source === "Learn.trainingSection.chapter_2"
+      ) {
+        dispatch({
+          type: "toggleChapter_2",
+          payload: state.chapter_2,
+        });
+      }
     },
-    [state.introduction]
+    [state]
   );
 
   const setLessonNameHandler = useCallback(
@@ -85,6 +103,8 @@ function Learn({
 
       <LearnPresentation
         introduction={state.introduction}
+        chapter1={state.chapter_1}
+        chapter2={state.chapter_2}
         onToggleDropDownHandler={toggleDropDownHandler}
         onSetLessonNameHandler={setLessonNameHandler}
       />

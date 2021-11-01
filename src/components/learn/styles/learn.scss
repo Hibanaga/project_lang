@@ -9,6 +9,7 @@
   left: 0;
   z-index: 9;
 
+  background-color: #fff;
   border-top: 0.3rem solid #e5e5e5;
 
   .row_navPanel {
@@ -29,7 +30,7 @@
   height: 6rem;
   width: 100%;
 
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
 
@@ -107,7 +108,7 @@
 
 .containerLearn {
   background-color: #fff;
-  margin-top: 6rem;
+  // margin-top: 6rem;
   margin-bottom: 7rem;
   min-height: 530px;
 
@@ -148,11 +149,7 @@
     left: 0%;
 
     z-index: 11;
-
     height: 10rem;
-
-    height: 8rem;
-
     width: 100%;
 
     background-color: #fff;
@@ -209,6 +206,13 @@
       font-size: 1.5rem;
       color: #555;
       font-weight: 500;
+    }
+  }
+
+  .rowMessageProfile {
+    justify-content: space-evenly;
+    .imgProfile {
+      width: 8.5rem;
     }
   }
 }
