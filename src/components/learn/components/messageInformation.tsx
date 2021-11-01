@@ -6,7 +6,6 @@ import {
 import { imgCrown } from "../images/imageExport";
 import flagObj from "../images/flagExport";
 import { supportedLang } from "../../../translation/assets/lang";
-import { MessageArrowCurrentPath } from "../styles/learn-comp";
 
 interface stateProp {
   isOpenMessageWindow: boolean;

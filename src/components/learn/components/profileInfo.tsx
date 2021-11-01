@@ -3,13 +3,6 @@ import { connect } from "react-redux";
 import { Wrapper, Row } from "../../../styles/styled-comp";
 import flagObj from "../images/flagExport";
 import { imgCrown, imgCoin, unknown } from "../images/imageExport";
-import {
-  imgCrown,
-  russianFlag,
-  // polishFlag,
-  imgCoin,
-  unknown,
-} from "../images/imageExport";
 
 interface stateProp {
   crown?: number;

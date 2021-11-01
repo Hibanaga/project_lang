@@ -3,8 +3,6 @@ import NavPanel from "../components/navPanel";
 import MessageInformation from "./messageInformation";
 import React, { useCallback, useReducer } from "react";
 import { initialState, actions } from "../services/optionsReducerMessage";
-
-<<<<<<< HEAD
 import { withTranslation } from "react-i18next";
 import i18next from "i18next";
 
@@ -16,16 +14,6 @@ interface stateProp {
 function LearnNavPanel({ pathname, profile }: stateProp) {
   const [state, dispatch] = useReducer(actions, initialState);
   const { coin, crown } = profile;
-
-=======
-interface stateProp {
-  pathname: string;
-}
-
-function LearnNavPanel({ pathname }: stateProp) {
-  const [state, dispatch] = useReducer(actions, initialState);
-  // console.log(state);
->>>>>>> 0d9bff4779fc9ce4d5c34247b271222a9c2feef6
   const changePathMessageHandler = useCallback(
     (event: any) => {
       const { dataset } = event.currentTarget;
@@ -46,12 +34,10 @@ function LearnNavPanel({ pathname }: stateProp) {
     [state]
   );
 
-
   const updateLangHandler = useCallback(
     (event) => i18next.changeLanguage(event.target.dataset.source),
     []
   );
-
 
   return (
     <div className="wrapperContainer">
@@ -61,7 +47,6 @@ function LearnNavPanel({ pathname }: stateProp) {
           currLang={i18next.language}
           onChangePathMessageHandler={changePathMessageHandler}
         />
-        <ProfileInfo onChangePathMessageHandler={changePathMessageHandler} />
 
         <MessageInformation
           isOpenMessageWindow={state.isOpenMessageWindow}
@@ -77,5 +62,3 @@ function LearnNavPanel({ pathname }: stateProp) {
 }
 
 export default withTranslation()(React.memo(LearnNavPanel));
-
-
