@@ -1,27 +1,28 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Wrapper, Row } from "../../../styles/styled-comp";
-import {
-  imgCrown,
-  russianFlag,
-  // polishFlag,
-  imgCoin,
-  unknown,
-} from "../images/imageExport";
+import flagObj from "../images/flagExport";
+import { imgCrown, imgCoin, unknown } from "../images/imageExport";
 
 interface stateProp {
   crown?: number;
   coin?: number;
   onChangePathMessageHandler: (p: any) => void;
+  currLang: string;
 }
 
-function profileInfo({ crown, coin, onChangePathMessageHandler }: stateProp) {
+function profileInfo({
+  crown,
+  coin,
+  currLang,
+  onChangePathMessageHandler,
+}: stateProp) {
   return (
     <aside className="containerProfileInfo">
       <Wrapper className="wrapperProfileInfo">
         <Row className="rowProfileInfo">
           <img
-            src={russianFlag}
+            src={flagObj[currLang]}
             alt="flag"
             data-theme="flag"
             onClick={onChangePathMessageHandler}

@@ -149,12 +149,64 @@
 
     z-index: 11;
 
-    height: 8rem;
+    height: 10rem;
     width: 100%;
 
     background-color: #fff;
 
     border-bottom: 0.3rem solid #e5e5e5;
+  }
+}
+
+.wrapperMessage {
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+
+  .rowMessage {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .rowMessageCrown {
+    justify-content: space-around;
+  }
+
+  .descriptionCountCrown {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #af6f00;
+  }
+
+  .rowRubinMessage {
+    height: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .imgChestRubin {
+      width: 11rem;
+    }
+  }
+
+  .containerMessageInfo {
+    width: 50%;
+
+    .subTitleNameMessage {
+      font-size: 2.5rem;
+      color: #333;
+    }
+
+    .descriptionMessage {
+      display: block;
+      padding-top: 0.5rem;
+      font-size: 1.5rem;
+      color: #555;
+      font-weight: 500;
+    }
   }
 }
 

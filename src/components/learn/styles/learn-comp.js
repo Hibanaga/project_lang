@@ -154,6 +154,37 @@ const MessageArrowCurrentPath = styled.div`
   border-top: 0.3rem solid #e5e5e5;
 `;
 
+const ButtonSelectLang = styled.button`
+  width: 6.5rem;
+  height: 6.5rem;
+
+  background-image: url(${({ theme }) => theme.imgURL});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border-radius: 7px;
+  margin-right: 0.5rem;
+  transition: 0.3s;
+
+  border: ${({ theme }) =>
+    theme.currentLang === true ? "0.3rem solid #1cb0f6" : "0.3rem solid #fff"};
+`;
+
+const CardCrownCard = styled.div`
+  background-image: url(${({ theme }) => theme.crownIMG});
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  width: 10rem;
+  height: 10rem;
+  margin-left: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export {
   WrapperTitleCard,
   RowTitleCard,
@@ -164,4 +195,6 @@ export {
   AdditionalInfoWrapper,
   ListItemCardLink,
   MessageArrowCurrentPath,
+  ButtonSelectLang,
+  CardCrownCard,
 };

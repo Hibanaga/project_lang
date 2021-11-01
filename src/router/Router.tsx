@@ -102,7 +102,7 @@ function Router({
           <>
             {nameLesson && catalog.length === 0 && <Redirect to={learn} />}
 
-            <LearnNavPanel pathname={location.pathname} />
+            <LearnNavPanel profile={profile} pathname={location.pathname} />
             <Route exact path={learn} component={Learn} />
             <Route exact path={learnLesson} component={Lesson} />
             <Route exact path={profile_user} component={Profile} />

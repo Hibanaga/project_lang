@@ -11,8 +11,4 @@ export const supportedLang = [
     lang: "Русский",
     code: "ru",
   },
-  // {
-  //   id: 2,
-  //   lang: "Українська",
-  // },
 ];
