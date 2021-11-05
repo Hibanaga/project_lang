@@ -63,12 +63,15 @@ const CardStory = styled.div`
 `;
 
 const WrapperCardStoryIMG = styled.div`
-  background-color: #fff;
-  border: 0.2rem solid #a5a5a5;
-  border-bottom: 0.4rem solid #a5a5a5;
+  background-color: ${({ theme }) => (theme.isBlocked ? "#dbdbdb" : "#fff")};
+  border: 0.2rem solid
+    ${({ theme }) => (theme.isBlocked ? "#929292" : "#a5a5a5")};
+  border-bottom-width: 0.4rem;
   border-radius: 12px;
 
-  width: 20rem;
+  cursor: ${({ theme }) => (theme.isBlocked ? "normal" : "pointer")};
+
+  width: 18rem;
   margin: 0 auto;
 
   display: flex;
@@ -77,7 +80,8 @@ const WrapperCardStoryIMG = styled.div`
 `;
 
 const ImgCardStory = styled.img`
-  /* filter: grayscale(100%); */
+  filter: ${({ theme }) =>
+    theme.isBlocked === true ? "grayscale(100%)" : "none"};
 `;
 
 const SubTitleCardStory = styled.h2`

@@ -15,10 +15,16 @@ interface stateProp {
 export default function cardStory({ description, title }: stateProp) {
   return (
     <CardStory>
-      <WrapperCardStoryIMG>
-        <ImgCardStory src={objExported[description]} alt="story book" />{" "}
+      <WrapperCardStoryIMG
+        data-current={description}
+        theme={{ isBlocked: false }}
+      >
+        <ImgCardStory
+          src={objExported[description]}
+          theme={{ isBlocked: false }}
+          alt="story book"
+        />
       </WrapperCardStoryIMG>
-
       <SubTitleCardStory>{title}</SubTitleCardStory>
     </CardStory>
   );
