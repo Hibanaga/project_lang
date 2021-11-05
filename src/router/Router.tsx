@@ -8,18 +8,20 @@ import {
   profile_user,
   learn,
   learnLesson,
+  story,
 } from "./routes";
+import Profile from "../components/profile/Profile";
 import Home from "../components/home/Home";
 import Login from "../components/auth/loginForm/Login";
 import Register from "../components/auth/registerForm/Register";
 import Confirm from "../components/auth/confirmCode/Confirm";
-import { ContextFormProvider } from "../components/auth/ContextForm";
-import Profile from "../components/profile/Profile";
-import { connect } from "react-redux";
 import Learn from "../components/learn/Learn";
 import LearnNavPanel from "../components/learn/components/learnNavPanel";
-import { setFirstAuth } from "../redux/userInfo/userActions";
 import Lesson from "../components/lesson/Lesson";
+import Story from "../components/story/Story";
+import { ContextFormProvider } from "../components/auth/ContextForm";
+import { connect } from "react-redux";
+import { setFirstAuth } from "../redux/userInfo/userActions";
 
 import {
   setCountCoin,
@@ -106,6 +108,7 @@ function Router({
 
             <Route exact path={learn} component={Learn} />
             <Route exact path={learnLesson} component={Lesson} />
+            <Route exact path={story} component={Story} />
             <Route exact path={profile_user} component={Profile} />
           </>
         )}
