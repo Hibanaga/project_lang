@@ -1,4 +1,5 @@
 import { Wrapper } from "../../styles/styled-comp";
+import "./styles/story.scss";
 import cardPack from "./assets/cardPack.json";
 import CatalogStoryPack from "./components/catalogStoryPack";
 import {
@@ -6,20 +7,44 @@ import {
   SubTitleStory,
   LineMessageStory,
 } from "./styles/story-comp";
+import StoryLesson from "./components/storyLesson";
 
-export default function HistoryPresentation() {
+interface stateProp {
+  currentTheme: string;
+  isOpen: boolean;
+
+  onChangeThemeHandler: (p: any) => void;
+}
+
+export default function HistoryPresentation({
+  currentTheme,
+  isOpen,
+  onChangeThemeHandler,
+}: stateProp) {
   return (
-    <article className="containerStory">
-      <Wrapper>
-        <TitleStory>Истории CoolLearn</TitleStory>
-        <SubTitleStory>
-          Мини-истории которые улучшают навыки чтения и ответа на вопросы{" "}
-        </SubTitleStory>
+    <>
+      {isOpen && (
+        <StoryLesson
+          currentTheme={currentTheme}
+          onChangeThemeHandler={onChangeThemeHandler}
+        />
+      )}
 
-        <LineMessageStory>Набор 1</LineMessageStory>
+      <article className="containerStory">
+        <Wrapper>
+          <TitleStory>Истории CoolLearn</TitleStory>
+          <SubTitleStory>
+            Мини-истории которые улучшают навыки чтения и ответа на вопросы{" "}
+          </SubTitleStory>
 
-        <CatalogStoryPack cardPack={cardPack[0]} />
-      </Wrapper>
-    </article>
+          <LineMessageStory>Набор 1</LineMessageStory>
+
+          <CatalogStoryPack
+            cardPack={cardPack[0]}
+            onChangeThemeHandler={onChangeThemeHandler}
+          />
+        </Wrapper>
+      </article>
+    </>
   );
 }

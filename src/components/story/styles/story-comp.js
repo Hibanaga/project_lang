@@ -69,7 +69,8 @@ const WrapperCardStoryIMG = styled.div`
   border-bottom-width: 0.4rem;
   border-radius: 12px;
 
-  cursor: ${({ theme }) => (theme.isBlocked ? "normal" : "pointer")};
+  cursor: ${({ theme }) =>
+    theme.isBlocked || theme.isAlreadyOpen ? "normal" : "pointer"};
 
   width: 18rem;
   margin: 0 auto;

@@ -3,12 +3,15 @@
     {
       "id": "22be6c91-dd58-4020-9d46-02cbdc504e9d",
       "title": "Заказ номера в отеле",
-      "description": "booking"
+      "description": "booking",
+      "originalTitle": "Booking a hotel room",
+      "urlVideo": "https://www.youtube.com/embed/h38OstrOo8k"
     },
     {
       "id": "febe174a-2401-4b32-9552-f893e06f264b",
       "title": "Встреча в аэропорту",
-      "description": "tourist"
+      "description": "tourist",
+      "originalTitle": "Meeting at the airport"
     }
   ]
 ]
