@@ -1,6 +1,7 @@
 const initialState: any = {
   currentTheme: "",
   isOpen: false,
+  isVisibleModal: false,
 };
 
 const actions = (state = initialState, { payload, type }: any) => {
@@ -9,6 +10,8 @@ const actions = (state = initialState, { payload, type }: any) => {
       return { ...state, isOpen: !payload };
     case "setNewCurrentTheme":
       return { ...state, currentTheme: payload };
+    case "toggleVisibleModal":
+      return { ...state, isVisibleModal: !payload };
     default:
       throw new Error();
   }

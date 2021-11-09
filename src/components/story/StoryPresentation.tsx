@@ -12,14 +12,18 @@ import StoryLesson from "./components/storyLesson";
 interface stateProp {
   currentTheme: string;
   isOpen: boolean;
+  isVisibleModal: boolean;
 
   onChangeThemeHandler: (p: any) => void;
+  onToggleModalVisibleHandler: (p: any) => void;
 }
 
 export default function HistoryPresentation({
   currentTheme,
   isOpen,
+  isVisibleModal,
   onChangeThemeHandler,
+  onToggleModalVisibleHandler,
 }: stateProp) {
   return (
     <>
@@ -27,6 +31,8 @@ export default function HistoryPresentation({
         <StoryLesson
           currentTheme={currentTheme}
           onChangeThemeHandler={onChangeThemeHandler}
+          onToggleModalVisibleHandler={onToggleModalVisibleHandler}
+          isVisibleModal={isVisibleModal}
         />
       )}
 

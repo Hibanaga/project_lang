@@ -2,11 +2,8 @@ import { useCallback, useReducer } from "react";
 import StoryPresentation from "./StoryPresentation";
 import { initialState, actions } from "./services/optionsReducer";
 
-// include styles
-import "rodal/lib/rodal.css";
-
 export default function Story() {
-  const [{ currentTheme, isOpen }, dispatch] = useReducer(
+  const [{ currentTheme, isOpen, isVisibleModal }, dispatch] = useReducer(
     actions,
     initialState
   );
@@ -24,9 +21,15 @@ export default function Story() {
     [isOpen]
   );
 
+  const toggleModalVisibleHandler = () => {
+    dispatch({ type: "toggleVisibleModal", payload: isVisibleModal });
+  };
+
   return (
     <StoryPresentation
       onChangeThemeHandler={changeThemeHandler}
+      onToggleModalVisibleHandler={toggleModalVisibleHandler}
+      isVisibleModal={isVisibleModal}
       currentTheme={currentTheme}
       isOpen={isOpen}
     />
