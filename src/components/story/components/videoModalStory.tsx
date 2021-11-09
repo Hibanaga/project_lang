@@ -16,7 +16,7 @@ export default function videoModalStory({
   onToggleModalVisibleHandler,
 }: stateProp) {
   return (
-    <div className="wrapperModalLesoon">
+    <>
       <Modal
         isOpen={isVisibleModal}
         onRequestClose={onToggleModalVisibleHandler}
@@ -39,6 +39,6 @@ export default function videoModalStory({
           className="iframevideo"
         ></iframe>
       </Modal>
-    </div>
+    </>
   );
 }

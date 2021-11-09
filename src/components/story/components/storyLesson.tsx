@@ -39,6 +39,8 @@ export default function storyLesson({
         isVisibleModal={isVisibleModal}
         onToggleModalVisibleHandler={onToggleModalVisibleHandler}
       />
+
+      <button className="js-btn__openWindow">далее</button>
     </div>
   );
 }

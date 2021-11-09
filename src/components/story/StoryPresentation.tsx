@@ -28,29 +28,34 @@ export default function HistoryPresentation({
   return (
     <>
       {isOpen && (
-        <StoryLesson
-          currentTheme={currentTheme}
-          onChangeThemeHandler={onChangeThemeHandler}
-          onToggleModalVisibleHandler={onToggleModalVisibleHandler}
-          isVisibleModal={isVisibleModal}
-        />
-      )}
-
-      <article className="containerStory">
-        <Wrapper>
-          <TitleStory>Истории CoolLearn</TitleStory>
-          <SubTitleStory>
-            Мини-истории которые улучшают навыки чтения и ответа на вопросы{" "}
-          </SubTitleStory>
-
-          <LineMessageStory>Набор 1</LineMessageStory>
-
-          <CatalogStoryPack
-            cardPack={cardPack[0]}
+        <>
+          <StoryLesson
+            currentTheme={currentTheme}
             onChangeThemeHandler={onChangeThemeHandler}
+            onToggleModalVisibleHandler={onToggleModalVisibleHandler}
+            isVisibleModal={isVisibleModal}
           />
-        </Wrapper>
-      </article>
+        </>
+      )}
+      {!isOpen && (
+        <>
+          <article className="containerStory">
+            <Wrapper>
+              <TitleStory>Истории CoolLearn</TitleStory>
+              <SubTitleStory>
+                Мини-истории которые улучшают навыки чтения и ответа на вопросы{" "}
+              </SubTitleStory>
+
+              <LineMessageStory>Набор 1</LineMessageStory>
+
+              <CatalogStoryPack
+                cardPack={cardPack[0]}
+                onChangeThemeHandler={onChangeThemeHandler}
+              />
+            </Wrapper>
+          </article>
+        </>
+      )}
     </>
   );
 }
