@@ -26,27 +26,19 @@ export default function storyLesson({
     <div className="wrapperStoryLessson">
       <ActionReturnback onChangeThemeHandler={onChangeThemeHandler} />
 
-      <div className="rowStoryLesson">
-        <CardStory
-          key={id}
-          description={description}
-          originalTitle={originalTitle}
-          title={title}
-        />
+      <CardStory
+        key={id}
+        description={description}
+        title={title}
+        onToggleModalVisibleHandler={onToggleModalVisibleHandler}
+        originalTitle={originalTitle}
+      />
 
-        <button
-          className="js_btn_openModal"
-          onClick={onToggleModalVisibleHandler}
-        >
-          видео
-        </button>
-
-        <VideoModalStory
-          urlVideo={urlVideo}
-          isVisibleModal={isVisibleModal}
-          onToggleModalVisibleHandler={onToggleModalVisibleHandler}
-        />
-      </div>
+      <VideoModalStory
+        urlVideo={urlVideo}
+        isVisibleModal={isVisibleModal}
+        onToggleModalVisibleHandler={onToggleModalVisibleHandler}
+      />
     </div>
   );
 }

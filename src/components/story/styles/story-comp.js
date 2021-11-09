@@ -69,8 +69,9 @@ const WrapperCardStoryIMG = styled.div`
   border-bottom-width: 0.4rem;
   border-radius: 12px;
 
-  cursor: ${({ theme }) =>
-    theme.isBlocked || theme.isAlreadyOpen ? "normal" : "pointer"};
+  cursor: ${({ theme }) => (theme.isBlocked ? "normal" : "pointer")};
+
+  position: relative;
 
   width: 18rem;
   margin: 0 auto;
@@ -78,11 +79,28 @@ const WrapperCardStoryIMG = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: 0.3s;
+
+  &:hover {
+    background-color: ${({ theme }) =>
+      theme.isAlreadyOpen ? " #1cb1f628" : "none"};
+  }
+
+  &:hover .imgCardCatalog {
+    filter: ${({ theme }) => (theme.isAlreadyOpen ? "blur(3px)" : "blur(0)")};
+  }
+
+  &:hover .img_playHidden {
+    visibility: ${({ theme }) => (theme.isAlreadyOpen ? "visible" : "hidden")};
+    opacity: ${({ theme }) => (theme.isAlreadyOpen ? ".9" : "0")};
+  }
 `;
 
 const ImgCardStory = styled.img`
   filter: ${({ theme }) =>
     theme.isBlocked === true ? "grayscale(100%)" : "none"};
+  transition: 0.3s;
 `;
 
 const SubTitleCardStory = styled.h2`

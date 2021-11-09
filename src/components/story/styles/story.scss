@@ -1,5 +1,16 @@
 @import "../../../styles/_mixins";
 
+.wrapperCardStoryLesson {
+  .img_playHidden {
+    position: absolute;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: 0.3s;
+  }
+}
+
 .containerStory {
   margin-bottom: 7rem;
 
@@ -49,29 +60,6 @@
       .progressBar {
         position: absolute;
         left: 0;
-      }
-    }
-  }
-
-  .rowStoryLesson {
-    .js_btn_openModal {
-      @include resetDefaultInputStyles;
-
-      border: 0.2rem solid #1cb0f6;
-      font-size: 2rem;
-      padding: 0.3rem 0.5rem 0.5rem 0.5rem;
-      border-radius: 7px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      margin: 1rem auto;
-      transition: 0.3s;
-
-      &:hover {
-        background-color: #1cb1f628;
-        cursor: pointer;
       }
     }
   }

@@ -31,7 +31,6 @@ export default function videoModalStory({
         >
           <CloseRoundedIcon />
         </button>
-
         <iframe
           width="100%"
           height="90%"
