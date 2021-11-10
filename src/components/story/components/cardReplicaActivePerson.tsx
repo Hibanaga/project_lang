@@ -13,5 +13,5 @@ export default function cardReplicaActivePerson({
   correctAnswer,
   variantAnswer,
 }: stateProp) {
-  return <div>{person}</div>;
+  return <div className="wrapperActivePerson">{person}</div>;
 }

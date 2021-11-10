@@ -67,21 +67,17 @@ export default function storyLesson({
 
       <TransitionGroup component="ul">
         {lessonObj.map(
-          (
-            {
-              id,
-              person,
-              replica,
-              actionType,
-              correctAnswer,
-              variantAnswer,
-            }: any,
-            idx: number
-          ) =>
+          ({
+            id,
+            person,
+            replica,
+            actionType,
+            correctAnswer,
+            variantAnswer,
+          }: any) =>
             actionType === "active" ? (
               <CSSTransition key={id} timeout={300} classNames="alert">
                 <CardReplicaActivePerson
-                  // key={id}
                   person={person}
                   replica={replica}
                   correctAnswer={correctAnswer}
@@ -90,12 +86,7 @@ export default function storyLesson({
               </CSSTransition>
             ) : (
               <CSSTransition key={id} timeout={300} classNames="alert">
-                <CardReplicaNonActivePerson
-                  // key={id}
-                  idx={idx}
-                  person={person}
-                  replica={replica}
-                />
+                <CardReplicaNonActivePerson person={person} replica={replica} />
               </CSSTransition>
             )
         )}
