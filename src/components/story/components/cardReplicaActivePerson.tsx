@@ -1,4 +1,5 @@
 import React from "react";
+import objExported from "../images/imageExporter";
 
 interface stateProp {
   person: string;
@@ -13,5 +14,15 @@ export default function cardReplicaActivePerson({
   correctAnswer,
   variantAnswer,
 }: stateProp) {
-  return <div className="wrapperActivePerson">{person}</div>;
+  return (
+    <div className="wrapperActivePerson">
+      <img src={objExported[person]} alt="" />
+
+      <div className="bubble">
+        <span className="descriptionReplica">
+          {replica} correct: {correctAnswer}
+        </span>
+      </div>
+    </div>
+  );
 }

@@ -6,6 +6,7 @@ export default function Story() {
   const [{ currentTheme, isOpen, isVisibleModal, lessonObj }, dispatch] =
     useReducer(actions, initialState);
   const [currElementDialog, setCurrelementDialog] = useState(-1);
+  const [isDisable, setIsDisable] = useState(false);
 
   const changeThemeHandler = useCallback(
     (event: any) => {
@@ -25,6 +26,8 @@ export default function Story() {
   const changeCounterCurrElementDialog = (newItem: any) => {
     setCurrelementDialog(currElementDialog + 1);
     if (newItem !== undefined) {
+      let keys = Object.keys(newItem);
+      keys.length === 6 && setIsDisable(true);
       dispatch({ type: "updateLessonObj", payload: newItem });
     }
   };
@@ -39,6 +42,7 @@ export default function Story() {
     <StoryPresentation
       //primitives
       isVisibleModal={isVisibleModal}
+      isDisable={isDisable}
       currentTheme={currentTheme}
       isOpen={isOpen}
       currElementDialog={currElementDialog}

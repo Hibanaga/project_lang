@@ -13,6 +13,7 @@ interface stateProp {
   currentTheme: string;
   isOpen: boolean;
   isVisibleModal: boolean;
+  isDisable: boolean;
   currElementDialog: number;
   lessonObj: any;
 
@@ -25,6 +26,7 @@ export default function HistoryPresentation({
   currentTheme,
   isOpen,
   isVisibleModal,
+  isDisable,
   currElementDialog,
   lessonObj,
   onChangeThemeHandler,
@@ -36,6 +38,7 @@ export default function HistoryPresentation({
       {isOpen && (
         <>
           <StoryLesson
+            isDisable={isDisable}
             lessonObj={lessonObj}
             currentTheme={currentTheme}
             isVisibleModal={isVisibleModal}

@@ -11,6 +11,7 @@ import CardReplicaNonActivePerson from "./cardReplicaNonActivePerson";
 interface stateProp {
   currentTheme: string;
   isVisibleModal: boolean;
+  isDisable: boolean;
   currElementDialog: number;
   lessonObj: any;
 
@@ -22,6 +23,7 @@ interface stateProp {
 export default function storyLesson({
   currentTheme,
   isVisibleModal,
+  isDisable,
   currElementDialog,
   lessonObj,
   onChangeThemeHandler,
@@ -94,6 +96,7 @@ export default function storyLesson({
 
       <button
         className="js-btn__openWindow"
+        disabled={isDisable}
         onClick={() => onChangeCounterCurrElementDialog(currItem)}
       >
         далее
