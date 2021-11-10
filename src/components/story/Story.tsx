@@ -1,12 +1,11 @@
-import { useCallback, useReducer } from "react";
+import { useCallback, useReducer, useState } from "react";
 import StoryPresentation from "./StoryPresentation";
 import { initialState, actions } from "./services/optionsReducer";
 
 export default function Story() {
-  const [{ currentTheme, isOpen, isVisibleModal }, dispatch] = useReducer(
-    actions,
-    initialState
-  );
+  const [{ currentTheme, isOpen, isVisibleModal, lessonObj }, dispatch] =
+    useReducer(actions, initialState);
+  const [currElementDialog, setCurrelementDialog] = useState(-1);
 
   const changeThemeHandler = useCallback(
     (event: any) => {
@@ -17,21 +16,37 @@ export default function Story() {
         });
       }
       dispatch({ type: "toggleStoryWindow", payload: isOpen });
+      setCurrelementDialog(-1);
+      dispatch({ type: "resetLessonObj", payload: [] });
     },
     [isOpen]
   );
+
+  const changeCounterCurrElementDialog = (newItem: any) => {
+    setCurrelementDialog(currElementDialog + 1);
+    if (newItem !== undefined) {
+      dispatch({ type: "updateLessonObj", payload: newItem });
+    }
+  };
 
   const toggleModalVisibleHandler = () => {
     dispatch({ type: "toggleVisibleModal", payload: isVisibleModal });
   };
 
+  console.log(lessonObj);
+
   return (
     <StoryPresentation
-      onChangeThemeHandler={changeThemeHandler}
-      onToggleModalVisibleHandler={toggleModalVisibleHandler}
+      //primitives
       isVisibleModal={isVisibleModal}
       currentTheme={currentTheme}
       isOpen={isOpen}
+      currElementDialog={currElementDialog}
+      lessonObj={lessonObj}
+      //methods
+      onToggleModalVisibleHandler={toggleModalVisibleHandler}
+      onChangeCounterCurrElementDialog={changeCounterCurrElementDialog}
+      onChangeThemeHandler={changeThemeHandler}
     />
   );
 }

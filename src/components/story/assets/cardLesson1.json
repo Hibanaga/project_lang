@@ -1,16 +1,18 @@
 {
-  "title": "The story of Mark Ryder who came to check in by booking at the hotel",
+  "title": "The story of Mark Ryder who came to check in by booking at the hotel.",
   "dialog": [
     {
       "id": "51a48771-6b0e-4cfc-9ad2-d0051c9c5e6d",
       "person": "female",
-      "replica": "Good evening, sir."
+      "replica": "Good evening, sir.",
+      "actionType": "don't active"
     },
     {
       "id": "caf3beda-a609-4987-a1f3-6fb6f0969fe7",
       "person": "male",
       "replica": "Hello. I have a reservation.",
       "correctAnswer": "My name’s Mark Ryder.",
+      "actionType": "active",
       "variantAnswer": [
         {
           "id": "9d89eda1-5f86-4c80-953d-b04113017eca",
@@ -29,33 +31,39 @@
     {
       "id": "d5d3dce7-10a0-4014-bd59-74d2566bcaab",
       "person": "female",
-      "replica": "Can you spell that, please?"
+      "replica": "Can you spell that, please?",
+      "actionType": "don't active"
     },
     {
       "id": "05760730-3a86-4ec8-ac4f-0826010646c7",
       "person": "male",
-      "replica": "R-Y-D-E-R."
+      "replica": "R-Y-D-E-R.",
+      "actionType": "don't active"
     },
     {
       "id": "04030789-fc73-40ae-9d1f-5e692fabc65e",
       "person": "female",
-      "replica": "For five nights."
+      "replica": "For five nights.",
+      "actionType": "don't active"
     },
     {
       "id": "fd75c69b-ec5b-4fee-a458-7afb71d6159a",
       "person": "male",
-      "replica": "Yes, that’s right."
+      "replica": "Yes, that’s right.",
+      "actionType": "don't active"
     },
     {
       "id": "271f907b-e2fd-4ee1-93c5-c08d1a2ac0d7",
       "person": "female",
-      "replica": "Can I have your passport, please?"
+      "replica": "Can I have your passport, please?",
+      "actionType": "don't active"
     },
     {
       "id": "3f72cb2d-3c17-4f75-8b57-858ff4250a83",
       "person": "male",
       "replica": "Just a moment.",
       "correctAnswer": "Here you are.",
+      "actionType": "active",
       "variantAnswer": [
         {
           "id": "39dc609e-0243-4b18-9168-22c6ab90bd39",
@@ -74,13 +82,15 @@
     {
       "id": "156b3191-6c83-42f1-82c8-b9e12a82efe9",
       "person": "female",
-      "replica": "Can you sign here, please? Do you want a smoking or non-smoking room?"
+      "replica": "Can you sign here, please? Do you want a smoking or non-smoking room?",
+      "actionType": "don't active"
     },
     {
       "id": "d169861e-c9ab-4b5b-b156-9aaa72d8289b",
       "person": "male",
       "replica": "Just a moment.",
       "correctAnswer": "Non-smoking, please.",
+      "actionType": "active",
       "variantAnswer": [
         {
           "id": "90909e93-be15-45ae-8a19-4da8604f98b4",
@@ -99,33 +109,39 @@
     {
       "id": "84ab9b90-8b15-42c7-9946-b911c3a1e70a",
       "person": "female",
-      "replica": "Here’s your key. It’s room four two five, on the fourth floor."
+      "replica": "Here’s your key. It’s room four two five, on the fourth floor.",
+      "actionType": "don't active"
     },
     {
       "id": "e7edc52e-e259-4dac-9b67-3c1031c417b0",
       "person": "male",
-      "replica": "Thank you. Where’s the lift?"
+      "replica": "Thank you. Where’s the lift?",
+      "actionType": "don't active"
     },
     {
-      "id": "338f9133-8a00-4850-824c-aa1b473ebea4",
+      "id": "777d00e9-bd87-41ab-9acb-32303ab00783",
       "person": "female",
-      "replica": "It’s over there. Do you need help with your bags?"
+      "replica": "It’s over there. Do you need help with your bags?",
+      "actionType": "don't active"
     },
     {
       "id": "338f9133-8a00-4850-824c-aa1b473ebea4",
       "person": "male",
-      "replica": "No, it’s OK, thanks."
+      "replica": "No, it’s OK, thanks.",
+      "actionType": "don't active"
     },
     {
       "id": "459ab704-08ad-41d2-8bca-b3cb8c250ff6",
       "person": "female",
-      "replica": "Enjoy your stay, Mr. Ryder."
+      "replica": "Enjoy your stay, Mr. Ryder.",
+      "actionType": "don't active"
     },
     {
-      "id": "d169861e-c9ab-4b5b-b156-9aaa72d8289b",
+      "id": "b3892371-25bf-479e-96fc-0e9bf2c04362",
       "person": "male",
       "replica": "",
       "correctAnswer": "Thank you.",
+      "actionType": "active",
       "variantAnswer": [
         {
           "id": "90909e93-be15-45ae-8a19-4da8604f98b4",
