@@ -11,6 +11,7 @@ import StoryLesson from "./components/storyLesson";
 
 interface stateProp {
   currentTheme: string;
+  selectVariant: string;
   isOpen: boolean;
   isVisibleModal: boolean;
   isDisable: boolean;
@@ -20,6 +21,7 @@ interface stateProp {
   onChangeThemeHandler: (p: any) => void;
   onToggleModalVisibleHandler: (p: any) => void;
   onChangeCounterCurrElementDialog: (p: any) => void;
+  onUpdateSelectWordHandler: (p: any) => void;
 }
 
 export default function HistoryPresentation({
@@ -29,9 +31,11 @@ export default function HistoryPresentation({
   isDisable,
   currElementDialog,
   lessonObj,
+  selectVariant,
   onChangeThemeHandler,
   onToggleModalVisibleHandler,
   onChangeCounterCurrElementDialog,
+  onUpdateSelectWordHandler,
 }: stateProp) {
   return (
     <>
@@ -40,12 +44,14 @@ export default function HistoryPresentation({
           <StoryLesson
             isDisable={isDisable}
             lessonObj={lessonObj}
+            selectVariant={selectVariant}
             currentTheme={currentTheme}
             isVisibleModal={isVisibleModal}
             currElementDialog={currElementDialog}
             onChangeThemeHandler={onChangeThemeHandler}
             onToggleModalVisibleHandler={onToggleModalVisibleHandler}
             onChangeCounterCurrElementDialog={onChangeCounterCurrElementDialog}
+            onUpdateSelectWordHandler={onUpdateSelectWordHandler}
           />
         </>
       )}

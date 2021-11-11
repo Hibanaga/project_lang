@@ -7,6 +7,7 @@ export default function Story() {
     useReducer(actions, initialState);
   const [currElementDialog, setCurrelementDialog] = useState(-1);
   const [isDisable, setIsDisable] = useState(false);
+  const [selectVariant, setSelectVariant] = useState("");
 
   const changeThemeHandler = useCallback(
     (event: any) => {
@@ -18,6 +19,7 @@ export default function Story() {
       }
       dispatch({ type: "toggleStoryWindow", payload: isOpen });
       setCurrelementDialog(-1);
+      setIsDisable(false);
       dispatch({ type: "resetLessonObj", payload: [] });
     },
     [isOpen]
@@ -27,7 +29,7 @@ export default function Story() {
     setCurrelementDialog(currElementDialog + 1);
     if (newItem !== undefined) {
       let keys = Object.keys(newItem);
-      keys.length === 6 && setIsDisable(true);
+      keys.length === 7 && setIsDisable(true);
       dispatch({ type: "updateLessonObj", payload: newItem });
     }
   };
@@ -36,7 +38,12 @@ export default function Story() {
     dispatch({ type: "toggleVisibleModal", payload: isVisibleModal });
   };
 
-  console.log(lessonObj);
+  const updateSelectWordHandler = useCallback((event: any) => {
+    console.log(event.target.textContent);
+    setSelectVariant(event.target.textContent);
+  }, []);
+
+  // console.log(lessonObj);
 
   return (
     <StoryPresentation
@@ -47,10 +54,12 @@ export default function Story() {
       isOpen={isOpen}
       currElementDialog={currElementDialog}
       lessonObj={lessonObj}
+      selectVariant={selectVariant}
       //methods
       onToggleModalVisibleHandler={toggleModalVisibleHandler}
       onChangeCounterCurrElementDialog={changeCounterCurrElementDialog}
       onChangeThemeHandler={changeThemeHandler}
+      onUpdateSelectWordHandler={updateSelectWordHandler}
     />
   );
 }

@@ -10,6 +10,7 @@
     {
       "id": "caf3beda-a609-4987-a1f3-6fb6f0969fe7",
       "person": "male",
+      "title": "Заполните пропуск",
       "replica": "Hello. I have a reservation.",
       "correctAnswer": "My name’s Mark Ryder.",
       "actionType": "active",
@@ -61,6 +62,7 @@
     {
       "id": "3f72cb2d-3c17-4f75-8b57-858ff4250a83",
       "person": "male",
+      "title": "Заполните пропуск",
       "replica": "Just a moment.",
       "correctAnswer": "Here you are.",
       "actionType": "active",
@@ -88,6 +90,7 @@
     {
       "id": "d169861e-c9ab-4b5b-b156-9aaa72d8289b",
       "person": "male",
+      "title": "Заполните пропуск",
       "replica": "Just a moment.",
       "correctAnswer": "Non-smoking, please.",
       "actionType": "active",
@@ -139,6 +142,7 @@
     {
       "id": "b3892371-25bf-479e-96fc-0e9bf2c04362",
       "person": "male",
+      "title": "Заполните пропуск",
       "replica": "",
       "correctAnswer": "Thank you.",
       "actionType": "active",

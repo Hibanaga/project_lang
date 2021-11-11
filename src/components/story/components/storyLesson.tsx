@@ -10,6 +10,7 @@ import CardReplicaNonActivePerson from "./cardReplicaNonActivePerson";
 
 interface stateProp {
   currentTheme: string;
+  selectVariant: string;
   isVisibleModal: boolean;
   isDisable: boolean;
   currElementDialog: number;
@@ -18,6 +19,7 @@ interface stateProp {
   onToggleModalVisibleHandler: (p: any) => void;
   onChangeThemeHandler: (p: any) => void;
   onChangeCounterCurrElementDialog: (p: any) => void;
+  onUpdateSelectWordHandler: (p: any) => void;
 }
 
 export default function storyLesson({
@@ -26,9 +28,11 @@ export default function storyLesson({
   isDisable,
   currElementDialog,
   lessonObj,
+  selectVariant,
   onChangeThemeHandler,
   onToggleModalVisibleHandler,
   onChangeCounterCurrElementDialog,
+  onUpdateSelectWordHandler,
 }: stateProp) {
   const { id, title, description, originalTitle, urlVideo } = cardPack
     .flat()
@@ -72,6 +76,7 @@ export default function storyLesson({
           ({
             id,
             person,
+            title,
             replica,
             actionType,
             correctAnswer,
@@ -82,8 +87,11 @@ export default function storyLesson({
                 <CardReplicaActivePerson
                   person={person}
                   replica={replica}
+                  title={title}
+                  selectVariant={selectVariant}
                   correctAnswer={correctAnswer}
                   variantAnswer={variantAnswer}
+                  onUpdateSelectWordHandler={onUpdateSelectWordHandler}
                 />
               </CSSTransition>
             ) : (
