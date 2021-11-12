@@ -19,7 +19,7 @@ interface stateProp {
   onToggleModalVisibleHandler: (p: any) => void;
   onChangeThemeHandler: (p: any) => void;
   onChangeCounterCurrElementDialog: (p: any) => void;
-  onUpdateSelectWordHandler: (p: any) => void;
+  onUpdateSelectWordHandler: (p: any, p1: any) => void;
 }
 
 export default function storyLesson({
@@ -40,9 +40,6 @@ export default function storyLesson({
 
   const { title: titleText, dialog } = cardlesson;
   const currItem = dialog[currElementDialog];
-
-  // console.log(currItem);
-  // console.log(titleText);
 
   return (
     <div className="wrapperStoryLessson">
@@ -88,6 +85,8 @@ export default function storyLesson({
                   person={person}
                   replica={replica}
                   title={title}
+                  isDisable={isDisable}
+                  actionType={actionType}
                   selectVariant={selectVariant}
                   correctAnswer={correctAnswer}
                   variantAnswer={variantAnswer}

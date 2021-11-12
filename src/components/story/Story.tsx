@@ -20,6 +20,7 @@ export default function Story() {
       dispatch({ type: "toggleStoryWindow", payload: isOpen });
       setCurrelementDialog(-1);
       setIsDisable(false);
+      setSelectVariant("");
       dispatch({ type: "resetLessonObj", payload: [] });
     },
     [isOpen]
@@ -29,7 +30,7 @@ export default function Story() {
     setCurrelementDialog(currElementDialog + 1);
     if (newItem !== undefined) {
       let keys = Object.keys(newItem);
-      keys.length === 7 && setIsDisable(true);
+      keys.length >= 6 ? setIsDisable(true) : setIsDisable(false);
       dispatch({ type: "updateLessonObj", payload: newItem });
     }
   };
@@ -38,9 +39,12 @@ export default function Story() {
     dispatch({ type: "toggleVisibleModal", payload: isVisibleModal });
   };
 
-  const updateSelectWordHandler = useCallback((event: any) => {
-    console.log(event.target.textContent);
-    setSelectVariant(event.target.textContent);
+  const updateSelectWordHandler = useCallback((event: any, prop: string) => {
+    // console.log(event.currentTarget.textContent);
+    setSelectVariant(event.currentTarget.textContent);
+    event.currentTarget.textContent === prop
+      ? setIsDisable(false)
+      : setIsDisable(true);
   }, []);
 
   // console.log(lessonObj);

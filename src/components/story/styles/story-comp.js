@@ -139,6 +139,11 @@ const VariantAnswerCardStory = styled.button`
     theme.isNowSelected && "rgba(0, 204, 255, 0.182)"};
 `;
 
+const RowVariantAnswer = styled.div`
+  margin-bottom: 10rem;
+  color: #1cb0f6;
+`;
+
 export {
   TitleStory,
   SubTitleStory,
@@ -148,4 +153,5 @@ export {
   SubTitleCardStory,
   ImgCardStory,
   VariantAnswerCardStory,
+  RowVariantAnswer,
 };

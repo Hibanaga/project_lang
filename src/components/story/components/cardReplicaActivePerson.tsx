@@ -1,6 +1,10 @@
 import React from "react";
 import objExported from "../images/imageExporter";
-import { SubTitleStory, VariantAnswerCardStory } from "../styles/story-comp";
+import {
+  SubTitleStory,
+  VariantAnswerCardStory,
+  RowVariantAnswer,
+} from "../styles/story-comp";
 import { replaceVariantStory } from "../utils/validateStoryHelpers";
 
 interface stateProp {
@@ -8,23 +12,28 @@ interface stateProp {
   replica: string;
   title: string;
   selectVariant: string;
+  isDisable: boolean;
+  actionType: string;
   correctAnswer: string | undefined;
   variantAnswer: any;
 
-  onUpdateSelectWordHandler: (p: any) => void;
+  onUpdateSelectWordHandler: (p: any, p1: any) => void;
 }
 
 export default function cardReplicaActivePerson({
   person,
   replica,
   title,
+  isDisable,
   correctAnswer,
   variantAnswer,
   selectVariant,
+  actionType,
   //methods
   onUpdateSelectWordHandler,
 }: stateProp) {
-  console.log(selectVariant);
+  console.log(actionType);
+
   return (
     <>
       <SubTitleStory className="titleStoryCardReplica">{title}</SubTitleStory>
@@ -42,17 +51,25 @@ export default function cardReplicaActivePerson({
         </div>
       </div>
 
-      <div className="rowVariantAnswerStory">
+      <RowVariantAnswer
+        theme={{
+          isNowSelected: selectVariant === replica,
+        }}
+        className="rowVariantAnswerStory"
+      >
         {variantAnswer.map(({ id, replica }: any) => (
           <VariantAnswerCardStory
-            theme={{ isNowSelected: selectVariant === replica }}
-            onClick={onUpdateSelectWordHandler}
+            theme={{
+              isNowSelected: selectVariant === replica,
+            }}
+            onClick={(event) => onUpdateSelectWordHandler(event, replica)}
+            disabled={replica === correctAnswer}
             key={id}
           >
             {replica}
           </VariantAnswerCardStory>
         ))}
-      </div>
+      </RowVariantAnswer>
     </>
   );
 }

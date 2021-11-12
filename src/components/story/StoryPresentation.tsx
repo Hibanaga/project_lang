@@ -21,7 +21,7 @@ interface stateProp {
   onChangeThemeHandler: (p: any) => void;
   onToggleModalVisibleHandler: (p: any) => void;
   onChangeCounterCurrElementDialog: (p: any) => void;
-  onUpdateSelectWordHandler: (p: any) => void;
+  onUpdateSelectWordHandler: (p: any, p1: any) => void;
 }
 
 export default function HistoryPresentation({
