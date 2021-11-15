@@ -8,8 +8,10 @@ export default function Story() {
   // isOpen:  to open window with story
   // isVisibleModal: to open modal with video of story
   // lessonObj: the array to show current elems of story shows to user
-  const [{ currentTheme, isOpen, isVisibleModal, lessonObj }, dispatch] =
-    useReducer(actions, initialState);
+  const [
+    { currentTheme, isOpen, isVisibleModal, lessonObj, falsyAnswerObj },
+    dispatch,
+  ] = useReducer(actions, initialState);
   //show to user elem of dialog to show next
   const [currElementDialog, setCurrelementDialog] = useState(-1);
   //disable botton prop if user don't click to variant answer
@@ -36,6 +38,7 @@ export default function Story() {
       setSelectVariant("");
       setFalsyAnswerCount(0);
       dispatch({ type: "resetLessonObj", payload: [] });
+      dispatch({ type: "resetFalsyAnswerObj", payload: [] });
     },
     [isOpen]
   );
@@ -67,6 +70,10 @@ export default function Story() {
       } else {
         setIsDisable(true);
         setFalsyAnswerCount(falsyAnswerCount + 1);
+        dispatch({
+          type: "updateFalsyAnswerObj",
+          payload: event.currentTarget.textContent,
+        });
       }
     },
     [falsyAnswerCount]
@@ -83,6 +90,7 @@ export default function Story() {
       lessonObj={lessonObj}
       selectVariant={selectVariant}
       falsyAnswerCount={falsyAnswerCount}
+      falsyAnswerObj={falsyAnswerObj}
       //methods
       onToggleModalVisibleHandler={toggleModalVisibleHandler}
       onChangeCounterCurrElementDialog={changeCounterCurrElementDialog}

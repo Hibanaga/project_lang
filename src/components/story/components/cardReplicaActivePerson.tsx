@@ -18,6 +18,7 @@ interface stateProp {
   currItem: any | undefined;
   lessonObjLength: number;
   countQuestion: number;
+  falsyAnswerObj: any;
 
   onUpdateSelectWordHandler: (p: any, p1: any) => void;
 }
@@ -33,6 +34,7 @@ export default function cardReplicaActivePerson({
   currItem,
   lessonObjLength,
   countQuestion,
+  falsyAnswerObj,
 
   //methods
   onUpdateSelectWordHandler,
@@ -68,9 +70,12 @@ export default function cardReplicaActivePerson({
           {variantAnswer.map(({ id, replica }: any) => (
             <VariantAnswerCardStory
               theme={{
-                isNowSelected: selectVariant === replica,
+                isCorrectAnswer: selectVariant === correctAnswer,
               }}
-              disabled={!isDisable}
+              disabled={
+                falsyAnswerObj.some((item: string) => item === replica) ||
+                !isDisable
+              }
               onClick={(event) =>
                 onUpdateSelectWordHandler(event, correctAnswer)
               }

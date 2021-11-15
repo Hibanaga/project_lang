@@ -3,6 +3,7 @@ const initialState: any = {
   isOpen: false,
   isVisibleModal: false,
   lessonObj: [],
+  falsyAnswerObj: [],
 };
 
 const actions = (state = initialState, { payload, type }: any) => {
@@ -17,7 +18,10 @@ const actions = (state = initialState, { payload, type }: any) => {
       return { ...state, lessonObj: [...state.lessonObj, payload] };
     case "resetLessonObj":
       return { ...state, lessonObj: payload };
-
+    case "updateFalsyAnswerObj":
+      return { ...state, falsyAnswerObj: [...state.falsyAnswerObj, payload] };
+    case "resetFalsyAnswerObj":
+      return { ...state, falsyAnswerObj: payload };
     default:
       throw new Error();
   }

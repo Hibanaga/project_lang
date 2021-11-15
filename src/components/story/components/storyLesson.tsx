@@ -15,6 +15,7 @@ interface stateProp {
   isDisable: boolean;
   currElementDialog: number;
   lessonObj: any;
+  falsyAnswerObj: any;
 
   onToggleModalVisibleHandler: (p: any) => void;
   onChangeThemeHandler: (p: any) => void;
@@ -29,6 +30,7 @@ export default function storyLesson({
   currElementDialog,
   lessonObj,
   selectVariant,
+  falsyAnswerObj,
 
   onChangeThemeHandler,
   onToggleModalVisibleHandler,
@@ -42,8 +44,6 @@ export default function storyLesson({
   const { title: titleText, dialog } = cardlesson;
   const currItem = dialog[currElementDialog];
   const currElement = dialog[currElementDialog - 1];
-
-  console.log(lessonObj);
 
   return (
     <div className="wrapperStoryLessson">
@@ -95,6 +95,7 @@ export default function storyLesson({
                   correctAnswer={correctAnswer}
                   variantAnswer={variantAnswer}
                   lessonObjLength={lessonObj.length}
+                  falsyAnswerObj={falsyAnswerObj}
                   currItem={currElement}
                   countQuestion={countQuestion}
                   onUpdateSelectWordHandler={onUpdateSelectWordHandler}

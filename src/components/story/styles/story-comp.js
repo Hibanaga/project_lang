@@ -118,25 +118,20 @@ const VariantAnswerCardStory = styled.button`
   padding: 1.3rem 1rem;
   background-color: #fff;
   border: 0.2rem solid #a5a5a5;
+
   border-bottom-width: 0.4rem;
   border-radius: 9px;
-  /* font-weight: 600; */
 
   cursor: pointer;
   transition: 0.3s;
 
-  &:hover {
-    background-color: ${({ theme }) =>
-      theme.isNowSelected ? "rgba(0, 204, 255, 0.182)" : "#f3f3f3"};
-
-    /* background-color: ${({ theme }) =>
-      theme.isNowSelected ? "rgba(0, 204, 255, 0.182)" : "#f3f3f3"};
-    border-color: ${({ theme }) => theme.isNowSelected && "#1cb0f6"}; */
+  &:disabled {
+    background-color: #f3f3f3;
   }
 
-  border-color: ${({ theme }) => theme.isNowSelected && "#1cb0f6"};
-  background-color: ${({ theme }) =>
-    theme.isNowSelected && "rgba(0, 204, 255, 0.182)"};
+  &:hover {
+    background-color: #f3f3f3;
+  }
 `;
 
 const RowVariantAnswer = styled.div`
