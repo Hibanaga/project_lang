@@ -29,6 +29,7 @@ export default function storyLesson({
   currElementDialog,
   lessonObj,
   selectVariant,
+
   onChangeThemeHandler,
   onToggleModalVisibleHandler,
   onChangeCounterCurrElementDialog,

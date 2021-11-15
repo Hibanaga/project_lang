@@ -17,6 +17,7 @@ interface stateProp {
   isDisable: boolean;
   currElementDialog: number;
   lessonObj: any;
+  falsyAnswerCount: number;
 
   onChangeThemeHandler: (p: any) => void;
   onToggleModalVisibleHandler: (p: any) => void;
@@ -32,6 +33,8 @@ export default function HistoryPresentation({
   currElementDialog,
   lessonObj,
   selectVariant,
+  falsyAnswerCount,
+  //methods
   onChangeThemeHandler,
   onToggleModalVisibleHandler,
   onChangeCounterCurrElementDialog,

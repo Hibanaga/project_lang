@@ -17,6 +17,7 @@ const actions = (state = initialState, { payload, type }: any) => {
       return { ...state, lessonObj: [...state.lessonObj, payload] };
     case "resetLessonObj":
       return { ...state, lessonObj: payload };
+
     default:
       throw new Error();
   }
