@@ -141,6 +141,7 @@ const VariantAnswerCardStory = styled.button`
 
 const RowVariantAnswer = styled.div`
   margin-bottom: 10rem;
+  /* ${({ theme }) => (theme.isNowSelected ? "0" : "10rem")} */
   color: #1cb0f6;
 `;
 

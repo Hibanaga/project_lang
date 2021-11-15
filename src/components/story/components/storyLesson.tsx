@@ -40,6 +40,9 @@ export default function storyLesson({
 
   const { title: titleText, dialog } = cardlesson;
   const currItem = dialog[currElementDialog];
+  const currElement = dialog[currElementDialog - 1];
+
+  console.log(lessonObj);
 
   return (
     <div className="wrapperStoryLessson">
@@ -78,6 +81,7 @@ export default function storyLesson({
             actionType,
             correctAnswer,
             variantAnswer,
+            countQuestion,
           }: any) =>
             actionType === "active" ? (
               <CSSTransition key={id} timeout={300} classNames="alert">
@@ -86,10 +90,12 @@ export default function storyLesson({
                   replica={replica}
                   title={title}
                   isDisable={isDisable}
-                  actionType={actionType}
                   selectVariant={selectVariant}
                   correctAnswer={correctAnswer}
                   variantAnswer={variantAnswer}
+                  lessonObjLength={lessonObj.length}
+                  currItem={currElement}
+                  countQuestion={countQuestion}
                   onUpdateSelectWordHandler={onUpdateSelectWordHandler}
                 />
               </CSSTransition>

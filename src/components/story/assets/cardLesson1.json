@@ -14,6 +14,7 @@
       "replica": "Hello. I have a reservation.",
       "correctAnswer": "My name’s Mark Ryder.",
       "actionType": "active",
+      "countQuestion": 2,
       "variantAnswer": [
         {
           "id": "9d89eda1-5f86-4c80-953d-b04113017eca",
@@ -66,9 +67,10 @@
       "replica": "Just a moment.",
       "correctAnswer": "Here you are.",
       "actionType": "active",
+      "countQuestion": 8,
       "variantAnswer": [
         {
-          "id": "39dc609e-0243-4b18-9168-22c6ab90bd39",
+          "id": "14b497ea-496a-42a2-8f9f-c768172d6669",
           "replica": "Here you are."
         },
         {
@@ -76,7 +78,7 @@
           "replica": "What the passport?"
         },
         {
-          "id": "624a68c0-be16-4905-be6a-3c1eb39bd633",
+          "id": "255b80c9-eb5a-4a1b-9c86-382dae371f44",
           "replica": "Here your passport."
         }
       ]
@@ -94,6 +96,7 @@
       "replica": "Just a moment.",
       "correctAnswer": "Non-smoking, please.",
       "actionType": "active",
+      "countQuestion": 10,
       "variantAnswer": [
         {
           "id": "90909e93-be15-45ae-8a19-4da8604f98b4",
@@ -146,6 +149,7 @@
       "replica": "",
       "correctAnswer": "Thank you.",
       "actionType": "active",
+      "countQuestion": 18,
       "variantAnswer": [
         {
           "id": "90909e93-be15-45ae-8a19-4da8604f98b4",

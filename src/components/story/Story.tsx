@@ -32,6 +32,7 @@ export default function Story() {
       let keys = Object.keys(newItem);
       keys.length >= 6 ? setIsDisable(true) : setIsDisable(false);
       dispatch({ type: "updateLessonObj", payload: newItem });
+      setSelectVariant("");
     }
   };
 
@@ -46,8 +47,6 @@ export default function Story() {
       ? setIsDisable(false)
       : setIsDisable(true);
   }, []);
-
-  // console.log(lessonObj);
 
   return (
     <StoryPresentation

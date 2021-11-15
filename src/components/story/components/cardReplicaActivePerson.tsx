@@ -13,9 +13,11 @@ interface stateProp {
   title: string;
   selectVariant: string;
   isDisable: boolean;
-  actionType: string;
   correctAnswer: string | undefined;
   variantAnswer: any;
+  currItem: any | undefined;
+  lessonObjLength: number;
+  countQuestion: number;
 
   onUpdateSelectWordHandler: (p: any, p1: any) => void;
 }
@@ -28,15 +30,18 @@ export default function cardReplicaActivePerson({
   correctAnswer,
   variantAnswer,
   selectVariant,
-  actionType,
+  currItem,
+  lessonObjLength,
+  countQuestion,
+
   //methods
   onUpdateSelectWordHandler,
 }: stateProp) {
-  console.log(actionType);
-
   return (
     <>
-      <SubTitleStory className="titleStoryCardReplica">{title}</SubTitleStory>
+      {currItem.correctAnswer === correctAnswer && (
+        <SubTitleStory className="titleStoryCardReplica">{title}</SubTitleStory>
+      )}
 
       <div className="wrapperActivePerson">
         <img src={objExported[person]} alt="" />
@@ -44,32 +49,38 @@ export default function cardReplicaActivePerson({
         <div className="bubble">
           <span className="descriptionReplica">
             {replica}
-            {selectVariant !== correctAnswer
+            {lessonObjLength > countQuestion
+              ? correctAnswer
+              : selectVariant !== correctAnswer
               ? replaceVariantStory(correctAnswer, "___________________")
               : correctAnswer}
           </span>
         </div>
       </div>
 
-      <RowVariantAnswer
-        theme={{
-          isNowSelected: selectVariant === replica,
-        }}
-        className="rowVariantAnswerStory"
-      >
-        {variantAnswer.map(({ id, replica }: any) => (
-          <VariantAnswerCardStory
-            theme={{
-              isNowSelected: selectVariant === replica,
-            }}
-            onClick={(event) => onUpdateSelectWordHandler(event, replica)}
-            disabled={replica === correctAnswer}
-            key={id}
-          >
-            {replica}
-          </VariantAnswerCardStory>
-        ))}
-      </RowVariantAnswer>
+      {currItem.correctAnswer === correctAnswer && (
+        <RowVariantAnswer
+          theme={{
+            isNowSelected: !isDisable,
+          }}
+          className="rowVariantAnswerStory"
+        >
+          {variantAnswer.map(({ id, replica }: any) => (
+            <VariantAnswerCardStory
+              theme={{
+                isNowSelected: selectVariant === replica,
+              }}
+              disabled={!isDisable}
+              onClick={(event) =>
+                onUpdateSelectWordHandler(event, correctAnswer)
+              }
+              key={id}
+            >
+              {replica}
+            </VariantAnswerCardStory>
+          ))}
+        </RowVariantAnswer>
+      )}
     </>
   );
 }
