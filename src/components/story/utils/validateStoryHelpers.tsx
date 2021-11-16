@@ -18,11 +18,27 @@ function returnPercentangeSuccesfullyAnswer(
   countFalsyAnswer: number,
   countActiveReplics: number
 ) {
-  return (countActiveReplics / countFalsyAnswer) * 100;
+  return countFalsyAnswer === 0
+    ? 0
+    : (countFalsyAnswer / countActiveReplics) * 100;
+}
+
+function returnMessageCongratulations(messageArr: any, percentange: number) {
+  return messageArr.reduce(
+    (prev: string, { message, percentangeSpread }: any) => {
+      let [min, max] = percentangeSpread.split("-");
+      if (percentange >= min && percentange <= max) {
+        prev = message;
+      }
+      return prev;
+    },
+    ""
+  );
 }
 
 export {
   replaceVariantStory,
   returnCountActiveReplics,
   returnPercentangeSuccesfullyAnswer,
+  returnMessageCongratulations,
 };

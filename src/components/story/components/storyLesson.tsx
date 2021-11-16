@@ -114,19 +114,18 @@ export default function storyLesson({
         )}
       </TransitionGroup>
 
-      {/* lessonObj.length >= cardlesson.dialog.length */}
       <button
         className="js-btn__openWindow"
         disabled={isDisable}
         onClick={
-          16 >= 16
+          lessonObj.length >= cardlesson.dialog.length
             ? () => onOpenResultLessonWindowHandler()
             : () => onChangeCounterCurrElementDialog(currItem)
         }
       >
-        {/* lessonObj.length < cardlesson.dialog.length
-cardlesson.dialog.length === lessonObj.length */}
-        {16 < 16 ? "далее" : 16 == 16 && "Завершить"}
+        {lessonObj.length < cardlesson.dialog.length
+          ? "далее"
+          : cardlesson.dialog.length === lessonObj.length && "Завершить"}
       </button>
     </div>
   );

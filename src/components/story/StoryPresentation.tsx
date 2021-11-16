@@ -27,6 +27,7 @@ interface stateProp {
   onChangeCounterCurrElementDialog: (p: any) => void;
   onUpdateSelectWordHandler: (p: any, p1: any) => void;
   onOpenResultLessonWindowHandler: () => void;
+  onCloseResultLessonWindowHandler: () => void;
 }
 
 export default function HistoryPresentation({
@@ -47,6 +48,7 @@ export default function HistoryPresentation({
   onChangeCounterCurrElementDialog,
   onUpdateSelectWordHandler,
   onOpenResultLessonWindowHandler,
+  onCloseResultLessonWindowHandler,
 }: stateProp) {
   return (
     <>
@@ -94,6 +96,7 @@ export default function HistoryPresentation({
         <ResultLessonWindow
           falsyAnswerObj={falsyAnswerObj}
           cardlesson={cardlesson}
+          onCloseResultLessonWindowHandler={onCloseResultLessonWindowHandler}
         />
       )}
     </>

@@ -1,0 +1,18 @@
+[
+  {
+    "message": "Идельно",
+    "percentangeSpread": "0-0"
+  },
+  {
+    "message": "Очень хорошо!",
+    "percentangeSpread": "1-60"
+  },
+  {
+    "message": "Хорошо",
+    "percentangeSpread": "61-100"
+  },
+  {
+    "message": "Можно лучше",
+    "percentangeSpread": "101-200"
+  }
+]

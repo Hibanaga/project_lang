@@ -46,6 +46,8 @@
 
     .js-btn__returnStory {
       @include resetDefaultInputStyles;
+
+      cursor: pointer;
     }
 
     .wrapperProgressBarStory {
@@ -102,6 +104,13 @@
 
     margin: 0 auto;
     cursor: pointer;
+
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #5ed801;
+      border-bottom: 0.4rem solid rgb(79, 148, 1);
+    }
 
     &:active {
       border-bottom-width: 0rem;
@@ -296,9 +305,48 @@
 
   .titleStoryResult {
     width: 90%;
-    margin: 25% auto;
+    margin: 30% auto;
+  }
 
-    // position: absolute;
-    // top: 10%;
+  .subTitleStoryResult {
+    font-size: 2.4rem;
+  }
+
+  .js-btn_finshLesson {
+    @include resetDefaultInputStyles;
+
+    display: block;
+    width: 90%;
+    height: 5rem;
+    background-color: #58cc02;
+    border-bottom: 0.4rem solid rgb(88, 167, 0);
+    color: #fff;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+
+    position: fixed;
+
+    z-index: 12;
+
+    bottom: 2.5%;
+    left: 0;
+    right: 0;
+
+    border-radius: 9px;
+
+    margin: 0 auto;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #5ed801;
+      border-bottom: 0.4rem solid rgb(79, 148, 1);
+    }
+
+    &:active {
+      border-bottom-width: 0rem;
+    }
   }
 }

@@ -161,6 +161,15 @@ const CloseWindowButton = styled.button`
   }
 `;
 
+const ResultMessage = styled.span`
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #58cc02;
+  text-align: center;
+  margin: 1rem auto;
+`;
+
 export {
   TitleStory,
   SubTitleStory,
@@ -172,4 +181,5 @@ export {
   VariantAnswerCardStory,
   RowVariantAnswer,
   CloseWindowButton,
+  ResultMessage,
 };

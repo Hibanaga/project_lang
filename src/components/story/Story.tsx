@@ -14,7 +14,7 @@ export default function Story() {
     dispatch,
   ] = useReducer(actions, initialState);
   //show to user elem of dialog to show next
-  const [currElementDialog, setCurrelementDialog] = useState(16);
+  const [currElementDialog, setCurrelementDialog] = useState(-1);
   //disable botton prop if user don't click to variant answer
   const [isDisable, setIsDisable] = useState(false);
   //selected variant of answer from user
@@ -34,7 +34,7 @@ export default function Story() {
 
       //reset all props
       dispatch({ type: "toggleStoryWindow", payload: isOpen });
-      setCurrelementDialog(16);
+      setCurrelementDialog(-1);
       setIsDisable(false);
       setSelectVariant("");
 
@@ -79,6 +79,18 @@ export default function Story() {
   //open window result
   const openResultLessonWindowHandler = () => setOpenResultWindow(true);
 
+  const closeResultLessonWindowHandler = () => {
+    setOpenResultWindow(false);
+    //reset all props
+    dispatch({ type: "toggleStoryWindow", payload: isOpen });
+    setCurrelementDialog(16);
+    setIsDisable(false);
+    setSelectVariant("");
+
+    dispatch({ type: "resetLessonObj", payload: [] });
+    dispatch({ type: "resetFalsyAnswerObj", payload: [] });
+  };
+
   return (
     <StoryPresentation
       //primitives
@@ -98,6 +110,7 @@ export default function Story() {
       onChangeThemeHandler={changeThemeHandler}
       onUpdateSelectWordHandler={updateSelectWordHandler}
       onOpenResultLessonWindowHandler={openResultLessonWindowHandler}
+      onCloseResultLessonWindowHandler={closeResultLessonWindowHandler}
     />
   );
 }
