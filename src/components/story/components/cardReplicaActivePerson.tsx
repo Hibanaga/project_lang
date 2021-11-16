@@ -69,16 +69,17 @@ export default function cardReplicaActivePerson({
         >
           {variantAnswer.map(({ id, replica }: any) => (
             <VariantAnswerCardStory
-              theme={{
-                isCorrectAnswer: selectVariant === correctAnswer,
-              }}
               disabled={
                 falsyAnswerObj.some((item: string) => item === replica) ||
                 !isDisable
               }
+              theme={{
+                isTrueVariant: replica === correctAnswer,
+              }}
               onClick={(event) =>
                 onUpdateSelectWordHandler(event, correctAnswer)
               }
+              className={selectVariant === replica ? "active" : ""}
               key={id}
             >
               {replica}

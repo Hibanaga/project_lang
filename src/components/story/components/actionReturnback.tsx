@@ -5,6 +5,7 @@ import {
   ProgressBar,
   ProgressInlineBar,
 } from "../../lesson/styles/styled-lesson";
+import { CloseWindowButton } from "../styles/story-comp";
 import { detectCurrWidthProgressBar } from "../../lesson/utils/validateLessonExamples";
 
 interface stateProp {
@@ -14,9 +15,12 @@ interface stateProp {
 export default function actionReturnback({ onChangeThemeHandler }: stateProp) {
   return (
     <Wrapper className="wrapperActionsStory">
-      <button className="js-btn__returnStory" onClick={onChangeThemeHandler}>
+      <CloseWindowButton
+        className="js-btn__returnStory"
+        onClick={onChangeThemeHandler}
+      >
         <CloseRoundedIcon />
-      </button>
+      </CloseWindowButton>
 
       <div className="wrapperProgressBarStory">
         <ProgressBar

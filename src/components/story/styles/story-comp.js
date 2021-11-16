@@ -117,6 +117,7 @@ const VariantAnswerCardStory = styled.button`
 
   padding: 1.3rem 1rem;
   background-color: #fff;
+  color: #333;
   border: 0.2rem solid #a5a5a5;
 
   border-bottom-width: 0.4rem;
@@ -125,12 +126,23 @@ const VariantAnswerCardStory = styled.button`
   cursor: pointer;
   transition: 0.3s;
 
+  &:hover {
+    background-color: #f3f3f3;
+  }
+
   &:disabled {
     background-color: #f3f3f3;
   }
 
-  &:hover {
-    background-color: #f3f3f3;
+  &.active {
+    background-color: ${({ theme }) =>
+      theme.isTrueVariant ? "#5acc02a9" : "rgba(255, 0, 0, 0.492)"};
+    border-color: ${({ theme }) =>
+      theme.isTrueVariant ? "#58cc02" : "rgba(196, 0, 0, 0.492)"};
+
+    &:disabled {
+      background-color: none;
+    }
   }
 `;
 
@@ -138,6 +150,15 @@ const RowVariantAnswer = styled.div`
   margin-bottom: 10rem;
   /* ${({ theme }) => (theme.isNowSelected ? "0" : "10rem")} */
   color: #1cb0f6;
+`;
+
+const CloseWindowButton = styled.button`
+  cursor: pointer;
+
+  svg {
+    font-size: 3.5rem;
+    color: #1cb0f6;
+  }
 `;
 
 export {
@@ -150,4 +171,5 @@ export {
   ImgCardStory,
   VariantAnswerCardStory,
   RowVariantAnswer,
+  CloseWindowButton,
 };

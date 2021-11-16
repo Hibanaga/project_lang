@@ -8,6 +8,7 @@ import {
   LineMessageStory,
 } from "./styles/story-comp";
 import StoryLesson from "./components/storyLesson";
+import ResultLessonWindow from "./components/resultLessonWindow";
 
 interface stateProp {
   currentTheme: string;
@@ -17,13 +18,15 @@ interface stateProp {
   isDisable: boolean;
   currElementDialog: number;
   lessonObj: any;
-  falsyAnswerCount: number;
+  isOpenResultWindow: boolean;
   falsyAnswerObj: any;
+  cardlesson: any;
 
   onChangeThemeHandler: (p: any) => void;
   onToggleModalVisibleHandler: (p: any) => void;
   onChangeCounterCurrElementDialog: (p: any) => void;
   onUpdateSelectWordHandler: (p: any, p1: any) => void;
+  onOpenResultLessonWindowHandler: () => void;
 }
 
 export default function HistoryPresentation({
@@ -34,16 +37,20 @@ export default function HistoryPresentation({
   currElementDialog,
   lessonObj,
   selectVariant,
+  isOpenResultWindow,
   falsyAnswerObj,
+  cardlesson,
+
   //methods
   onChangeThemeHandler,
   onToggleModalVisibleHandler,
   onChangeCounterCurrElementDialog,
   onUpdateSelectWordHandler,
+  onOpenResultLessonWindowHandler,
 }: stateProp) {
   return (
     <>
-      {isOpen && (
+      {isOpen && !isOpenResultWindow && (
         <>
           <StoryLesson
             isDisable={isDisable}
@@ -53,10 +60,13 @@ export default function HistoryPresentation({
             isVisibleModal={isVisibleModal}
             currElementDialog={currElementDialog}
             falsyAnswerObj={falsyAnswerObj}
+            isOpenResultWindow={isOpenResultWindow}
+            cardlesson={cardlesson}
             onChangeThemeHandler={onChangeThemeHandler}
             onToggleModalVisibleHandler={onToggleModalVisibleHandler}
             onChangeCounterCurrElementDialog={onChangeCounterCurrElementDialog}
             onUpdateSelectWordHandler={onUpdateSelectWordHandler}
+            onOpenResultLessonWindowHandler={onOpenResultLessonWindowHandler}
           />
         </>
       )}
@@ -78,6 +88,13 @@ export default function HistoryPresentation({
             </Wrapper>
           </article>
         </>
+      )}
+
+      {isOpenResultWindow && (
+        <ResultLessonWindow
+          falsyAnswerObj={falsyAnswerObj}
+          cardlesson={cardlesson}
+        />
       )}
     </>
   );

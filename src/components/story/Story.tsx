@@ -1,6 +1,7 @@
 import { useCallback, useReducer, useState } from "react";
 import StoryPresentation from "./StoryPresentation";
 import { initialState, actions } from "./services/optionsReducer";
+import cardlesson from "./assets/cardLesson1.json";
 
 export default function Story() {
   //the reducer to use from another needs
@@ -13,13 +14,13 @@ export default function Story() {
     dispatch,
   ] = useReducer(actions, initialState);
   //show to user elem of dialog to show next
-  const [currElementDialog, setCurrelementDialog] = useState(-1);
+  const [currElementDialog, setCurrelementDialog] = useState(16);
   //disable botton prop if user don't click to variant answer
   const [isDisable, setIsDisable] = useState(false);
   //selected variant of answer from user
   const [selectVariant, setSelectVariant] = useState("");
   //calculate the count of falsy answer count from user
-  const [falsyAnswerCount, setFalsyAnswerCount] = useState(0);
+  const [isOpenResultWindow, setOpenResultWindow] = useState(false);
 
   //toggle window handler to open/close from user
   const changeThemeHandler = useCallback(
@@ -33,10 +34,10 @@ export default function Story() {
 
       //reset all props
       dispatch({ type: "toggleStoryWindow", payload: isOpen });
-      setCurrelementDialog(-1);
+      setCurrelementDialog(16);
       setIsDisable(false);
       setSelectVariant("");
-      setFalsyAnswerCount(0);
+
       dispatch({ type: "resetLessonObj", payload: [] });
       dispatch({ type: "resetFalsyAnswerObj", payload: [] });
     },
@@ -60,24 +61,23 @@ export default function Story() {
   };
 
   //update selected word of user to answer and calculate count of falsy answer from user
-  const updateSelectWordHandler = useCallback(
-    (event: any, prop: string) => {
-      // console.log(event.currentTarget.textContent);
-      setSelectVariant(event.currentTarget.textContent);
+  const updateSelectWordHandler = useCallback((event: any, prop: string) => {
+    // console.log(event.currentTarget.textContent);
+    setSelectVariant(event.currentTarget.textContent);
 
-      if (event.currentTarget.textContent === prop) {
-        setIsDisable(false);
-      } else {
-        setIsDisable(true);
-        setFalsyAnswerCount(falsyAnswerCount + 1);
-        dispatch({
-          type: "updateFalsyAnswerObj",
-          payload: event.currentTarget.textContent,
-        });
-      }
-    },
-    [falsyAnswerCount]
-  );
+    if (event.currentTarget.textContent === prop) {
+      setIsDisable(false);
+    } else {
+      setIsDisable(true);
+      dispatch({
+        type: "updateFalsyAnswerObj",
+        payload: event.currentTarget.textContent,
+      });
+    }
+  }, []);
+
+  //open window result
+  const openResultLessonWindowHandler = () => setOpenResultWindow(true);
 
   return (
     <StoryPresentation
@@ -89,13 +89,15 @@ export default function Story() {
       currElementDialog={currElementDialog}
       lessonObj={lessonObj}
       selectVariant={selectVariant}
-      falsyAnswerCount={falsyAnswerCount}
+      isOpenResultWindow={isOpenResultWindow}
       falsyAnswerObj={falsyAnswerObj}
+      cardlesson={cardlesson}
       //methods
       onToggleModalVisibleHandler={toggleModalVisibleHandler}
       onChangeCounterCurrElementDialog={changeCounterCurrElementDialog}
       onChangeThemeHandler={changeThemeHandler}
       onUpdateSelectWordHandler={updateSelectWordHandler}
+      onOpenResultLessonWindowHandler={openResultLessonWindowHandler}
     />
   );
 }

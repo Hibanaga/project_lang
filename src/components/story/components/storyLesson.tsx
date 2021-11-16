@@ -3,7 +3,7 @@ import ActionReturnback from "./actionReturnback";
 import cardPack from "../assets/cardPack.json";
 import CardStory from "./cardStory";
 import VideoModalStory from "./videoModalStory";
-import cardlesson from "../assets/cardLesson1.json";
+
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import CardReplicaActivePerson from "./cardReplicaActivePerson";
 import CardReplicaNonActivePerson from "./cardReplicaNonActivePerson";
@@ -13,14 +13,17 @@ interface stateProp {
   selectVariant: string;
   isVisibleModal: boolean;
   isDisable: boolean;
+  isOpenResultWindow: boolean;
   currElementDialog: number;
   lessonObj: any;
   falsyAnswerObj: any;
+  cardlesson: any;
 
   onToggleModalVisibleHandler: (p: any) => void;
   onChangeThemeHandler: (p: any) => void;
   onChangeCounterCurrElementDialog: (p: any) => void;
   onUpdateSelectWordHandler: (p: any, p1: any) => void;
+  onOpenResultLessonWindowHandler: () => void;
 }
 
 export default function storyLesson({
@@ -31,11 +34,13 @@ export default function storyLesson({
   lessonObj,
   selectVariant,
   falsyAnswerObj,
+  cardlesson,
 
   onChangeThemeHandler,
   onToggleModalVisibleHandler,
   onChangeCounterCurrElementDialog,
   onUpdateSelectWordHandler,
+  onOpenResultLessonWindowHandler,
 }: stateProp) {
   const { id, title, description, originalTitle, urlVideo } = cardPack
     .flat()
@@ -109,12 +114,19 @@ export default function storyLesson({
         )}
       </TransitionGroup>
 
+      {/* lessonObj.length >= cardlesson.dialog.length */}
       <button
         className="js-btn__openWindow"
         disabled={isDisable}
-        onClick={() => onChangeCounterCurrElementDialog(currItem)}
+        onClick={
+          16 >= 16
+            ? () => onOpenResultLessonWindowHandler()
+            : () => onChangeCounterCurrElementDialog(currItem)
+        }
       >
-        далее
+        {/* lessonObj.length < cardlesson.dialog.length
+cardlesson.dialog.length === lessonObj.length */}
+        {16 < 16 ? "далее" : 16 == 16 && "Завершить"}
       </button>
     </div>
   );
