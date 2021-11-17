@@ -178,8 +178,6 @@ app.post("/update_markUpCoin", (req, res) => {
         objToupdateProgress[nameCatalog] = updatedProgress;
       }
 
-      // console.log(objToupdateProgress[nameCatalog]);
-
       db_update(
         process.env.DB_NAME,
         "activeUsers",
@@ -194,6 +192,20 @@ app.post("/update_markUpCoin", (req, res) => {
   );
 
   res.json({ message: "success" });
+});
+
+app.post("/get_storyLesson", (req, res) => {
+  const state = req.body;
+  const { theme } = state;
+
+  db_read(process.env.DB_NAME, "story_lessons", { theme: theme })
+    .then(({ dialog, title }) => {
+      res.json({
+        title,
+        dialog,
+      });
+    })
+    .catch((err) => res.json({ message: err }));
 });
 
 app.listen(PORT, () => console.log(`server lister on port ${PORT}`));
