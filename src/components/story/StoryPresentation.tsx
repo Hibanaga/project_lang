@@ -21,6 +21,8 @@ interface stateProp {
   isOpenResultWindow: boolean;
   falsyAnswerObj: any;
   cardlesson: any;
+  outerRef: any;
+  titleStory: string;
 
   onChangeThemeHandler: (p: any) => void;
   onToggleModalVisibleHandler: (p: any) => void;
@@ -41,6 +43,8 @@ export default function HistoryPresentation({
   isOpenResultWindow,
   falsyAnswerObj,
   cardlesson,
+  outerRef,
+  titleStory,
 
   //methods
   onChangeThemeHandler,
@@ -64,6 +68,8 @@ export default function HistoryPresentation({
             falsyAnswerObj={falsyAnswerObj}
             isOpenResultWindow={isOpenResultWindow}
             cardlesson={cardlesson}
+            outerRef={outerRef}
+            titleStory={titleStory}
             onChangeThemeHandler={onChangeThemeHandler}
             onToggleModalVisibleHandler={onToggleModalVisibleHandler}
             onChangeCounterCurrElementDialog={onChangeCounterCurrElementDialog}

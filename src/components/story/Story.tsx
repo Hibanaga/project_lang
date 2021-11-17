@@ -1,4 +1,4 @@
-import { useCallback, useReducer, useState } from "react";
+import { useCallback, useEffect, useReducer, useState, useRef } from "react";
 import StoryPresentation from "./StoryPresentation";
 import { initialState, actions } from "./services/optionsReducer";
 import cardlesson from "./assets/cardLesson1.json";
@@ -10,7 +10,15 @@ export default function Story() {
   // isVisibleModal: to open modal with video of story
   // lessonObj: the array to show current elems of story shows to user
   const [
-    { currentTheme, isOpen, isVisibleModal, lessonObj, falsyAnswerObj },
+    {
+      currentTheme,
+      isOpen,
+      isVisibleModal,
+      lessonObj,
+      falsyAnswerObj,
+      titleStory,
+      dialogResponse,
+    },
     dispatch,
   ] = useReducer(actions, initialState);
   //show to user elem of dialog to show next
@@ -21,6 +29,31 @@ export default function Story() {
   const [selectVariant, setSelectVariant] = useState("");
   //calculate the count of falsy answer count from user
   const [isOpenResultWindow, setOpenResultWindow] = useState(false);
+  //item ref
+  const outerRef = useRef<HTMLLinkElement>(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    if (currentTheme !== "") {
+      fetch("/get_storyLesson", {
+        method: "POST",
+        signal: signal,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          theme: currentTheme,
+        }),
+      })
+        .then((res) => res.json())
+        .then(({ title, dialog }) => {
+          dispatch({ type: "setTitleStory", payload: title });
+          dispatch({ type: "setDialogResponse", payload: dialog });
+        });
+    }
+  }, [currentTheme]);
 
   //toggle window handler to open/close from user
   const changeThemeHandler = useCallback(
@@ -43,6 +76,13 @@ export default function Story() {
     },
     [isOpen]
   );
+
+  //effect scroll to bottom dialog
+  const scrollToBottom = () => {
+    outerRef.current && outerRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => scrollToBottom, [currElementDialog]);
 
   //update current count of dialog replice show to user
   const changeCounterCurrElementDialog = (newItem: any) => {
@@ -103,7 +143,9 @@ export default function Story() {
       selectVariant={selectVariant}
       isOpenResultWindow={isOpenResultWindow}
       falsyAnswerObj={falsyAnswerObj}
-      cardlesson={cardlesson}
+      cardlesson={dialogResponse}
+      outerRef={outerRef}
+      titleStory={titleStory}
       //methods
       onToggleModalVisibleHandler={toggleModalVisibleHandler}
       onChangeCounterCurrElementDialog={changeCounterCurrElementDialog}

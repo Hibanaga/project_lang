@@ -1,8 +1,10 @@
 const initialState: any = {
   currentTheme: "",
+  titleStory: "",
   isOpen: false,
   isVisibleModal: false,
   lessonObj: [],
+  dialogResponse: [],
   falsyAnswerObj: [],
 };
 
@@ -22,6 +24,10 @@ const actions = (state = initialState, { payload, type }: any) => {
       return { ...state, falsyAnswerObj: [...state.falsyAnswerObj, payload] };
     case "resetFalsyAnswerObj":
       return { ...state, falsyAnswerObj: payload };
+    case "setTitleStory":
+      return { ...state, titleStory: payload };
+    case "setDialogResponse":
+      return { ...state, dialogResponse: payload };
     default:
       throw new Error();
   }

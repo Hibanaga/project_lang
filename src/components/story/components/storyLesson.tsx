@@ -18,6 +18,8 @@ interface stateProp {
   lessonObj: any;
   falsyAnswerObj: any;
   cardlesson: any;
+  outerRef: any;
+  titleStory: string;
 
   onToggleModalVisibleHandler: (p: any) => void;
   onChangeThemeHandler: (p: any) => void;
@@ -35,6 +37,8 @@ export default function storyLesson({
   selectVariant,
   falsyAnswerObj,
   cardlesson,
+  outerRef,
+  titleStory,
 
   onChangeThemeHandler,
   onToggleModalVisibleHandler,
@@ -46,9 +50,13 @@ export default function storyLesson({
     .flat()
     .filter(({ description }) => description === currentTheme)[0];
 
-  const { title: titleText, dialog } = cardlesson;
-  const currItem = dialog[currElementDialog];
-  const currElement = dialog[currElementDialog - 1];
+  console.log(cardPack);
+
+  // const { title: titleText, dialog } = cardlesson;
+  const currItem =
+    cardlesson === undefined ? undefined : cardlesson[currElementDialog];
+  const currElement =
+    cardlesson === undefined ? undefined : cardlesson[currElementDialog - 1];
 
   return (
     <div className="wrapperStoryLessson">
@@ -74,7 +82,7 @@ export default function storyLesson({
         classNames="alert"
         unmountOnExit
       >
-        <h1 className="titleTextStoryLesson">{titleText}</h1>
+        <h1 className="titleTextStoryLesson">{titleStory}</h1>
       </CSSTransition>
 
       <TransitionGroup component="ul">
@@ -114,19 +122,23 @@ export default function storyLesson({
         )}
       </TransitionGroup>
 
-      <button
-        className="js-btn__openWindow"
-        disabled={isDisable}
-        onClick={
-          lessonObj.length >= cardlesson.dialog.length
-            ? () => onOpenResultLessonWindowHandler()
-            : () => onChangeCounterCurrElementDialog(currItem)
-        }
-      >
-        {lessonObj.length < cardlesson.dialog.length
-          ? "далее"
-          : cardlesson.dialog.length === lessonObj.length && "Завершить"}
-      </button>
+      <>
+        <button
+          className="js-btn__openWindow"
+          disabled={isDisable}
+          onClick={
+            lessonObj.length >= cardlesson.length
+              ? () => onOpenResultLessonWindowHandler()
+              : () => onChangeCounterCurrElementDialog(currItem)
+          }
+        >
+          {lessonObj.length < cardlesson.length
+            ? "далее"
+            : cardlesson.length === lessonObj.length && "Завершить"}
+        </button>
+      </>
+
+      <div className="outerScroll" ref={outerRef}></div>
     </div>
   );
 }
