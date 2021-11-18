@@ -4,6 +4,7 @@ import playIMG from "./play.png";
 import maleIMG from "./cardpack1/male.png";
 import femaleIMG from "./cardpack1/female.png";
 import AllieIMG from "./cardpack1/allie.png";
+import colleagueIMG from "./cardpack1/colleague.png";
 
 type Dict = {
   [key: string]: string;
@@ -16,6 +17,7 @@ const objExported: Dict = {
   male: maleIMG,
   female: femaleIMG,
   Allie: AllieIMG,
+  colleague: colleagueIMG,
 };
 
 export default objExported;

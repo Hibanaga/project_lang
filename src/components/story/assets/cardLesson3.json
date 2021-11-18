@@ -1,0 +1,297 @@
+{
+  "title": "Dialogue between Allie and Mark about family",
+  "dialog": [
+    {
+      "id": "ab2664b5-0790-41d6-81dd-070f93bee748",
+      "person": "Allie",
+      "replica": "Where are you from in the United States, Mark?",
+      "actionType": "don't active"
+    },
+    {
+      "id": "d33b5343-ea49-4542-8b60-6d588dd516d3",
+      "person": "male",
+      "replica": "The West Coast. San Francisco.",
+      "actionType": "don't active"
+    },
+    {
+      "id": "b426cdfa-625f-41a7-bf9b-27adb81609f2",
+      "person": "Allie",
+      "replica": "Is it nice?",
+      "actionType": "don't active"
+    },
+    {
+      "id": "70a7e3a5-f821-4734-972e-7cf5ca2b0b8c",
+      "person": "male",
+      "title": "Заполните пропуск",
+      "replica": "Oh yeah. It’s a great city.",
+      "correctAnswer": "Are you from London?",
+      "actionType": "active",
+      "countQuestion": 4,
+      "variantAnswer": [
+        {
+          "id": "6a1f9f37-da12-467a-a186-3cf9de2f2689",
+          "replica": "Are you from Los Angeles?"
+        },
+        {
+          "id": "79735d1f-50da-43d1-aadb-57726b98e373",
+          "replica": "Are you from New York?"
+        },
+        {
+          "id": "24173e38-e27d-409c-b3d1-dab5ad1af587",
+          "replica": "Are you from London?"
+        }
+      ]
+    },
+    {
+      "id": "85ef1d39-a1cc-40d1-ba10-8d90c37a3682",
+      "person": "Allie",
+      "replica": "No, I’m from Cambridge.",
+      "actionType": "don't active"
+    },
+    {
+      "id": "eadbb6d3-38fd-40b7-8bc0-2b18f152077f",
+      "person": "Allie",
+      "replica": "My family live there, but I live here in London.",
+      "actionType": "don't active"
+    },
+    {
+      "id": "f6e5439c-d2e9-47c3-a6c1-0582b708fc37",
+      "person": "male",
+      "title": "Заполните пропуск",
+      "replica": "Hello darling, how are you?",
+      "correctAnswer": "I’m fine, yeah.Don’t worry.",
+      "actionType": "active",
+      "countQuestion": 7,
+      "variantAnswer": [
+        {
+          "id": "3a78fbfb-6ba4-4be7-95d0-5935d12066ad",
+          "replica": "I’m fine, yeah.Don’t worry."
+        },
+        {
+          "id": "87fb10d0-db08-4641-b38a-548fd29353b9",
+          "replica": "I’m fine, yeah."
+        },
+        {
+          "id": "8fc68c46-6d14-45f4-9d94-a5368eef6431",
+          "replica": "Don’t worry."
+        }
+      ]
+    },
+    {
+      "id": "ee7a3b2c-903f-40bb-87a8-029864f61653",
+      "person": "male",
+      "title": "Заполните пропуск",
+      "replica": "Fine, fine.That’s great.",
+      "correctAnswer": "Bye, darling.I love you.",
+      "actionType": "active",
+      "countQuestion": 8,
+      "variantAnswer": [
+        {
+          "id": "9c8bd463-fe14-47f0-8280-a7ee3b39d513",
+          "replica": "Bye, darling."
+        },
+        {
+          "id": "0450e099-bf77-47d9-8b48-f41423d5a765",
+          "replica": "Bye, darling.I love you."
+        },
+        {
+          "id": "92f4d553-c209-4909-a18c-97aabc264e81",
+          "replica": "Good bye!"
+        }
+      ]
+    },
+    {
+      "id": "85a78146-d7d5-490a-853d-594f81e0013a",
+      "person": "male",
+      "replica": "Sorry.",
+      "actionType": "don't active"
+    },
+    {
+      "id": "0961e4be-2d1c-4175-8af2-1797f6efc7f0",
+      "person": "Allie",
+      "replica": "That’s OK. Your wife?",
+      "actionType": "don't active"
+    },
+    {
+      "id": "4ad4b2b4-6ae8-4329-b015-558d1272a8b8",
+      "person": "male",
+      "title": "Заполните пропуск",
+      "replica": "No, no,",
+      "correctAnswer": "my daughter.",
+      "actionType": "active",
+      "countQuestion": 11,
+      "variantAnswer": [
+        {
+          "id": "9c8bd463-fe14-47f0-8280-a7ee3b39d513",
+          "replica": "my daughter."
+        },
+        {
+          "id": "0450e099-bf77-47d9-8b48-f41423d5a765",
+          "replica": "my son."
+        },
+        {
+          "id": "92f4d553-c209-4909-a18c-97aabc264e81",
+          "replica": "my wife."
+        }
+      ]
+    },
+    {
+      "id": "3b7d2652-05c4-4a4e-a67d-0c57e63150c9",
+      "person": "male",
+      "replica": "She always phones me when I’m traveling.",
+      "actionType": "don't active"
+    },
+    {
+      "id": "113b418f-ca7f-4b76-8dbf-9b285729a11f",
+      "person": "Allie",
+      "replica": "How old is she?",
+      "actionType": "don't active"
+    },
+    {
+      "id": "526785b7-21d5-47bc-8eda-7ae21cb2d5b1",
+      "person": "male",
+      "title": "Заполните пропуск",
+      "replica": "",
+      "correctAnswer": "She’s nine.",
+      "actionType": "active",
+      "countQuestion": 14,
+      "variantAnswer": [
+        {
+          "id": "bdc8e802-3807-42ca-98d6-c7c14b0ce432",
+          "replica": "She’s nine."
+        },
+        {
+          "id": "c754acaa-723b-4de2-aacb-0e30b764bf08",
+          "replica": "She’s ten."
+        },
+        {
+          "id": "9ac61807-d859-473e-b6ca-61fd6d2dd051",
+          "replica": "She’s eleven."
+        }
+      ]
+    },
+    {
+      "id": "ab5da8d0-38db-4bcf-8800-a542b9bea457",
+      "person": "male",
+      "replica": "She lives with her mother in Los Angeles.",
+      "actionType": "don't active"
+    },
+    {
+      "id": "38fda518-dda4-4a27-ae23-11959ac2835d",
+      "person": "male",
+      "title": "Заполните пропуск",
+      "replica": "We’re divorced.",
+      "correctAnswer": "Are you married?",
+      "actionType": "active",
+      "countQuestion": 16,
+      "variantAnswer": [
+        {
+          "id": "a9b00bde-a621-498a-8f1a-027da32ea1f4",
+          "replica": "You are married?"
+        },
+        {
+          "id": "9483f033-573a-4d01-95c5-6505e853809c",
+          "replica": "Are she married?"
+        },
+        {
+          "id": "5221020c-7022-4281-b763-65009da4590a",
+          "replica": "Are you married?"
+        }
+      ]
+    },
+    {
+      "id": "51a816bc-5667-4fe4-8d19-2982f09d9e44",
+      "person": "Allie",
+      "replica": "No, I’m not.",
+      "actionType": "don't active"
+    },
+    {
+      "id": "51a816bc-5667-4fe4-8d19-2982f09d9e44",
+      "person": "male",
+      "replica": "How old are you?",
+      "actionType": "don't active"
+    },
+    {
+      "id": "8d726511-49fa-4cf6-8776-c4f969b66e86",
+      "person": "Allie",
+      "replica": "That’s very personal! What do you think?",
+      "actionType": "don't active"
+    },
+    {
+      "id": "029b229f-edb4-4db7-8cf8-9bbe4253758f",
+      "person": "male",
+      "replica": "Twenty-five? Twenty-six?",
+      "actionType": "don't active"
+    },
+    {
+      "id": "f4cdaa81-2bb7-497e-8792-1100e6262c33",
+      "person": "Allie",
+      "replica": "Thanks, I’m twenty-seven. How old are you?",
+      "actionType": "don't active"
+    },
+    {
+      "id": "e78dcf75-faaf-4524-85ba-d45737fcaf38",
+      "person": "male",
+      "title": "Заполните пропуск",
+      "replica": "I’m thirty-four.",
+      "correctAnswer": "Would you like another drink?",
+      "actionType": "active",
+      "countQuestion": 22,
+      "variantAnswer": [
+        {
+          "id": "b3444de0-fe1f-4a26-950e-8975b66f7bb2",
+          "replica": "You drink another drink?"
+        },
+        {
+          "id": "9615874b-afc9-4e04-9d02-2514581e50fb",
+          "replica": "Would you like another drink?"
+        },
+        {
+          "id": "44bcf04e-93f3-4524-8a8b-b5e73f36683b",
+          "replica": "You would like another drink?"
+        }
+      ]
+    },
+    {
+      "id": "3793097a-2589-4e3e-a281-098ad4355190",
+      "person": "Allie",
+      "replica": "No, thanks. I have to go now, Mark.",
+      "actionType": "don't active"
+    },
+    {
+      "id": "fd41646d-d6e7-4b91-8bd1-06d5387d31a7",
+      "person": "Allie",
+      "replica": "Our first meeting’s at ten. See you tomorrow.",
+      "actionType": "don't active"
+    },
+    {
+      "id": "c7ec428e-b570-40f6-bc80-32c91ad25141",
+      "person": "male",
+      "title": "Заполните пропуск",
+      "replica": "See you tomorrow,",
+      "correctAnswer": "Allie.",
+      "actionType": "active",
+      "countQuestion": 25,
+      "variantAnswer": [
+        {
+          "id": "569903df-b7c6-44ac-bace-4eacbea42418",
+          "replica": "Ellie."
+        },
+        {
+          "id": "67899909-d6e4-4baa-b09b-adc8d799128f",
+          "replica": "Mollie."
+        },
+        {
+          "id": "b836c859-09c2-4e24-9b5e-eae78ee82d52",
+          "replica": "Allie."
+        }
+      ]
+    },
+    {
+      "id": "40ed9df3-0a34-44e8-ba5c-d3fcedf5d70d",
+      "person": "Allie",
+      "replica": "Goodnight.",
+      "actionType": "don't active"
+    }
+  ]
+}

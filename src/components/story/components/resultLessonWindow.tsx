@@ -48,7 +48,7 @@ export default function resultLessonWindow({
             messageCongratulations,
             returnPercentangeSuccesfullyAnswer(
               falsyAnswerObj.length,
-              returnCountActiveReplics(cardlesson.dialog)
+              returnCountActiveReplics(cardlesson)
             )
           )}
         </ResultMessage>
