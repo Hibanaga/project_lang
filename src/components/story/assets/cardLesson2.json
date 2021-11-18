@@ -1,0 +1,135 @@
+{
+  "title": "The story is about Max Ryder who flew to the UK and meets his girlfriend Allie at the airport.",
+  "dialog": [
+    {
+      "id": "30654777-8f17-49d2-8bcc-1c996431183f",
+      "person": "Allie",
+      "replica": "Hello. Are you Mark Ryder?",
+      "actionType": "don't active"
+    },
+    {
+      "id": "70a7e3a5-f821-4734-972e-7cf5ca2b0b8c",
+      "person": "male",
+      "title": "Заполните пропуск",
+      "replica": "Yes.",
+      "correctAnswer": "Are you Allie?",
+      "actionType": "active",
+      "countQuestion": 2,
+      "variantAnswer": [
+        {
+          "id": "6a1f9f37-da12-467a-a186-3cf9de2f2689",
+          "replica": "Are you Ellie?"
+        },
+        {
+          "id": "79735d1f-50da-43d1-aadb-57726b98e373",
+          "replica": "Are you Allie?"
+        },
+        {
+          "id": "24173e38-e27d-409c-b3d1-dab5ad1af587",
+          "replica": "You are Allie"
+        }
+      ]
+    },
+    {
+      "id": "0558d219-7866-417e-8397-f2a2c1e01868",
+      "person": "Allie",
+
+      "replica": "Yes, I am.",
+      "actionType": "don't active"
+    },
+    {
+      "id": "40898a51-ec16-4dcb-8781-d680c3a0c0b2",
+      "person": "male",
+      "title": "Заполните пропуск",
+      "replica": "",
+      "correctAnswer": "Nice to meet you.",
+      "actionType": "active",
+      "countQuestion": 4,
+      "variantAnswer": [
+        {
+          "id": "ab70c37b-2174-4085-aa45-ae4fc807faea",
+          "replica": "i'm glad to see you"
+        },
+        {
+          "id": "875ea786-3137-4bab-b7bd-e27d6d9efd20",
+          "replica": "Nice to meet you."
+        },
+        {
+          "id": "6c546864-e692-46d2-b3e5-edbda1eff91c",
+          "replica": "Good to meet you"
+        }
+      ]
+    },
+    {
+      "id": "2db50852-6db7-458c-9dbf-65ad12d6b983",
+      "person": "Allie",
+      "replica": "And you. Welcome to the UK.",
+      "actionType": "don't active"
+    },
+    {
+      "id": "1544a40e-6032-4ea9-89ae-82ef37ff2134",
+      "person": "Allie",
+      "replica": "Your hotel’s in the city center.",
+      "actionType": "don't active"
+    },
+    {
+      "id": "abc9893e-49dc-40ea-a175-c1accfdc7c40",
+      "person": "male",
+      "replica": "How far is it?",
+      "actionType": "don't active"
+    },
+    {
+      "id": "bd18a468-ffdc-423f-a6e4-54acbad2e226",
+      "person": "Allie",
+      "replica": "It’s about thirty minutes if the traffic’s OK.",
+      "actionType": "don't active"
+    },
+    {
+      "id": "0b4a1326-4d59-4923-b155-5bb1b3b6f19a",
+      "person": "male",
+      "title": "Заполните пропуск",
+      "replica": "",
+      "correctAnswer": "Great.",
+      "actionType": "active",
+      "countQuestion": 9,
+      "variantAnswer": [
+        {
+          "id": "48669bc3-f2e1-47b2-b5de-08eaa03c7142",
+          "replica": "Great."
+        },
+        {
+          "id": "83474665-2bc7-4a22-8642-a33fd554b6d1",
+          "replica": "Not bad."
+        },
+        {
+          "id": "589a67bc-89e1-48af-ba2f-c71d2cd8e09c",
+          "replica": "It's a little far away."
+        }
+      ]
+    },
+    {
+      "id": "33ed0bbd-11e7-4213-b253-e854cbe17d81",
+      "person": "male",
+      "replica": "No, I’m fine, thanks.",
+      "actionType": "don't active"
+    },
+    {
+      "id": "eeb90684-1e59-4c3c-bc72-357d5a08b8da",
+      "person": "Allie",
+      "replica": "All right. Let’s go. My car’s in the car park.",
+      "actionType": "don't active"
+    },
+    {
+      "id": "2c60df34-7951-4840-a88c-e38e850fdfdf",
+      "person": "Allie",
+      "replica": "Can I help you with your bags?",
+      "actionType": "don't active"
+    },
+    {
+      "id": "053335e1-9284-443b-b403-38f2cf9e6f4e",
+      "person": "male",
+      "replica": "No, it’s OK, thanks.",
+      "actionType": "don't active"
+    }
+  ]
+}

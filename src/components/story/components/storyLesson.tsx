@@ -50,8 +50,6 @@ export default function storyLesson({
     .flat()
     .filter(({ description }) => description === currentTheme)[0];
 
-  console.log(cardPack);
-
   // const { title: titleText, dialog } = cardlesson;
   const currItem =
     cardlesson === undefined ? undefined : cardlesson[currElementDialog];
