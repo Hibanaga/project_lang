@@ -1,0 +1,244 @@
+{
+  "title": "Mark and Allie are looking for the way to the restaurant.",
+  "dialog": [
+    {
+      "id": "ab2664b5-0790-41d6-81dd-070f93bee748",
+      "person": "Allie",
+      "title": "Заполните пропуск",
+      "replica": "OK. It’s this street. No, it isn’t. ",
+      "correctAnswer": "I’m sure she said the first on the right.",
+      "actionType": "active",
+      "countQuestion": 1,
+      "variantAnswer": [
+        {
+          "id": "6a1f9f37-da12-467a-a186-3cf9de2f2689",
+          "replica": "I’m sure he said the first on the left."
+        },
+        {
+          "id": "79735d1f-50da-43d1-aadb-57726b98e373",
+          "replica": "I’m sure she said the second on the left."
+        },
+        {
+          "id": "24173e38-e27d-409c-b3d1-dab5ad1af587",
+          "replica": "I’m sure she said the first on the right."
+        }
+      ]
+    },
+    {
+      "id": "85ef1d39-a1cc-40d1-ba10-8d90c37a3682",
+      "person": "male",
+      "replica": "No, she said the second on the right. Relax, Allie. ",
+      "actionType": "don't active"
+    },
+    {
+      "id": "7ad9e40c-af6c-49d1-9aa8-c75cb0f1762d",
+      "person": "Allie",
+      "replica": "Look, let’s ask that man there. ",
+      "actionType": "don't active"
+    },
+    {
+      "id": "90921874-9ae7-4093-933f-ddfda8fb2b6c",
+      "person": "male",
+      "title": "Заполните пропуск",
+      "replica": "I don’t think ",
+      "correctAnswer": "he knows.",
+      "actionType": "active",
+      "countQuestion": 4,
+      "variantAnswer": [
+        {
+          "id": "6a1f9f37-da12-467a-a186-3cf9de2f2689",
+          "replica": "she doesn't knows."
+        },
+        {
+          "id": "79735d1f-50da-43d1-aadb-57726b98e373",
+          "replica": "he knows."
+        },
+        {
+          "id": "24173e38-e27d-409c-b3d1-dab5ad1af587",
+          "replica": "yes he did."
+        }
+      ]
+    },
+    {
+      "id": "bc8f590c-4c08-4997-8eb0-ee1370b72963",
+      "person": "male",
+      "replica": "He’s a tourist. ",
+      "actionType": "don't active"
+    },
+    {
+      "id": "5a254c51-b491-4254-8840-41ad85ba0f7c",
+      "person": "Allie",
+      "replica": "Just ask him, please. ",
+      "actionType": "don't active"
+    },
+    {
+      "id": "0f916d1b-ce46-47c1-ac12-c14f64df3f5f",
+      "person": "male",
+      "replica": "OK, OK. Excuse me! We’re lost. ",
+      "actionType": "don't active"
+    },
+    {
+      "id": "b74f4b2d-fe3a-4dec-ad8a-9f0102bc7f76",
+      "person": "male",
+      "title": "Заполните пропуск",
+      "replica": "",
+      "correctAnswer": "Do you know where King Street is?",
+      "actionType": "active",
+      "countQuestion": 8,
+      "variantAnswer": [
+        {
+          "id": "6a1f9f37-da12-467a-a186-3cf9de2f2689",
+          "replica": "Do you know where Street King is?"
+        },
+        {
+          "id": "79735d1f-50da-43d1-aadb-57726b98e373",
+          "replica": "Do you know where King Street is?"
+        },
+        {
+          "id": "24173e38-e27d-409c-b3d1-dab5ad1af587",
+          "replica": "Do you know where Queen Street is?"
+        }
+      ]
+    },
+    {
+      "id": "2e03d9fc-cc38-4145-b6fa-9b66239a9ce6",
+      "person": "blackPerson",
+      "replica": "Sorry, I don’t live here – I’m a tourist. ",
+      "actionType": "don't active"
+    },
+    {
+      "id": "172172b4-a0c7-4a34-82d5-f8a216fe9603",
+      "person": "male",
+      "replica": "You see. I was right. ",
+      "actionType": "don't active"
+    },
+    {
+      "id": "c17ba1b7-f702-4e8a-94cf-df6876ff1a12",
+      "person": "Allie",
+      "replica": "OK, let’s try the second on the right. ",
+      "actionType": "don't active"
+    },
+    {
+      "id": "2d7ab7fc-d8d0-4871-9371-162c55440919",
+      "person": "male",
+      "title": "Заполните пропуск",
+      "replica": "Here it is. ",
+      "correctAnswer": "King Street.",
+      "actionType": "active",
+      "countQuestion": 12,
+      "variantAnswer": [
+        {
+          "id": "6a1f9f37-da12-467a-a186-3cf9de2f2689",
+          "replica": "King Street."
+        },
+        {
+          "id": "79735d1f-50da-43d1-aadb-57726b98e373",
+          "replica": "Here is King Street."
+        },
+        {
+          "id": "24173e38-e27d-409c-b3d1-dab5ad1af587",
+          "replica": "Queen Street."
+        }
+      ]
+    },
+    {
+      "id": "312c9e15-f3f7-445f-999e-0ddc0d5c754c",
+      "person": "male",
+      "replica": "I knew she said the second on the right. ",
+      "actionType": "don't active"
+    },
+    {
+      "id": "4e9d6984-8636-495b-af39-f261dd99c7dd",
+      "person": "Allie",
+      "title": "Заполните пропуск",
+      "replica": "",
+      "correctAnswer": "There’s the restaurant, Donatella’s.",
+      "actionType": "active",
+      "countQuestion": 14,
+      "variantAnswer": [
+        {
+          "id": "6a1f9f37-da12-467a-a186-3cf9de2f2689",
+          "replica": "There’s the bar, Donatella’s."
+        },
+        {
+          "id": "79735d1f-50da-43d1-aadb-57726b98e373",
+          "replica": "There’s the restaurant, Donatella’s."
+        },
+        {
+          "id": "24173e38-e27d-409c-b3d1-dab5ad1af587",
+          "replica": "There’s the restaurant, Asian City."
+        }
+      ]
+    },
+    {
+      "id": "ed1e5d4a-4e76-4220-ae31-45d15226aba1",
+      "person": "Allie",
+      "replica": "Can you see anywhere to park?",
+      "actionType": "don't active"
+    },
+    {
+      "id": "52ba3ea2-4253-4989-bd30-0dca0c62ebb0",
+      "person": "male",
+      "replica": "That white car’s going over there!",
+      "actionType": "don't active"
+    },
+    {
+      "id": "fe9f4af3-7a91-4774-908c-0b22aca9f102",
+      "person": "male",
+      "title": "Заполните пропуск",
+      "replica": "",
+      "correctAnswer": "Do you think you can park in that space?",
+      "actionType": "active",
+      "countQuestion": 17,
+      "variantAnswer": [
+        {
+          "id": "6a1f9f37-da12-467a-a186-3cf9de2f2689",
+          "replica": "Do you think you can park in this space?"
+        },
+        {
+          "id": "79735d1f-50da-43d1-aadb-57726b98e373",
+          "replica": "Do you think you can park in that space?"
+        },
+        {
+          "id": "24173e38-e27d-409c-b3d1-dab5ad1af587",
+          "replica": "Do you think you can park in that place?"
+        }
+      ]
+    },
+    {
+      "id": "86dec9a6-49ce-47ab-84b7-73aeece7fc00",
+      "person": "Allie",
+      "title": "Заполните пропуск",
+      "replica": "Are you saying ",
+      "correctAnswer": "I can’t park?",
+      "actionType": "active",
+      "countQuestion": 18,
+      "variantAnswer": [
+        {
+          "id": "6a1f9f37-da12-467a-a186-3cf9de2f2689",
+          "replica": "I can’t park?"
+        },
+        {
+          "id": "79735d1f-50da-43d1-aadb-57726b98e373",
+          "replica": "I can park?"
+        },
+        {
+          "id": "24173e38-e27d-409c-b3d1-dab5ad1af587",
+          "replica": "I meen park?"
+        }
+      ]
+    },
+    {
+      "id": "947cfa0c-22e2-4942-a4cc-a318ea084a8a",
+      "person": "male",
+      "replica": "Allie, I’m only joking.",
+      "actionType": "don't active"
+    },
+    {
+      "id": "10942229-a23a-49a8-8078-aeab30362d2b",
+      "person": "Allie",
+      "replica": "OK, OK, I’m sorry.",
+      "actionType": "don't active"
+    }
+  ]
+}

@@ -21,5 +21,28 @@
       "originalTitle": "Meeting with a colleague",
       "urlVideo": "https://www.youtube.com/embed/dhT1Qon-zK4"
     }
+  ],
+  [
+    {
+      "id": "2538e813-c260-4b18-8125-7bd8dc1d3b0a",
+      "title": "Как спросить дорогу",
+      "description": "routeQuestion",
+      "originalTitle": "How to ask for directions",
+      "urlVideo": "https://www.youtube.com/embed/P7AKkny1piQ"
+    },
+    {
+      "id": "be2d3c74-b1ee-4958-a815-30370b4f006f",
+      "title": "В ресторане. Заказ блюд",
+      "description": "restaurant",
+      "originalTitle": "In the restaurant. Ordering dishes",
+      "urlVideo": "https://www.youtube.com/embed/enA3X-iNCi0"
+    },
+    {
+      "id": "d721decc-9cc9-4551-bef7-d424326e6f39",
+      "title": "Беседа за столом в ресторане",
+      "description": "conversationInRestaurant",
+      "originalTitle": "Conversation at the table in a restaurant",
+      "urlVideo": "https://www.youtube.com/embed/Io6ca445Q3k"
+    }
   ]
 ]

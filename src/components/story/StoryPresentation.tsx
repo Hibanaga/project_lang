@@ -93,6 +93,13 @@ export default function HistoryPresentation({
                 cardPack={cardPack[0]}
                 onChangeThemeHandler={onChangeThemeHandler}
               />
+
+              <LineMessageStory>Набор 2</LineMessageStory>
+
+              <CatalogStoryPack
+                cardPack={cardPack[1]}
+                onChangeThemeHandler={onChangeThemeHandler}
+              />
             </Wrapper>
           </article>
         </>

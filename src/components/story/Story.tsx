@@ -1,9 +1,13 @@
 import { useCallback, useEffect, useReducer, useState, useRef } from "react";
 import StoryPresentation from "./StoryPresentation";
 import { initialState, actions } from "./services/optionsReducer";
-import cardlesson from "./assets/cardLesson1.json";
+import { connect } from "react-redux";
 
-export default function Story() {
+interface stateProp {
+  clientID: string;
+}
+
+function Story({ clientID }: stateProp) {
   //the reducer to use from another needs
   // currentTheme: to check current open theme
   // isOpen:  to open window with story
@@ -117,7 +121,27 @@ export default function Story() {
   }, []);
 
   //open window result
-  const openResultLessonWindowHandler = () => setOpenResultWindow(true);
+  const openResultLessonWindowHandler = () => {
+    setOpenResultWindow(true);
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    fetch("/update_progressStory", {
+      method: "POST",
+      signal: signal,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        clientID: clientID,
+        progress: currentTheme,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
 
   const closeResultLessonWindowHandler = () => {
     setOpenResultWindow(false);
@@ -156,3 +180,9 @@ export default function Story() {
     />
   );
 }
+
+const mapStateToProps = ({ profile }: any) => ({
+  clientID: profile.clientID,
+});
+
+export default connect(mapStateToProps, null)(Story);
