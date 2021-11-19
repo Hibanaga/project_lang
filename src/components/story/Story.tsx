@@ -72,8 +72,6 @@ function Story({
   //toggle window handler to open/close from user
   const changeThemeHandler = useCallback(
     (event: any, coinCount?: number) => {
-      console.log(coinCount, "fff");
-
       if (coinCount !== undefined && coinCount > 0) {
         return false;
       }

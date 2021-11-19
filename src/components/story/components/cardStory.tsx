@@ -28,8 +28,6 @@ export default function cardStory({
   onChangeThemeHandler,
   onToggleModalVisibleHandler,
 }: stateProp) {
-  console.log(Boolean(countPoints));
-
   return (
     <CardStory
       data-theme={description}
@@ -45,7 +43,7 @@ export default function cardStory({
       <WrapperCardStoryIMG
         data-current={description}
         theme={{
-          isBlocked: Boolean(countPoints),
+          isBlocked: countPoints !== undefined && Boolean(countPoints > 0),
           isAlreadyOpen: Boolean(originalTitle),
           isAlreadyComplete: isAlreadyComplete,
         }}
@@ -54,7 +52,7 @@ export default function cardStory({
           className="imgCardCatalog"
           src={objExported[description]}
           theme={{
-            isBlocked: Boolean(countPoints),
+            isBlocked: countPoints !== undefined && Boolean(countPoints > 0),
             isAlreadyOpen: Boolean(originalTitle),
             isAlreadyComplete: isAlreadyComplete,
           }}
