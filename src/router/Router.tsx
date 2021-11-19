@@ -27,6 +27,7 @@ import {
   setCountCoin,
   setCountCrown,
   setCurrentProgress,
+  setProgressStory,
 } from "../redux/userInfo/userActions";
 
 interface stateProp {
@@ -38,6 +39,7 @@ interface stateProp {
   restoreCoinHandler: (p: number) => void;
   restoreCrownHandler: (p: number) => void;
   restoreCurrentProgressHandler: (p: {}) => void;
+  restoreCurrentProgressStoryHandler: (p: any) => void;
 }
 
 function Router({
@@ -47,6 +49,7 @@ function Router({
   restoreCoinHandler,
   restoreCrownHandler,
   restoreCurrentProgressHandler,
+  restoreCurrentProgressStoryHandler,
 }: stateProp) {
   const [isAuth, setAuth] = useState(false);
 
@@ -82,6 +85,7 @@ function Router({
             .then((data) => {
               restoreCoinHandler(data.coin);
               restoreCrownHandler(data.crown);
+              restoreCurrentProgressStoryHandler(data.progressStory);
             });
         });
     }
@@ -129,6 +133,7 @@ const mapDispatchToProps = {
   restoreCoinHandler: setCountCoin,
   restoreCrownHandler: setCountCrown,
   restoreCurrentProgressHandler: setCurrentProgress,
+  restoreCurrentProgressStoryHandler: setProgressStory,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Router);

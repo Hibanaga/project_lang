@@ -63,13 +63,31 @@ const CardStory = styled.div`
 `;
 
 const WrapperCardStoryIMG = styled.div`
-  background-color: ${({ theme }) => (theme.isBlocked ? "#dbdbdb" : "#fff")};
+  transition: 0.3s;
+  background-color: ${({ theme }) =>
+    theme.isAlreadyComplete
+      ? "#5acc02a6"
+      : theme.isBlocked
+      ? "#dbdbdb"
+      : "#fff"};
   border: 0.2rem solid
-    ${({ theme }) => (theme.isBlocked ? "#929292" : "#a5a5a5")};
+    ${({ theme }) =>
+      theme.isAlreadyComplete
+        ? "#58cc02"
+        : theme.isBlocked
+        ? "#929292"
+        : "#a5a5a5"};
   border-bottom-width: 0.4rem;
   border-radius: 12px;
 
-  cursor: ${({ theme }) => (theme.isBlocked ? "normal" : "pointer")};
+  cursor: ${({ theme }) =>
+    theme.isAlreadyComplete
+      ? "pointer"
+      : theme.isBlocked
+      ? "normal"
+      : "pointer"};
+
+  /* pointer-events: ${({ theme }) => (theme.isBlocked ? "none" : "auto")}; */
 
   position: relative;
 
@@ -80,27 +98,34 @@ const WrapperCardStoryIMG = styled.div`
   align-items: center;
   justify-content: center;
 
-  transition: 0.3s;
-
   &:hover {
     background-color: ${({ theme }) =>
       theme.isAlreadyOpen ? " #1cb1f628" : "none"};
   }
 
   &:hover .imgCardCatalog {
-    filter: ${({ theme }) => (theme.isAlreadyOpen ? "blur(3px)" : "blur(0)")};
+    transition: 0.3s;
+
+    filter: ${({ theme }) => (theme.isAlreadyOpen ? "blur(3px)" : "blur(0px)")};
   }
 
   &:hover .img_playHidden {
+    transition: 0.3s;
+
     visibility: ${({ theme }) => (theme.isAlreadyOpen ? "visible" : "hidden")};
     opacity: ${({ theme }) => (theme.isAlreadyOpen ? ".9" : "0")};
   }
 `;
 
 const ImgCardStory = styled.img`
+  transition: grayscale 0.5s;
+
   filter: ${({ theme }) =>
-    theme.isBlocked === true ? "grayscale(100%)" : "none"};
-  transition: 0.3s;
+    theme.isAlreadyComplete
+      ? "grayscale(0%)"
+      : theme.isBlocked === true
+      ? "grayscale(100%)"
+      : "grayscale(0%)"};
 `;
 
 const SubTitleCardStory = styled.h2`

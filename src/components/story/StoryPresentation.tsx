@@ -23,8 +23,10 @@ interface stateProp {
   cardlesson: any;
   outerRef: any;
   titleStory: string;
+  progressStory: any;
+  crown: number;
 
-  onChangeThemeHandler: (p: any) => void;
+  onChangeThemeHandler: (p: any, p1?: number) => void;
   onToggleModalVisibleHandler: (p: any) => void;
   onChangeCounterCurrElementDialog: (p: any) => void;
   onUpdateSelectWordHandler: (p: any, p1: any) => void;
@@ -45,6 +47,8 @@ export default function HistoryPresentation({
   cardlesson,
   outerRef,
   titleStory,
+  progressStory,
+  crown,
 
   //methods
   onChangeThemeHandler,
@@ -91,6 +95,8 @@ export default function HistoryPresentation({
 
               <CatalogStoryPack
                 cardPack={cardPack[0]}
+                progressStory={progressStory}
+                crown={crown}
                 onChangeThemeHandler={onChangeThemeHandler}
               />
 
@@ -98,6 +104,8 @@ export default function HistoryPresentation({
 
               <CatalogStoryPack
                 cardPack={cardPack[1]}
+                progressStory={progressStory}
+                crown={crown}
                 onChangeThemeHandler={onChangeThemeHandler}
               />
             </Wrapper>

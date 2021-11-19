@@ -4,6 +4,8 @@ import {
   SET_COINCOUNT,
   SET_CROWNCOUNT,
   SET_PROGRESSINFO,
+  SET_PROGRESSSTORYINFO,
+  UPDATE_PROGRESSSTORYINFO,
 } from "./userActionsTypes";
 
 interface stateProp {
@@ -15,6 +17,7 @@ const initialState = {
   clientID: "",
   isFirstAuth: false,
   progress: {},
+  progressStory: [],
   coin: 0,
   crown: 0,
 };
@@ -34,6 +37,10 @@ export default function userReducer(
       return { ...state, crown: payload };
     case SET_PROGRESSINFO:
       return { ...state, progress: payload };
+    case SET_PROGRESSSTORYINFO:
+      return { ...state, progressStory: payload };
+    case UPDATE_PROGRESSSTORYINFO:
+      return { ...state, progressStory: [...state.progressStory, payload] };
     default:
       return state;
   }

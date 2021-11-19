@@ -4,6 +4,8 @@ import {
   SET_COINCOUNT,
   SET_CROWNCOUNT,
   SET_PROGRESSINFO,
+  SET_PROGRESSSTORYINFO,
+  UPDATE_PROGRESSSTORYINFO,
 } from "./userActionsTypes";
 
 const setAuthClientID = (clientID: any) => ({
@@ -31,10 +33,22 @@ const setCurrentProgress = (objProgress: any) => ({
   payload: objProgress,
 });
 
+const setProgressStory = (progressItem: any) => ({
+  type: SET_PROGRESSSTORYINFO,
+  payload: progressItem,
+});
+
+const updateProgressStory = (progressItem: string) => ({
+  type: UPDATE_PROGRESSSTORYINFO,
+  payload: progressItem,
+});
+
 export {
   setAuthClientID,
   setFirstAuth,
   setCountCoin,
   setCountCrown,
   setCurrentProgress,
+  setProgressStory,
+  updateProgressStory,
 };

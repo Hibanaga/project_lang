@@ -2,12 +2,22 @@ import { useCallback, useEffect, useReducer, useState, useRef } from "react";
 import StoryPresentation from "./StoryPresentation";
 import { initialState, actions } from "./services/optionsReducer";
 import { connect } from "react-redux";
+import { updateProgressStory } from "../../redux/userInfo/userActions";
 
 interface stateProp {
   clientID: string;
+  progressStory: string;
+  crown: number;
+
+  updateProgressStoryHandler: (p: string) => void;
 }
 
-function Story({ clientID }: stateProp) {
+function Story({
+  clientID,
+  progressStory,
+  crown,
+  updateProgressStoryHandler,
+}: stateProp) {
   //the reducer to use from another needs
   // currentTheme: to check current open theme
   // isOpen:  to open window with story
@@ -61,7 +71,13 @@ function Story({ clientID }: stateProp) {
 
   //toggle window handler to open/close from user
   const changeThemeHandler = useCallback(
-    (event: any) => {
+    (event: any, coinCount?: number) => {
+      console.log(coinCount, "fff");
+
+      if (coinCount !== undefined && coinCount > 0) {
+        return false;
+      }
+
       if (event.currentTarget.dataset.theme !== undefined) {
         dispatch({
           type: "setNewCurrentTheme",
@@ -123,6 +139,22 @@ function Story({ clientID }: stateProp) {
   //open window result
   const openResultLessonWindowHandler = () => {
     setOpenResultWindow(true);
+  };
+
+  const closeResultLessonWindowHandler = () => {
+    setOpenResultWindow(false);
+
+    updateProgressStoryHandler(currentTheme);
+
+    //reset all props
+    dispatch({ type: "toggleStoryWindow", payload: isOpen });
+    setCurrelementDialog(16);
+    setIsDisable(false);
+    setSelectVariant("");
+
+    dispatch({ type: "resetLessonObj", payload: [] });
+    dispatch({ type: "resetFalsyAnswerObj", payload: [] });
+
     const controller = new AbortController();
     const signal = controller.signal;
 
@@ -137,22 +169,8 @@ function Story({ clientID }: stateProp) {
         progress: currentTheme,
       }),
     })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
-  };
-
-  const closeResultLessonWindowHandler = () => {
-    setOpenResultWindow(false);
-    //reset all props
-    dispatch({ type: "toggleStoryWindow", payload: isOpen });
-    setCurrelementDialog(16);
-    setIsDisable(false);
-    setSelectVariant("");
-
-    dispatch({ type: "resetLessonObj", payload: [] });
-    dispatch({ type: "resetFalsyAnswerObj", payload: [] });
+      .then((res) => res.json)
+      .then((data) => {});
   };
 
   return (
@@ -170,6 +188,8 @@ function Story({ clientID }: stateProp) {
       cardlesson={dialogResponse}
       outerRef={outerRef}
       titleStory={titleStory}
+      progressStory={progressStory}
+      crown={crown}
       //methods
       onToggleModalVisibleHandler={toggleModalVisibleHandler}
       onChangeCounterCurrElementDialog={changeCounterCurrElementDialog}
@@ -183,6 +203,12 @@ function Story({ clientID }: stateProp) {
 
 const mapStateToProps = ({ profile }: any) => ({
   clientID: profile.clientID,
+  progressStory: profile.progressStory,
+  crown: profile.crown,
 });
 
-export default connect(mapStateToProps, null)(Story);
+const mapDispatchToProps = {
+  updateProgressStoryHandler: updateProgressStory,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Story);

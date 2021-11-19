@@ -5,21 +5,24 @@
       "title": "Встреча в аэропорту",
       "description": "tourist",
       "originalTitle": "Meeting at the airport",
-      "urlVideo": "https://www.youtube.com/embed/Xi6eNSfn82E"
+      "urlVideo": "https://www.youtube.com/embed/Xi6eNSfn82E",
+      "countPoints": 15
     },
     {
       "id": "22be6c91-dd58-4020-9d46-02cbdc504e9d",
       "title": "Заказ номера в отеле",
       "description": "booking",
       "originalTitle": "Booking a hotel room",
-      "urlVideo": "https://www.youtube.com/embed/h38OstrOo8k"
+      "urlVideo": "https://www.youtube.com/embed/h38OstrOo8k",
+      "countPoints": 15
     },
     {
       "id": "6e2a4b47-52fc-47eb-95fc-5dec7da0ceba",
       "title": "Встреча с коллегой",
       "description": "colleague",
       "originalTitle": "Meeting with a colleague",
-      "urlVideo": "https://www.youtube.com/embed/dhT1Qon-zK4"
+      "urlVideo": "https://www.youtube.com/embed/dhT1Qon-zK4",
+      "countPoints": 15
     }
   ],
   [
@@ -28,21 +31,25 @@
       "title": "Как спросить дорогу",
       "description": "routeQuestion",
       "originalTitle": "How to ask for directions",
-      "urlVideo": "https://www.youtube.com/embed/P7AKkny1piQ"
+      "urlVideo": "https://www.youtube.com/embed/P7AKkny1piQ",
+      "countPoints": 25
     },
     {
       "id": "be2d3c74-b1ee-4958-a815-30370b4f006f",
       "title": "В ресторане. Заказ блюд",
       "description": "restaurant",
       "originalTitle": "In the restaurant. Ordering dishes",
-      "urlVideo": "https://www.youtube.com/embed/enA3X-iNCi0"
+      "urlVideo": "https://www.youtube.com/embed/enA3X-iNCi0",
+
+      "countPoints": 25
     },
     {
       "id": "d721decc-9cc9-4551-bef7-d424326e6f39",
       "title": "Беседа за столом в ресторане",
       "description": "conversationInRestaurant",
       "originalTitle": "Conversation at the table in a restaurant",
-      "urlVideo": "https://www.youtube.com/embed/Io6ca445Q3k"
+      "urlVideo": "https://www.youtube.com/embed/Io6ca445Q3k",
+      "countPoints": 25
     }
   ]
 ]

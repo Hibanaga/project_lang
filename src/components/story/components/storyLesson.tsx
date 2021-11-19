@@ -22,7 +22,7 @@ interface stateProp {
   titleStory: string;
 
   onToggleModalVisibleHandler: (p: any) => void;
-  onChangeThemeHandler: (p: any) => void;
+  onChangeThemeHandler: (p: any, p1?: number) => void;
   onChangeCounterCurrElementDialog: (p: any) => void;
   onUpdateSelectWordHandler: (p: any, p1: any) => void;
   onOpenResultLessonWindowHandler: () => void;
