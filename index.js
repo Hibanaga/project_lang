@@ -208,4 +208,28 @@ app.post("/get_storyLesson", (req, res) => {
     .catch((err) => res.json({ message: err }));
 });
 
+app.post("/update_progressStory", (req, res) => {
+  const state = req.body;
+  const { clientID, progress } = state;
+
+  db_read(process.env.DB_NAME, "activeUsers", { clientID: clientID }).then(
+    ({ progressStory }) => {
+      const objToupdateProgress = [...progressStory, progress].filter(
+        (item, pos) => {
+          return [...progressStory, progress].indexOf(item) === pos;
+        }
+      );
+
+      db_update(
+        process.env.DB_NAME,
+        "activeUsers",
+        { clientID: clientID },
+        {
+          progressStory: objToupdateProgress,
+        }
+      );
+    }
+  );
+});
+
 app.listen(PORT, () => console.log(`server lister on port ${PORT}`));
