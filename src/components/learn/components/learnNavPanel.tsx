@@ -9,9 +9,10 @@ import i18next from "i18next";
 interface stateProp {
   pathname: string;
   profile: any;
+  t: (p: any) => string;
 }
 
-function LearnNavPanel({ pathname, profile }: stateProp) {
+function LearnNavPanel({ pathname, profile, t }: stateProp) {
   const [state, dispatch] = useReducer(actions, initialState);
   const { coin, crown } = profile;
   const changePathMessageHandler = useCallback(
@@ -55,6 +56,7 @@ function LearnNavPanel({ pathname, profile }: stateProp) {
           currLang={i18next.language}
           coin={coin}
           crown={crown}
+          t={t}
         />
       </div>
     </div>

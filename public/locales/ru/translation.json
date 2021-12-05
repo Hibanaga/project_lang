@@ -77,6 +77,21 @@
       "titleLessons": "Занятия",
       "titleRecreation": "Отдых",
       "titleMarket": "Рынок"
+    },
+    "actionUsers": {
+      "rubin": {
+        "rubinsTitle": "Рубины",
+        "rubinsDescription_1": "Ваше богатство - ",
+        "rubinsDescription_2": " рубинов."
+      },
+      "crown": {
+        "crownTitle": "Короны",
+        "crownDescription": "Получайте короны, повышая уровень навыков!"
+      },
+      "profile": {
+        "profileTiTle": "Аккаунт",
+        "profileDescription": "Профиль можно кастомизировать используя рубины."
+      }
     }
   },
 
@@ -119,6 +134,23 @@
       "typeC": {
         "startQuestion": "Мой брат студент"
       }
+    }
+  },
+  "Story": {
+    "titles": {
+      "storyTitle": "Истории CoolLearn",
+      "storyDescription": "Мини-истории которые улучшают навыки чтения и ответа на вопросы"
+    },
+    "setStories": {
+      "set": "Набор"
+    },
+    "cardPacks": {
+      "cardPackTitle_11": "Встреча в аэропорту",
+      "cardPackTitle_12": "Заказ номера в отеле",
+      "cardPackTitle_13": "Встреча с коллегой",
+      "cardPackTitle_21": "Как спросить дорогу",
+      "cardPackTitle_22": "В ресторане. Заказ блюд",
+      "cardPackTitle_23": "Беседа за столом в ресторане"
     }
   }
 }

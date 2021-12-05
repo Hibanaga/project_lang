@@ -3,7 +3,6 @@ import LessonPresentation from "./LessonPresentation";
 import { memo, useEffect, useState, useCallback } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { isCompletedQuestion } from "./utils/validateLessonExamples";
-// uniqNumbers,
 import {
   setLessonContent,
   setLessonTypeName,
@@ -11,7 +10,6 @@ import {
 import localforage from "localforage";
 import { setCountCoin, setCountCrown } from "../../redux/userInfo/userActions";
 import { withTranslation } from "react-i18next";
-// import uniq from "lodash.uniq";
 
 interface stateProp {
   name?: any;

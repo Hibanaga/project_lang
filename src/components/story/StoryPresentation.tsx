@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Wrapper } from "../../styles/styled-comp";
 import "./styles/story.scss";
 import cardPack from "./assets/cardPack.json";
@@ -9,6 +10,7 @@ import {
 } from "./styles/story-comp";
 import StoryLesson from "./components/storyLesson";
 import ResultLessonWindow from "./components/resultLessonWindow";
+import { withTranslation } from "react-i18next";
 
 interface stateProp {
   currentTheme: string;
@@ -32,9 +34,10 @@ interface stateProp {
   onUpdateSelectWordHandler: (p: any, p1: any) => void;
   onOpenResultLessonWindowHandler: () => void;
   onCloseResultLessonWindowHandler: () => void;
+  t: (p: any) => string;
 }
 
-export default function HistoryPresentation({
+const HistoryPresentation = ({
   currentTheme,
   isOpen,
   isVisibleModal,
@@ -57,7 +60,8 @@ export default function HistoryPresentation({
   onUpdateSelectWordHandler,
   onOpenResultLessonWindowHandler,
   onCloseResultLessonWindowHandler,
-}: stateProp) {
+  t,
+}: stateProp) => {
   return (
     <>
       {isOpen && !isOpenResultWindow && (
@@ -86,26 +90,28 @@ export default function HistoryPresentation({
         <>
           <article className="containerStory">
             <Wrapper>
-              <TitleStory>Истории CoolLearn</TitleStory>
+              <TitleStory>{t("Story.titles.storyTitle")}</TitleStory>
               <SubTitleStory>
-                Мини-истории которые улучшают навыки чтения и ответа на вопросы{" "}
+                {t("Story.titles.storyDescription")}
               </SubTitleStory>
 
-              <LineMessageStory>Набор 1</LineMessageStory>
+              <LineMessageStory>{t("Story.setStories.set")} 1</LineMessageStory>
 
               <CatalogStoryPack
                 cardPack={cardPack[0]}
                 progressStory={progressStory}
                 crown={crown}
+                t={t}
                 onChangeThemeHandler={onChangeThemeHandler}
               />
 
-              <LineMessageStory>Набор 2</LineMessageStory>
+              <LineMessageStory>{t("Story.setStories.set")} 2</LineMessageStory>
 
               <CatalogStoryPack
                 cardPack={cardPack[1]}
                 progressStory={progressStory}
                 crown={crown}
+                t={t}
                 onChangeThemeHandler={onChangeThemeHandler}
               />
             </Wrapper>
@@ -123,3 +129,6 @@ export default function HistoryPresentation({
     </>
   );
 }
+
+
+export default withTranslation()(memo(HistoryPresentation));

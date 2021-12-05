@@ -12,6 +12,7 @@ interface stateProp {
   currentTheme: string;
   currLang: string;
   onUpdateLangHandler: (p: any) => void;
+  t: (p: any) => string;
   coin: number;
   crown: number;
 }
@@ -23,6 +24,7 @@ export default function messageInformation({
   onUpdateLangHandler,
   coin,
   crown,
+  t,
 }: stateProp) {
   return (
     <>
@@ -59,10 +61,10 @@ export default function messageInformation({
                   <img src={flagObj.chest} alt="" className="imgChestRubin" />
 
                   <div className="containerMessageInfo">
-                    <h2 className="subTitleNameMessage">Рубины</h2>
+                    <h2 className="subTitleNameMessage">{t("Learn.actionUsers.rubin.rubinsTitle")}</h2>
 
                     <span className="descriptionMessage">
-                      Ваше богатство - {coin} рубинов.
+                      {t("Learn.actionUsers.rubin.rubinsDescription_1")}{coin}{t("Learn.actionUsers.rubin.rubinsDescription_2")}
                     </span>
                   </div>
                 </div>
@@ -77,10 +79,10 @@ export default function messageInformation({
                   </CardCrownCard>
 
                   <div className="containerMessageInfo">
-                    <h2 className="subTitleNameMessage">Короны</h2>
+                    <h2 className="subTitleNameMessage">{t("Learn.actionUsers.crown.crownTitle")}</h2>
 
                     <span className="descriptionMessage">
-                      Получайте короны, повышая уровень навыков!
+                      {t("Learn.actionUsers.crown.crownDescription")}
                     </span>
                   </div>
                 </div>
@@ -93,10 +95,12 @@ export default function messageInformation({
                   <img src={profileIMG} alt="" className="imgProfile" />
 
                   <div className="containerMessageInfo">
-                    <h2 className="subTitleNameMessage">Аккаунт</h2>
+                    <h2 className="subTitleNameMessage">
+                      {t("Learn.actionUsers.profile.profileTiTle")}
+                    </h2>
 
                     <span className="descriptionMessage">
-                      Профиль можно кастомизировать используя рубины.
+                      {t("Learn.actionUsers.profile.profileDescription")}
                     </span>
                   </div>
                 </div>

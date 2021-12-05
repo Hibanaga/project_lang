@@ -7,6 +7,7 @@ interface stateProp {
   crown: number;
 
   onChangeThemeHandler: (p: any, p1?: number) => void;
+  t: (p: any) => void;
 }
 
 export default function catalogStoryPack({
@@ -14,6 +15,7 @@ export default function catalogStoryPack({
   progressStory,
   crown,
   onChangeThemeHandler,
+  t,
 }: stateProp) {
   return (
     <div className="containerStoryCatalog">
@@ -23,7 +25,7 @@ export default function catalogStoryPack({
           isAlreadyComplete={progressStory.indexOf(description) > -1}
           description={description}
           countPoints={countPoints - crown}
-          title={title}
+          title={t(title)}
           onChangeThemeHandler={onChangeThemeHandler}
         />
       ))}

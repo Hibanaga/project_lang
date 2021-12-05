@@ -168,7 +168,7 @@ function Story({
       }),
     })
       .then((res) => res.json)
-      .then((data) => {});
+      .then((data) => { });
   };
 
   return (

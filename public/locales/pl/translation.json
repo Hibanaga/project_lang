@@ -56,16 +56,57 @@
     "login": "Zalogować",
     "title": "Nazwa użytkownika może zawierać tylko liczby, litery i niektóre znaki specjalne takie jak !_@"
   },
-
+  "Story": {
+    "titles": {
+      "storyTitle": "Historie CoolLearn",
+      "storyDescription": "Mini historie które poprawiają umiejętności czytania i odpowiadania na pytania"
+    },
+    "setStories": {
+      "set": "Zestaw"
+    },
+    "cardPacks": {
+      "cardPackTitle_11": "Spotkanie na lotnisku",
+      "cardPackTitle_12": "Rezerwacja pokoju w hotelu",
+      "cardPackTitle_13": "Spotkanie z kolegą",
+      "cardPackTitle_21": "Jak zapytać o drogę",
+      "cardPackTitle_22": "W restauracji. Zamawianie potraw",
+      "cardPackTitle_23": "Rozmowa przy stole w restauracji"
+    }
+  },
   "Learn": {
     "trainingSection": {
-      "mainTitle": "Zasady"
+      "mainTitle": "Zasady",
+      "chapter_1": "I. Ranek",
+      "chapter_2": "II. Obiad"
     },
     "catalogLesson": {
       "titleFamily": "Rodzina",
-      "titleMeeting": "Znajomość",
+      "titleProduct": "Produkty",
       "titleParty": "Impreza",
-      "titleRestaurant": "Restauracja"
+      "titleRestaurant": "Restauracja",
+      "titleFood": "Jedzenie",
+      "titleBathroom": "Łazienka",
+      "titlePurchases": "Zakupy",
+      "titleUniversity": "Uczelnia",
+      "titleCity": "Miasto",
+      "titleLessons": "Uprawianie",
+      "titleRecreation": "Rekreacja",
+      "titleMarket": "Rynek"
+    },
+    "actionUsers": {
+      "rubin": {
+        "rubinsTitle": "Rubiny",
+        "rubinsDescription_1": "Twoje bogactwo -",
+        "rubinsDescription_2": " rubiny."
+      },
+      "crown": {
+        "crownTitle": "Korony",
+        "crownDescription": "Zdobywaj korony, podnosząc poziom umiejętności!"
+      },
+      "profile": {
+        "profileTiTle": "Konto",
+        "profileDescription": "Profil można dostosować za pomocą rubinów."
+      }
     }
   },
 

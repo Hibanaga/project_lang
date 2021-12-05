@@ -9,7 +9,7 @@ import objExported from "../images/imageExporter";
 
 interface stateProp {
   description: string;
-  title: string;
+  title: any;
   originalTitle?: string;
   isAlreadyComplete?: boolean;
   countPoints?: number;
@@ -35,8 +35,8 @@ export default function cardStory({
         originalTitle !== undefined
           ? onToggleModalVisibleHandler
           : (event: any) =>
-              onChangeThemeHandler !== undefined &&
-              onChangeThemeHandler(event, countPoints)
+            onChangeThemeHandler !== undefined &&
+            onChangeThemeHandler(event, countPoints)
       }
       className="wrapperCardStoryLesson"
     >
