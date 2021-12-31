@@ -12,6 +12,8 @@ import {
   setCountCrown,
   setCurrentProgress,
 } from "../../redux/userInfo/userActions";
+import instance from "../../service/AppService";
+
 
 interface stateProp {
   onSetLessonNameHandler: (p: string) => void;
@@ -75,18 +77,12 @@ function Learn({
         data !== null ? setPathRedirect(data) : setPathRedirect("")
       );
 
-    fetch("/profileStats", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ clientID: profile.clientID }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        data.progress !== undefined &&
-          restoreCurrentProgressHandler(data.progress);
-      });
+       instance.getProgress(profile.clientID).then((data) => {
+         console.log(JSON.parse(data.progress));
+         data.progress !== undefined &&
+           restoreCurrentProgressHandler(data.progress);
+       });
+     
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

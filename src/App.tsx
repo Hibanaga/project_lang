@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { setAuthClientID, setFirstAuth } from "./redux/userInfo/userActions";
 import Router from "./router/Router";
 
-interface stateProp {
+interface stateProp { 
   restoreClientID: (p: any) => void;
   toggleAuthActivate: (p: boolean) => void;
 }

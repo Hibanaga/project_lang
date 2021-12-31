@@ -4,6 +4,7 @@ import RegisterPresentation from "./RegisterPresentation";
 import { Redirect } from "react-router-dom";
 import { confirm } from "../../../router/routes";
 import { ContextForm } from "../ContextForm";
+import instance from "../../../service/AppService";
 
 export default function Register() {
   const [state, dispatch] = useContext(ContextForm);
@@ -29,24 +30,12 @@ export default function Register() {
   const submitFormHandler = (event: React.MouseEvent) => {
     event.preventDefault();
 
-    const controller = new AbortController();
-    const signal = controller.signal;
-
-    fetch("/register_user", {
-      method: "POST",
-      signal: signal,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ...register, clientID: uuidv4() }),
-    })
-      .then((res) => res.json())
-      .then((data) => setAlreadyExist(data.isExist))
-      .finally(() => {
-        controller.abort();
-      });
+    instance
+      .registerUser({ ...register, clientID: uuidv4() })
+      .then((data) => data !== undefined && setAlreadyExist("success added"));
   };
 
+  console.log(isAlreadyExist);
   return (
     <>
       {isAlreadyExist === "success added" && <Redirect to={confirm} />}

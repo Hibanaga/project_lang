@@ -8,6 +8,7 @@ import {
   setFirstAuth,
 } from "../../../redux/userInfo/userActions";
 import localforage from "localforage";
+import instance from "../../../service/AppService"
 
 interface stateProp {
   addDefaultUserData: (p: object) => void;
@@ -26,31 +27,14 @@ function Confirm({ addDefaultUserData, setFirstAuthHandler }: stateProp) {
   const submitFormHandler = (event: React.MouseEvent) => {
     event.preventDefault();
 
-    const controller = new AbortController();
-    const signal = controller.signal;
+    instance.verifyCode(codeConfirm, register.email).then((data) => {
 
-    fetch("/verify_user", {
-      method: "POST",
-      signal: signal,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        code: codeConfirm,
-        email: register.email,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setMessage(data.message);
-        addDefaultUserData(data.clientID);
-
-        localforage.setItem("loginID", data.clientID);
-        setFirstAuthHandler(true);
-      })
-      .finally(() => {
-        controller.abort();
-      });
+      data !== undefined && setMessage("success");
+      setMessage(data.message);
+      addDefaultUserData(data.cliendID);
+      localforage.setItem("loginID", data.clientID);
+      setFirstAuthHandler(true);
+    });
   };
 
   return (

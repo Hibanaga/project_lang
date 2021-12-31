@@ -22,6 +22,7 @@ import Story from "../components/story/Story";
 import { ContextFormProvider } from "../components/auth/ContextForm";
 import { connect } from "react-redux";
 import { setFirstAuth } from "../redux/userInfo/userActions";
+import instance from "../service/AppService";
 
 import {
   setCountCoin,
@@ -29,6 +30,7 @@ import {
   setCurrentProgress,
   setProgressStory,
 } from "../redux/userInfo/userActions";
+
 
 interface stateProp {
   profile?: any;
@@ -56,37 +58,12 @@ function Router({
   const location = useLocation();
 
   useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-
     if (profile.clientID !== "" && isAuth === false) {
-      //upload curr clientID
-      fetch("/check_login", {
-        method: "POST",
-        signal: signal,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ clientID: profile.clientID }),
-      })
-        .then((res) => res.json())
-        .then((data) =>
-          data.message === "success" ? setAuth(true) : setAuth(false)
-        )
-        .then(() => {
-          fetch("/profileStats", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ clientID: profile.clientID }),
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              restoreCoinHandler(data.coin);
-              restoreCrownHandler(data.crown);
-              restoreCurrentProgressStoryHandler(data.progressStory);
-            });
+        instance.check_login(profile.clientID).then((data) => {
+          data !== undefined && setAuth(true);
+          restoreCoinHandler(data.coin);
+          restoreCrownHandler(data.crown);
+          restoreCurrentProgressStoryHandler(data.progressStory);
         });
     }
 

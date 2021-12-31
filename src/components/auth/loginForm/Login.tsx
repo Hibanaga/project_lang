@@ -9,6 +9,8 @@ import {
   setFirstAuth,
 } from "../../../redux/userInfo/userActions";
 import localforage from "localforage";
+import instance from "../../../service/AppService";
+
 
 interface stateProp {
   addDefaultUserData: (p: object) => void;
@@ -36,27 +38,11 @@ function Login({ addDefaultUserData, setFirstAuthHandler }: stateProp) {
   const submitFormHandler = (event: React.MouseEvent) => {
     event.preventDefault();
 
-    const controller = new AbortController();
-    const signal = controller.signal;
-
-    fetch("/log_in", {
-      method: "POST",
-      signal: signal,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(login),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        addDefaultUserData(data.clientID);
-
-        localforage.setItem("loginID", data.clientID);
-        setFirstAuthHandler(true);
-      })
-      .finally(() => {
-        controller.abort();
-      });
+    instance.login(login).then((data) => {
+      addDefaultUserData(data.clientID);
+      localforage.setItem("loginID", data.clientID);
+      setFirstAuthHandler(true);
+    });
   };
 
   return (

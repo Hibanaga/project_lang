@@ -10,6 +10,8 @@ import {
 import localforage from "localforage";
 import { setCountCoin, setCountCrown } from "../../redux/userInfo/userActions";
 import { withTranslation } from "react-i18next";
+import instance from "../../service/AppService";
+
 
 interface stateProp {
   name?: any;
@@ -56,8 +58,8 @@ function Lesson({
 
   //get current lesson data
   useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
+    // const controller = new AbortController();
+    // const signal = controller.signal;
 
     if (name === "") {
       localforage
@@ -67,18 +69,23 @@ function Lesson({
 
     //get_lesson from back-end
     if (name !== "") {
-      fetch("/get_lesson", {
-        method: "POST",
-        signal: signal,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          lesson: name,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => uploadContentLessonHandler(data));
+      instance.getLesson(name).then((data) => {
+        uploadContentLessonHandler(data);
+      });
+
+
+    //   fetch("/get_lesson", {
+    //     method: "POST",
+    //     signal: signal,
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       lesson: name,
+    //     }),
+    //   })
+    //     .then((res) => res.json())
+    //     .then((data) => uploadContentLessonHandler(data));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [uploadContentLessonHandler, uploadContentLessonName]);
@@ -174,23 +181,34 @@ function Lesson({
     updateCountCoinHandler(coin + countScore);
     updateCountCrownHandler(crown + Math.ceil(countScore / 2));
 
-    const controller = new AbortController();
-    const signal = controller.signal;
 
-    fetch("/update_markUpCoin", {
-      method: "POST",
-      signal: signal,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        clientID: clientID,
-        coin: coin + countScore,
-        nameCatalog: name,
-        updatedProgress: progressArr,
-        crown: crown + Math.ceil(countScore / 2),
-      }),
-    }).then((res) => res.json());
+    const data = {
+      clientID: clientID,
+      coin: coin + countScore,
+      crown: crown + Math.ceil(countScore / 2),
+      progress: progressArr,
+    };
+
+    instance.updateProgress(data).then((data) => console.log(data));
+    // const controller = new AbortController();
+    // const signal = controller.signal;
+
+    // fetch("/update_markUpCoin", {
+    //   method: "POST",
+    //   signal: signal,
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     clientID: clientID,
+    //     coin: coin + countScore,
+    //     nameCatalog: name,
+    //     updatedProgress: progressArr,
+    //     crown: crown + Math.ceil(countScore / 2),
+    //   }),
+    // }).then((res) => res.json());
+
+
 
     localforage.removeItem("currLesson");
   };
