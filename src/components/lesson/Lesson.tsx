@@ -58,9 +58,6 @@ function Lesson({
 
   //get current lesson data
   useEffect(() => {
-    // const controller = new AbortController();
-    // const signal = controller.signal;
-
     if (name === "") {
       localforage
         .getItem("currLesson")
@@ -70,22 +67,8 @@ function Lesson({
     //get_lesson from back-end
     if (name !== "") {
       instance.getLesson(name).then((data) => {
-        uploadContentLessonHandler(data);
+        uploadContentLessonHandler(data.content);
       });
-
-
-    //   fetch("/get_lesson", {
-    //     method: "POST",
-    //     signal: signal,
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       lesson: name,
-    //     }),
-    //   })
-    //     .then((res) => res.json())
-    //     .then((data) => uploadContentLessonHandler(data));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [uploadContentLessonHandler, uploadContentLessonName]);
@@ -103,7 +86,6 @@ function Lesson({
     let correctAnswer = "";
 
     //type A submit
-
     let stringWordsTypeB = arrWordMessage.reduce((prev, curr, idx) => {
       return idx === 0 ? curr.value : prev + " " + curr.value;
     }, "");
@@ -178,14 +160,18 @@ function Lesson({
     setTypedText(event.target.value);
 
   const submitLessonHandler = (event: any) => {
-    updateCountCoinHandler(coin + countScore);
-    updateCountCrownHandler(crown + Math.ceil(countScore / 2));
+    updateCountCoinHandler(Number(coin) + Number(countScore));
+    updateCountCrownHandler(Number(crown) + Number(Math.ceil(countScore / 2)));
 
+
+    console.log(coin);
+    console.log(crown);
+    console.log(progressArr);
 
     const data = {
       clientID: clientID,
-      coin: coin + countScore,
-      crown: crown + Math.ceil(countScore / 2),
+      coin: Number(coin) + Number(countScore),
+      crown: Number(crown) + Number(Math.ceil(countScore / 2)),
       progress: progressArr,
     };
 

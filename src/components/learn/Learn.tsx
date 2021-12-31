@@ -78,7 +78,6 @@ function Learn({
       );
 
        instance.getProgress(profile.clientID).then((data) => {
-         console.log(JSON.parse(data.progress));
          data.progress !== undefined &&
            restoreCurrentProgressHandler(data.progress);
        });

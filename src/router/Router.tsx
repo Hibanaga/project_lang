@@ -70,6 +70,9 @@ function Router({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuth, profile.clientID]);
 
+
+
+
   return (
     <Switch>
       <Route exact path={home} component={Home} />
@@ -83,10 +86,8 @@ function Router({
 
         {isAuth && (
           <>
-            {nameLesson && catalog.length === 0 && <Redirect to={learn} />}
-
+            {!nameLesson && <Redirect to={learn} />}
             <LearnNavPanel profile={profile} pathname={location.pathname} />
-
             <Route exact path={learn} component={Learn} />
             <Route exact path={learnLesson} component={Lesson} />
             <Route exact path={story} component={Story} />

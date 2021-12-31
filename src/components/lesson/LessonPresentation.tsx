@@ -112,10 +112,12 @@ function LessonPresentation({
                 />
               </>
             )}
-
+            {/* {console.log(catalog[countQuestion])} */}
+            {console.log(progressArr, "progressArr")}
+            {console.log(catalog.length, "catalogLength")}
             {catalog[countQuestion] === undefined && (
               <>
-                {progressArr.length === catalog.length ? (
+                {progressArr && progressArr.length === catalog.length ? (
                   <SuccessfulCompletedLesson
                     onSubmitLessonHandler={onSubmitLessonHandler}
                   />
