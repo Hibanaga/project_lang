@@ -55,8 +55,6 @@ function LessonPresentation({
   onRemovePathRedirectHandler,
   currentProgressArr,
 }: stateProp) {
-  // console.log(catalog);
-  // console.log(progressArr.length);
 
   return (
     <>
@@ -112,9 +110,6 @@ function LessonPresentation({
                 />
               </>
             )}
-            {/* {console.log(catalog[countQuestion])} */}
-            {console.log(progressArr, "progressArr")}
-            {console.log(catalog.length, "catalogLength")}
             {catalog[countQuestion] === undefined && (
               <>
                 {progressArr && progressArr.length === catalog.length ? (

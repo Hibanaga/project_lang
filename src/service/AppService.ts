@@ -52,7 +52,7 @@ class AppService {
   }
 
   async updateProgress(data:any) {
-    return await this.instance.post(`/introduce-lessons`,data);
+    return await this.instance.put(`/active-user`,data).then((data:any) => data.data);
   }
 
 }

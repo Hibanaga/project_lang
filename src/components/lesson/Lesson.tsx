@@ -8,9 +8,11 @@ import {
   setLessonTypeName,
 } from "../../redux/lessonInfo/lessonActions";
 import localforage from "localforage";
-import { setCountCoin, setCountCrown } from "../../redux/userInfo/userActions";
+import { setCountCoin, setCountCrown, updateProgress } from "../../redux/userInfo/userActions";
 import { withTranslation } from "react-i18next";
 import instance from "../../service/AppService";
+import { useLocation } from "react-router-dom";
+import {convertToString,convertToJSON} from "../../utils/converterProgress";
 
 
 interface stateProp {
@@ -20,6 +22,7 @@ interface stateProp {
   uploadContentLessonName: (p: any) => void;
   updateCountCoinHandler: (p: any) => void;
   updateCountCrownHandler: (p: any) => void;
+  updateProgressHandler: (p:any) => void;
   t: (p: any) => string;
   progress: any;
   coin: number;
@@ -35,12 +38,14 @@ function Lesson({
   uploadContentLessonName,
   updateCountCoinHandler,
   updateCountCrownHandler,
+  updateProgressHandler,
   coin,
   crown,
   clientID,
 
   t,
 }: stateProp) {
+  const location = useLocation();
   const [countQuestion, setCountQuestion] = useState(0);
 
   //typeA
@@ -159,43 +164,29 @@ function Lesson({
   const changeTextAreaHandler = (event: any) =>
     setTypedText(event.target.value);
 
+
+
   const submitLessonHandler = (event: any) => {
-    updateCountCoinHandler(Number(coin) + Number(countScore));
-    updateCountCrownHandler(Number(crown) + Number(Math.ceil(countScore / 2)));
-
-
-    console.log(coin);
-    console.log(crown);
-    console.log(progressArr);
+    const currentLesson = location.pathname.split("/").reverse()[0];
+   
+    const resultToUpdateProgress = convertToString({
+      ...progress,
+      [currentLesson]: progressArr,
+    });
 
     const data = {
       clientID: clientID,
       coin: Number(coin) + Number(countScore),
       crown: Number(crown) + Number(Math.ceil(countScore / 2)),
-      progress: progressArr,
+      progress: resultToUpdateProgress,
     };
 
-    instance.updateProgress(data).then((data) => console.log(data));
-    // const controller = new AbortController();
-    // const signal = controller.signal;
-
-    // fetch("/update_markUpCoin", {
-    //   method: "POST",
-    //   signal: signal,
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     clientID: clientID,
-    //     coin: coin + countScore,
-    //     nameCatalog: name,
-    //     updatedProgress: progressArr,
-    //     crown: crown + Math.ceil(countScore / 2),
-    //   }),
-    // }).then((res) => res.json());
-
-
-
+    instance.updateProgress(data).then((data) => {
+      updateCountCoinHandler(data.coin);
+      updateCountCrownHandler(data.crown);
+      const convertedProgress = convertToJSON(data.progress);
+      updateProgressHandler(convertedProgress);
+    });
     localforage.removeItem("currLesson");
   };
 
@@ -238,6 +229,7 @@ const mapDispatchToProps = {
   uploadContentLessonName: setLessonTypeName,
   updateCountCoinHandler: setCountCoin,
   updateCountCrownHandler: setCountCrown,
+  updateProgressHandler: updateProgress,
 };
 
 export default withTranslation()(

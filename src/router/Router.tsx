@@ -23,6 +23,7 @@ import { ContextFormProvider } from "../components/auth/ContextForm";
 import { connect } from "react-redux";
 import { setFirstAuth } from "../redux/userInfo/userActions";
 import instance from "../service/AppService";
+import { convertToJSON } from "../utils/converterProgress";
 
 import {
   setCountCoin,
@@ -30,6 +31,7 @@ import {
   setCurrentProgress,
   setProgressStory,
 } from "../redux/userInfo/userActions";
+
 
 
 interface stateProp {

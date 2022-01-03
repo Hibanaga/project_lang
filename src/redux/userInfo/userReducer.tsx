@@ -6,6 +6,7 @@ import {
   SET_PROGRESSINFO,
   SET_PROGRESSSTORYINFO,
   UPDATE_PROGRESSSTORYINFO,
+  UPDATE_PROGRESS,
 } from "./userActionsTypes";
 
 interface stateProp {
@@ -39,6 +40,8 @@ export default function userReducer(
       return { ...state, progress: payload };
     case SET_PROGRESSSTORYINFO:
       return { ...state, progressStory: payload };
+    case UPDATE_PROGRESS:
+      return { ...state, progress: { ...state.progress, ...payload } };
     case UPDATE_PROGRESSSTORYINFO:
       return { ...state, progressStory: [...state.progressStory, payload] };
     default:

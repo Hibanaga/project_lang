@@ -6,6 +6,7 @@ import {
   SET_PROGRESSINFO,
   SET_PROGRESSSTORYINFO,
   UPDATE_PROGRESSSTORYINFO,
+  UPDATE_PROGRESS,
 } from "./userActionsTypes";
 
 const setAuthClientID = (clientID: any) => ({
@@ -43,6 +44,11 @@ const updateProgressStory = (progressItem: string) => ({
   payload: progressItem,
 });
 
+const updateProgress = (progress:any) => ({
+  type: UPDATE_PROGRESS,
+  payload: progress
+})
+
 export {
   setAuthClientID,
   setFirstAuth,
@@ -51,4 +57,5 @@ export {
   setCurrentProgress,
   setProgressStory,
   updateProgressStory,
+  updateProgress,
 };

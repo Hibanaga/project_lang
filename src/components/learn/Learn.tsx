@@ -13,6 +13,7 @@ import {
   setCurrentProgress,
 } from "../../redux/userInfo/userActions";
 import instance from "../../service/AppService";
+import { convertToJSON } from "../../utils/converterProgress";
 
 
 interface stateProp {
@@ -78,8 +79,10 @@ function Learn({
       );
 
        instance.getProgress(profile.clientID).then((data) => {
-         data.progress !== undefined &&
-           restoreCurrentProgressHandler(data.progress);
+         if (data.progress !== undefined) {
+            const result = convertToJSON(data.progress);
+            restoreCurrentProgressHandler(result);
+         }         
        });
      
     // eslint-disable-next-line react-hooks/exhaustive-deps
