@@ -3,15 +3,26 @@ import styled from "styled-components";
 const TitleQuestion = styled.h1`
   text-align: center;
   margin-top: 1rem;
+
+  @media (min-width: 375px) {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+  }
 `;
 
 const MessageBoxContainer = styled.div`
   display: flex;
 
   align-items: center;
+  justify-content: center;
 
   /* margin-bottom: 1.5rem; */
   margin: 2rem auto;
+
+  @media (min-width: 768px) {
+    margin: 4rem auto;
+  }
 `;
 
 const BubbleMessageBox = styled.div`
@@ -49,6 +60,11 @@ const WrapperCardSelect = styled.div`
   flex-wrap: wrap;
   justify-content: ${({ theme }) =>
     theme.type === "A" ? "space-evenly" : "inherit"};
+
+  @media (min-width: 768px) {
+    width: 75%;
+    margin: 0 auto;
+  }
 `;
 
 const CardSelect = styled.div`
@@ -61,6 +77,10 @@ const CardSelect = styled.div`
   /* height: 20vh; */
   margin-top: 1rem;
   transition: 0.5s;
+
+  @media (min-width: 475px) {
+    width: 190px;
+  }
 
   &:hover {
     cursor: pointer;
@@ -97,6 +117,10 @@ const CardSelectWord = styled.button`
     background-color: #e5e5e5;
     color: #e5e5e5;
   }
+
+  @media (min-width: 768px) {
+    font-size: 1.8rem;
+  }
 `;
 
 const DescriptionCardSelect = styled.span`
@@ -105,6 +129,10 @@ const DescriptionCardSelect = styled.span`
   text-align: center;
 
   margin: 1rem auto;
+
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const FormSubmitCardLesson = styled.form`
@@ -140,6 +168,7 @@ const FinalMessageConfirm = styled.h2`
 
   font-size: 2rem;
   margin-bottom: 1rem;
+  text-align: center;
   text-transform: uppercase;
 `;
 
@@ -156,6 +185,11 @@ const ContainerTextBox = styled.div`
   /* border: 1px solid #333; */
 
   position: relative;
+
+  @media (min-width: 768px) {
+    width: 75%;
+    margin: 0 auto;
+  }
 `;
 
 const ContainterLineTextBox = styled.span`
@@ -188,6 +222,11 @@ const TextAreaForm = styled.textarea`
 
   padding: 1rem;
   font-size: 15px;
+
+  @media (min-width: 768px) {
+    margin: 0 auto;
+    width: 70%;
+  }
 `;
 
 const ProgressBar = styled.div`

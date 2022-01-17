@@ -221,6 +221,7 @@
   .containerProfileInfo .rowProfileInfo .wrapperUserCoins {
     width: 80%;
   }
+
 }
 
 @media (min-width: 768px) {
@@ -261,7 +262,6 @@
   .container_navPanel {
     position: inherit;
     width: 50%;
-
     border: none;
 
     height: 7rem;
@@ -297,6 +297,10 @@
     justify-content: flex-end;
     // align-items: flex-end;
   }
+
+ .containerProfileInfo .rowProfileInfo .wrapperUserCoins {
+   width: 60%;
+ }
 }
 
 @media (min-width: 1140px) {

@@ -9,6 +9,7 @@ import {
   learn,
   learnLesson,
   story,
+  store
 } from "./routes";
 import Profile from "../components/profile/Profile";
 import Home from "../components/home/Home";
@@ -23,14 +24,13 @@ import { ContextFormProvider } from "../components/auth/ContextForm";
 import { connect } from "react-redux";
 import { setFirstAuth } from "../redux/userInfo/userActions";
 import instance from "../service/AppService";
-import { convertToJSON } from "../utils/converterProgress";
-
 import {
   setCountCoin,
   setCountCrown,
   setCurrentProgress,
   setProgressStory,
 } from "../redux/userInfo/userActions";
+import Store from "../components/store/Store";
 
 
 
@@ -94,6 +94,7 @@ function Router({
             <Route exact path={learnLesson} component={Lesson} />
             <Route exact path={story} component={Story} />
             <Route exact path={profile_user} component={Profile} />
+            <Route exact path={store} component={Store} />
           </>
         )}
       </ContextFormProvider>
@@ -109,7 +110,6 @@ const mapStateToProps = (state: any) => ({
 
 const mapDispatchToProps = {
   setFirthAuthHandler: setFirstAuth,
-
   restoreCoinHandler: setCountCoin,
   restoreCrownHandler: setCountCrown,
   restoreCurrentProgressHandler: setCurrentProgress,

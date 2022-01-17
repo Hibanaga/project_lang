@@ -3,6 +3,7 @@ import StoryPresentation from "./StoryPresentation";
 import { initialState, actions } from "./services/optionsReducer";
 import { connect } from "react-redux";
 import { updateProgressStory } from "../../redux/userInfo/userActions";
+import instance from "../../service/AppService";
 
 interface stateProp {
   clientID: string;
@@ -47,24 +48,10 @@ function Story({
   const outerRef = useRef<HTMLLinkElement>(null);
 
   useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-
     if (currentTheme !== "") {
-      fetch("/get_storyLesson", {
-        method: "POST",
-        signal: signal,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          theme: currentTheme,
-        }),
-      })
-        .then((res) => res.json())
-        .then(({ title, dialog }) => {
-          dispatch({ type: "setTitleStory", payload: title });
-          dispatch({ type: "setDialogResponse", payload: dialog });
+        instance.getStoryLesson(currentTheme).then((data) => {
+         dispatch({ type: "setTitleStory", payload: data.title });
+         dispatch({ type: "setDialogResponse", payload: data.dialog });
         });
     }
   }, [currentTheme]);
@@ -153,22 +140,9 @@ function Story({
     dispatch({ type: "resetLessonObj", payload: [] });
     dispatch({ type: "resetFalsyAnswerObj", payload: [] });
 
-    const controller = new AbortController();
-    const signal = controller.signal;
 
-    fetch("/update_progressStory", {
-      method: "POST",
-      signal: signal,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        clientID: clientID,
-        progress: currentTheme,
-      }),
-    })
-      .then((res) => res.json)
-      .then((data) => { });
+    instance.updateStoryLesson({ clientID, currentTheme }).then((data) => console.log(data));
+   
   };
 
   return (

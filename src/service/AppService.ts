@@ -55,6 +55,14 @@ class AppService {
     return await this.instance.put(`/active-user`,data).then((data:any) => data.data);
   }
 
+  async getStoryLesson(theme:string) {
+    return await this.instance.get(`/story-lesson?theme=${theme}`).then((data:any) => data.data)
+  }
+
+  async updateStoryLesson(data:any) {
+    return this.instance.put("/active-user/story",data).then((data:any) => data.data);
+  }
+
 }
 
 

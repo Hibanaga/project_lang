@@ -26,6 +26,7 @@ export default function cardSelectTypeA({
       }
     >
       <img src={imgIcon} alt="" />
+      
       <DescriptionCardSelect>{answer}</DescriptionCardSelect>
     </CardSelect>
   );

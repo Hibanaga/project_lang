@@ -192,6 +192,7 @@ function Lesson({
 
   const removePathRedirectHandler = () => localforage.removeItem("currLesson");
 
+
   return (
     <LessonPresentation
       countQuestion={countQuestion}

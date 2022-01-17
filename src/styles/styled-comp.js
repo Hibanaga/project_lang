@@ -36,7 +36,6 @@ const Header = styled.section`
   overflow: hidden;
   //   background-color: #235390;
   background-color: #235390;
-
   background-image: url(${({ theme }) => theme});
   background-size: cover;
   background-position: center center;
