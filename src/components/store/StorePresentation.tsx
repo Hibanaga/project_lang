@@ -1,30 +1,74 @@
 import React from 'react'
 import { withTranslation } from 'react-i18next'
 import { Wrapper } from '../../styles/styled-comp';
-import { TitleStory } from '../story/styles/story-comp';
-import {SutTitleStore} from "./styles/styled-store";
+import { TitleStory, LineMessageStory } from "../story/styles/story-comp";
+import * as StyledThisComp from "./styles/styled-store"
 import firstPack from "./images/firstPack/firstPack"
 import secondPack from "./images/secondPack/secondPack"
 import ShopImages from './components/ShopImages';
+import ShopModalBuy from './components/ShopModalBuy';
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 
 
-function StorePresentation() {
+interface IStoryPresentationProps {
+  isSuccessBuy: boolean;
+  imageToBuy: string[];
+  t: (prop: string) => string;
+  onUpdateImagesToBuyHandler: (imageName: string) => void;
+  onDeleteImageToBuyHandler: (imageName: string) => void;
+  toggleSuccesBuyHandler: () => void;
+  clearImageToBuyHandler: ()=>void;
+}
 
 
+function StorePresentation({
+  isSuccessBuy,
+  imageToBuy,
+  t,
+  toggleSuccesBuyHandler,
+  onDeleteImageToBuyHandler,
+  onUpdateImagesToBuyHandler,
+  clearImageToBuyHandler,
+}: IStoryPresentationProps) {
   return (
-    <article>
+    <StyledThisComp.ArticleStore>
       <Wrapper>
         <TitleStory>Магазин CoolLearn</TitleStory>
-        <SutTitleStore>
+        <StyledThisComp.SutTitleStore>
           В магазине вы можете потратить заработанные ранее тяжким трудом рубины
-        </SutTitleStore>
+        </StyledThisComp.SutTitleStore>
 
-        <ShopImages objectImages={firstPack} />
+        <LineMessageStory>{t("Story.setStories.set")} 1</LineMessageStory>
+        <ShopImages
+          arrImages={firstPack}
+          imageToBuy={imageToBuy}
+          onUpdateImagesToBuyHandler={onUpdateImagesToBuyHandler}
+          onDeleteImageToBuyHandler={onDeleteImageToBuyHandler}
+        />
+        <LineMessageStory>{t("Story.setStories.set")} 2</LineMessageStory>
+        <ShopImages
+          arrImages={secondPack}
+          imageToBuy={imageToBuy}
+          onUpdateImagesToBuyHandler={onUpdateImagesToBuyHandler}
+          onDeleteImageToBuyHandler={onDeleteImageToBuyHandler}
+        />
 
-        <ShopImages objectImages={secondPack} />
+        <ShopModalBuy
+          isSuccessBuy={isSuccessBuy}
+          imageToBuy={imageToBuy}
+          toggleSuccesBuyHandler={toggleSuccesBuyHandler}
+          onDeleteImageToBuyHandler={onDeleteImageToBuyHandler}
+          clearImageToBuyHandler={clearImageToBuyHandler}
+        />
       </Wrapper>
-    </article>
+
+      {imageToBuy.length > 0 && (
+        <StyledThisComp.ShoopingCart onClick={toggleSuccesBuyHandler}>
+          <ShoppingCartIcon />
+        </StyledThisComp.ShoopingCart>
+      )}
+    </StyledThisComp.ArticleStore>
   );
 }
 

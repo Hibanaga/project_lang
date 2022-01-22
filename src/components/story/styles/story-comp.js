@@ -91,8 +91,6 @@ const WrapperCardStoryIMG = styled.div`
       ? "normal"
       : "pointer"};
 
-  /* pointer-events: ${({ theme }) => (theme.isBlocked ? "none" : "auto")}; */
-
   position: relative;
 
   width: 18rem;
@@ -104,7 +102,7 @@ const WrapperCardStoryIMG = styled.div`
 
   &:hover {
     background-color: ${({ theme }) =>
-      theme.isAlreadyOpen ? " #1cb1f628" : "none"};
+      theme.isAlreadyOpen ? " #1cb1f628" : "#d1fae5"};
   }
 
   &:hover .imgCardCatalog {
