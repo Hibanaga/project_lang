@@ -4,12 +4,14 @@ import { imgCoin } from "../../learn/images/imageExport";
 import { useState } from 'react';
 import { ReactComponent as AddButtonIMG } from "../images/supports/add-icon.svg";
 import { ReactComponent as RemoveButtonIMG } from "../images/supports/remove-icon.svg";
+import ShoppingBasketRoundedIcon from "@material-ui/icons/ShoppingBasketRounded";
 
 interface IShoImageCardProps {
   url: any;
   name: any;
   price: number;
-  isAlreadyBuy: boolean;
+  isAleadyBuy:boolean;
+  isAlreadyInShoopingCard: boolean;
   onUpdateImagesToBuyHandler: (imageName: string) => void;
   onDeleteImageToBuyHandler: (imageName: string) => void;
 }
@@ -18,7 +20,8 @@ export default function ShopImageCard({
   url,
   price,
   name,
-  isAlreadyBuy,
+  isAleadyBuy,
+  isAlreadyInShoopingCard,
   onUpdateImagesToBuyHandler,
   onDeleteImageToBuyHandler,
 }: IShoImageCardProps) {
@@ -40,9 +43,16 @@ export default function ShopImageCard({
         <StyledThisComp.ShopImageTitle>{price}</StyledThisComp.ShopImageTitle>
         <StyledThisComp.ShopImageRubin src={imgCoin} />
       </StyledThisComp.ShopImageCostWrapper>
-      <StyledThisComp.HoverShopImage className={isOpen ? "open" : ""}>
-        <StyledThisComp.ButtonShopImage onClick={isAlreadyBuy ? ()=>onDeleteImageToBuyHandler(name) : buyImageHandler }>
-          {isAlreadyBuy ? <RemoveButtonIMG /> : <AddButtonIMG />}
+      <StyledThisComp.HoverShopImage className={isAleadyBuy ? "disableOpen" : isOpen ? "open" : ""}>
+        <StyledThisComp.ButtonShopImage
+          disabled={isAleadyBuy}
+          onClick={
+            isAlreadyInShoopingCard
+              ? () => onDeleteImageToBuyHandler(name)
+              : buyImageHandler
+          }
+        >
+          {isAleadyBuy ? <ShoppingBasketRoundedIcon /> : isAlreadyInShoopingCard ? <RemoveButtonIMG /> : <AddButtonIMG />}
         </StyledThisComp.ButtonShopImage>
       </StyledThisComp.HoverShopImage>
     </StyledThisComp.ShopImagesCard>

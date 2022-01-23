@@ -6,6 +6,7 @@ import ShopImageCard from './ShopImageCard';
 interface IShopProps {
   arrImages: any;
   imageToBuy: string[];
+  images: string[];
   onUpdateImagesToBuyHandler: (imageName: string) => void;
   onDeleteImageToBuyHandler: (imageName: string) => void;
 }
@@ -13,6 +14,7 @@ interface IShopProps {
 export default function ShopImages({
   arrImages,
   imageToBuy,
+   images,
   onUpdateImagesToBuyHandler,
   onDeleteImageToBuyHandler,
 }: IShopProps) {
@@ -24,7 +26,10 @@ export default function ShopImages({
           url={url}
           name={name}
           price={cost}
-          isAlreadyBuy={imageToBuy.findIndex((item) => item === name) > -1}
+          isAlreadyInShoopingCard={
+            imageToBuy.findIndex((item) => item === name) > -1
+          }
+          isAleadyBuy={images.findIndex((item) => item === name) > -1}
           onUpdateImagesToBuyHandler={onUpdateImagesToBuyHandler}
           onDeleteImageToBuyHandler={onDeleteImageToBuyHandler}
         />

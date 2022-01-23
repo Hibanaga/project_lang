@@ -11,17 +11,21 @@ Modal.setAppElement("#root");
 interface IShopModalBuyProps {
   isSuccessBuy: boolean;
   imageToBuy: string[];
+  coin: number;
   toggleSuccesBuyHandler: () => void;
   onDeleteImageToBuyHandler: (imageName: string) => void;
   clearImageToBuyHandler: () => void;
+  onSubmitSuccessBuyHandler: (coinCost: number) => void;
 }
 
 export default function ShopModalBuy({
   isSuccessBuy,
   imageToBuy,
+  coin,
   toggleSuccesBuyHandler,
   onDeleteImageToBuyHandler,
-  clearImageToBuyHandler
+  clearImageToBuyHandler,
+  onSubmitSuccessBuyHandler,
 }: IShopModalBuyProps) {
   const resultImageArr = imagesShop.filter(
     (item) => imageToBuy.indexOf(item.name) > -1
@@ -80,7 +84,10 @@ export default function ShopModalBuy({
               очистить
             </StyledThisComp.CancelCostModal>
 
-            <StyledThisComp.SubmitCostModal>
+            <StyledThisComp.SubmitCostModal
+              onClick={() => onSubmitSuccessBuyHandler(totalCost)}
+              disabled={totalCost > coin}
+            >
               купить
             </StyledThisComp.SubmitCostModal>
           </StyledThisComp.ActionModal>

@@ -65,6 +65,10 @@ export const HoverShopImage = styled.div`
   cursor: pointer;
   opacity: 0;
 
+  &.disableOpen {
+    opacity: 1;
+  }
+
   &.open {
     opacity: 1;
   }
@@ -197,6 +201,11 @@ export const SubmitCostModal = styled.button`
   background-color: #58cc02;
   border: 2px solid rgb(209, 209, 209);
   border-bottom: 0.4rem solid rgb(209, 209, 209);
+
+  &:disabled {
+    background-color: #a6a6a6;
+    cursor: default;
+  }
 `;
 
 export const DeleteItemModal = styled.button`

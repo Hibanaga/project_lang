@@ -7,6 +7,8 @@ import {
   SET_PROGRESSSTORYINFO,
   UPDATE_PROGRESSSTORYINFO,
   UPDATE_PROGRESS,
+  SET_IMAGES,
+  UPDATE_AVATARINFO,
 } from "./userActionsTypes";
 
 const setAuthClientID = (clientID: any) => ({
@@ -29,6 +31,11 @@ const setCountCrown = (count: number) => ({
   payload: count,
 });
 
+const setImages = (images: string[]) => ({
+  type: SET_IMAGES,
+  payload: images
+})
+
 const setCurrentProgress = (objProgress: any) => ({
   type: SET_PROGRESSINFO,
   payload: objProgress,
@@ -49,6 +56,11 @@ const updateProgress = (progress:any) => ({
   payload: progress
 })
 
+const updateImages = (images: any) => ({
+  type: UPDATE_AVATARINFO,
+  payload: images,
+});
+
 export {
   setAuthClientID,
   setFirstAuth,
@@ -58,4 +70,6 @@ export {
   setProgressStory,
   updateProgressStory,
   updateProgress,
+  setImages,
+  updateImages,
 };

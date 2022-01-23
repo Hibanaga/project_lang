@@ -63,6 +63,10 @@ class AppService {
     return this.instance.put("/active-user/story",data).then((data:any) => data.data);
   }
 
+  async updateImagesUser(data:any) {
+    return this.instance.put("/active-user/avatar",data).then((data:any) => data.data);
+  }
+
 }
 
 

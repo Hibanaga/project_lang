@@ -14,22 +14,28 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 interface IStoryPresentationProps {
   isSuccessBuy: boolean;
   imageToBuy: string[];
+  coin: number;
+  images: string[];
   t: (prop: string) => string;
   onUpdateImagesToBuyHandler: (imageName: string) => void;
   onDeleteImageToBuyHandler: (imageName: string) => void;
   toggleSuccesBuyHandler: () => void;
-  clearImageToBuyHandler: ()=>void;
+  clearImageToBuyHandler: () => void;
+  onSubmitSuccessBuyHandler: (coinCost: number) => void;
 }
 
 
 function StorePresentation({
   isSuccessBuy,
   imageToBuy,
+  coin,
   t,
+  images,
   toggleSuccesBuyHandler,
   onDeleteImageToBuyHandler,
   onUpdateImagesToBuyHandler,
   clearImageToBuyHandler,
+  onSubmitSuccessBuyHandler,
 }: IStoryPresentationProps) {
   return (
     <StyledThisComp.ArticleStore>
@@ -43,6 +49,7 @@ function StorePresentation({
         <ShopImages
           arrImages={firstPack}
           imageToBuy={imageToBuy}
+          images={images}
           onUpdateImagesToBuyHandler={onUpdateImagesToBuyHandler}
           onDeleteImageToBuyHandler={onDeleteImageToBuyHandler}
         />
@@ -50,16 +57,19 @@ function StorePresentation({
         <ShopImages
           arrImages={secondPack}
           imageToBuy={imageToBuy}
+          images={images}
           onUpdateImagesToBuyHandler={onUpdateImagesToBuyHandler}
           onDeleteImageToBuyHandler={onDeleteImageToBuyHandler}
         />
 
         <ShopModalBuy
           isSuccessBuy={isSuccessBuy}
+          coin={Number(coin)}
           imageToBuy={imageToBuy}
           toggleSuccesBuyHandler={toggleSuccesBuyHandler}
           onDeleteImageToBuyHandler={onDeleteImageToBuyHandler}
           clearImageToBuyHandler={clearImageToBuyHandler}
+          onSubmitSuccessBuyHandler={onSubmitSuccessBuyHandler}
         />
       </Wrapper>
 

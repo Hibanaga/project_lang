@@ -22,7 +22,7 @@ import Lesson from "../components/lesson/Lesson";
 import Story from "../components/story/Story";
 import { ContextFormProvider } from "../components/auth/ContextForm";
 import { connect } from "react-redux";
-import { setFirstAuth } from "../redux/userInfo/userActions";
+import { setFirstAuth, setImages } from "../redux/userInfo/userActions";
 import instance from "../service/AppService";
 import {
   setCountCoin,
@@ -44,6 +44,7 @@ interface stateProp {
   restoreCrownHandler: (p: number) => void;
   restoreCurrentProgressHandler: (p: {}) => void;
   restoreCurrentProgressStoryHandler: (p: any) => void;
+  restoreCurrentImagesHandler: (images:string[]) => void;
 }
 
 function Router({
@@ -54,6 +55,7 @@ function Router({
   restoreCrownHandler,
   restoreCurrentProgressHandler,
   restoreCurrentProgressStoryHandler,
+  restoreCurrentImagesHandler,
 }: stateProp) {
   const [isAuth, setAuth] = useState(false);
 
@@ -61,19 +63,17 @@ function Router({
 
   useEffect(() => {
     if (profile.clientID !== "" && isAuth === false) {
-        instance.check_login(profile.clientID).then((data) => {
-          data !== undefined && setAuth(true);
-          restoreCoinHandler(data.coin);
-          restoreCrownHandler(data.crown);
-          restoreCurrentProgressStoryHandler(data.progressStory);
-        });
+      instance.check_login(profile.clientID).then((data) => {
+        data !== undefined && setAuth(true);
+        restoreCoinHandler(data.coin);
+        restoreCrownHandler(data.crown);
+        restoreCurrentProgressStoryHandler(data.progressStory);
+        restoreCurrentImagesHandler(data.images);
+      });
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuth, profile.clientID]);
-
-
-
 
   return (
     <Switch>
@@ -114,6 +114,7 @@ const mapDispatchToProps = {
   restoreCrownHandler: setCountCrown,
   restoreCurrentProgressHandler: setCurrentProgress,
   restoreCurrentProgressStoryHandler: setProgressStory,
+  restoreCurrentImagesHandler: setImages,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Router);
