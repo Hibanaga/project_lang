@@ -67,6 +67,10 @@ class AppService {
     return this.instance.put("/active-user/avatar",data).then((data:any) => data.data);
   }
 
+  async getProfile(data:any) {
+    return this.instance.get(`/user/me?clientID=${data}`).then((data:any) => data.data)
+  }
+
 }
 
 

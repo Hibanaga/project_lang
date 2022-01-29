@@ -1,5 +1,6 @@
+import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { learn, store, story, profile_user } from "../../../router/routes";
+import { learn, store, story, user } from "../../../router/routes";
 import { Wrapper } from "../../../styles/styled-comp";
 import {
   learnOff,
@@ -14,9 +15,10 @@ import {
 
 interface stateProp {
   pathname: string;
+  clientID: string;
 }
 
-export default function navPanel({ pathname }: stateProp) {
+export default function navPanel({ pathname, clientID }: stateProp) {
   return (
     <nav className="container_navPanel">
       <Wrapper>
@@ -33,9 +35,9 @@ export default function navPanel({ pathname }: stateProp) {
             <img src={pathname === store ? storeOn : storeOff} alt="" />
           </NavLink>
 
-          <NavLink to={profile_user}>
+          <NavLink to={`${user}/${clientID}`}>
             <img
-              src={pathname === profile_user ? profileOn : profileOff}
+              src={pathname === `${user}/${clientID}` ? profileOn : profileOff}
               alt=""
             />
           </NavLink>

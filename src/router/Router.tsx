@@ -5,11 +5,11 @@ import {
   log_in,
   register,
   confirm,
-  profile_user,
+  user,
   learn,
   learnLesson,
   story,
-  store
+  store,
 } from "./routes";
 import Profile from "../components/profile/Profile";
 import Home from "../components/home/Home";
@@ -93,7 +93,7 @@ function Router({
             <Route exact path={learn} component={Learn} />
             <Route exact path={learnLesson} component={Lesson} />
             <Route exact path={story} component={Story} />
-            <Route exact path={profile_user} component={Profile} />
+            <Route path={`${user}/${profile.clientID}`} component={Profile} />
             <Route exact path={store} component={Store} />
           </>
         )}

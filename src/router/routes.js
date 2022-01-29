@@ -3,6 +3,7 @@ const log_in = "/log_in";
 const register = "/register";
 const confirm = "/register/confirm";
 const englishTest = "/english_test";
+const user = "/profile";
 const profile_user = "/profile/:cliendID";
 const learn = "/learn";
 const learnLesson = "/learn/:lessonName";
@@ -15,6 +16,7 @@ export {
   register,
   englishTest,
   confirm,
+  user,
   profile_user,
   learn,
   story,

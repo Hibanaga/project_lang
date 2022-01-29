@@ -1,0 +1,20 @@
+{
+  "lessons": [
+    {
+      "name": "family",
+      "result": 5
+    },
+    {
+      "name": "party",
+      "result": 4
+    },
+    {
+      "name": "products",
+      "result": 6
+    },
+    {
+      "name": "restaurant",
+      "result": 4 
+    }
+  ]
+}

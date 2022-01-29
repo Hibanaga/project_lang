@@ -1,15 +1,16 @@
 import ProfileInfo from "../components/profileInfo";
 import NavPanel from "../components/navPanel";
 import MessageInformation from "./messageInformation";
-import React, { useCallback, useReducer } from "react";
+import React, { useCallback, useReducer,memo } from "react";
 import { initialState, actions } from "../services/optionsReducerMessage";
-import { withTranslation } from "react-i18next";
 import i18next from "i18next";
+import { withTranslation } from "react-i18next";
+
 
 interface stateProp {
   pathname: string;
   profile: any;
-  t: (p: any) => string;
+  t: (prop:any) => string;
 }
 
 function LearnNavPanel({ pathname, profile, t }: stateProp) {
@@ -43,7 +44,7 @@ function LearnNavPanel({ pathname, profile, t }: stateProp) {
   return (
     <div className="wrapperContainer">
       <div className="containerNavLearn">
-        <NavPanel pathname={pathname} />
+        <NavPanel pathname={pathname} clientID={profile.clientID} />
         <ProfileInfo
           currLang={i18next.language}
           onChangePathMessageHandler={changePathMessageHandler}
@@ -63,4 +64,5 @@ function LearnNavPanel({ pathname, profile, t }: stateProp) {
   );
 }
 
-export default withTranslation()(React.memo(LearnNavPanel));
+
+export default withTranslation()(memo(LearnNavPanel));
