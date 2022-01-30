@@ -28,7 +28,6 @@ function Confirm({ addDefaultUserData, setFirstAuthHandler }: stateProp) {
     event.preventDefault();
 
     instance.verifyCode(codeConfirm, register.email).then((data) => {
-
       data !== undefined && setMessage("success");
       setMessage(data.message);
       addDefaultUserData(data.cliendID);

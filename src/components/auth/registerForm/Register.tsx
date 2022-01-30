@@ -35,7 +35,6 @@ export default function Register() {
       .then((data) => data !== undefined && setAlreadyExist("success added"));
   };
 
-  console.log(isAlreadyExist);
   return (
     <>
       {isAlreadyExist === "success added" && <Redirect to={confirm} />}

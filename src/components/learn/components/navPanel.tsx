@@ -1,4 +1,3 @@
-import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { learn, store, story, user } from "../../../router/routes";
 import { Wrapper } from "../../../styles/styled-comp";

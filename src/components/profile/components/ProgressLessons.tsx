@@ -13,8 +13,6 @@ interface ProgressLessonsProps {
 const ProgressLessons = ({ progress }: ProgressLessonsProps) => {
   const { lessons } = progressAssets;
   const currentProgress = convertToArray(progress);
-  console.log(lessons);
-  console.log(currentProgress);
   return (
     <StyledThisComp.ProgressLessonsWrapper>
       <StyledThisComp.ProgressLessonsProgressTitle>

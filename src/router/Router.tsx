@@ -31,6 +31,8 @@ import {
   setProgressStory,
 } from "../redux/userInfo/userActions";
 import Store from "../components/store/Store";
+// import { getLocalValue } from "../components/profile/utils/getLocalValue";
+import useLocalForge from "../components/profile/hooks/useLocalForge";
 
 
 
@@ -58,11 +60,13 @@ function Router({
   restoreCurrentImagesHandler,
 }: stateProp) {
   const [isAuth, setAuth] = useState(false);
-
   const location = useLocation();
+  const [loginID] = useLocalForge("loginID");
+ 
+
 
   useEffect(() => {
-    if (profile.clientID !== "" && isAuth === false) {
+    if (profile.clientID !== "" && profile.clientID.length > 0 && isAuth === false) {
       instance.check_login(profile.clientID).then((data) => {
         data !== undefined && setAuth(true);
         restoreCoinHandler(data.coin);
@@ -71,9 +75,18 @@ function Router({
         restoreCurrentImagesHandler(data.images);
       });
     }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuth, profile.clientID]);
+
+  useEffect(() => {
+    if (
+      profile.clientID.length === 0 &&
+      (loginID === null || loginID === undefined)
+    ) {
+      setAuth(false);
+    }
+
+  }, [profile.clientID, loginID]);
 
   return (
     <Switch>

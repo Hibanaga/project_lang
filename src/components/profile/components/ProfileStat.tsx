@@ -1,6 +1,7 @@
 import React from "react";
 import * as StyledThisComp from "../styles/styled-profile";
 import imageExporter from "../../store/images/imageExporter";
+import defaultImage from "../images/defaultImage.png";
 
 interface ProfileStatProps {
   profileData: any;
@@ -9,7 +10,7 @@ interface ProfileStatProps {
 
 const ProfileStat = ({ profileData, image }: ProfileStatProps) => {
   const { nickname, email } = profileData;
-  const currentImage = imageExporter.filter((item) => item.name === image);
+  const currentImage = image ? imageExporter.filter((item) => item.name === image)[0].url : defaultImage;
   return (
     <StyledThisComp.ProfileStat>
       <StyledThisComp.ProfileStatWrapper>
@@ -20,9 +21,7 @@ const ProfileStat = ({ profileData, image }: ProfileStatProps) => {
           {email}
         </StyledThisComp.ProfileStatDescription>
       </StyledThisComp.ProfileStatWrapper>
-      {currentImage[0].url && (
-        <StyledThisComp.ProfileStatImage src={currentImage[0].url} />
-      )}
+      <StyledThisComp.ProfileStatImage src={currentImage } />
     </StyledThisComp.ProfileStat>
   );
 };

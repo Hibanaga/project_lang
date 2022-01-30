@@ -4,24 +4,29 @@ import * as StyledThisComp from "./styles/styled-profile";
 import ProfileStat from "./components/ProfileStat";
 import imageExporter from "../store/images/imageExporter";
 import ProgressLessons from "./components/ProgressLessons";
+import BuyedAvatars from "./components/BuyedAvatars";
+
 
 
 
 interface IProfilePresentationProps {
   t: (prop: any) => string;
+  selectedProfileImage: any;
+  setProfileImageHandler: (prop: string) => void;
+  exitProfileHandler: ()=> void;
   profile: any;
-  profileData:any;
+  profileData: any;
 }
 
 export default function ProfilePresentaiton({
   t,
+  selectedProfileImage,
+  setProfileImageHandler,
+  exitProfileHandler,
   profile,
   profileData,
 }: IProfilePresentationProps) {
-  // console.log(profile,"profile");
-  // console.log(profileData,"profileData");
-
-
+  const filtredListImages = imageExporter.filter(({name}) => profile.images.indexOf(name) > -1);
   return (
     <article className="containerProfile">
       <Wrapper>
@@ -29,11 +34,20 @@ export default function ProfilePresentaiton({
           {profileData && (
             <ProfileStat
               profileData={profileData}
-              image={profile.images[profile.images.length - 1]}
+              image={selectedProfileImage}
             />
           )}
           <ProgressLessons progress={profile.progress} />
         </StyledThisComp.RowProfile>
+        <BuyedAvatars
+          selectedProfileImage={selectedProfileImage}
+          filtredListImages={filtredListImages}
+          setProfileImageHandler={setProfileImageHandler}
+        />
+
+        <StyledThisComp.ExitButtonWrapper onClick={exitProfileHandler}>
+          <StyledThisComp.ExitButton>Выйти</StyledThisComp.ExitButton>
+        </StyledThisComp.ExitButtonWrapper>
       </Wrapper>
     </article>
   );
