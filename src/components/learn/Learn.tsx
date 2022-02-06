@@ -80,6 +80,7 @@ function Learn({
 
        instance.getProgress(profile.clientID).then((data) => {
          if (data.progress !== undefined) {
+           console.log(data)
             const result = convertToJSON(data.progress);
             restoreCurrentProgressHandler(result);
          }         

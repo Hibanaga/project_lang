@@ -94,7 +94,6 @@
       }
     }
   },
-
   "Lesson": {
     "titleTypes": {
       "titleTypeA": "Введите перевод на английский",
@@ -152,5 +151,21 @@
       "cardPackTitle_22": "В ресторане. Заказ блюд",
       "cardPackTitle_23": "Беседа за столом в ресторане"
     }
+  },
+  "Store": {
+    "titles": {
+      "storeTitle": "Магазин CoolLearn",
+      "storeDescription": "В магазине вы можете потратить заработанные ранее тяжким трудом рубины"
+    },
+    "modalShop": {
+      "shoopingCart": "Корзина",
+      "shoopingCartTotal": "Стоимость",
+      "shoopingCartClear": "очистить",
+      "shoopingCartBuy": "купить"
+    }
+  },
+  "Profile": {
+    "profileProgress": "Прогресс",
+    "profileAvatars": "Купленные аватары"
   }
 }

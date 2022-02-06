@@ -28,7 +28,7 @@ export default function resultScrore({
 }: stateProp) {
   return (
     <div className="containerCountScore">
-      {catalogLength === progressArr.length ? (
+      {progressArr && catalogLength === currentProgressArr.length ? (
         <div className="wrapperSuccesfulCompletedLesson">
           <TitleQuestion className="titleSuccesfullMessage">
             Поздравляем
@@ -48,7 +48,8 @@ export default function resultScrore({
             <li className="liItemResultList">
               <h2 className="subTitleProperty">Количество:</h2>
               <span className="countValueProperty">
-                <CountScore>{progressArr.length}</CountScore> / {catalogLength}
+                <CountScore>{currentProgressArr.length}</CountScore> /{" "}
+                {catalogLength}
               </span>
             </li>
             <li className="liItemResultList">

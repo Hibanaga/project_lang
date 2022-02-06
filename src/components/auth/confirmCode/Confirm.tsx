@@ -6,16 +6,37 @@ import ConfirmPresentation from "./ConfirmPresentation";
 import {
   setAuthClientID,
   setFirstAuth,
+  setImages,
 } from "../../../redux/userInfo/userActions";
-import localforage from "localforage";
-import instance from "../../../service/AppService"
+import instance from "../../../service/AppService";
+import {
+  setCountCoin,
+  setCountCrown,
+  setCurrentProgress,
+  setProgressStory,
+} from "../../../redux/userInfo/userActions";
+import { Redirect } from "react-router-dom";
+import { home } from "../../../router/routes";
 
 interface stateProp {
   addDefaultUserData: (p: object) => void;
   setFirstAuthHandler: (p: boolean) => void;
+  restoreCoinHandler: (p: any) => void;
+  restoreCrownHandler: (p: any) => void;
+  restoreCurrentProgressHandler: (p: any) => void;
+  restoreCurrentProgressStoryHandler: (p: any) => void;
+  restoreCurrentImagesHandler: (p: any) => void;
 }
 
-function Confirm({ addDefaultUserData, setFirstAuthHandler }: stateProp) {
+function Confirm({
+  addDefaultUserData,
+  setFirstAuthHandler,
+  restoreCoinHandler,
+  restoreCrownHandler,
+  restoreCurrentProgressHandler,
+  restoreCurrentProgressStoryHandler,
+  restoreCurrentImagesHandler,
+}: stateProp) {
   const [codeConfirm, setConfirmCode] = useState("");
   const [message, setMessage] = useState("loading");
   const [state] = useContext(ContextForm);
@@ -28,16 +49,29 @@ function Confirm({ addDefaultUserData, setFirstAuthHandler }: stateProp) {
     event.preventDefault();
 
     instance.verifyCode(codeConfirm, register.email).then((data) => {
-      data !== undefined && setMessage("success");
+      instance.createActiveUser({ clientID: data.clientID }).then((data) => {
+        if (data !== undefined) {
+        setMessage("success");
+        // addDefaultUserData(data.cliendID);
+        }
+        
+        // restoreCoinHandler(data.coin);
+        // restoreCrownHandler(data.crown);
+        // restoreCurrentProgressHandler(data.progress);
+        // restoreCurrentProgressStoryHandler(data.progressStory);
+        // restoreCurrentImagesHandler(data.images);
+        setFirstAuthHandler(true);
+      });
       setMessage(data.message);
-      addDefaultUserData(data.cliendID);
-      localforage.setItem("loginID", data.clientID);
-      setFirstAuthHandler(true);
+      // localforage.setItem("loginID", data.clientID);
+     
     });
   };
 
   return (
     <>
+      {message === "success" && <Redirect to={home} />}
+
       <ConfirmPresentation
         message={message}
         codeConfirm={codeConfirm}
@@ -51,6 +85,11 @@ function Confirm({ addDefaultUserData, setFirstAuthHandler }: stateProp) {
 const mapDispatchToProps = {
   addDefaultUserData: setAuthClientID,
   setFirstAuthHandler: setFirstAuth,
+  restoreCoinHandler: setCountCoin,
+  restoreCrownHandler: setCountCrown,
+  restoreCurrentProgressHandler: setCurrentProgress,
+  restoreCurrentProgressStoryHandler: setProgressStory,
+  restoreCurrentImagesHandler: setImages,
 };
 
 export default connect(null, mapDispatchToProps)(Confirm);

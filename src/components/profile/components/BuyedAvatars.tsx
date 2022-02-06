@@ -5,19 +5,21 @@ import BuyedAvatar from "./BuyedAvatar";
 
 interface IBuyedAvatarsProps {
   filtredListImages: any;
-  selectedProfileImage:any;
+  selectedProfileImage: any;
+  t: (prop: any) => string;
   setProfileImageHandler: (prop: string) => void;
 }
 
 const BuyedAvatars = ({
   filtredListImages,
+  t,
   selectedProfileImage,
   setProfileImageHandler,
 }: IBuyedAvatarsProps) => {
   return (
     <StyledThisComp.BuyAvatarWrapper>
       <StyledThisComp.ProgressLessonsProgressTitle>
-        Купленные аватары
+        {t("Profile.profileAvatars")}
       </StyledThisComp.ProgressLessonsProgressTitle>
       <StyledThisComp.AvatarsWrapper>
         {filtredListImages.map(({ id, url, name }: any) => (

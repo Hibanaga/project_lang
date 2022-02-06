@@ -1,7 +1,7 @@
 
 
 export const convertToJSON = (item:string) =>  {
-  if (item.length >0 ) {
+  if (item !== undefined && item.length > 0 ) {
     const convertedToArrayString = item.split("-").filter(e => e);
     const result = convertedToArrayString.reduce((prev, item): any => {
       const [key, value] = item.split(":");
@@ -17,9 +17,8 @@ export const convertToJSON = (item:string) =>  {
 
 export const convertToString = (item:any) => {
   let stringArr = "";
-
   for (let el in item) {
-    stringArr += `${el}: [${item[el]}]-`
+    stringArr += `${el}: [${item[el].map((item:string)=> item).join(",")}]-`
   }
 
  return stringArr;

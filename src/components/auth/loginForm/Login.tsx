@@ -38,11 +38,18 @@ function Login({ addDefaultUserData, setFirstAuthHandler }: stateProp) {
   const submitFormHandler = (event: React.MouseEvent) => {
     event.preventDefault();
 
-    instance.login(login).then((data) => {
-      addDefaultUserData(data.clientID);
-      localforage.setItem("loginID", data.clientID);
-      setFirstAuthHandler(true);
+    console.log(login);
+
+    instance.getClientID(login.email).then((data) => {
+       instance.login({ ...login , ...{clientID:  data.clientID}}).then((data) => {
+         addDefaultUserData(data.clientID);
+         console.log(data);
+         localforage.setItem("loginID", data.clientID);
+         setFirstAuthHandler(true);
+       });
     });
+
+   
   };
 
   return (

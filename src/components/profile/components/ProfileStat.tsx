@@ -21,7 +21,7 @@ const ProfileStat = ({ profileData, image }: ProfileStatProps) => {
           {email}
         </StyledThisComp.ProfileStatDescription>
       </StyledThisComp.ProfileStatWrapper>
-      <StyledThisComp.ProfileStatImage src={currentImage } />
+      <StyledThisComp.ProfileStatImage src={currentImage} />
     </StyledThisComp.ProfileStat>
   );
 };

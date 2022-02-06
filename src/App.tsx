@@ -10,19 +10,13 @@ interface stateProp {
 }
 
 function App({ restoreClientID, toggleAuthActivate }: stateProp) {
+
   useEffect(() => {
     localforage.getItem("loginID").then((data) => {
-      // if (data !== null) {
-      //   toggleAuthActivate(true);
-      //   restoreClientID(data);
-      // }
       return data !== null && restoreClientID(data);
-
-      // data !== null && restoreClientID(data)
     });
   }, [restoreClientID]);
-
-  return <Router />;
+  return <Router  />;
 }
 
 const mapDispatchToProps = {

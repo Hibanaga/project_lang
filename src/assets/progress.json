@@ -15,6 +15,10 @@
     {
       "name": "restaurant",
       "result": 4 
+    },
+    {
+      "name": "Bath",
+      "result": 6
     }
   ]
 }

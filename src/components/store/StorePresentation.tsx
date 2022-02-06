@@ -40,9 +40,9 @@ function StorePresentation({
   return (
     <StyledThisComp.ArticleStore>
       <Wrapper>
-        <TitleStory>Магазин CoolLearn</TitleStory>
+        <TitleStory>{t("Store.titles.storeTitle")}</TitleStory>
         <StyledThisComp.SutTitleStore>
-          В магазине вы можете потратить заработанные ранее тяжким трудом рубины
+          {t("Store.titles.storeDescription")}
         </StyledThisComp.SutTitleStore>
 
         <LineMessageStory>{t("Story.setStories.set")} 1</LineMessageStory>
@@ -63,6 +63,7 @@ function StorePresentation({
         />
 
         <ShopModalBuy
+          t={t}
           isSuccessBuy={isSuccessBuy}
           coin={Number(coin)}
           imageToBuy={imageToBuy}

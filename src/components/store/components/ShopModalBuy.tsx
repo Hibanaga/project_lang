@@ -12,6 +12,7 @@ interface IShopModalBuyProps {
   isSuccessBuy: boolean;
   imageToBuy: string[];
   coin: number;
+  t: (prop:string) => string;
   toggleSuccesBuyHandler: () => void;
   onDeleteImageToBuyHandler: (imageName: string) => void;
   clearImageToBuyHandler: () => void;
@@ -22,6 +23,7 @@ export default function ShopModalBuy({
   isSuccessBuy,
   imageToBuy,
   coin,
+  t,
   toggleSuccesBuyHandler,
   onDeleteImageToBuyHandler,
   clearImageToBuyHandler,
@@ -50,7 +52,7 @@ export default function ShopModalBuy({
       </StyledThisComp.ModalCloseButton>
       <StyledThisComp.ModalSuccessBuy>
         <StyledThisComp.ModalSuccessTitle>
-          Корзина
+          {t("Store.modalShop.shoopingCart")}
         </StyledThisComp.ModalSuccessTitle>
 
         <StyledThisComp.ModalSuccessItemsWrapper>
@@ -68,7 +70,7 @@ export default function ShopModalBuy({
         <StyledThisComp.ResultImageModal>
           <StyledThisComp.ResultCostModal>
             <StyledThisComp.ResultDescription>
-              Стоимость:
+              {t("Store.modalShop.shoopingCartTotal")}:
             </StyledThisComp.ResultDescription>
 
             <StyledThisComp.ShopImageCostWrapper>
@@ -81,14 +83,14 @@ export default function ShopModalBuy({
 
           <StyledThisComp.ActionModal>
             <StyledThisComp.CancelCostModal onClick={clearImageToBuyHandler}>
-              очистить
+              {t("Store.modalShop.shoopingCartClear")}
             </StyledThisComp.CancelCostModal>
 
             <StyledThisComp.SubmitCostModal
               onClick={() => onSubmitSuccessBuyHandler(totalCost)}
               disabled={totalCost > coin}
             >
-              купить
+              {t("Store.modalShop.shoopingCartBuy")}
             </StyledThisComp.SubmitCostModal>
           </StyledThisComp.ActionModal>
         </StyledThisComp.ResultImageModal>

@@ -71,9 +71,9 @@ function Lesson({
 
     //get_lesson from back-end
     if (name !== "") {
-      instance.getLesson(name).then((data) => {
-        uploadContentLessonHandler(data.content);
-      });
+      instance
+        .getLesson(name)
+        .then((data) => uploadContentLessonHandler(data.content));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [uploadContentLessonHandler, uploadContentLessonName]);
@@ -165,14 +165,21 @@ function Lesson({
     setTypedText(event.target.value);
 
 
-
   const submitLessonHandler = (event: any) => {
     const currentLesson = location.pathname.split("/").reverse()[0];
-   
-    const resultToUpdateProgress = convertToString({
-      ...progress,
-      [currentLesson]: progressArr,
-    });
+    let resultToUpdateProgress = ""
+    const progressKeys = Object.keys(progress).length > 0 
+    
+    if (progressKeys) {
+      resultToUpdateProgress = convertToString({
+        ...progress,
+        [currentLesson]: progressArr,
+      });
+    } else {
+      resultToUpdateProgress = convertToString({
+        [currentLesson]: progressArr,
+      });
+    }
 
     const data = {
       clientID: clientID,
@@ -192,7 +199,7 @@ function Lesson({
 
   const removePathRedirectHandler = () => localforage.removeItem("currLesson");
 
-
+  console.log(progressArr);
   return (
     <LessonPresentation
       countQuestion={countQuestion}

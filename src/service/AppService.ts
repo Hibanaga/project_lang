@@ -18,9 +18,25 @@ class AppService {
     .then((data:any) => data.data)
   }
 
+
+  async createActiveUser(data: any) {
+    return await this.instance.post(`/active-user`, {
+      ...data,
+      progressStory: [],
+      progress:'',
+      crown:0,
+      coin:0,
+      images: [],
+    }).then((data: any) => data.data)
+  }
+
+  async getClientID(data:any) {
+    return await this.instance.get(`/user/clientID?email=${data}`).then((data:any) => data.data)
+  }
+
   async login(query:any){
-    const {email,password} = query;
-    return await this.instance.get(`/active-user?password=${password}&email=${email}`)
+    const {email,password,clientID} = query;
+    return await this.instance.get(`/active-user/login?password=${password}&email=${email}&clientID=${clientID}`)
     .then((data:any) => data.data)
   }
 
@@ -32,6 +48,7 @@ class AppService {
     })
     .then((data:any) => data.data)
   }
+
 
   async check_login(clientID:string) {
     return await this.instance.get(`/active-user?clientID=${clientID}`)

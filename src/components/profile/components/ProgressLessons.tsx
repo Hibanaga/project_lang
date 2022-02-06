@@ -7,16 +7,17 @@ import { convertToArray } from "../utils/convertToArray";
 
 
 interface ProgressLessonsProps {
-  progress:any
+  progress: any;
+  t: (prop: any) => string;
 }
 
-const ProgressLessons = ({ progress }: ProgressLessonsProps) => {
+const ProgressLessons = ({ t,progress }: ProgressLessonsProps) => {
   const { lessons } = progressAssets;
   const currentProgress = convertToArray(progress);
   return (
     <StyledThisComp.ProgressLessonsWrapper>
       <StyledThisComp.ProgressLessonsProgressTitle>
-        Прогресс
+          {t("Profile.profileProgress")}
       </StyledThisComp.ProgressLessonsProgressTitle>
       <StyledThisComp.ProgressLessonsCategory>
         {currentProgress.map(({ title, progress }, idx) => (
