@@ -198,8 +198,6 @@ function Lesson({
   };
 
   const removePathRedirectHandler = () => localforage.removeItem("currLesson");
-
-  console.log(progressArr);
   return (
     <LessonPresentation
       countQuestion={countQuestion}

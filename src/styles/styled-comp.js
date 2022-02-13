@@ -7,6 +7,13 @@ const Wrapper = styled.div`
   margin: 0 auto;
   position: relative;
 
+  &.wrapperLearn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
   @media (min-width: 1140px) {
     width: 960px;
   }

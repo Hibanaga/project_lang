@@ -53,6 +53,19 @@ const LineMessageStory = styled.div`
     display: inline-block;
     margin-left: 1rem;
   }
+
+  @media (min-width: 768px) {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+
+    &::before {
+      width: 45%;
+    }
+
+    &::after {
+      width: 45%;
+    }
+  }
 `;
 
 const CardStory = styled.div`

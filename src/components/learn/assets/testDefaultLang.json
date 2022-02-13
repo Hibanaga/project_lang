@@ -2,121 +2,451 @@
   "_id": {
     "$oid": "6154281121304351647079f7"
   },
-  "title": "family",
+  "title": "city",
   "content": [
     {
       "type": "A",
-      "typeQuestion": "Введите перевод на английский",
-      "questionDefaultLang": "Отец",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Lesson.cityQuestionTranslate.typeA.question_0",
       "varianAnswer": [
         {
           "id": "a432f889-3d78-4103-9454-98cecb86be43",
-          "answer": "Mother"
+          "answer": "Street"
         },
         {
           "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
-          "answer": "Grandfather"
+          "answer": "City"
         },
         {
           "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
-          "answer": "Father"
+          "answer": "Village"
         }
       ],
-      "answer": "Father"
+      "answer": "Street"
     },
     {
       "type": "B",
-      "typeQuestion": "Введите перевод на",
-      "startQuestion": "My mother's name is Alexandra",
+      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "startQuestion": "Is this your first time in the city?",
       "varianAnswer": [
         {
           "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "Мою"
+          "answer": "Lesson.cityQuestionTranslate.typeB.question_0.variantAnswer.answer_0"
         },
         {
           "id": "3947cfb5-b7bf-4b8f-8886-9a6898c94e34",
-          "answer": "брат"
-        },
-        {
-          "id": "f0262f68-ae5b-4718-91b5-8fb7950ac6b6",
-          "answer": "зовут"
+          "answer": "Lesson.cityQuestionTranslate.typeB.question_0.variantAnswer.answer_1"
         },
         {
           "id": "fb3f50b3-f284-43d6-9676-c72d86000327",
-          "answer": "Александра"
+          "answer": "Lesson.cityQuestionTranslate.typeB.question_0.variantAnswer.answer_2"
         },
         {
           "id": "323b01ba-31a8-4ab4-b9d9-3582237d5728",
-          "answer": "фамилия"
+          "answer": "Lesson.cityQuestionTranslate.typeB.question_0.variantAnswer.answer_3"
         },
         {
           "id": "d133fa86-9d95-4a0e-af18-c44c4443f448",
-          "answer": "мать"
+          "answer": "Lesson.cityQuestionTranslate.typeB.question_0.variantAnswer.answer_4"
         }
       ],
-      "answer": "Мою мать зовут Александра"
+      "answer": "Lesson.cityQuestionTranslate.typeB.question_0.correctAnswer"
     },
     {
       "type": "A",
-      "typeQuestion": "Введите перевод на английский",
-      "questionDefaultLang": "Двоюродная сестра",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Lesson.cityQuestionTranslate.typeA.question_1",
       "varianAnswer": [
         {
           "id": "a432f889-3d78-4103-9454-98cecb86be43",
-          "answer": "Son"
+          "answer": "Flat"
         },
         {
           "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
-          "answer": "Cousin"
+          "answer": "Bicycle"
         },
         {
           "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
-          "answer": "Father"
+          "answer": "Follow"
         }
       ],
-      "answer": "Cousin"
+      "answer": "Flat"
     },
     {
       "type": "B",
-      "typeQuestion": "Вставьте пропущенные слова",
-      "startQuestion": "My father is 42 years old",
+      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "startQuestion": "Please follow me",
       "varianAnswer": [
         {
           "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
-          "answer": "Моему"
+          "answer": "Lesson.cityQuestionTranslate.typeB.question_1.variantAnswer.answer_0"
         },
         {
           "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
-          "answer": "брату"
+          "answer": "Lesson.cityQuestionTranslate.typeB.question_1.variantAnswer.answer_1"
         },
         {
           "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
-          "answer": "сестре"
+          "answer": "Lesson.cityQuestionTranslate.typeB.question_1.variantAnswer.answer_2"
         },
         {
           "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
-          "answer": "отцу"
+          "answer": "Lesson.cityQuestionTranslate.typeB.question_1.variantAnswer.answer_3"
         },
         {
           "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
-          "answer": "42"
+          "answer": "Lesson.cityQuestionTranslate.typeB.question_1.variantAnswer.answer_4"
         },
         {
           "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
-          "answer": "32"
+          "answer": "Lesson.cityQuestionTranslate.typeB.question_1.variantAnswer.answer_5"
         },
         {
           "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
-          "answer": "года"
+          "answer": "Lesson.cityQuestionTranslate.typeB.question_1.variantAnswer.answer_6"
         }
       ],
-      "answer": "Моему отцу 42 года"
+      "answer": "Lesson.cityQuestionTranslate.typeB.question_1.correctAnswer"
     },
     {
       "type": "C",
-      "typeQuestion": "Напишите перевод на английский",
-      "startQuestion": "Мой брат студент",
-      "answer": "My brother is a student"
+      "typeQuestion": "Lesson.titleTypes.titleTypeC",
+      "startQuestion": "Lesson.cityQuestionTranslate.typeC.startQuestion",
+      "answer": "can i ask the way"
     }
+  ]
+}
+
+
+
+
+{
+  "_id": {
+      "$oid": "61712881c138a149aae04b4d"
+  },
+  "title": "lessons",
+  "content": [
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Lesson.lessonsQuestionTranslate.typeA.question_0",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Homework"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Homeless"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Class"
+        }
+      ],
+      "answer": "Homework"
+    },
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Экзамен",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Test"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Exam"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Time"
+        }
+      ],
+      "answer": "Exam"
+    },
+    {
+      "type": "B",
+      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "startQuestion": "Please answer the question",
+      "varianAnswer": [
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "Lesson.lessonsQuestionTranslate.typeB.question_0.variantAnswer.answer_0"
+        },
+        {
+          "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
+          "answer": "Lesson.lessonsQuestionTranslate.typeB.question_0.variantAnswer.answer_1"
+        },
+        {
+          "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
+          "answer": "Lesson.lessonsQuestionTranslate.typeB.question_0.variantAnswer.answer_2"
+        },
+        {
+          "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
+          "answer": "Lesson.lessonsQuestionTranslate.typeB.question_0.variantAnswer.answer_3"
+        },
+        {
+          "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
+          "answer": "Lesson.lessonsQuestionTranslate.typeB.question_0.variantAnswer.answer_4"
+        },
+        {
+          "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
+          "answer": "Lesson.lessonsQuestionTranslate.typeB.question_0.variantAnswer.answer_5"
+        },
+        {
+          "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
+          "answer": "Lesson.lessonsQuestionTranslate.typeB.question_0.variantAnswer.answer_6"
+        }
+      ],
+      "answer": "Lesson.lessonsQuestionTranslate.typeB.question_0.correctAnswer"
+    },{
+      "type": "C",
+      "typeQuestion": "Lesson.titleTypes.titleTypeC",
+      "startQuestion": "Lesson.lessonsQuestionTranslate.typeC.startQuestion",
+      "answer": "What is the question?"
+    }
+  ]
+}
+
+
+
+
+
+{
+  "_id": {
+      "$oid": "616fd739ff61fa52cdd227da"
+  },
+  "title": "recreation",
+  "content": [
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Lesson.recreationQuestionTranslate.typeA.question_0",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Vacation"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Weekend"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "medical"
+        }
+      ],
+      "answer": "Vacation"
+    },
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Lesson.recreationQuestionTranslate.typeA.question_1",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Biology"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Physics"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Mathematics"
+        }
+      ],
+      "answer": "Mathematics"
+    },
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Lesson.recreationQuestionTranslate.typeA.question_2",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Physical culture"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Chemistry"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Physics"
+        }
+      ],
+      "answer": "Physics"
+    },
+    {
+      "type": "B",
+      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "startQuestion": "Physical formulas are complex",
+      "varianAnswer": [
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "Lesson.recreationQuestionTranslate.typeB.question_0.variantAnswer.answer_0"
+        },
+        {
+          "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
+          "answer": "Lesson.recreationQuestionTranslate.typeB.question_0.variantAnswer.answer_1"
+        },
+        {
+          "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
+          "answer": "Lesson.recreationQuestionTranslate.typeB.question_0.variantAnswer.answer_2"
+        },
+        {
+          "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
+          "answer": "Lesson.recreationQuestionTranslate.typeB.question_0.variantAnswer.answer_3"
+        },
+        {
+          "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
+          "answer": "Lesson.recreationQuestionTranslate.typeB.question_0.variantAnswer.answer_4"
+        },
+        {
+          "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
+          "answer": "Lesson.recreationQuestionTranslate.typeB.question_0.variantAnswer.answer_5"
+        },
+        {
+          "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
+          "answer": "Lesson.recreationQuestionTranslate.typeB.question_0.variantAnswer.answer_6"
+        }
+      ],
+      "answer": "Lesson.recreationQuestionTranslate.typeB.question_0.correctAnswer"
+    },{
+      "type": "C",
+      "typeQuestion": "Lesson.titleTypes.titleTypeC",
+      "startQuestion": "Lesson.recreationQuestionTranslate.typeC.startQuestion",
+      "answer": "When is the end of the lesson"
+    },
+    {
+      "type": "B",
+      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "startQuestion": "When is the end of the lesson",
+      "varianAnswer": [
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "Lesson.recreationQuestionTranslate.typeB.question_1.variantAnswer.answer_0"
+        },
+        {
+          "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
+          "answer": "Lesson.recreationQuestionTranslate.typeB.question_1.variantAnswer.answer_1"
+        },
+        {
+          "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
+          "answer": "Lesson.recreationQuestionTranslate.typeB.question_1.variantAnswer.answer_2"
+        },
+        {
+          "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
+          "answer": "Lesson.recreationQuestionTranslate.typeB.question_1.variantAnswer.answer_3"
+        },
+        {
+          "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
+          "answer": "Lesson.recreationQuestionTranslate.typeB.question_1.variantAnswer.answer_4"
+        },
+        {
+          "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
+          "answer": "Lesson.recreationQuestionTranslate.typeB.question_1.variantAnswer.answer_5"
+        },
+        {
+          "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
+          "answer": "Lesson.recreationQuestionTranslate.typeB.question_1.variantAnswer.answer_6"
+        }
+      ],
+      "answer": "Lesson.recreationQuestionTranslate.typeB.question_1.correctAnswer"
+    }
+  ]
+}
+
+
+{
+  "_id": {
+      "$oid": "61712881c138a149aae04b4d"
+  },
+  "title": "market",
+  "content": [
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Lesson.marketQuestionTranslate.typeA.question_0",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Shop"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Market"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Store"
+        }
+      ],
+      "answer": "Market"
+    },
+    {
+      "type": "A",
+      "typeQuestion": "Lesson.titleTypes.titleTypeA",
+      "questionDefaultLang": "Lesson.marketQuestionTranslate.typeA.question_1",
+      "varianAnswer": [
+        {
+          "id": "a432f889-3d78-4103-9454-98cecb86be43",
+          "answer": "Egg"
+        },
+        {
+          "id": "23cac317-0c01-4816-834c-dcecfba3ba5c",
+          "answer": "Tomato"
+        },
+        {
+          "id": "d7fa3d82-693f-4e60-bbac-bdcdafd79b46",
+          "answer": "Potato"
+        }
+      ],
+      "answer": "Egg"
+    },
+    {
+      "type": "B",
+      "typeQuestion": "Lesson.titleTypes.titleTypeB",
+      "startQuestion": "How much does a potato cost",
+      "varianAnswer": [
+        {
+          "id": "6f35f812-dc8b-47c5-ad3d-7dad1de1f049",
+          "answer": "Lesson.marketQuestionTranslate.typeB.question_0.variantAnswer.answer_0"
+        },
+        {
+          "id": "de64e1d5-ac1a-4483-8828-327e15e6815a",
+          "answer": "Lesson.marketQuestionTranslate.typeB.question_0.variantAnswer.answer_1"
+        },
+        {
+          "id": "d25bc5d4-b38c-4c94-8e9a-23de9dd7c515",
+          "answer": "Lesson.marketQuestionTranslate.typeB.question_0.variantAnswer.answer_2"
+        },
+        {
+          "id": "46a5b8a2-e2f0-4a1b-9da2-68d589ea277c",
+          "answer": "Lesson.marketQuestionTranslate.typeB.question_0.variantAnswer.answer_3"
+        },
+        {
+          "id": "58f8fc12-17f1-4c3a-b0bc-fce6c9b2f012",
+          "answer": "Lesson.marketQuestionTranslate.typeB.question_0.variantAnswer.answer_4"
+        },
+        {
+          "id": "9189fc98-2e36-4359-b150-939aa3bb87d7",
+          "answer": "Lesson.marketQuestionTranslate.typeB.question_0.variantAnswer.answer_5"
+        },
+        {
+          "id": "d9aa11f9-8a45-43f3-b399-8d8688576367",
+          "answer": "Lesson.marketQuestionTranslate.typeB.question_0.variantAnswer.answer_6"
+        }
+      ],
+      "answer": "Lesson.marketQuestionTranslate.typeB.question_0.correctAnswer"
+    },{
+      "type": "C",
+      "typeQuestion": "Lesson.titleTypes.titleTypeC",
+      "startQuestion": "Lesson.marketQuestionTranslate.typeC.startQuestion",
+      "answer": "This tomato is too expensive"
+    },
   ]
 }

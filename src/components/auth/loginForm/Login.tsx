@@ -42,10 +42,11 @@ function Login({ addDefaultUserData, setFirstAuthHandler }: stateProp) {
 
     instance.getClientID(login.email).then((data) => {
        instance.login({ ...login , ...{clientID:  data.clientID}}).then((data) => {
-         addDefaultUserData(data.clientID);
-         console.log(data);
-         localforage.setItem("loginID", data.clientID);
-         setFirstAuthHandler(true);
+        if (data) {
+          addDefaultUserData(data.clientID);
+          localforage.setItem("loginID", data.clientID);
+          setFirstAuthHandler(true);
+        }
        });
     });
 

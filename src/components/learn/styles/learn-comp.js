@@ -152,6 +152,10 @@ const MessageArrowCurrentPath = styled.div`
   background-color: #fff;
   border-left: 0.3rem solid #e5e5e5;
   border-top: 0.3rem solid #e5e5e5;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const ButtonSelectLang = styled.button`

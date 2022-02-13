@@ -14,11 +14,39 @@
     },
     {
       "name": "restaurant",
-      "result": 4 
+      "result": 4
     },
     {
-      "name": "Bath",
+      "name": "bathroom",
+      "result": 5
+    },
+    {
+      "name": "purchases",
+      "result": 4
+    },
+    {
+      "name": "food",
       "result": 6
+    },
+    {
+      "name": "university",
+      "result": 4
+    },
+    {
+      "name": "city",
+      "result": 5
+    },
+    {
+      "name": "lessons",
+      "result": 4
+    },
+    {
+      "name": "recreation",
+      "result": 6
+    },
+    {
+      "name": "market",
+      "result": 4
     }
   ]
 }

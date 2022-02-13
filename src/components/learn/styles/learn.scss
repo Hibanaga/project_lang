@@ -155,13 +155,24 @@
     background-color: #fff;
 
     border-bottom: 0.3rem solid #e5e5e5;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
   }
+
+
 }
 
 .wrapperMessage {
   height: 100%;
   width: 90%;
   margin: 0 auto;
+
+
+  @media (min-width:768px ) {
+    display: none;
+  }
 
   .rowMessage {
     height: 100%;
@@ -227,7 +238,7 @@
 @media (min-width: 768px) {
   .rowContainerLearn {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
 
     height: 100%;
   }
@@ -284,10 +295,10 @@
     width: 1.5rem;
   }
 
-  .wrapperCatalogLearn {
-    width: 45%;
-    min-height: 490px;
-  }
+  // .wrapperCatalogLearn {
+  //   width: 45%;
+  //   min-height: 490px;
+  // }
 
   .rowAdditionalInfo {
     width: 45%;
@@ -311,7 +322,7 @@
 
   .rowAdditionalInfo {
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   .wrapperCatalogCard {
@@ -337,6 +348,8 @@
 
   .rowContainerLearn {
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .wrapperCatalogLearn {
