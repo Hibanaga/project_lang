@@ -41,6 +41,24 @@
       "link": "начать"
     }
   },
+  "confirm": {
+    "confirmEmail": "Подтверждение почты",
+    "notTrueCode": "Неправильный код",
+    "placeholderConfirm": "введите полученный код",
+    "submitCode": "Подтвердить"
+  },
+  "resultLesson": {
+    "congratsMessage": "Поздравляем",
+    "descriptionCongrats": "Вы успешно завершили этот урок",
+    "yourResult": "Ваш результат",
+    "resultMessage": "Результат",
+    "countResultCongrats": "Количество",
+    "countCrownsCongrats": "Заработано корон",
+    "countCoinCongrats": "Заработано рубинов",
+    "submitFinishCongrats": "Завершить",
+    "buttonInfoCheck":"Проверить",
+    "buttonInfoNext": "Далее" 
+  },
   "form": {
     "loginForm": {
       "placeholderEmail": "Email или имя пользователя",
@@ -93,6 +111,11 @@
         "profileDescription": "Профиль можно кастомизировать используя рубины."
       }
     }
+  },
+  "profileAdditional": {
+  "SelectedImage": "Выбрано",
+  "selectImage": "Выбрать",
+  "removeText": "удалить"
   },
   "Lesson": {
     "titleTypes": {

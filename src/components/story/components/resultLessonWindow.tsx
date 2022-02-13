@@ -12,18 +12,21 @@ import {
   returnMessageCongratulations,
 } from "../utils/validateStoryHelpers";
 import messageCongratulations from "../assets/messageCongratulations.json";
+import { withTranslation } from "react-i18next";
 
 interface stateProp {
   falsyAnswerObj: any;
   cardlesson: any;
 
+  t: (prop:any) => string;
   onCloseResultLessonWindowHandler: () => void;
 }
 
-export default function resultLessonWindow({
+function resultLessonWindow({
   falsyAnswerObj,
   cardlesson,
   onCloseResultLessonWindowHandler,
+  t,
 }: stateProp) {
   return (
     <div className="wrapperResultWindow">
@@ -35,12 +38,12 @@ export default function resultLessonWindow({
       </CloseWindowButton>
 
       <TitleStory className="titleStoryResult">
-        Вы успешно завершили урок
+        {t("resultLesson.descriptionCongrats")}
       </TitleStory>
 
       <div className="wrapperResultStoryLesson">
         <SubTitleStory className="subTitleStoryResult">
-          Ваш результат:
+          {t("resultLesson.yourResult")}:
         </SubTitleStory>
 
         <ResultMessage>
@@ -58,8 +61,11 @@ export default function resultLessonWindow({
         className="js-btn_finshLesson"
         onClick={onCloseResultLessonWindowHandler}
       >
-        Завершить
+        {t("resultLesson.submitFinishCongrats")}
       </button>
     </div>
   );
 }
+
+
+export default withTranslation()(resultLessonWindow);

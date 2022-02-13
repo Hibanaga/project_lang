@@ -87,7 +87,9 @@ function submitAnswerAction({
             : false
         }
       >
-        {messageConfirm === "" ? "Проверить" : "Далее"}{" "}
+        {messageConfirm === ""
+          ? t("resultLesson.buttonInfoCheck")
+          : t("resultLesson.buttonInfoNext")}
       </button>
     </FormSubmitCardLesson>
   );

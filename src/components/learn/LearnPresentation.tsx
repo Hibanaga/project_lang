@@ -1,5 +1,4 @@
-import { Row, Wrapper } from "../../styles/styled-comp";
-import { AdditionalInfoWrapper } from "./styles/learn-comp";
+import { Wrapper } from "../../styles/styled-comp";
 import "./styles/learn.scss";
 import TrainingSection from "./components/trainingSection";
 import catalog from "./assets/catalog.json";

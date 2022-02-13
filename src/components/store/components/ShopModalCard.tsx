@@ -1,19 +1,22 @@
 import React from 'react';
 import * as StyledThisComp from "../styles/styled-store";
 import { imgCoin } from "../../learn/images/imageExport";
+import { withTranslation } from 'react-i18next';
 
 interface IShopModalCardProps {
   name: string;
   url: any;
   price: number;
   onDeleteImageToBuyHandler: (imageName: string) => void;
+  t: (prop:any) => string
   
 }
 
-export default function ShopModalCard({
+ function ShopModalCard({
   price,
   url,
   name,
+  t,
   onDeleteImageToBuyHandler,
 }: IShopModalCardProps) {
 
@@ -30,9 +33,11 @@ export default function ShopModalCard({
         <StyledThisComp.DeleteItemModal
           onClick={() => onDeleteImageToBuyHandler(name)}
         >
-          удалить
+          {t("profileAdditional.removeText")}
         </StyledThisComp.DeleteItemModal>
       </StyledThisComp.ActionItemModal>
     </StyledThisComp.ShopImageCardWrapper>
   );
 }
+
+export default withTranslation()(ShopModalCard);

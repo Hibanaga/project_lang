@@ -10,56 +10,67 @@ import {
 } from "../utils/validateLessonExamples";
 import { learn } from "../../../router/routes";
 import messageResults from "../services/messageResults.json";
+import { withTranslation } from "react-i18next";
 
 interface stateProp {
   countScore: number;
   catalogLength: number;
   onSubmitLessonHandler: (p: any) => void;
+  t: (prop:any) => string;
   currentProgressArr: any;
   progressArr:any;
 }
 
-export default function resultScrore({
+ function resultScrore({
   countScore,
   catalogLength,
   currentProgressArr,
   progressArr,
   onSubmitLessonHandler,
+  t
 }: stateProp) {
   return (
     <div className="containerCountScore">
       {progressArr && catalogLength === currentProgressArr.length ? (
         <div className="wrapperSuccesfulCompletedLesson">
           <TitleQuestion className="titleSuccesfullMessage">
-            Поздравляем
+            {t("resultLesson.congratsMessage")}
           </TitleQuestion>
 
           <SubTitleSearchWord className="subTitleSuccesfullMessage">
-            Вы успешно завершили этот урок
+            {t("resultLesson.descriptionCongrats")}
           </SubTitleSearchWord>
         </div>
       ) : (
         <>
           <TitleQuestion className="titleResultCountScore">
-            Результат:
+            {t("resultLesson.resultMessage")}
+            {":"}
           </TitleQuestion>
 
           <ul className="ulResultList">
             <li className="liItemResultList">
-              <h2 className="subTitleProperty">Количество:</h2>
+              <h2 className="subTitleProperty">
+                {t("resultLesson.countResultCongrats")}
+                {":"}
+              </h2>
               <span className="countValueProperty">
                 <CountScore>{currentProgressArr.length}</CountScore> /{" "}
                 {catalogLength}
               </span>
             </li>
             <li className="liItemResultList">
-              <h2 className="subTitleProperty">Заработано корон:</h2>
+              <h2 className="subTitleProperty">
+                {t("resultLesson.countCrownsCongrats")}:
+              </h2>
               <span className="countValueProperty">
                 <CountScore>+{countScore}</CountScore>
               </span>
             </li>
             <li className="liItemResultList">
-              <h2 className="subTitleProperty">Заработано рубинов:</h2>
+              <h2 className="subTitleProperty">
+                {t("resultLesson.countCoinCongrats")}:
+              </h2>
               <span className="countValueProperty">
                 <CountScore>+{countScore}</CountScore>
               </span>
@@ -80,8 +91,11 @@ export default function resultScrore({
         to={learn}
         className="routeReturnToMain"
       >
-        Завершить
+        {t("resultLesson.submitFinishCongrats")}
       </NavLink>
     </div>
   );
 }
+
+
+export default withTranslation()(resultScrore);

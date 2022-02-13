@@ -1,3 +1,4 @@
+import { withTranslation } from "react-i18next";
 import { Wrapper, Title } from "../../../styles/styled-comp";
 import ActionsRedirect from "../components/actionsRedirect";
 import ConfirmCodeForm from "../components/confirmCodeForm";
@@ -8,13 +9,15 @@ interface stateProp {
   codeConfirm: string;
   onHandleInputChange: (p: any) => void;
   onSubmitFormHandler: (p: any) => void;
+  t: (prop:any) => string;
   message: string;
 }
 
-export default function ConfirmPresentation({
+ function ConfirmPresentation({
   codeConfirm,
   onHandleInputChange,
   onSubmitFormHandler,
+  t,
   message,
 }: stateProp) {
   return (
@@ -22,10 +25,11 @@ export default function ConfirmPresentation({
       <ActionsRedirect />
       <Wrapper>
         <RowLogin className="rowConfirm">
-          <Title>Подтверждение почты</Title>
+          <Title>{t("confirm.confirmEmail")}</Title>
           <ConfirmCodeForm
             message={message}
             codeConfirm={codeConfirm}
+            t={t}
             onHandleInputChange={onHandleInputChange}
             onSubmitFormHandler={onSubmitFormHandler}
           />
@@ -35,3 +39,6 @@ export default function ConfirmPresentation({
     </ContainerForm>
   );
 }
+
+
+export default withTranslation()(ConfirmPresentation);
