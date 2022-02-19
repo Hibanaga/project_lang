@@ -56,26 +56,28 @@
     "login": "Logowanie",
     "title": "Nazwa użytkownika może zawierać tylko liczby, litery i niektóre znaki specjalne takie jak !_@"
   },
-  "Story": {
-    "titles": {
-      "storyTitle": "Historie CoolLearn",
-      "storyDescription": "Mini historie które poprawiają umiejętności czytania i odpowiadania na pytania"
-    },
-    "setStories": {
-      "set": "Zestaw"
-    },
-    "cardPacks": {
-      "cardPackTitle_11": "Spotkanie na lotnisku",
-      "cardPackTitle_12": "Rezerwacja pokoju w hotelu",
-      "cardPackTitle_13": "Spotkanie z kolegą",
-      "cardPackTitle_21": "Jak zapytać o drogę",
-      "cardPackTitle_22": "W restauracji. Zamawianie potraw",
-      "cardPackTitle_23": "Rozmowa przy stole w restauracji"
-    }
+  "confirm": {
+    "confirmEmail": "Potwierdzenie poczty",
+    "notTrueCode": "Nieprawidłowy kod",
+    "placeholderConfirm": "wpisz otrzymany kod",
+    "submitCode": "Potwierdzić"
   },
+  "resultLesson": {
+    "congratsMessage": "Gratulować",
+    "descriptionCongrats": "Pomyślnie ukończyłeś ten samouczek",
+    "yourResult": "Twój wynik",
+    "resultMessage": "Wynik",
+    "countResultCongrats": "Liczba punktów",
+    "countCrownsCongrats": "Zdobyte korony",
+    "countCoinCongrats": "Zarobione rubiny",
+    "submitFinishCongrats": "Zakończyć",
+    "buttonInfoCheck": "Sprawdzić",
+    "buttonInfoNext": "Dalej"
+  },
+
   "Learn": {
     "trainingSection": {
-      "mainTitle": "Zasady",
+      "mainTitle": "Podstawy",
       "chapter_1": "I. Ranek",
       "chapter_2": "II. Obiad"
     },
@@ -84,20 +86,20 @@
       "titleProduct": "Produkty",
       "titleParty": "Impreza",
       "titleRestaurant": "Restauracja",
-      "titleFood": "Jedzenie",
+      "titleFood": "Żywność",
       "titleBathroom": "Łazienka",
       "titlePurchases": "Zakupy",
-      "titleUniversity": "Uczelnia",
+      "titleUniversity": "Uniwersytet",
       "titleCity": "Miasto",
-      "titleLessons": "Uprawianie",
-      "titleRecreation": "Rekreacja",
+      "titleLessons": "Klasy",
+      "titleRecreation": "Relaks",
       "titleMarket": "Rynek"
     },
     "actionUsers": {
       "rubin": {
         "rubinsTitle": "Rubiny",
-        "rubinsDescription_1": "Twoje bogactwo -",
-        "rubinsDescription_2": " rubiny."
+        "rubinsDescription_1": "Twoje bogactwo - ",
+        "rubinsDescription_2": "rubiny."
       },
       "crown": {
         "crownTitle": "Korony",
@@ -109,39 +111,43 @@
       }
     }
   },
-
+  "profileAdditional": {
+    "SelectedImage": "Wybrane",
+    "selectImage": "Wybrać",
+    "removeText": "Usunąć"
+  },
   "Lesson": {
     "titleTypes": {
       "titleTypeA": "Wpisz tłumaczenie na język angielski",
-      "titleTypeB": "Wpisz tłumaczenie na Polski",
+      "titleTypeB": "Wpisz tłumaczenie na polski",
       "titleTypeC": "Napisz tłumaczenie na angielski"
     },
     "familyQuestionTranslate": {
       "typeA": {
         "question_0": "Ojciec",
-        "question_1": "Kuzynka"
+        "question_1": "Kuzyna"
       },
       "typeB": {
         "question_0": {
           "variantAnswer": {
-            "answer_0": "Moja",
-            "answer_1": "imię",
-            "answer_2": "Aleksandra",
-            "answer_3": "na",
-            "answer_4": "ma",
-            "answer_5": "matka"
+            "answer_0": "ma",
+            "answer_1": "na",
+            "answer_2": "imię",
+            "answer_3": "Aleksandra",
+            "answer_4": "matka",
+            "answer_5": "Moja"
           },
           "correctAnswer": "Moja matka ma na imię Aleksandra"
         },
         "question_1": {
           "variantAnswer": {
-            "answer_0": "Mój",
-            "answer_1": "ojciec",
-            "answer_2": "ma",
-            "answer_3": "dziadek",
-            "answer_4": "42",
+            "answer_0": "ojciec",
+            "answer_1": "ma",
+            "answer_2": "42",
+            "answer_3": "lata",
+            "answer_4": "brat",
             "answer_5": "32",
-            "answer_6": "lata"
+            "answer_6": "Mój"
           },
           "correctAnswer": "Mój ojciec ma 42 lata"
         }
@@ -149,6 +155,266 @@
       "typeC": {
         "startQuestion": "Mój brat student"
       }
+    },
+    "bathroomQuestionTranslate": {
+      "typeA": {
+        "question_0": "Mydło",
+        "question_1": "Prysznic"
+      },
+      "typeB": {
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "Zupa",
+            "answer_1": "Szczotka",
+            "answer_2": "Ostatni",
+            "answer_3": "kawałek",
+            "answer_4": "mydła"
+          },
+          "correctAnswer": "Ostatni kawałek mydła"
+        },
+        "question_1": {
+          "variantAnswer": {
+            "answer_0": "umyć",
+            "answer_1": "zęby",
+            "answer_2": "kawałek",
+            "answer_3": "Ostatni",
+            "answer_4": "uszy",
+            "answer_5": "wyczyścić",
+            "answer_6": "Trzeba"
+          },
+          "correctAnswer": "Trzeba umyć zęby"
+        }
+      },
+      "typeC": {
+        "startQuestion": "Ta szczoteczka jest okropna"
+      }
+    },
+    "purchasesQuestionTranslate": {
+      "typeA": {
+        "question_0": "Pieniądz",
+        "question_1": "Laptop"
+      },
+      "typeB": {
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "Tak",
+            "answer_1": "ciasto",
+            "answer_2": "smartfon",
+            "answer_3": "ten",
+            "answer_4": "laptop",
+            "answer_5": "kosztuje",
+            "answer_6": "Ile"
+          },
+          "correctAnswer": "Ile kosztuje ten laptop"
+        }
+      },
+      "typeC": {
+        "startQuestion": "Ciekawa oferta"
+      }
+    },
+    "foodQuestionTranslate": {
+      "typeA": {
+        "question_0": "Sałatka",
+        "question_1": "Krewetki",
+        "question_2": "Pieczony kurczak"
+      },
+      "typeB": {
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "Będziesz",
+            "answer_1": "deser",
+            "answer_2": "gorąca herbata",
+            "answer_3": "ci",
+            "answer_4": "rekreacja",
+            "answer_5": "kolacja",
+            "answer_6": "doskonały"
+          },
+          "correctAnswer": "Będziesz deser"
+        },
+        "question_1": {
+          "variantAnswer": {
+            "answer_0": "cukru",
+            "answer_1": "zjeść",
+            "answer_2": "łyżek",
+            "answer_3": "Gdzie",
+            "answer_4": "Ile",
+            "answer_5": "Dlaczego",
+            "answer_6": "sól"
+          },
+          "correctAnswer": "Ile łyżek cukru"
+        }
+      },
+      "typeC": {
+        "startQuestion": "Przygotuj tiramisu proszę"
+      }
+    },
+    "universityQuestionTranslate": {
+      "typeA": {
+        "question_0": "Uczelnia",
+        "question_1": "Opinia"
+      },
+      "typeB": {
+        "question_0": {
+          "answer_0": "Wyciągnij",
+          "answer_1": "zadaniami",
+          "answer_2": "kiedy",
+          "answer_3": "dla",
+          "answer_4": "z",
+          "answer_5": "bilet",
+          "answer_6": "zadaniami"
+        },
+        "correctAnswer": "Wyciągnij bilet z zadaniami"
+      },
+      "typeC": {
+        "startQuestion": "Gratuluję, świetny wynik"
+      }
+    },
+    "cityQuestionTranslate": {
+      "typeA": {
+        "question_0": "Dwór",
+        "question_1": "Mieszkanie"
+      },
+      "typeB": {
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "Jesteś",
+            "answer_1": "pierwszy",
+            "answer_2": "w",
+            "answer_3": "mieście",
+            "answer_4": "raz"
+          },
+          "correctAnswer": "Jesteś pierwszy raz w mieście"
+        },
+        "question_1": {
+          "variantAnswer": {
+            "answer_0": "Proszę",
+            "answer_1": "za",
+            "answer_2": "mną",
+            "answer_3": "dla",
+            "answer_4": "Kilka",
+            "answer_5": "Przepraszam",
+            "answer_6": "podtrzymać"
+          },
+          "correctAnswer": "Proszę za mną"
+        }
+      },
+      "typeC": {
+        "startQuestion": "Mogę zapytać o drogę?"
+      }
+    },
+    "lessonsQuestionTranslate": {
+      "typeA": {
+        "question_0": "Praca domowa"
+      },
+      "typeB": {
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "Proszę",
+            "answer_1": "wy",
+            "answer_2": "o",
+            "answer_3": "odpowiedź",
+            "answer_4": "pytanie",
+            "answer_5": "na",
+            "answer_6": "Jestem"
+          },
+          "correctAnswer": "Proszę o odpowiedź na pytanie"
+        }
+      },
+      "typeC": {
+        "startQuestion": "Na czym polega pytanie?"
+      }
+    },
+    "recreationQuestionTranslate": {
+      "typeA": {
+        "question_0": "Urlop",
+        "question_1": "Matematyka",
+        "question_2": "Fizyka"
+      },
+      "typeB": {
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "fizyczne",
+            "answer_1": "Wzory",
+            "answer_2": "złożone",
+            "answer_3": "chemiczne",
+            "answer_4": "ćwiczenia",
+            "answer_5": "są",
+            "answer_6": "ciekawe"
+          },
+          "correctAnswer": "Wzory fizyczne są złożone"
+        },
+        "question_1": {
+          "variantAnswer": {
+            "answer_0": "Pozdrowienia",
+            "answer_1": "początek",
+            "answer_2": "koniec",
+            "answer_3": "lekcja",
+            "answer_4": "kończy",
+            "answer_5": "się",
+            "answer_6": "Kiedy"
+          },
+          "correctAnswer": "Kiedy kończy się lekcja"
+        }
+      },
+      "typeC": {
+        "startQuestion": "Kiedy kończy się lekcja?"
+      }
+    },
+    "marketQuestionTranslate": {
+      "typeA": {
+        "question_0": "Rynek",
+        "question_1": "Jajko"
+      },
+      "typeB": {
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "ziemniaki",
+            "answer_1": "pomidory",
+            "answer_2": "pomarańcze",
+            "answer_3": "będzie",
+            "answer_4": "waży",
+            "answer_5": "kosztuje",
+            "answer_6": "Ile"
+          },
+          "correctAnswer": "Ile kosztuje ziemniaki"
+        }
+      },
+      "typeC": {
+        "startQuestion": "Ten pomidor jest za drogi"
+      }
     }
+  },
+  "Story": {
+    "titles": {
+      "storyTitle": "Historie CoolLearn",
+      "storyDescription": "Mini-historie, które poprawiają umiejętność czytania i odpowiadania na pytania"
+    },
+    "setStories": {
+      "set": "Zestaw"
+    },
+    "cardPacks": {
+      "cardPackTitle_11": "Spotkanie na lotnisku",
+      "cardPackTitle_12": "Rezerwacja pokoju hotelowego",
+      "cardPackTitle_13": "Spotkanie z kolegą",
+      "cardPackTitle_21": "Jak zapytać o drogę",
+      "cardPackTitle_22": "W restauracji. Zamawianie posiłków",
+      "cardPackTitle_23": "Rozmowa przy stole w restauracji"
+    }
+  },
+  "Store": {
+    "titles": {
+      "storeTitle": "Sklep CoolLearn",
+      "storeDescription": "W sklepie możesz wydać swoje ciężko zarobione rubiny"
+    },
+    "modalShop": {
+      "shoopingCart": "kosz",
+      "shoopingCartTotal": "cena",
+      "shoopingCartClear": "oczyścić",
+      "shoopingCartBuy": "kupić"
+    }
+  },
+  "Profile": {
+    "profileProgress": "Postęp",
+    "profileAvatars": "Kupione awatary"
   }
 }

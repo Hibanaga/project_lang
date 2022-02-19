@@ -156,6 +156,10 @@
   margin: 0 auto;
 
   overflow: hidden;
+
+  @media (min-width: 768px) {
+    width: 700px;
+  }
 }
 
 .myoverlay {

@@ -1,4 +1,4 @@
-export const defaultLang = "ru";
+export const defaultLang = "pl";
 
 export const supportedLang = [
   {

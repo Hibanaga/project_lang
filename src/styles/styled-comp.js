@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   }
 
   @media (min-width: 1140px) {
-    width: 960px;
+    width: 900px;
   }
 `;
 

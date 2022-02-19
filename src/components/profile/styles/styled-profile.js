@@ -112,6 +112,11 @@ export const ExitButtonWrapper = styled.div`
   justify-content: center;
 
   margin: 3rem 0 8rem 0;
+
+  @media (min-width: 768px) {
+    margin: 3rem auto 8rem auto;
+    width: 40rem;
+  }
 `;
 
 export const ExitButton = styled.button`

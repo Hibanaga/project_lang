@@ -134,6 +134,10 @@ export const ModalSuccessItemsWrapper = styled.div`
   margin-top: 1rem;
   height: 200px;
   overflow-y: scroll;
+
+  @media (min-width: 768px) {
+    height: 380px;
+  }
 `;
 
 export const ShopImageCardWrapper = styled.div`

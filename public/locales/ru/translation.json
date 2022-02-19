@@ -41,24 +41,6 @@
       "link": "начать"
     }
   },
-  "confirm": {
-    "confirmEmail": "Подтверждение почты",
-    "notTrueCode": "Неправильный код",
-    "placeholderConfirm": "введите полученный код",
-    "submitCode": "Подтвердить"
-  },
-  "resultLesson": {
-    "congratsMessage": "Поздравляем",
-    "descriptionCongrats": "Вы успешно завершили этот урок",
-    "yourResult": "Ваш результат",
-    "resultMessage": "Результат",
-    "countResultCongrats": "Количество",
-    "countCrownsCongrats": "Заработано корон",
-    "countCoinCongrats": "Заработано рубинов",
-    "submitFinishCongrats": "Завершить",
-    "buttonInfoCheck":"Проверить",
-    "buttonInfoNext": "Далее" 
-  },
   "form": {
     "loginForm": {
       "placeholderEmail": "Email или имя пользователя",
@@ -74,6 +56,24 @@
     "placeholderPassword": "Пароль",
     "login": "Войти",
     "title": "Имя пользователя может включать только числа,буквы и некоторые специальные знаки такие как !_@"
+  },
+  "confirm": {
+    "confirmEmail": "Подтверждение почты",
+    "notTrueCode": "Неправильный код",
+    "placeholderConfirm": "введите полученный код",
+    "submitCode": "Подтвердить"
+  },
+  "resultLesson": {
+    "congratsMessage": "Поздравляем",
+    "descriptionCongrats": "Вы успешно завершили этот урок",
+    "yourResult": "Ваш результат",
+    "resultMessage": "Результат",
+    "countResultCongrats": "Количество",
+    "countCrownsCongrats": "Заработано корон",
+    "countCoinCongrats": "Заработано рубинов",
+    "submitFinishCongrats": "Завершить",
+    "buttonInfoCheck": "Проверить",
+    "buttonInfoNext": "Далее"
   },
 
   "Learn": {
@@ -113,9 +113,9 @@
     }
   },
   "profileAdditional": {
-  "SelectedImage": "Выбрано",
-  "selectImage": "Выбрать",
-  "removeText": "удалить"
+    "SelectedImage": "Выбрано",
+    "selectImage": "Выбрать",
+    "removeText": "удалить"
   },
   "Lesson": {
     "titleTypes": {
@@ -163,29 +163,28 @@
         "question_1": "Душ"
       },
       "typeB": {
-         "question_0": {
-           "variantAnswer": {
-             "answer_0": "Суп",
-             "answer_1": "щетки",
-             "answer_2": "Последний",
-             "answer_3": "кусочек",
-              "answer_4": "мыла"
-            
-           },
-           "correctAnswer": "Последний кусочек мыла"
-         },
-         "question_1": {
-           "variantAnswer": {
-             "answer_0": "Нужно",
-             "answer_1": "помыть",
-             "answer_2": "почистить",
-             "answer_3": "зубы",
-             "answer_4": "голову",
-             "answer_5": "завтракать",
-             "answer_6": "супом"
-           },
-           "correctAnswer": "Нужно почистить зубы"
-         }
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "Суп",
+            "answer_1": "щетки",
+            "answer_2": "Последний",
+            "answer_3": "кусочек",
+            "answer_4": "мыла"
+          },
+          "correctAnswer": "Последний кусочек мыла"
+        },
+        "question_1": {
+          "variantAnswer": {
+            "answer_0": "Нужно",
+            "answer_1": "помыть",
+            "answer_2": "почистить",
+            "answer_3": "зубы",
+            "answer_4": "голову",
+            "answer_5": "завтракать",
+            "answer_6": "супом"
+          },
+          "correctAnswer": "Нужно почистить зубы"
+        }
       },
       "typeC": {
         "startQuestion": "Эта зубная щетка ужасная"
