@@ -6,7 +6,7 @@ class AppService {
 
   constructor() {
     this.instance = axios.create({
-      baseURL: "http://localhost:3000"
+      baseURL: "https://coollearn-backend.herokuapp.com/"
     })
   }
 

@@ -43,7 +43,7 @@
   },
   "form": {
     "loginForm": {
-      "placeholderEmail": "Email lub nazwa użytkownika",
+      "placeholderEmail": "Email użytkownika",
       "registerBtn": "Rejestracja"
     },
     "registerForm": {

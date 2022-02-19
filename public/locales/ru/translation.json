@@ -43,7 +43,7 @@
   },
   "form": {
     "loginForm": {
-      "placeholderEmail": "Email или имя пользователя",
+      "placeholderEmail": "Email пользователя",
       "registerBtn": "Регистрация"
     },
     "registerForm": {
