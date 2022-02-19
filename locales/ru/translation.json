@@ -43,7 +43,7 @@
   },
   "form": {
     "loginForm": {
-      "placeholderEmail": "Email или имя пользователя",
+      "placeholderEmail": "Email пользователя",
       "registerBtn": "Регистрация"
     },
     "registerForm": {
@@ -57,19 +57,66 @@
     "login": "Войти",
     "title": "Имя пользователя может включать только числа,буквы и некоторые специальные знаки такие как !_@"
   },
+  "confirm": {
+    "confirmEmail": "Подтверждение почты",
+    "notTrueCode": "Неправильный код",
+    "placeholderConfirm": "введите полученный код",
+    "submitCode": "Подтвердить"
+  },
+  "resultLesson": {
+    "congratsMessage": "Поздравляем",
+    "descriptionCongrats": "Вы успешно завершили этот урок",
+    "yourResult": "Ваш результат",
+    "resultMessage": "Результат",
+    "countResultCongrats": "Количество",
+    "countCrownsCongrats": "Заработано корон",
+    "countCoinCongrats": "Заработано рубинов",
+    "submitFinishCongrats": "Завершить",
+    "buttonInfoCheck": "Проверить",
+    "buttonInfoNext": "Далее"
+  },
 
   "Learn": {
     "trainingSection": {
-      "mainTitle": "Основы"
+      "mainTitle": "Основы",
+      "chapter_1": "I. Утро",
+      "chapter_2": "II. Обед"
     },
     "catalogLesson": {
       "titleFamily": "Семья",
       "titleProduct": "Продукты",
       "titleParty": "Вечеринка",
-      "titleRestaurant": "Ресторан"
+      "titleRestaurant": "Ресторан",
+      "titleFood": "Еда",
+      "titleBathroom": "Ванная",
+      "titlePurchases": "Покупки",
+      "titleUniversity": "Университет",
+      "titleCity": "Город",
+      "titleLessons": "Занятия",
+      "titleRecreation": "Отдых",
+      "titleMarket": "Рынок"
+    },
+    "actionUsers": {
+      "rubin": {
+        "rubinsTitle": "Рубины",
+        "rubinsDescription_1": "Ваше богатство - ",
+        "rubinsDescription_2": " рубинов."
+      },
+      "crown": {
+        "crownTitle": "Короны",
+        "crownDescription": "Получайте короны, повышая уровень навыков!"
+      },
+      "profile": {
+        "profileTiTle": "Аккаунт",
+        "profileDescription": "Профиль можно кастомизировать используя рубины."
+      }
     }
   },
-
+  "profileAdditional": {
+    "SelectedImage": "Выбрано",
+    "selectImage": "Выбрать",
+    "removeText": "удалить"
+  },
   "Lesson": {
     "titleTypes": {
       "titleTypeA": "Введите перевод на английский",
@@ -109,6 +156,266 @@
       "typeC": {
         "startQuestion": "Мой брат студент"
       }
+    },
+    "bathroomQuestionTranslate": {
+      "typeA": {
+        "question_0": "Мыло",
+        "question_1": "Душ"
+      },
+      "typeB": {
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "Суп",
+            "answer_1": "щетки",
+            "answer_2": "Последний",
+            "answer_3": "кусочек",
+            "answer_4": "мыла"
+          },
+          "correctAnswer": "Последний кусочек мыла"
+        },
+        "question_1": {
+          "variantAnswer": {
+            "answer_0": "Нужно",
+            "answer_1": "помыть",
+            "answer_2": "почистить",
+            "answer_3": "зубы",
+            "answer_4": "голову",
+            "answer_5": "завтракать",
+            "answer_6": "супом"
+          },
+          "correctAnswer": "Нужно почистить зубы"
+        }
+      },
+      "typeC": {
+        "startQuestion": "Эта зубная щетка ужасная"
+      }
+    },
+    "purchasesQuestionTranslate": {
+      "typeA": {
+        "question_0": "Деньги",
+        "question_1": "Ноутбук"
+      },
+      "typeB": {
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "Сколько",
+            "answer_1": "ноутбук",
+            "answer_2": "компьютер",
+            "answer_3": "этот",
+            "answer_4": "стоит",
+            "answer_5": "лежит",
+            "answer_6": "салат"
+          },
+          "correctAnswer": "Сколько стоит этот ноутбук"
+        }
+      },
+      "typeC": {
+        "startQuestion": "Интересное предложение"
+      }
+    },
+    "foodQuestionTranslate": {
+      "typeA": {
+        "question_0": "Салат",
+        "question_1": "Креветки",
+        "question_2": "Жареная курица"
+      },
+      "typeB": {
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "Будешь",
+            "answer_1": "нравится",
+            "answer_2": "десерт",
+            "answer_3": "тебе",
+            "answer_4": "отдых",
+            "answer_5": "обед",
+            "answer_6": "отличный"
+          },
+          "correctAnswer": "Будешь десерт"
+        },
+        "question_1": {
+          "variantAnswer": {
+            "answer_0": "сахара",
+            "answer_1": "съел",
+            "answer_2": "ложек",
+            "answer_3": "Когда",
+            "answer_4": "Сколько",
+            "answer_5": "зачем",
+            "answer_6": "соли"
+          },
+          "correctAnswer": "Сколько ложек сахара"
+        }
+      },
+      "typeC": {
+        "startQuestion": "Приготовь тирамису пожалуйста"
+      }
+    },
+    "universityQuestionTranslate": {
+      "typeA": {
+        "question_0": "Университет",
+        "question_1": "Оценка"
+      },
+      "typeB": {
+        "question_0": {
+          "answer_0": "Тяните",
+          "answer_1": "заданиями",
+          "answer_2": "билет",
+          "answer_3": "с",
+          "answer_4": "для",
+          "answer_5": "Сколько",
+          "answer_6": "Оценка"
+        },
+        "correctAnswer": "Тяните  билет с заданиями"
+      },
+      "typeC": {
+        "startQuestion": "Поздравлю, отличный результат"
+      }
+    },
+    "cityQuestionTranslate": {
+      "typeA": {
+        "question_0": "Улица",
+        "question_1": "Квартира"
+      },
+      "typeB": {
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "Вы",
+            "answer_1": "впервые",
+            "answer_2": "в",
+            "answer_3": "городе",
+            "answer_4": "тут"
+          },
+          "correctAnswer": "Вы впервые в городе"
+        },
+        "question_1": {
+          "variantAnswer": {
+            "answer_0": "Пожалуйста",
+            "answer_1": "мной",
+            "answer_2": "Праздник",
+            "answer_3": "за",
+            "answer_4": "следуй",
+            "answer_5": "Спасибо",
+            "answer_6": "поддержи"
+          },
+          "correctAnswer": "Пожалуйста следуй за мной"
+        }
+      },
+      "typeC": {
+        "startQuestion": "Можно спросить дорогу?"
+      }
+    },
+    "lessonsQuestionTranslate": {
+      "typeA": {
+        "question_0": "Домашняя работа"
+      },
+      "typeB": {
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "Простите",
+            "answer_1": "но",
+            "answer_2": "вы",
+            "answer_3": "вопрос",
+            "answer_4": "Пожалуйста",
+            "answer_5": "на",
+            "answer_6": "ответьте"
+          },
+          "correctAnswer": "Пожалуйста ответьте на вопрос"
+        }
+      },
+      "typeC": {
+        "startQuestion": "В чем состоит вопрос?"
+      }
+    },
+    "recreationQuestionTranslate": {
+      "typeA": {
+        "question_0": "Отпуск",
+        "question_1": "Математика",
+        "question_2": "Физика"
+      },
+      "typeB": {
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "Физические",
+            "answer_1": "простые",
+            "answer_2": "Химические",
+            "answer_3": "формулы",
+            "answer_4": "сложные",
+            "answer_5": "ответ",
+            "answer_6": "интересные"
+          },
+          "correctAnswer": "Физические формулы сложные"
+        },
+        "question_1": {
+          "variantAnswer": {
+            "answer_0": "Когда",
+            "answer_1": "начало",
+            "answer_2": "конец",
+            "answer_3": "занятий",
+            "answer_4": "урока",
+            "answer_5": "примеры",
+            "answer_6": "заданий"
+          },
+          "correctAnswer": "Когда конец урока"
+        }
+      },
+      "typeC": {
+        "startQuestion": "Когда конец урока"
+      }
+    },
+    "marketQuestionTranslate": {
+      "typeA": {
+        "question_0": "Рынок",
+        "question_1": "Яйцо"
+      },
+      "typeB": {
+        "question_0": {
+          "variantAnswer": {
+            "answer_0": "картошка",
+            "answer_1": "томаты",
+            "answer_2": "Сколько",
+            "answer_3": "стоит",
+            "answer_4": "весит",
+            "answer_5": "занимает",
+            "answer_6": "места"
+          },
+          "correctAnswer": "Сколько стоит картошка"
+        }
+      },
+      "typeC": {
+        "startQuestion": "Этот помидор слишком дорогой"
+      }
     }
+  },
+  "Story": {
+    "titles": {
+      "storyTitle": "Истории CoolLearn",
+      "storyDescription": "Мини-истории которые улучшают навыки чтения и ответа на вопросы"
+    },
+    "setStories": {
+      "set": "Набор"
+    },
+    "cardPacks": {
+      "cardPackTitle_11": "Встреча в аэропорту",
+      "cardPackTitle_12": "Заказ номера в отеле",
+      "cardPackTitle_13": "Встреча с коллегой",
+      "cardPackTitle_21": "Как спросить дорогу",
+      "cardPackTitle_22": "В ресторане. Заказ блюд",
+      "cardPackTitle_23": "Беседа за столом в ресторане"
+    }
+  },
+  "Store": {
+    "titles": {
+      "storeTitle": "Магазин CoolLearn",
+      "storeDescription": "В магазине вы можете потратить заработанные ранее тяжким трудом рубины"
+    },
+    "modalShop": {
+      "shoopingCart": "Корзина",
+      "shoopingCartTotal": "Стоимость",
+      "shoopingCartClear": "очистить",
+      "shoopingCartBuy": "купить"
+    }
+  },
+  "Profile": {
+    "profileProgress": "Прогресс",
+    "profileAvatars": "Купленные аватары"
   }
 }
